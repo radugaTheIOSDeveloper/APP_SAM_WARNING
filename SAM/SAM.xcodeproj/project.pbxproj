@@ -599,7 +599,7 @@
 				TargetAttributes = {
 					CE032C5E1D7D880600851FF4 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 45CYBPXLWX;
+						DevelopmentTeam = HL7PGCM524;
 						ProvisioningStyle = Automatic;
 					};
 					CE032C771D7D880600851FF4 = {
@@ -909,11 +909,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 45CYBPXLWX;
+				DEVELOPMENT_TEAM = HL7PGCM524;
 				INFOPLIST_FILE = SAM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = freshtech.SAM;
+				PRODUCT_BUNDLE_IDENTIFIER = itstack.SAM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -925,11 +925,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 45CYBPXLWX;
+				DEVELOPMENT_TEAM = HL7PGCM524;
 				INFOPLIST_FILE = SAM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = freshtech.SAM;
+				PRODUCT_BUNDLE_IDENTIFIER = itstack.SAM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

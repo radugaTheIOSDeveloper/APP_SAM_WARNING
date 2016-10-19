@@ -26,13 +26,49 @@
 @implementation MyCoin
 
 
+#pragma marl API DELETE
+
 #pragma mark API "GET USER QR"
+
+-(void) deleteUsedQR:(NSString *) qrCodeID {
+    [[API apiManager] deleteUsedQR:qrCodeID
+                         onSuccess:^(NSDictionary *responseObject) {
+                             NSLog(@"%@",responseObject);
+                             [self getUserQRCode];
+                             [self.activityIndicator startAnimating];
+                             [self.tableView reloadData];
+                         } onFailure:^(NSError *error, NSInteger statusCode) {
+                             NSLog(@"%@",error);
+                             [self alerts];
+                         }];
+    
+}
+
+-(void) alerts{
+    
+    UIAlertController * alert=   [UIAlertController
+                                alertControllerWithTitle:@"Ошибка удаления"
+                                  message:nil
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* yesButton = [UIAlertAction
+                                actionWithTitle:@"OK"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action)
+                                {
+                                    
+                                }];
+    
+    [alert addAction:yesButton];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 
 -(void) getUserQRCode {
     
     [[API apiManager]getUserQR:^(NSDictionary *responceObject) {
-        NSLog(@"%@",responceObject);
-        
+        NSLog(@"%@",responceObject);        
         self.activityIndicator.alpha = 1.f;
         [self.view setUserInteractionEnabled:YES];
         [self.activityIndicator stopAnimating];
@@ -158,7 +194,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    
     static NSString * ideActive = @"cell";
     static NSString * idePast = @"callPast";
     static NSString * ideNo = @"cellNoBuy";
@@ -188,6 +223,9 @@
             UIImageView * imageCoin = (UIImageView *)[cellACtive.contentView viewWithTag:10];
             UILabel * nameSam = (UILabel *)[cellACtive.contentView viewWithTag:11];
             UILabel * date = (UILabel *)[cellACtive.contentView viewWithTag:12];
+            UILabel * detailLabel = (UILabel *)[cellACtive.contentView viewWithTag:60];
+            detailLabel.text = [NSString stringWithFormat:@"Жетонов на 4 минуты:%@ Жетонов на 2 минуты: %@",[curCoinActive objectForKey:@"4minutes_str"],[curCoinActive objectForKey:@"2minutes_str"]];
+            
             imageCoin.image = [UIImage imageNamed:@"coinPast"];
             nameSam.textColor = [UIColor colorWithRed:111/255.0f green:113/255.0f blue:121/255.0f alpha:1];
             nameSam.text = [curCoinActive objectForKey:@"minutes_str"];
@@ -223,6 +261,9 @@
         UIImageView * imageCoin = (UIImageView *)[cellPast.contentView viewWithTag:20];
         UILabel * nameSam = (UILabel *)[cellPast.contentView viewWithTag:21];
         UILabel * date = (UILabel *)[cellPast.contentView viewWithTag:22];
+        UILabel * detailLabel = (UILabel *)[cellPast.contentView viewWithTag:62];
+            
+        detailLabel.text = [NSString stringWithFormat:@"Жетонов на 4 минуты: %@ Жетонов на 2 минуты: %@",[curCoinPast objectForKey:@"4minutes_str"],[curCoinPast objectForKey:@"2minutes_str"]];
 
         imageCoin.image = [UIImage imageNamed:@"coinPast"];
         nameSam.textColor = [UIColor colorWithRed:236/255.0f green:88/255.0f blue:98/255.0f alpha:1];
@@ -254,6 +295,7 @@
 
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     if (self.indexBtn == 0) {
         return NO;
     } else  if ([self.pastCount count]==0){
@@ -261,15 +303,20 @@
     } else {
         return YES;
     }
+    
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    NSDictionary * curCoinPast = [self.pastCount objectAtIndex:indexPath.row];
+    
     if (self.indexBtn == 1) {
-      
+        
+        NSLog(@"%@",[curCoinPast objectForKey:@"qr_code_id"]);
         if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.pastCount removeObjectAtIndex:indexPath.row];
-        [tableView reloadData]; // tell table to refresh now
+            [self deleteUsedQR:[curCoinPast objectForKey:@"qr_code_id"]];
+     //   [self.pastCount removeObjectAtIndex:indexPath.row];
+       // [tableView reloadData]; // tell table to refresh now
     }
         
     }
@@ -290,9 +337,9 @@
 
         if (self.indexBtn == 0) {
             segueMyBuy.stringQR = self.stringQR;
+            
         } else {
             segueMyBuy.stringQR = @"nonActive";
-
         }
 
         } else if ([[segue identifier] isEqualToString:@"buyCoins"]) {
@@ -323,9 +370,6 @@
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder
 {
     NSLog(@"%s", __PRETTY_FUNCTION__);
-    
-    // Save what you need here
-    
     [super encodeRestorableStateWithCoder:coder];
 }
 
@@ -333,9 +377,6 @@
 - (void)decodeRestorableStateWithCoder:(NSCoder *)coder
 {
     NSLog(@"%s", __PRETTY_FUNCTION__);
-    
-    // Restore what you need here
-    
     [super decodeRestorableStateWithCoder:coder];
 }
 
@@ -343,8 +384,7 @@
 - (void)applicationFinishedRestoringState
 {
     NSLog(@"%s", __PRETTY_FUNCTION__);
-    
-    // Call whatever function you need to visually restore
     [self customSetup];
 }
+
 @end

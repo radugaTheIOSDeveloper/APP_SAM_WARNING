@@ -160,4 +160,37 @@
                      }];
 }
 
+// METHOD DELETE
+
+-(void) deleteUsedQR:(NSString *) qrCodeID
+           onSuccess:(void(^)(NSDictionary * responseObject)) success
+           onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure{
+    
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    [self.sessionManager.requestSerializer setValue:[userDefaults objectForKey:@"token"] forHTTPHeaderField:@"Authorization"];
+    self.sessionManager.requestSerializer.HTTPMethodsEncodingParametersInURI = [NSSet setWithObjects:@"GET", @"HEAD", nil];
+    
+    NSDictionary * params = [NSDictionary dictionaryWithObjectsAndKeys:
+                             qrCodeID, @"qrCodeID",nil];
+                           
+    
+    [self.sessionManager DELETE:@"deleteUsedQR/"
+                     parameters:params
+                        success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
+                            NSLog(@"responceObj%@",responseObject);
+                            if(success){
+                                success(responseObject);
+                            }
+                        }
+     
+                        failure:^(NSURLSessionTask *operation, NSError *error) {
+                            NSLog(@"error%@",error);
+                            if(failure){
+                                NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
+                                failure(error, response.statusCode);
+                            }
+                        }];
+}
+
+
 @end

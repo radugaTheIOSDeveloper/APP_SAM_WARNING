@@ -20,7 +20,7 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) MKDirections * directions;
 @property (strong, nonnull) NSString * titleStr;
-
+@property (assign, nonatomic) double routeDistance;
 @end
 
 @implementation MapViewController
@@ -32,10 +32,32 @@
     [self.activitiIndicator stopAnimating];
     self.activitiIndicator.alpha = 0.f;
     self.labelLoad.alpha = 0.f;
-  //  mapRegion.span = MKCoordinateSpanMake(0.1,0.1);
-    //[self.mapView setRegion:mapRegion animated: YES];
+    
+    self.test2.text = [NSString stringWithFormat:@"%f,%f мои клоор",self.mapView.userLocation.coordinate.latitude,self.mapView.userLocation.coordinate.longitude];
+ 
+    NSLog(@"%@",self.test2.text);
+    
 }
+-(void) alerts{
+    
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:@"маршрут закончен!"
+                                  message:nil
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* yesButton = [UIAlertAction
+                                actionWithTitle:@"OK"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action)
+                                {
+                                    self.viewDetail.alpha = 0.f;
 
+                                }];
+    
+    [alert addAction:yesButton];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
 - (void) dealloc  {
     
     [self.mapView removeFromSuperview]; // release crashes app
@@ -47,6 +69,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.viewDetail.alpha = 0.f;
     
     self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoMenu"]];
@@ -62,10 +85,10 @@
     [self.locationManager startUpdatingLocation];
     
     self.mapView.delegate = self;
-    
     self.mapView.showsUserLocation = YES;
     CLLocation *location = [_locationManager location];
     CLLocationCoordinate2D  coordinate = [location coordinate];
+    
 
     // showing them in the mapView
     _mapView.region = MKCoordinateRegionMakeWithDistance(coordinate, 10000, 10000);
@@ -107,6 +130,12 @@
     annotation6.coordinate = CLLocationCoordinate2DMake(54.211388, 37.696394);
     annotation6.title = @"г. Тула, Пролетарский район, ул. Вильямса (напротив д. 46)";
     [self.mapView addAnnotation:annotation6];
+    
+    
+    PinAnnotation * annotation7 = [[PinAnnotation alloc]init];
+    annotation7.coordinate = CLLocationCoordinate2DMake(54.196345, 37.604139);
+    annotation7.title = @"ТЕСТ";
+    [self.mapView addAnnotation:annotation7];
     
 //    UIBarButtonItem * zoomButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(actionShowAll:)];
    
@@ -235,7 +264,8 @@
     }
     
     CLLocationCoordinate2D coordinate = annotationView.annotation.coordinate;
-    //    CLLocation * location = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
+    self.test.text = [NSString stringWithFormat:@"%f,%f Координаты annotation ",coordinate.latitude,coordinate.longitude];
+
     MKDirectionsRequest * request = [[MKDirectionsRequest alloc]init];
     request.source = [MKMapItem mapItemForCurrentLocation];
     MKPlacemark * placemark = [[MKPlacemark alloc]initWithCoordinate:coordinate addressDictionary:nil];
@@ -248,15 +278,32 @@
     [self.directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *  response, NSError *  error) {
         if (error) {
             NSLog(@"1231");
-        }else if ([response.routes count]== 0){
+        } else if ([response.routes count]== 0) {
             NSLog(@"123");
-        }else{
-            [self.mapView removeOverlays:[self.mapView overlays]];
+        } else {
             
+            [self.mapView removeOverlays:[self.mapView overlays]];
             NSMutableArray * array =  [NSMutableArray array];
             
             for (MKRoute * route in response.routes) {
+                
+                self.viewDetail.alpha = 1.f;
+                self.lablelDistance.text = [NSString stringWithFormat:@"До чистой машины осталось%.02f км",(float)route.distance / 1000];
+                CLLocation *locations = [_locationManager location];
+                CLLocationCoordinate2D  coordinates = [locations coordinate];
+                
+                _mapView.region = MKCoordinateRegionMakeWithDistance(coordinates, 1000, 1000);
+
+                
                 [array addObject:route.polyline];
+                NSArray *steps = [route steps];
+                
+                NSLog(@"Total Steps : %lu",(unsigned long)[steps count]);
+                
+                [steps enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                    NSLog(@"Rout Instruction : %@",[obj instructions]);
+                    NSLog(@"Rout Distance : %f",[obj distance]); 
+                }];
             }
             [self.mapView addOverlays:array level:MKOverlayLevelAboveRoads];
         }

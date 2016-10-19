@@ -18,4 +18,9 @@
 @property (strong, nonatomic) NSMutableArray * arrayImages;
 - (IBAction)skipBtn:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *skipOtl;
+
+
+
+
 @end

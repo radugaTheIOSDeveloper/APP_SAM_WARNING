@@ -18,17 +18,16 @@
     
     [super viewDidLoad];
     
-    self.pageTitles = @[@"Оплатите жетоны",@"Просканируйте QR код",@"Приехай на мойку САМ",@"Получите жетоны"];
+    self.pageTitles = @[@"Оплатите жетоны",@"Приехай на мойку САМ",@"Просканируйте QR код",@"Получите жетоны"];
     
-    self.pageDetail = @[@"Жетоны нужны для получения услуг автомойки самообслуживания САМ",@"Поднесите смартфон к считывающему устройству на разменном аппарате",@"Подойдите к разменному аппарату и получите жетоны с помощью QR кода",@"Спасибо за пользование автомойкой самообслуживания САМ"];
-    self.pageImages = @[@"rPos5",@"qrPos4",@"carPos4",@"coinPos3"];
-    
+    self.pageDetail = @[@"Жетоны нужны для получения услуг автомойки самообслуживания САМ",@"Подойдите к разменному аппарату и получите жетоны с помощью QR кода",@"Поднесите смартфон к считывающему устройству на разменном аппарате",@"Спасибо за пользование автомойкой самообслуживания САМ"];
+    self.pageImages = @[@"rPos5",@"carPos4",@"qrPos4",@"coinPos3"];
     
     NSMutableArray * animationOne = [NSMutableArray arrayWithObjects:[UIImage imageNamed:@"rPos0"],[UIImage imageNamed:@"rPos1"],[UIImage imageNamed:@"rPos2"],[UIImage imageNamed:@"rPos3"],[UIImage imageNamed:@"rPos4"],[UIImage imageNamed:@"rPos5"], nil];
     
-    NSMutableArray * animationTwo = [NSMutableArray arrayWithObjects:[UIImage imageNamed:@"qrPos0"],[UIImage imageNamed:@"qrPos1"],[UIImage imageNamed:@"qrPos2"],[UIImage imageNamed:@"qrPos3"],[UIImage imageNamed:@"qrPos4"], nil];
+    NSMutableArray * animationTree = [NSMutableArray arrayWithObjects:[UIImage imageNamed:@"qrPos0"],[UIImage imageNamed:@"qrPos1"],[UIImage imageNamed:@"qrPos2"],[UIImage imageNamed:@"qrPos3"],[UIImage imageNamed:@"qrPos4"], nil];
     
-    NSMutableArray * animationTree = [NSMutableArray arrayWithObjects:[UIImage imageNamed:@"carPos0"],[UIImage imageNamed:@"carPos1"],[UIImage imageNamed:@"carPos2"],[UIImage imageNamed:@"carPos3"],[UIImage imageNamed:@"carPos4"], nil];
+    NSMutableArray * animationTwo = [NSMutableArray arrayWithObjects:[UIImage imageNamed:@"carPos0"],[UIImage imageNamed:@"carPos1"],[UIImage imageNamed:@"carPos2"],[UIImage imageNamed:@"carPos3"],[UIImage imageNamed:@"carPos4"], nil];
     
     NSMutableArray * animationFour = [NSMutableArray arrayWithObjects:[UIImage imageNamed:@"coinPos0"],[UIImage imageNamed:@"coinPos1"],[UIImage imageNamed:@"coinPos2"],[UIImage imageNamed:@"coinPos3"], nil];
     
@@ -47,6 +46,7 @@
     [self addChildViewController:_pageViewController];
     [self.view addSubview:_pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,6 +66,11 @@
     pageContentController.detailText = self.pageDetail[index];
     pageContentController.arrayImage = self.arrayImages[index];
     pageContentController.pageIndex = index;
+    
+    if (index == 3) {
+        [self.skipOtl setTitle:@"далее" forState:UIControlStateNormal];
+    } else {
+        [self.skipOtl setTitle:@"пропустить" forState:UIControlStateNormal];    }
     
     return pageContentController;
 }
@@ -116,4 +121,6 @@
     [self performSegueWithIdentifier:@"enterScreen" sender:self];
     
 }
+
+
 @end

@@ -42,12 +42,11 @@
     }];
 }
 
-
 -(void) alerts{
     
     UIAlertController * alert=   [UIAlertController
                                   alertControllerWithTitle:@"Ошибка регистрации!"
-                                  message:@"Печалька"
+                                  message:@"Недопустимый номер телефона или пароль"
                                   preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* yesButton = [UIAlertAction

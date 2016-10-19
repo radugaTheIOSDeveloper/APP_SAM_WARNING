@@ -19,7 +19,7 @@
     [super viewDidLoad];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoMenu"]];
     
-    self.pageTitles = @[@"1 ПРОГРАММА МОЙКА",@"2 ПРОГРАММА ОПОЛАСКИВАНИЕ",@"3 ПРОГРАММА ЗАЩИТА ЛАКОКРАСОЧНОГО ПОКРЫТИЯ",@"4 ПРОГРАММА БЛЕСК",@"ПРОГРАММА ПЫЛЕСОС"];
+    self.pageTitles = @[@"1 ПРОГРАММА МОЙКА",@"2 ПРОГРАММА ОПОЛАСКИВАНИЕ",@"3 ПРОГРАММА ЗАЩИТА ЛАКОКРАСОЧНОГО ПОКРЫТИЯ",@"4 ПРОГРАММА БЛЕСК",@"ПЫЛЕСОС"];
     self.pageBGImage = @[@"bgOne",@"bgTwo",@"bgTree",@"bgFour",@"bgFive"];
     self.pageLogoImaage = @[@"logoOne",@"logoTwo",@"logoTree",@"logoFour",@"logoFive"];
     self.pageDetail = @[@"Смесь высококачественного моющего порошка и горячей воды под давлением.",
@@ -48,15 +48,16 @@
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     // Change the size of page view controller
-    self.pageViewController.view.frame = CGRectMake(0, -10, self.view.frame.size.width, self.view.frame.size.height);
+    self.pageViewController.view.frame = CGRectMake(0, -10, self.view.frame.size.width, self.view.frame.size.height +10);
     
     [self addChildViewController:_pageViewController];
     [self.view addSubview:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-
      [self customSetup];
+    
 }
+
 - (void)customSetup
 {
     SWRevealViewController *revealViewController = self.revealViewController;
