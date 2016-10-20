@@ -21,8 +21,6 @@
 @property (weak, nonatomic) IBOutlet UIView *viewDetail;
 
 @property (weak, nonatomic) IBOutlet UILabel *lablelDistance;
-@property (weak, nonatomic) IBOutlet UILabel *test;
-@property (weak, nonatomic) IBOutlet UILabel *test2;
 
 
 @end

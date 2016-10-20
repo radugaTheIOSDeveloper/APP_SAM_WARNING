@@ -13,6 +13,7 @@
 #import "BuyCoins.h"
 #import "SWRevealViewController.h"
 
+
 #define AllTrim(string) [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 @interface MapViewController ()<MKMapViewDelegate, CalloutAnnotationViewDelegate,CLLocationManagerDelegate>
 
@@ -21,27 +22,49 @@
 @property (strong, nonatomic) MKDirections * directions;
 @property (strong, nonnull) NSString * titleStr;
 @property (assign, nonatomic) double routeDistance;
+@property (strong, nonatomic) MKMapItem *destination;
+@property  MKAnnotationView * annotationView ;
+
 @end
 
 @implementation MapViewController
 
+
+
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
     MKCoordinateRegion mapRegion;
-    mapRegion.center = self.mapView.userLocation.coordinate;
     
+    mapRegion.center = self.mapView.userLocation.coordinate;
     [self.activitiIndicator stopAnimating];
     self.activitiIndicator.alpha = 0.f;
     self.labelLoad.alpha = 0.f;
     
-    self.test2.text = [NSString stringWithFormat:@"%f,%f мои клоор",self.mapView.userLocation.coordinate.latitude,self.mapView.userLocation.coordinate.longitude];
- 
-    NSLog(@"%@",self.test2.text);
+
+    if (self.routeDistance <= 0.01f) {
+        [self alerts];
+        
+    } else {
+        
+        [self.directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *  response, NSError *  error) {
+            if (error) {
+                NSLog(@"1231");
+            } else if ([response.routes count]== 0) {
+                NSLog(@"123");
+            } else {
+                [self showRoute:response];
+            }
+            
+        }];
+
+    }
     
 }
+
+
 -(void) alerts{
     
-    UIAlertController * alert=   [UIAlertController
-                                  alertControllerWithTitle:@"маршрут закончен!"
+    UIAlertController * alert = [UIAlertController
+                                 alertControllerWithTitle:@"Вы достигли конца  своего пути!!!"
                                   message:nil
                                   preferredStyle:UIAlertControllerStyleAlert];
     
@@ -55,10 +78,12 @@
                                 }];
     
     [alert addAction:yesButton];
-    
+    [self.mapView removeOverlays:[self.mapView overlays]];
+    self.viewDetail.alpha = 0.f;
+    self.routeDistance = 1000.f;
     [self presentViewController:alert animated:YES completion:nil];
 }
-- (void) dealloc  {
+- (void)dealloc{
     
     [self.mapView removeFromSuperview]; // release crashes app
     self.mapView = nil;
@@ -68,6 +93,8 @@
 }
 
 - (void)viewDidLoad {
+    
+    self.routeDistance = 1000.f;
     [super viewDidLoad];
     self.viewDetail.alpha = 0.f;
     
@@ -88,8 +115,6 @@
     self.mapView.showsUserLocation = YES;
     CLLocation *location = [_locationManager location];
     CLLocationCoordinate2D  coordinate = [location coordinate];
-    
-
     // showing them in the mapView
     _mapView.region = MKCoordinateRegionMakeWithDistance(coordinate, 10000, 10000);
     
@@ -136,8 +161,7 @@
     annotation7.coordinate = CLLocationCoordinate2DMake(54.196345, 37.604139);
     annotation7.title = @"ТЕСТ";
     [self.mapView addAnnotation:annotation7];
-    
-//    UIBarButtonItem * zoomButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(actionShowAll:)];
+
    
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
@@ -195,10 +219,11 @@
 
 - (void)actionShowAll:(id)sender {
     
+    [self mapView:self.mapView didDeselectAnnotationView:self.annotationView];
+    
     CLLocation *location = [_locationManager location];
     CLLocationCoordinate2D  coordinate = [location coordinate];
     _mapView.region = MKCoordinateRegionMakeWithDistance(coordinate, 10000, 10000);
-    
 }
 
 
@@ -220,9 +245,7 @@
         annotationView = (CalloutAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
         if (annotationView == nil) {
             annotationView = [[CalloutAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-            
         }
-        
         CalloutAnnotation *calloutAnnotation = (CalloutAnnotation *)annotation;
         ((CalloutAnnotationView *)annotationView).title = calloutAnnotation.title;
         ((CalloutAnnotationView *)annotationView).delegate = self;
@@ -230,11 +253,9 @@
         [((CalloutAnnotationView *)annotationView).button addTarget:self action:@selector(segue:) forControlEvents:UIControlEventTouchUpInside];
         
         [annotationView setNeedsDisplay];
-        
-        [annotationView setCenterOffset:CGPointMake(0, -110)];
+        [annotationView setCenterOffset:CGPointMake(0, -100)];
         [UIView animateWithDuration:0.5f
                          animations:^(void) {
-                             
                              mapView.centerCoordinate = calloutAnnotation.coordinate;
                              
                          }];
@@ -252,10 +273,31 @@
 }
 
 -(void)route:(UIButton*)sender{
+
+    [self mapView:self.mapView didDeselectAnnotationView:self.annotationView];
+    [UIView animateWithDuration:0.2f
+                     animations:^(void) {
+                         
+                         CLLocation *location = [_locationManager location];
+                         CLLocationCoordinate2D  coordinate = [location coordinate];
+                         _mapView.region = MKCoordinateRegionMakeWithDistance(coordinate, 10, 10);
+                     }];
     
-    MKAnnotationView * annotationView = [sender superAnnotationView];
+    self.activitiIndicator.alpha = 1.f;
+    self.labelLoad.alpha = 1.f;
+    self.labelLoad.text = @"Загрузка...";
+    [self.activitiIndicator startAnimating];
     
-    if (!annotationView) {
+    [self getDirections];
+    
+  }
+
+
+
+- (void)getDirections
+{
+    
+    if (!_annotationView) {
         return;
     }
     
@@ -263,13 +305,12 @@
         [self.directions cancel];
     }
     
-    CLLocationCoordinate2D coordinate = annotationView.annotation.coordinate;
-    self.test.text = [NSString stringWithFormat:@"%f,%f Координаты annotation ",coordinate.latitude,coordinate.longitude];
-
+    CLLocationCoordinate2D coordinate = _annotationView.annotation.coordinate;
+    
+    
     MKDirectionsRequest * request = [[MKDirectionsRequest alloc]init];
     request.source = [MKMapItem mapItemForCurrentLocation];
     MKPlacemark * placemark = [[MKPlacemark alloc]initWithCoordinate:coordinate addressDictionary:nil];
-    
     MKMapItem * destination = [[MKMapItem alloc]initWithPlacemark:placemark];
     request.destination = destination;
     request.transportType = MKDirectionsTransportTypeAutomobile;
@@ -278,38 +319,45 @@
     [self.directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *  response, NSError *  error) {
         if (error) {
             NSLog(@"1231");
-        } else if ([response.routes count]== 0) {
+        } else if ([response.routes count] == 0) {
             NSLog(@"123");
         } else {
-            
-            [self.mapView removeOverlays:[self.mapView overlays]];
-            NSMutableArray * array =  [NSMutableArray array];
-            
-            for (MKRoute * route in response.routes) {
-                
-                self.viewDetail.alpha = 1.f;
-                self.lablelDistance.text = [NSString stringWithFormat:@"До чистой машины осталось%.02f км",(float)route.distance / 1000];
-                CLLocation *locations = [_locationManager location];
-                CLLocationCoordinate2D  coordinates = [locations coordinate];
-                
-                _mapView.region = MKCoordinateRegionMakeWithDistance(coordinates, 1000, 1000);
-
-                
-                [array addObject:route.polyline];
-                NSArray *steps = [route steps];
-                
-                NSLog(@"Total Steps : %lu",(unsigned long)[steps count]);
-                
-                [steps enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                    NSLog(@"Rout Instruction : %@",[obj instructions]);
-                    NSLog(@"Rout Distance : %f",[obj distance]); 
-                }];
-            }
-            [self.mapView addOverlays:array level:MKOverlayLevelAboveRoads];
+     
+            [self showRoute:response];
         }
-        
     }];
+    
 }
+
+-(void)showRoute:(MKDirectionsResponse *)response
+{
+    
+    [self.mapView removeOverlays:[self.mapView overlays]];
+    
+    NSMutableArray * array =  [NSMutableArray array];
+    self.viewDetail.alpha = 1.f;
+    
+    for (MKRoute *route in response.routes)
+    {
+        [array addObject:route.polyline];
+        
+        [self.mapView
+         addOverlay:route.polyline level:MKOverlayLevelAboveRoads];
+
+         self.lablelDistance.text = [NSString stringWithFormat:@"До чистой машины осталось %.02f км",(float)route.distance / 1000];
+        self.routeDistance = route.distance / 1000;
+        
+        self.activitiIndicator.alpha = 0.f;
+        self.labelLoad.alpha = 0.f;
+        [self.activitiIndicator stopAnimating];
+     
+        for (MKRouteStep *step in route.steps)
+        {
+            NSLog(@"%@", step.instructions);
+        }
+    }
+}
+
 
 -(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
     
@@ -325,9 +373,10 @@
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
     if ([view.annotation isKindOfClass:[PinAnnotation class]]) {
+        
+        self.annotationView = view;
         // Selected the pin annotation.
         CalloutAnnotation *calloutAnnotation = [[CalloutAnnotation alloc] init];
-        
         PinAnnotation *pinAnnotation = ((PinAnnotation *)view.annotation);
         calloutAnnotation.title = pinAnnotation.title;
         self.titleStr = pinAnnotation.title;
@@ -339,10 +388,12 @@
 //----------------------------------------------------------------------
 
 - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view {
+    
     if ([view.annotation isKindOfClass:[PinAnnotation class]]) {
         // Deselected the pin annotation.
         PinAnnotation *pinAnnotation = ((PinAnnotation *)view.annotation);
         [mapView removeAnnotation:pinAnnotation.calloutAnnotation];
+        
         pinAnnotation.calloutAnnotation = nil;
     }
 }
