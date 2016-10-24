@@ -27,7 +27,7 @@
                         NSLog(@"%@",responseObject);
                         
                         if ([responseObject objectForKey:@"token"]) {
-                            [[API apiManager]setToken:[responseObject objectForKey:@"token"]];
+                            [[API apiManager]setToken:[NSString stringWithFormat:@"Token %@",[responseObject objectForKey:@"token"]]];
                             [[Payment save]setPhoneNumber:username];
                             [self.activityIndicator stopAnimating];
                             [self.view setUserInteractionEnabled:YES];

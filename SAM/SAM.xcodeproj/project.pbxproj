@@ -51,6 +51,7 @@
 		CE032CF81D7DAB7F00851FF4 /* MyCoin.m in Sources */ = {isa = PBXBuildFile; fileRef = CE032CF71D7DAB7F00851FF4 /* MyCoin.m */; };
 		CE032CFD1D7DABBB00851FF4 /* Help.m in Sources */ = {isa = PBXBuildFile; fileRef = CE032CFC1D7DABBB00851FF4 /* Help.m */; };
 		CE128D331DA7CF1C00050099 /* PaymentWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE128D321DA7CF1C00050099 /* PaymentWebView.m */; };
+		CE2ADAFE1DBE117E005BFAED /* SetPassController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2ADAFD1DBE117E005BFAED /* SetPassController.m */; };
 		CE370DF51DA2B0660027D66B /* ConfirmRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = CE370DF41DA2B0660027D66B /* ConfirmRegister.m */; };
 		CE39BA3F1D9406EA00C5256A /* RegistrClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CE39BA3E1D9406EA00C5256A /* RegistrClass.m */; };
 		CE39BA421D94239E00C5256A /* Enter.m in Sources */ = {isa = PBXBuildFile; fileRef = CE39BA411D94239E00C5256A /* Enter.m */; };
@@ -164,6 +165,8 @@
 		CE032CFC1D7DABBB00851FF4 /* Help.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Help.m; sourceTree = "<group>"; };
 		CE128D311DA7CF1C00050099 /* PaymentWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentWebView.h; sourceTree = "<group>"; };
 		CE128D321DA7CF1C00050099 /* PaymentWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentWebView.m; sourceTree = "<group>"; };
+		CE2ADAFC1DBE117E005BFAED /* SetPassController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPassController.h; sourceTree = "<group>"; };
+		CE2ADAFD1DBE117E005BFAED /* SetPassController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPassController.m; sourceTree = "<group>"; };
 		CE370DF31DA2B0660027D66B /* ConfirmRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmRegister.h; sourceTree = "<group>"; };
 		CE370DF41DA2B0660027D66B /* ConfirmRegister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmRegister.m; sourceTree = "<group>"; };
 		CE39BA3D1D9406EA00C5256A /* RegistrClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrClass.h; sourceTree = "<group>"; };
@@ -452,6 +455,8 @@
 				CE39BA411D94239E00C5256A /* Enter.m */,
 				CE370DF31DA2B0660027D66B /* ConfirmRegister.h */,
 				CE370DF41DA2B0660027D66B /* ConfirmRegister.m */,
+				CE2ADAFC1DBE117E005BFAED /* SetPassController.h */,
+				CE2ADAFD1DBE117E005BFAED /* SetPassController.m */,
 			);
 			name = Registr;
 			sourceTree = "<group>";
@@ -758,6 +763,7 @@
 				CED618DC1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m in Sources */,
 				CE032CEA1D7DA9AA00851FF4 /* qrenc.c in Sources */,
 				CE032CEB1D7DA9AA00851FF4 /* qrinput.c in Sources */,
+				CE2ADAFE1DBE117E005BFAED /* SetPassController.m in Sources */,
 				CE032CF11D7DA9BB00851FF4 /* mask.c in Sources */,
 				CE39BA3F1D9406EA00C5256A /* RegistrClass.m in Sources */,
 				CE032CDB1D7DA8CA00851FF4 /* QREncoder.m in Sources */,

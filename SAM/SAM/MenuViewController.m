@@ -36,6 +36,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:0 forKey:@"need_activate"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -108,6 +110,7 @@
 }
 
 - (IBAction)btnClose:(id)sender {
+    [[API apiManager]setToken:NULL];
     [self performSegueWithIdentifier:@"closeApp" sender:self];
 }
 @end

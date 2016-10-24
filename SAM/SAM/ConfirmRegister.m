@@ -27,20 +27,23 @@
                               
                               NSLog(@"%@",responseObject);
                               self.messages = [responseObject objectForKey:@"message"];
-                              
+                              [self.activityIndicator stopAnimating];
+                              [self.view setUserInteractionEnabled:YES];
                               if ([responseObject objectForKey:@"token"]) {
-                                  
-                                  [[API apiManager]setToken:[responseObject objectForKey:@"token"]];
-                                  
-                                  [self performSegueWithIdentifier:@"appSAM" sender:self];
+                                  [[API apiManager]setToken:[NSString stringWithFormat:@"Token %@",[responseObject objectForKey:@"token"]]];
+                                  [self performSegueWithIdentifier:@"setPass" sender:self];
                                   
                               } else {
-                                  self.typeMessages = @"Ошибка регистрации!";
+                                  self.typeMessages = @"Ошибка подтверждения!";
                                   [self alerts];
                               }
                               
 }                               onFailure:^(NSError *error, NSInteger statusCode) {
-    
+                                    self.typeMessages = @"Ошибка подтверждения!";
+                                    [self.activityIndicator stopAnimating];
+    [self.view setUserInteractionEnabled:YES];
+
+                                    [self alerts];
                                     NSLog(@"%@",error);
     }];
 }
@@ -86,6 +89,15 @@
     [userDefaults setInteger:1 forKey:@"need_activate"];
     [userDefaults setObject:self.saveTelephone forKey:@"user_phone"];
     
+    NSLog(@"%@",self.saveTelephone);
+    
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.activityIndicator.alpha = 0.f;
+    [self.view addSubview:self.activityIndicator];
+    self.activityIndicator.center = CGPointMake([[UIScreen mainScreen]bounds].size.width/2, [[UIScreen mainScreen]bounds].size.height/2);
+    self.activityIndicator.color = [UIColor whiteColor];
+    [self.view setUserInteractionEnabled:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -115,7 +127,8 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     
     if ([textField isEqual:self.confirmNumber]) {
-    
+        self.activityIndicator.alpha = 1.f;
+        [self.activityIndicator startAnimating];
         [self confirmRegister:self.saveTelephone confirm:self.confirmNumber.text];
     }
     
@@ -126,7 +139,8 @@
 
 
 - (IBAction)buttonConfirm:(id)sender {
-    
+    self.activityIndicator.alpha = 1.f;
+    [self.activityIndicator startAnimating];
     [self confirmRegister:self.saveTelephone confirm:self.confirmNumber.text];
     
 }

@@ -24,6 +24,7 @@
 @property (assign, nonatomic) double routeDistance;
 @property (strong, nonatomic) MKMapItem *destination;
 @property  MKAnnotationView * annotationView ;
+@property BOOL status;
 
 @end
 
@@ -34,29 +35,47 @@
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
     MKCoordinateRegion mapRegion;
     
-    mapRegion.center = self.mapView.userLocation.coordinate;
+    _mapView.centerCoordinate =
+    userLocation.location.coordinate;
+    
     [self.activitiIndicator stopAnimating];
     self.activitiIndicator.alpha = 0.f;
     self.labelLoad.alpha = 0.f;
-    
 
-    if (self.routeDistance <= 0.01f) {
-        [self alerts];
+    if (self.status == true) {
         
-    } else {
-        
-        [self.directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *  response, NSError *  error) {
-            if (error) {
-                NSLog(@"1231");
-            } else if ([response.routes count]== 0) {
-                NSLog(@"123");
-            } else {
-                [self showRoute:response];
-            }
+        MKCoordinateSpan span;
+        span.latitudeDelta = 0.005;
+        span.longitudeDelta = 0.005;
+        CLLocationCoordinate2D location;
+        location.latitude = userLocation.coordinate.latitude;
+        location.longitude = userLocation.coordinate.longitude;
+        mapRegion.span = span;
+        mapRegion.center = location;
+        [self.mapView setRegion:mapRegion animated:YES];
+
+        if (self.routeDistance <= 0.01f) {
+            [self alerts];
             
-        }];
-
+        } else {
+            
+            [self.directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *  response, NSError *  error) {
+                if (error) {
+                    NSLog(@"1231");
+                } else if ([response.routes count]== 0) {
+                    NSLog(@"123");
+                } else {
+                    [self showRoute:response];
+                }
+                
+            }];
+            
+        }
+    } else {
+        NSLog(@"123");
     }
+
+    
     
 }
 
@@ -64,8 +83,8 @@
 -(void) alerts{
     
     UIAlertController * alert = [UIAlertController
-                                 alertControllerWithTitle:@"Вы достигли конца  своего пути!!!"
-                                  message:nil
+                                 alertControllerWithTitle:@"Вы приехали"
+                                  message:@"Нажмите приобрести жетоны что бы купить жетоны."
                                   preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* yesButton = [UIAlertAction
@@ -73,14 +92,28 @@
                                 style:UIAlertActionStyleDefault
                                 handler:^(UIAlertAction * action)
                                 {
+                                    
+//                                    [UIView animateWithDuration:0.1 animations:^{
+//                                        self.viewDetail.alpha = 0.f;
+//                                    } completion:^(BOOL finished) {
+//                                        
+//                                        [UIView animateWithDuration:0.3f animations:^{
+//                                            
+//                                            self.viewDetail.frame = CGRectMake(self.viewDetail.frame.origin.x,self.viewDetail.frame.origin.y + 64 ,self.viewDetail.frame.origin.x,self.viewDetail.frame.origin.y);
+//                                            
+//                                            
+//                                        }];
+//                                    }];
+                                    
                                     self.viewDetail.alpha = 0.f;
-
+                                    [self.mapView removeOverlays:[self.mapView overlays]];
+                                    self.viewDetail.alpha = 0.f;
+                                    self.routeDistance = 1000.f;
+                                    self.status = false;
                                 }];
     
     [alert addAction:yesButton];
-    [self.mapView removeOverlays:[self.mapView overlays]];
-    self.viewDetail.alpha = 0.f;
-    self.routeDistance = 1000.f;
+   
     [self presentViewController:alert animated:YES completion:nil];
 }
 - (void)dealloc{
@@ -97,6 +130,7 @@
     self.routeDistance = 1000.f;
     [super viewDidLoad];
     self.viewDetail.alpha = 0.f;
+    self.status = false;
     
     self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoMenu"]];
@@ -116,7 +150,7 @@
     CLLocation *location = [_locationManager location];
     CLLocationCoordinate2D  coordinate = [location coordinate];
     // showing them in the mapView
-    _mapView.region = MKCoordinateRegionMakeWithDistance(coordinate, 10000, 10000);
+    _mapView.region = MKCoordinateRegionMakeWithDistance(coordinate, 1000, 1000);
     
     [self.locationManager startUpdatingLocation];
     self.geoCoder = [[CLGeocoder alloc]init];
@@ -223,7 +257,7 @@
     
     CLLocation *location = [_locationManager location];
     CLLocationCoordinate2D  coordinate = [location coordinate];
-    _mapView.region = MKCoordinateRegionMakeWithDistance(coordinate, 10000, 10000);
+    _mapView.region = MKCoordinateRegionMakeWithDistance(coordinate, 1000, 1000);
 }
 
 
@@ -280,19 +314,33 @@
                          
                          CLLocation *location = [_locationManager location];
                          CLLocationCoordinate2D  coordinate = [location coordinate];
-                         _mapView.region = MKCoordinateRegionMakeWithDistance(coordinate, 10, 10);
+                         _mapView.region = MKCoordinateRegionMakeWithDistance(coordinate, 1000, 1000);
                      }];
     
+    self.viewDetail.alpha = 1.f;
+//    [UIView animateWithDuration:0.1 animations:^{
+//        self.viewDetail.alpha = 1.f;
+//    } completion:^(BOOL finished) {
+//        
+//        [UIView animateWithDuration:0.3f animations:^{
+//            
+//            self.viewDetail.frame = CGRectMake(self.viewDetail.frame.origin.x,self.viewDetail.frame.origin.y - 64 ,self.viewDetail.frame.origin.x,self.viewDetail.frame.origin.y);
+//            
+//            
+//        }];
+//    }];
+
     self.activitiIndicator.alpha = 1.f;
     self.labelLoad.alpha = 1.f;
+    
     self.labelLoad.text = @"Загрузка...";
     [self.activitiIndicator startAnimating];
+    
+    self.status = true;
     
     [self getDirections];
     
   }
-
-
 
 - (void)getDirections
 {
@@ -335,8 +383,8 @@
     [self.mapView removeOverlays:[self.mapView overlays]];
     
     NSMutableArray * array =  [NSMutableArray array];
-    self.viewDetail.alpha = 1.f;
     
+   
     for (MKRoute *route in response.routes)
     {
         [array addObject:route.polyline];
@@ -412,11 +460,11 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-//    BuyCoins * coins;
+    BuyCoins * coins;
     NSLog(@"%@",self.titleStr);
     if ([[segue identifier] isEqualToString:@"MAP"]){
-       // coins = [segue destinationViewController];
-      //  coins.titleStr = self.titleStr;
+        coins = [segue destinationViewController];
+        coins.titleStr = @"MAP";
     }
 }
 

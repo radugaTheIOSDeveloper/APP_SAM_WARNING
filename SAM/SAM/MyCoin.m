@@ -90,7 +90,12 @@
 }
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    
+    [self getUserQRCode];
+    [self.tableView reloadData];
+    
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoMenu"]];
     
     self.activeView.backgroundColor = [UIColor redColor];
@@ -112,7 +117,6 @@
     self.refreshControl.tintColor = [UIColor redColor];
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    [self getUserQRCode];
     [self customSetup];
     
     self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
@@ -224,7 +228,7 @@
             UILabel * nameSam = (UILabel *)[cellACtive.contentView viewWithTag:11];
             UILabel * date = (UILabel *)[cellACtive.contentView viewWithTag:12];
             UILabel * detailLabel = (UILabel *)[cellACtive.contentView viewWithTag:60];
-            detailLabel.text = [NSString stringWithFormat:@"Жетонов на 4 минуты:%@ Жетонов на 2 минуты: %@",[curCoinActive objectForKey:@"4minutes_str"],[curCoinActive objectForKey:@"2minutes_str"]];
+            detailLabel.text = [NSString stringWithFormat:@"Жетонов на 4 минуты: %@ Жетонов на 2 минуты: %@",[curCoinActive objectForKey:@"4minutes_str"],[curCoinActive objectForKey:@"2minutes_str"]];
             
             imageCoin.image = [UIImage imageNamed:@"coinPast"];
             nameSam.textColor = [UIColor colorWithRed:111/255.0f green:113/255.0f blue:121/255.0f alpha:1];
@@ -261,7 +265,7 @@
         UIImageView * imageCoin = (UIImageView *)[cellPast.contentView viewWithTag:20];
         UILabel * nameSam = (UILabel *)[cellPast.contentView viewWithTag:21];
         UILabel * date = (UILabel *)[cellPast.contentView viewWithTag:22];
-        UILabel * detailLabel = (UILabel *)[cellPast.contentView viewWithTag:62];
+        UILabel * detailLabel = (UILabel *)[cellPast.contentView viewWithTag:61];
             
         detailLabel.text = [NSString stringWithFormat:@"Жетонов на 4 минуты: %@ Жетонов на 2 минуты: %@",[curCoinPast objectForKey:@"4minutes_str"],[curCoinPast objectForKey:@"2minutes_str"]];
 
@@ -330,7 +334,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     QREncoder * segueMyBuy;
-
+    BuyCoins * buyCoin;
     if ([[segue identifier] isEqualToString:@"myBuy"]){
         
         segueMyBuy = [segue destinationViewController];
@@ -343,7 +347,7 @@
         }
 
         } else if ([[segue identifier] isEqualToString:@"buyCoins"]) {
-
+            buyCoin.titleStr = @"MyCoin";
     }
 }
 

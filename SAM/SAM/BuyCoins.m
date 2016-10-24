@@ -54,8 +54,14 @@
 }
 
 - (void)backTapped:(id)sender {
+
     
-    [self.navigationController popViewControllerAnimated:YES];
+    if ([self.titleStr isEqualToString:@"MyCoin"]) {
+        [self performSegueWithIdentifier:@"backBuyCoin" sender:self];
+    }else {
+          [self.navigationController popViewControllerAnimated:YES];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {

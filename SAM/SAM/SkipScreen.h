@@ -19,7 +19,7 @@
 - (IBAction)skipBtn:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIButton *skipOtl;
-
+@property (assign, nonatomic) NSInteger index;
 
 
 

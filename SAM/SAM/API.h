@@ -47,6 +47,9 @@
            onSuccess:(void(^)(NSDictionary * responseObject)) success
            onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
 
+//set registr
 
-
+-(void) setPass:(NSString *) newPass
+      onSuccess:(void(^)(NSDictionary * responseObject)) success
+      onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
 @end

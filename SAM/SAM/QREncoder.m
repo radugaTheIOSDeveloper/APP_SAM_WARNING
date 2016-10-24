@@ -7,6 +7,7 @@
 //
 
 #import "QREncoder.h"
+#import "MyCoin.h"
 void freeRawData(void *info, const void *data, size_t size);
 
 @interface QREncoder ()
@@ -58,8 +59,12 @@ void freeRawData(void *info, const void *data, size_t size);
 }
 
 - (void)backTapped:(id)sender {
-    
-    [self.navigationController popViewControllerAnimated:YES];
+
+    [self performSegueWithIdentifier:@"backMyCoin" sender:self];
+//    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"
+//                                                             bundle: nil];
+//    MyCoin *controller = [mainStoryboard instantiateViewControllerWithIdentifier:@"MyCoin"];
+//    [self.navigationController pushViewController:controller animated:YES];
 }
 
 void freeRawData(void *info, const void *data, size_t size) {

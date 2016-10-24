@@ -14,12 +14,15 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *confirmNumber;
 
-@property (strong, nonatomic) NSString * demoConfirm;
 @property (strong, nonatomic) NSString * saveTelephone;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
 - (IBAction)actConfirm:(id)sender;
 - (IBAction)buttonConfirm:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *labelInfo;
+
+@property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
+
 
 @end

@@ -66,12 +66,7 @@
     pageContentController.detailText = self.pageDetail[index];
     pageContentController.arrayImage = self.arrayImages[index];
     pageContentController.pageIndex = index;
-    
-    if (index == 3) {
-        [self.skipOtl setTitle:@"далее" forState:UIControlStateNormal];
-    } else {
-        [self.skipOtl setTitle:@"пропустить" forState:UIControlStateNormal];    }
-    
+    self.index = index;
     return pageContentController;
 }
 
@@ -118,7 +113,17 @@
 
 - (IBAction)skipBtn:(id)sender {
     
-    [self performSegueWithIdentifier:@"enterScreen" sender:self];
+    
+    if (self.index <= 2) {
+        PageContentController *startingViewController = [self viewControllerAtIndex:self.index + 1];
+        NSArray *viewControllers = @[startingViewController];
+        [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
+
+    } else {
+        [self performSegueWithIdentifier:@"enterScreen" sender:self];
+
+    }
+ 
     
 }
 

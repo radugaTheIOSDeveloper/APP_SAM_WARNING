@@ -37,7 +37,7 @@
 -(void) setToken:(NSString *) token{
     
     NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:[NSString stringWithFormat:@"Token %@",token] forKey:@"token"];
+    [userDefaults setObject:token forKey:@"token"];
     
 }
 
@@ -191,6 +191,38 @@
                             }
                         }];
 }
+
+// setRegistr
+
+-(void) setPass:(NSString *) newPass
+      onSuccess:(void(^)(NSDictionary * responseObject)) success
+      onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure{
+    
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    [self.sessionManager.requestSerializer setValue:[userDefaults objectForKey:@"token"] forHTTPHeaderField:@"Authorization"];
+    NSDictionary * params = [NSDictionary dictionaryWithObjectsAndKeys:
+                             newPass, @"newPass",nil];
+    
+    [self.sessionManager POST:@"setPass/"
+                   parameters:params
+                     progress:nil
+                      success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
+                          NSLog(@"JSON: %@", responseObject);
+                          if (success) {
+                              success(responseObject);
+                          }
+                      }
+                      failure: ^(NSURLSessionTask *operation, NSError *error) {
+                          NSLog(@"erorr: %@", error);
+                          if (failure) {
+                              NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
+                              failure(error, response.statusCode);
+                          }
+                      }];
+
+}
+
+
 
 
 @end

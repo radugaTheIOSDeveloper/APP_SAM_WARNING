@@ -21,24 +21,23 @@
             password:(NSString *)password{
     
     [[API apiManager]registerUser:numTel
-                        password:password
+                         password:password
                         onSuccess:^(NSDictionary *responseObject) {
-        NSLog(@"%@",responseObject);
                             
-            if ([responseObject objectForKey:@"confirm_code"]) {
-                self.demoString = [responseObject objectForKey:@"confirm_code"];
-            }
-                            
-            if ([responseObject objectForKey:@"phone"]) {
-                self.demoTel = [responseObject objectForKey:@"phone"];
-            }
-            NSLog(@"%@",self.demoString);
+                            [self.activityIndicator stopAnimating];
+                            [self.view setUserInteractionEnabled:YES];
+                            NSLog(@"%@",responseObject);
+                            if ([responseObject objectForKey:@"phone"]) {
+                                self.demoTel = [responseObject objectForKey:@"phone"];
+                            }
                             
         [self performSegueWithIdentifier:@"confirm" sender:self];
-    } onFailure:^(NSError *error, NSInteger statusCode) {
+    }                   onFailure:^(NSError *error, NSInteger statusCode) {
         
-        NSLog(@"%@",error);
-        [self alerts];
+                            [self.activityIndicator stopAnimating];
+                            [self.view setUserInteractionEnabled:YES];
+                            NSLog(@"%@",error);
+                            [self alerts];
     }];
 }
 
@@ -46,7 +45,7 @@
     
     UIAlertController * alert=   [UIAlertController
                                   alertControllerWithTitle:@"Ошибка регистрации!"
-                                  message:@"Недопустимый номер телефона или пароль"
+                                  message:@"Недопустимый номер телефона!"
                                   preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* yesButton = [UIAlertAction
@@ -70,19 +69,24 @@
     [self.navigationController setNavigationBarHidden:YES animated:NO];
 
     self.textField.placeholder = @"Номер телефона";
-    self.pasTextField.placeholder = @"Придумайте пароль";
-
     //self.textField.text = @"+7";
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
 
     NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setInteger:1 forKey:@"show_animated"];
+    
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.activityIndicator.alpha = 0.f;
+    [self.view addSubview:self.activityIndicator];
+    self.activityIndicator.center = CGPointMake([[UIScreen mainScreen]bounds].size.width/2, [[UIScreen mainScreen]bounds].size.height/2);
+    self.activityIndicator.color = [UIColor whiteColor];
+    [self.view setUserInteractionEnabled:YES];
+
 }
 
 -(void) dismissKeyboard{
     [self.textField resignFirstResponder];
-    [self.pasTextField resignFirstResponder];
 }
 
 -(void) textFieldDidBeginEditing:(UITextField *)textField{
@@ -114,18 +118,21 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     
-    if ([textField isEqual:self.textField]) {
-        [self.pasTextField becomeFirstResponder];
-    }else if([textField isEqual:self.pasTextField]){
+   
+        if([textField isEqual:self.textField]){
         
         if (self.textField.text.length <= 0) {
-            [self registerUser:self.textField.text password:self.pasTextField.text];
+            self.activityIndicator.alpha = 1.f;
+            [self.activityIndicator startAnimating];
+            [self registerUser:self.textField.text password:@"123456789"];
         } else {
+            self.activityIndicator.alpha = 1.f;
+            [self.activityIndicator startAnimating];
             NSMutableString *stringRange = [self.textField.text mutableCopy];
             NSRange range = NSMakeRange(0, 1);
             [stringRange deleteCharactersInRange:range];
             
-            [self registerUser:stringRange password:self.pasTextField.text];
+            [self registerUser:stringRange password:@"123456789"];
             
         }
         
@@ -136,13 +143,17 @@
 - (IBAction)actBtnRegistr:(id)sender {
     
     if (self.textField.text.length <= 0) {
-        [self registerUser:self.textField.text password:self.pasTextField.text];
+        self.activityIndicator.alpha = 1.f;
+        [self.activityIndicator startAnimating];
+        [self registerUser:self.textField.text password:@"123456789"];
     } else {
+        self.activityIndicator.alpha = 1.f;
+        [self.activityIndicator startAnimating];
         NSMutableString *stringRange = [self.textField.text mutableCopy];
         NSRange range = NSMakeRange(0, 1);
         [stringRange deleteCharactersInRange:range];
         
-        [self registerUser:stringRange password:self.pasTextField.text];
+        [self registerUser:stringRange password:@"123456789"];
 
     }
 
@@ -154,8 +165,6 @@
     NSLog(@"%@",self.textField.text);
 }
 
-- (IBAction)actPasTextField:(id)sender {
-}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
@@ -164,7 +173,6 @@
     if ([[segue identifier] isEqualToString:@"confirm"]){
         conReg = [segue destinationViewController];
         conReg.saveTelephone = self.demoTel;
-        NSLog(@"%@",self.demoString);
     }
 }
 
