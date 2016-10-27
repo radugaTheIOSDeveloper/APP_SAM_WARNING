@@ -22,30 +22,20 @@ void freeRawData(void *info, const void *data, size_t size);
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    NSLog(@"%@",self.stringQR);
-    
     self.nonActive.alpha = 0.f;
-    
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoMenu"]];
-    
     [super viewWillAppear:animated];
-    
     UIImage *image = [self quickResponseImageForString:self.stringQR withDimension:182];
     
-    //set the image
     [imageView setImage: image];
     [self backButton];
     
-    
     if ([self.stringQR isEqualToString:@"nonActive"]) {
-        
         self.nonActive.alpha = 1.f;
         imageView.alpha = 0.5;
     } else {
-        
         self.nonActive.alpha = 0.f;
         imageView.alpha = 1.0;
-        
     }
     
 }
@@ -59,12 +49,7 @@ void freeRawData(void *info, const void *data, size_t size);
 }
 
 - (void)backTapped:(id)sender {
-
     [self performSegueWithIdentifier:@"backMyCoin" sender:self];
-//    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"
-//                                                             bundle: nil];
-//    MyCoin *controller = [mainStoryboard instantiateViewControllerWithIdentifier:@"MyCoin"];
-//    [self.navigationController pushViewController:controller animated:YES];
 }
 
 void freeRawData(void *info, const void *data, size_t size) {

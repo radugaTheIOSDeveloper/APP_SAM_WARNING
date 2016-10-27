@@ -109,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HXM-zQ-u4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-175.19999999999999" y="-350.37481259370315"/>
+            <point key="canvasLocation" x="-143" y="-339"/>
         </scene>
         <!--Buy Coins-->
         <scene sceneID="VWc-pq-n7x">
@@ -542,14 +542,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ieR-oQ-Auu" firstAttribute="centerY" secondItem="F93-cc-iLq" secondAttribute="centerY" id="BKY-BP-Jec"/>
-                            <constraint firstItem="vo2-vq-agd" firstAttribute="centerX" secondItem="g0x-P8-jRz" secondAttribute="centerX" id="MNX-8q-xYD"/>
-                            <constraint firstItem="vo2-vq-agd" firstAttribute="top" secondItem="ieR-oQ-Auu" secondAttribute="bottom" constant="1" id="OsS-oD-Glj"/>
-                            <constraint firstItem="F93-cc-iLq" firstAttribute="height" secondItem="g0x-P8-jRz" secondAttribute="height" id="RgX-e1-ixW"/>
-                            <constraint firstItem="1pf-hG-3Ng" firstAttribute="top" secondItem="vo2-vq-agd" secondAttribute="bottom" constant="250" id="X2R-wU-oE8"/>
-                            <constraint firstItem="ieR-oQ-Auu" firstAttribute="centerX" secondItem="F93-cc-iLq" secondAttribute="centerX" id="XCn-oY-sXJ"/>
-                            <constraint firstItem="F93-cc-iLq" firstAttribute="width" secondItem="g0x-P8-jRz" secondAttribute="width" id="dTZ-v4-eNG"/>
-                            <constraint firstItem="vo2-vq-agd" firstAttribute="centerX" secondItem="ieR-oQ-Auu" secondAttribute="centerX" id="kMx-If-T8X"/>
+                            <constraint firstItem="F93-cc-iLq" firstAttribute="leading" secondItem="g0x-P8-jRz" secondAttribute="leading" id="78u-um-RzJ"/>
+                            <constraint firstAttribute="trailing" secondItem="F93-cc-iLq" secondAttribute="trailing" id="7Fw-c4-Ppc"/>
+                            <constraint firstItem="vo2-vq-agd" firstAttribute="centerX" secondItem="g0x-P8-jRz" secondAttribute="centerX" id="DGg-O0-ZF9"/>
+                            <constraint firstItem="F93-cc-iLq" firstAttribute="top" secondItem="g0x-P8-jRz" secondAttribute="top" id="Ygf-4I-GAy"/>
+                            <constraint firstItem="ieR-oQ-Auu" firstAttribute="centerY" secondItem="g0x-P8-jRz" secondAttribute="centerY" id="bYh-Dm-1EI"/>
+                            <constraint firstItem="1pf-hG-3Ng" firstAttribute="top" secondItem="F93-cc-iLq" secondAttribute="bottom" id="ogH-KM-2Fu"/>
+                            <constraint firstItem="vo2-vq-agd" firstAttribute="top" secondItem="ieR-oQ-Auu" secondAttribute="bottom" constant="1" id="qa5-Wc-jmM"/>
+                            <constraint firstItem="ieR-oQ-Auu" firstAttribute="centerX" secondItem="g0x-P8-jRz" secondAttribute="centerX" id="saN-WY-wyy"/>
                         </constraints>
                     </view>
                     <connections>
@@ -561,7 +561,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h3e-PY-8hs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2600.625" y="-350.7042253521127"/>
+            <point key="canvasLocation" x="2600" y="-350.82458770614693"/>
         </scene>
         <!--Encoder-->
         <scene sceneID="Jny-bm-C9B">
@@ -664,7 +664,7 @@
                                             <constraint firstAttribute="width" constant="221" id="hTl-IO-0FH"/>
                                             <constraint firstAttribute="height" constant="12" id="ptm-IR-Fpb"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="10"/>
+                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="10"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -673,7 +673,7 @@
                                             <constraint firstAttribute="width" constant="175" id="1kr-mN-bqW"/>
                                             <constraint firstAttribute="height" constant="21" id="RkQ-LB-F7f"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -682,7 +682,7 @@
                                             <constraint firstAttribute="height" constant="31" id="1Ej-M7-j7V"/>
                                             <constraint firstAttribute="width" constant="207" id="7hn-U7-5f7"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
                                         <state key="normal" title="Войти">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -981,7 +981,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLj-LV-qwJ">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="222" id="T8l-IU-pdJ"/>
+                                    <constraint firstAttribute="width" constant="100" id="vZq-6N-CtN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="13"/>
                                 <state key="normal" title="Далее">
@@ -991,22 +991,37 @@
                                     <action selector="skipBtn:" destination="NZw-bx-Qhd" eventType="touchUpInside" id="0PI-md-0hJ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6y-Xy-awy">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="dXo-ff-oVn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="13"/>
+                                <state key="normal" title="Пропустить ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextBtn:" destination="NZw-bx-Qhd" eventType="touchUpInside" id="cAW-rk-E4u"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="7q1-vb-Yhe" firstAttribute="top" secondItem="J6y-Xy-awy" secondAttribute="bottom" constant="8" id="3s9-fn-pIf"/>
                             <constraint firstItem="7q1-vb-Yhe" firstAttribute="top" secondItem="iLj-LV-qwJ" secondAttribute="bottom" constant="8" id="89J-l6-s5O"/>
-                            <constraint firstItem="iLj-LV-qwJ" firstAttribute="centerX" secondItem="sOc-Ea-h2a" secondAttribute="centerX" id="OCK-va-jEw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iLj-LV-qwJ" secondAttribute="trailing" id="Ut8-Ac-76u"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="J6y-Xy-awy" secondAttribute="leading" id="mbl-9E-rfy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XnN-Ho-qR2"/>
                     <connections>
+                        <outlet property="nextOtl" destination="J6y-Xy-awy" id="Lpd-1v-1Bw"/>
                         <outlet property="skipOtl" destination="iLj-LV-qwJ" id="nHp-aU-YJD"/>
                         <segue destination="QgF-dx-8gr" kind="show" identifier="enterScreen" animates="NO" id="e8Z-w0-Upd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q4D-Ob-AXN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2370" y="1039"/>
+            <point key="canvasLocation" x="-2370.4000000000001" y="1038.5307346326838"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="HcK-hn-rce">
@@ -1638,7 +1653,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oyb-wU-KLg"/>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CB85FF35-559F-4592-BBD9-A7E2F9872139" translatesAutoresizingMaskIntoConstraints="NO" id="lV2-8V-1AA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FF13CEA2-E96B-4ED2-B244-7C6EE4CF80A7" translatesAutoresizingMaskIntoConstraints="NO" id="lV2-8V-1AA">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="8tz-Dt-Nh7"/>
                                     <constraint firstAttribute="width" constant="120" id="XzS-nC-P8z"/>
@@ -1648,16 +1663,16 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="0RE-o0-hHO"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 ПРОГРАММА ЗАЩИТА" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bZ-qU-IfV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 ПРОГРАММА ЗАЩИТА" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bZ-qU-IfV">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="Ao8-fv-gjP"/>
                                     <constraint firstAttribute="height" constant="82" id="E9r-Sm-0rR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1805,7 +1820,7 @@
                                             <constraint firstAttribute="width" constant="240" id="A30-qs-FYm"/>
                                             <constraint firstAttribute="height" constant="50" id="nyj-JT-Ydf"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="18"/>
                                         <state key="normal" title="Войти" backgroundImage="registrBtn">
                                             <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -1877,7 +1892,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CB85FF35-559F-4592-BBD9-A7E2F9872139" width="83" height="43">
+        <image name="FF13CEA2-E96B-4ED2-B244-7C6EE4CF80A7" width="83" height="43">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -2186,12 +2201,12 @@ Qg4AAAAAAAACAQAAAAAAAABBAAAAAAAAAAAAAAAAAABCEA
         <image name="zheton" width="37" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Fzv-Ba-eAq"/>
-        <segue reference="dk6-d0-ceV"/>
-        <segue reference="KGA-Te-pWq"/>
-        <segue reference="6nd-pK-u6i"/>
         <segue reference="Ax7-KB-mjv"/>
         <segue reference="ONJ-g1-OZg"/>
+        <segue reference="6nd-pK-u6i"/>
         <segue reference="e8Z-w0-Upd"/>
+        <segue reference="KGA-Te-pWq"/>
+        <segue reference="u5c-4C-kEj"/>
+        <segue reference="QQd-ky-k4i"/>
     </inferredMetricsTieBreakers>
 </document>

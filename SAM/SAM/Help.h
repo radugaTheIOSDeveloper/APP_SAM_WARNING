@@ -13,6 +13,7 @@
 @interface Help : UIViewController <UIPageViewControllerDataSource>
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
 
 @property (strong, nonatomic) NSArray *pageTitles;
 @property (strong, nonatomic) NSArray *pageBGImage;
@@ -20,6 +21,5 @@
 @property (strong, nonatomic) NSArray *pageDetail;
 @property (strong, nonatomic) NSArray *pageTextInfo;
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
 
 @end

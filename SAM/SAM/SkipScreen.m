@@ -19,7 +19,6 @@
     [super viewDidLoad];
     
     self.pageTitles = @[@"Оплатите жетоны",@"Приехай на мойку САМ",@"Просканируйте QR код",@"Получите жетоны"];
-    
     self.pageDetail = @[@"Жетоны нужны для получения услуг автомойки самообслуживания САМ",@"Подойдите к разменному аппарату и получите жетоны с помощью QR кода",@"Поднесите смартфон к считывающему устройству на разменном аппарате",@"Спасибо за пользование автомойкой самообслуживания САМ"];
     self.pageImages = @[@"rPos5",@"carPos4",@"qrPos4",@"coinPos3"];
     
@@ -47,6 +46,8 @@
     [self.view addSubview:_pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
     
+    self.nextOtl.alpha = 0.f;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,7 +60,6 @@
         return nil;
     }
     
-    // Create a new view controller and pass suitable data.
     PageContentController *pageContentController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentController"];
     pageContentController.imageName = self.pageImages[index];
     pageContentController.titleText = self.pageTitles[index];
@@ -67,6 +67,12 @@
     pageContentController.arrayImage = self.arrayImages[index];
     pageContentController.pageIndex = index;
     self.index = index;
+    
+    if (index == 1) {
+        self.nextOtl.alpha = 1.f;
+    }
+    
+    
     return pageContentController;
 }
 
@@ -113,7 +119,6 @@
 
 - (IBAction)skipBtn:(id)sender {
     
-    
     if (self.index <= 2) {
         PageContentController *startingViewController = [self viewControllerAtIndex:self.index + 1];
         NSArray *viewControllers = @[startingViewController];
@@ -123,9 +128,11 @@
         [self performSegueWithIdentifier:@"enterScreen" sender:self];
 
     }
- 
-    
 }
 
 
+- (IBAction)nextBtn:(id)sender {
+    [self performSegueWithIdentifier:@"enterScreen" sender:self];
+
+}
 @end

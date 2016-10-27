@@ -11,14 +11,13 @@
 @interface SetPassController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *registerLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
-
 @property (weak, nonatomic) IBOutlet UITextField *pasTextField;
-- (IBAction)actTextField:(id)sender;
-- (IBAction)registrBtn:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
+
+- (IBAction)actTextField:(id)sender;
+- (IBAction)registrBtn:(id)sender;
 
 @end

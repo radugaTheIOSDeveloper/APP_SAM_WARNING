@@ -62,13 +62,13 @@
                    parameters:params
                      progress:nil
                       success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
-                          NSLog(@"JSON: %@", responseObject);
+                          
                           if (success) {
                               success(responseObject);
                           }
                       }
                       failure: ^(NSURLSessionTask *operation, NSError *error) {
-                          NSLog(@"erorr: %@", error);
+                          
                           if (failure) {
                               NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
                               failure(error, response.statusCode);
@@ -91,13 +91,13 @@
                    parameters:params
                      progress:nil
                       success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
-                          NSLog(@"JSON: %@", responseObject);
+                          
                           if (success) {
                               success(responseObject);
                           }
                       }
                       failure: ^(NSURLSessionTask *operation, NSError *error) {
-                          NSLog(@"erorr: %@", error);
+                          
                           if (failure) {
                               NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
                               failure(error, response.statusCode);
@@ -119,13 +119,13 @@
                    parameters:params
                      progress:nil
                       success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
-                          NSLog(@"JSON: %@", responseObject);
+                          
                           if (success) {
                               success(responseObject);
                           }
                       }
                       failure: ^(NSURLSessionTask *operation, NSError *error) {
-                          NSLog(@"erorr: %@", error);
+                          
                           if (failure) {
                               NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
                               failure(error, response.statusCode);
@@ -145,7 +145,7 @@
                   parameters:nil
                     progress:nil
                      success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
-                         NSLog(@"responceObj%@",responseObject);
+                         
                          if(success){
                              success(responseObject);
                          }
@@ -177,14 +177,14 @@
     [self.sessionManager DELETE:@"deleteUsedQR/"
                      parameters:params
                         success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
-                            NSLog(@"responceObj%@",responseObject);
+                            
                             if(success){
                                 success(responseObject);
                             }
                         }
      
                         failure:^(NSURLSessionTask *operation, NSError *error) {
-                            NSLog(@"error%@",error);
+                            
                             if(failure){
                                 NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
                                 failure(error, response.statusCode);
@@ -207,13 +207,13 @@
                    parameters:params
                      progress:nil
                       success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
-                          NSLog(@"JSON: %@", responseObject);
+                          
                           if (success) {
                               success(responseObject);
                           }
                       }
                       failure: ^(NSURLSessionTask *operation, NSError *error) {
-                          NSLog(@"erorr: %@", error);
+                          
                           if (failure) {
                               NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
                               failure(error, response.statusCode);

@@ -26,19 +26,58 @@
 @implementation MyCoin
 
 
+#pragma mark ViewDidLoad
+
+- (void)viewDidLoad {
+    
+    [super viewDidLoad];
+    
+    [self getUserQRCode];
+    [self.tableView reloadData];
+    
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoMenu"]];
+    
+    self.activeView.backgroundColor = [UIColor redColor];
+    self.pastView.backgroundColor = [UIColor whiteColor];
+    self.indexBtn = 0;
+    
+    self.activeCount = [NSMutableArray array];
+    self.pastCount = [NSMutableArray array];
+    self.buyCoin = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.buyCoin.frame = CGRectMake(self.view.frame.size.width/2 + 80, self.view.frame.size.height/2 + 170, 80, 80);
+    [self.buyCoin addTarget:self action:@selector(buyCoinBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.buyCoin setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.buyCoin setBackgroundImage:[UIImage imageNamed:@"btnBuy"] forState:UIControlStateNormal];
+    [self.view addSubview: self.buyCoin];
+    
+    self.refreshControl = [[UIRefreshControl alloc]init];
+    [self.tableView addSubview:self.refreshControl];
+    [self.refreshControl addTarget:self action:@selector(refreshView:) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl.tintColor = [UIColor redColor];
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    [self customSetup];
+    
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.activityIndicator.alpha = 1.f;
+    [self.view addSubview:self.activityIndicator];
+    self.activityIndicator.center = CGPointMake([[UIScreen mainScreen]bounds].size.width/2, [[UIScreen mainScreen]bounds].size.height/2);
+    self.activityIndicator.color = [UIColor redColor];
+    [self.view setUserInteractionEnabled:NO];
+    [self.activityIndicator startAnimating];
+    
+}
+
 #pragma marl API DELETE
 
-#pragma mark API "GET USER QR"
 
 -(void) deleteUsedQR:(NSString *) qrCodeID {
     [[API apiManager] deleteUsedQR:qrCodeID
                          onSuccess:^(NSDictionary *responseObject) {
-                             NSLog(@"%@",responseObject);
                              [self getUserQRCode];
                              [self.activityIndicator startAnimating];
                              [self.tableView reloadData];
                          } onFailure:^(NSError *error, NSInteger statusCode) {
-                             NSLog(@"%@",error);
                              [self alerts];
                          }];
     
@@ -64,6 +103,7 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+#pragma mark API "GET USER QR"
 
 -(void) getUserQRCode {
     
@@ -89,45 +129,7 @@
     }];
 }
 
-- (void)viewDidLoad {
-    
-    [super viewDidLoad];
-    
-    [self getUserQRCode];
-    [self.tableView reloadData];
-    
-    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoMenu"]];
-    
-    self.activeView.backgroundColor = [UIColor redColor];
-    self.pastView.backgroundColor = [UIColor whiteColor];
-    self.indexBtn = 0;
-    
-    self.activeCount = [NSMutableArray array];
-    self.pastCount = [NSMutableArray array];
-     self.buyCoin = [UIButton buttonWithType:UIButtonTypeCustom];
-     self.buyCoin.frame = CGRectMake(self.view.frame.size.width/2 + 80, self.view.frame.size.height/2 + 170, 80, 80);
-    [ self.buyCoin addTarget:self action:@selector(buyCoinBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [ self.buyCoin setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [ self.buyCoin setBackgroundImage:[UIImage imageNamed:@"btnBuy"] forState:UIControlStateNormal];
-    [self.view addSubview: self.buyCoin];
-   
-    self.refreshControl = [[UIRefreshControl alloc]init];
-    [self.tableView addSubview:self.refreshControl];
-    [self.refreshControl addTarget:self action:@selector(refreshView:) forControlEvents:UIControlEventValueChanged];
-    self.refreshControl.tintColor = [UIColor redColor];
-    
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    [self customSetup];
-    
-    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    self.activityIndicator.alpha = 1.f;
-    [self.view addSubview:self.activityIndicator];
-    self.activityIndicator.center = CGPointMake([[UIScreen mainScreen]bounds].size.width/2, [[UIScreen mainScreen]bounds].size.height/2);
-    self.activityIndicator.color = [UIColor redColor];
-    [self.view setUserInteractionEnabled:NO];
-    [self.activityIndicator startAnimating];
-
-}
+#pragma mark Refresh
 
 - (void)customSetup
 {
@@ -138,18 +140,16 @@
         [self.revealButtonItem setAction: @selector( revealToggle: )];
         [self.navigationController.navigationBar addGestureRecognizer:revealViewController.panGestureRecognizer];
     }
-
 }
 
 -(void) refreshView: (UIRefreshControl *) refresh{
     
-  //  refresh.tintColor = [UIColor redColor];
-    
     refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Идет обновление..."];
     [self getUserQRCode];
-
 }
 
+
+#pragma mark TableView DataSource Delegate
 
 - (NSInteger)numberOfSectionsInTableView: (UITableView *) tableView{
     return 1;
@@ -201,6 +201,7 @@
     static NSString * ideActive = @"cell";
     static NSString * idePast = @"callPast";
     static NSString * ideNo = @"cellNoBuy";
+    
     if (self.indexBtn == 0) {
         
         if ([self.activeCount count] == 0) {
@@ -214,73 +215,64 @@
             
             return cellNoBuy;
             
+            } else {
+            
+                self.tableView.scrollEnabled = YES;
+                self.tableView.allowsSelection = YES;
+                self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+                NSDictionary * curCoinActive = [self.activeCount objectAtIndex:indexPath.row];
+                UITableViewCell * cellACtive = [tableView dequeueReusableCellWithIdentifier:ideActive];
+                UIImageView * imageCoin = (UIImageView *)[cellACtive.contentView viewWithTag:10];
+                UILabel * nameSam = (UILabel *)[cellACtive.contentView viewWithTag:11];
+                UILabel * date = (UILabel *)[cellACtive.contentView viewWithTag:12];
+                UILabel * detailLabel = (UILabel *)[cellACtive.contentView viewWithTag:60];
+                detailLabel.text = [NSString stringWithFormat:@"Жетонов на 4 минуты: %@ Жетонов на 2 минуты: %@",[curCoinActive objectForKey:@"4minutes_str"],[curCoinActive objectForKey:@"2minutes_str"]];
+            
+                imageCoin.image = [UIImage imageNamed:@"coinPast"];
+                nameSam.textColor = [UIColor colorWithRed:111/255.0f green:113/255.0f blue:121/255.0f alpha:1];
+                nameSam.text = [curCoinActive objectForKey:@"minutes_str"];
+                date.text = [curCoinActive objectForKey:@"pay_date"];
+            
+                    return cellACtive;
+            
+            }
+        
+        } else if (self.indexBtn == 1) {
+        
+            if ([self.pastCount count] == 0) {
+            
+                UITableViewCell * cellNoBuys = [tableView dequeueReusableCellWithIdentifier:ideNo];
+                UILabel * nonLabel = (UILabel *)[cellNoBuys.contentView viewWithTag:97];
+                nonLabel.text = @"У вас нет покупок.Чтобы приобрести жетоны нажмите на \"+\"";
+                self.tableView.allowsSelection = NO;
+                self.tableView.scrollEnabled = NO;
+                self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+            
+                return cellNoBuys;
+            
+                } else {
+            
+                    self.tableView.scrollEnabled = YES;
+                    self.tableView.allowsSelection = YES;
+                    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+                    NSDictionary * curCoinPast = [self.pastCount objectAtIndex:indexPath.row];
+                    UITableViewCell * cellPast = [tableView dequeueReusableCellWithIdentifier:idePast];
+                    UIImageView * imageCoin = (UIImageView *)[cellPast.contentView viewWithTag:20];
+                    UILabel * nameSam = (UILabel *)[cellPast.contentView viewWithTag:21];
+                    UILabel * date = (UILabel *)[cellPast.contentView viewWithTag:22];
+                    UILabel * detailLabel = (UILabel *)[cellPast.contentView viewWithTag:61];
+                    detailLabel.text = [NSString stringWithFormat:@"Жетонов на 4 минуты: %@ Жетонов на 2 минуты: %@",[curCoinPast objectForKey:@"4minutes_str"],[curCoinPast objectForKey:@"2minutes_str"]];
+                    imageCoin.image = [UIImage imageNamed:@"coinPast"];
+                    nameSam.textColor = [UIColor colorWithRed:236/255.0f green:88/255.0f blue:98/255.0f alpha:1];
+                    nameSam.text = [curCoinPast objectForKey:@"minutes_str"];
+                    date.text = [curCoinPast objectForKey:@"pay_date"];
+        
+                    return cellPast;
+                }
+            
         } else {
             
-            self.tableView.scrollEnabled = YES;
-            self.tableView.allowsSelection = YES;
-            self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-            
-            NSDictionary * curCoinActive = [self.activeCount objectAtIndex:indexPath.row];
-
-            
-            UITableViewCell * cellACtive = [tableView dequeueReusableCellWithIdentifier:ideActive];
-            UIImageView * imageCoin = (UIImageView *)[cellACtive.contentView viewWithTag:10];
-            UILabel * nameSam = (UILabel *)[cellACtive.contentView viewWithTag:11];
-            UILabel * date = (UILabel *)[cellACtive.contentView viewWithTag:12];
-            UILabel * detailLabel = (UILabel *)[cellACtive.contentView viewWithTag:60];
-            detailLabel.text = [NSString stringWithFormat:@"Жетонов на 4 минуты: %@ Жетонов на 2 минуты: %@",[curCoinActive objectForKey:@"4minutes_str"],[curCoinActive objectForKey:@"2minutes_str"]];
-            
-            imageCoin.image = [UIImage imageNamed:@"coinPast"];
-            nameSam.textColor = [UIColor colorWithRed:111/255.0f green:113/255.0f blue:121/255.0f alpha:1];
-            nameSam.text = [curCoinActive objectForKey:@"minutes_str"];
-            date.text = [curCoinActive objectForKey:@"pay_date"];
-            
-            return cellACtive;
-            
-        }
-        
-    } else if (self.indexBtn == 1) {
-        
-        if ([self.pastCount count] == 0) {
-            
-            UITableViewCell * cellNoBuys = [tableView dequeueReusableCellWithIdentifier:ideNo];
-            UILabel * nonLabel = (UILabel *)[cellNoBuys.contentView viewWithTag:97];
-            nonLabel.text = @"У вас нет покупок.Чтобы приобрести жетоны нажмите на \"+\"";
-
-            self.tableView.allowsSelection = NO;
-            self.tableView.scrollEnabled = NO;
-            self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-            
-            return cellNoBuys;
-            
-        } else {
-            
-        self.tableView.scrollEnabled = YES;
-        self.tableView.allowsSelection = YES;
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-            
-        NSDictionary * curCoinPast = [self.pastCount objectAtIndex:indexPath.row];
-
-        UITableViewCell * cellPast = [tableView dequeueReusableCellWithIdentifier:idePast];
-        UIImageView * imageCoin = (UIImageView *)[cellPast.contentView viewWithTag:20];
-        UILabel * nameSam = (UILabel *)[cellPast.contentView viewWithTag:21];
-        UILabel * date = (UILabel *)[cellPast.contentView viewWithTag:22];
-        UILabel * detailLabel = (UILabel *)[cellPast.contentView viewWithTag:61];
-            
-        detailLabel.text = [NSString stringWithFormat:@"Жетонов на 4 минуты: %@ Жетонов на 2 минуты: %@",[curCoinPast objectForKey:@"4minutes_str"],[curCoinPast objectForKey:@"2minutes_str"]];
-
-        imageCoin.image = [UIImage imageNamed:@"coinPast"];
-        nameSam.textColor = [UIColor colorWithRed:236/255.0f green:88/255.0f blue:98/255.0f alpha:1];
-        nameSam.text = [curCoinPast objectForKey:@"minutes_str"];
-        date.text = [curCoinPast objectForKey:@"pay_date"];
-        
-        return cellPast;
-    }
-        
-    } else {
-        
-        return nil;
-        
+            return nil;
     }
 }
 
@@ -293,7 +285,6 @@
          NSDictionary * curCoinPast = [self.pastCount objectAtIndex:indexPath.row];
          self.stringQR = [curCoinPast objectForKey:@"qr_code"];
      }
-    
     [self performSegueWithIdentifier:@"myBuy" sender:self];
 }
 
@@ -319,8 +310,6 @@
         NSLog(@"%@",[curCoinPast objectForKey:@"qr_code_id"]);
         if (editingStyle == UITableViewCellEditingStyleDelete) {
             [self deleteUsedQR:[curCoinPast objectForKey:@"qr_code_id"]];
-     //   [self.pastCount removeObjectAtIndex:indexPath.row];
-       // [tableView reloadData]; // tell table to refresh now
     }
         
     }
@@ -330,6 +319,7 @@
     return @"УДАЛИТЬ";
 }
 
+#pragma mark Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
@@ -347,9 +337,12 @@
         }
 
         } else if ([[segue identifier] isEqualToString:@"buyCoins"]) {
+            buyCoin = [segue destinationViewController];
             buyCoin.titleStr = @"MyCoin";
     }
 }
+
+#pragma mark Button Action
 
 - (IBAction)btnActiveBuy:(id)sender {
     
@@ -373,21 +366,18 @@
 
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder
 {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
     [super encodeRestorableStateWithCoder:coder];
 }
 
 
 - (void)decodeRestorableStateWithCoder:(NSCoder *)coder
 {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
     [super decodeRestorableStateWithCoder:coder];
 }
 
 
 - (void)applicationFinishedRestoringState
 {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
     [self customSetup];
 }
 

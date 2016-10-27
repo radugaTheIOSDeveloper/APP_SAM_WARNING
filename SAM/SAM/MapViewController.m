@@ -30,29 +30,26 @@
 
 @implementation MapViewController
 
-
-
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
     MKCoordinateRegion mapRegion;
     
-    _mapView.centerCoordinate =
-    userLocation.location.coordinate;
+  //  [mapView setRegion:mapRegion animated:NO];
     
     [self.activitiIndicator stopAnimating];
     self.activitiIndicator.alpha = 0.f;
     self.labelLoad.alpha = 0.f;
 
     if (self.status == true) {
-        
-        MKCoordinateSpan span;
-        span.latitudeDelta = 0.005;
-        span.longitudeDelta = 0.005;
-        CLLocationCoordinate2D location;
-        location.latitude = userLocation.coordinate.latitude;
-        location.longitude = userLocation.coordinate.longitude;
-        mapRegion.span = span;
-        mapRegion.center = location;
-        [self.mapView setRegion:mapRegion animated:YES];
+        [self.mapView setCenterCoordinate:mapView.userLocation.location.coordinate animated:YES];
+//        MKCoordinateSpan span;
+//        span.latitudeDelta = 0.005;
+//        span.longitudeDelta = 0.005;
+//        CLLocationCoordinate2D location;
+//        location.latitude = userLocation.coordinate.latitude;
+//        location.longitude = userLocation.coordinate.longitude;
+//        mapRegion.span = span;
+//        mapRegion.center = location;
+//        [self.mapView setRegion:mapRegion animated:YES];
 
         if (self.routeDistance <= 0.01f) {
             [self alerts];
@@ -84,7 +81,7 @@
     
     UIAlertController * alert = [UIAlertController
                                  alertControllerWithTitle:@"Вы приехали"
-                                  message:@"Нажмите приобрести жетоны что бы купить жетоны."
+                                  message:nil
                                   preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* yesButton = [UIAlertAction
@@ -92,19 +89,6 @@
                                 style:UIAlertActionStyleDefault
                                 handler:^(UIAlertAction * action)
                                 {
-                                    
-//                                    [UIView animateWithDuration:0.1 animations:^{
-//                                        self.viewDetail.alpha = 0.f;
-//                                    } completion:^(BOOL finished) {
-//                                        
-//                                        [UIView animateWithDuration:0.3f animations:^{
-//                                            
-//                                            self.viewDetail.frame = CGRectMake(self.viewDetail.frame.origin.x,self.viewDetail.frame.origin.y + 64 ,self.viewDetail.frame.origin.x,self.viewDetail.frame.origin.y);
-//                                            
-//                                            
-//                                        }];
-//                                    }];
-                                    
                                     self.viewDetail.alpha = 0.f;
                                     [self.mapView removeOverlays:[self.mapView overlays]];
                                     self.viewDetail.alpha = 0.f;
@@ -150,7 +134,7 @@
     CLLocation *location = [_locationManager location];
     CLLocationCoordinate2D  coordinate = [location coordinate];
     // showing them in the mapView
-    _mapView.region = MKCoordinateRegionMakeWithDistance(coordinate, 1000, 1000);
+    _mapView.region = MKCoordinateRegionMakeWithDistance(coordinate, 10000, 10000);
     
     [self.locationManager startUpdatingLocation];
     self.geoCoder = [[CLGeocoder alloc]init];
@@ -257,7 +241,7 @@
     
     CLLocation *location = [_locationManager location];
     CLLocationCoordinate2D  coordinate = [location coordinate];
-    _mapView.region = MKCoordinateRegionMakeWithDistance(coordinate, 1000, 1000);
+    _mapView.region = MKCoordinateRegionMakeWithDistance(coordinate, 10000, 10000);
 }
 
 
@@ -274,7 +258,6 @@
         }
         
     } else if ([annotation isKindOfClass:[CalloutAnnotation class]]) {
-        
         identifier = @"Callout";
         annotationView = (CalloutAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
         if (annotationView == nil) {
@@ -314,7 +297,7 @@
                          
                          CLLocation *location = [_locationManager location];
                          CLLocationCoordinate2D  coordinate = [location coordinate];
-                         _mapView.region = MKCoordinateRegionMakeWithDistance(coordinate, 1000, 1000);
+                         _mapView.region = MKCoordinateRegionMakeWithDistance(coordinate, 100, 100);
                      }];
     
     self.viewDetail.alpha = 1.f;
@@ -354,8 +337,6 @@
     }
     
     CLLocationCoordinate2D coordinate = _annotationView.annotation.coordinate;
-    
-    
     MKDirectionsRequest * request = [[MKDirectionsRequest alloc]init];
     request.source = [MKMapItem mapItemForCurrentLocation];
     MKPlacemark * placemark = [[MKPlacemark alloc]initWithCoordinate:coordinate addressDictionary:nil];
@@ -388,10 +369,8 @@
     for (MKRoute *route in response.routes)
     {
         [array addObject:route.polyline];
-        
         [self.mapView
          addOverlay:route.polyline level:MKOverlayLevelAboveRoads];
-
          self.lablelDistance.text = [NSString stringWithFormat:@"До чистой машины осталось %.02f км",(float)route.distance / 1000];
         self.routeDistance = route.distance / 1000;
         
@@ -405,7 +384,6 @@
         }
     }
 }
-
 
 -(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
     

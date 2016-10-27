@@ -47,7 +47,6 @@
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
-    // Change the size of page view controller
     self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height );
     
     [self addChildViewController:_pageViewController];
@@ -55,7 +54,6 @@
     [self.pageViewController didMoveToParentViewController:self];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
      [self customSetup];
-    
 }
 
 - (void)customSetup
@@ -72,7 +70,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (PageContentViewController *)viewControllerAtIndex:(NSUInteger)index
@@ -81,7 +78,6 @@
         return nil;
     }
     
-    // Create a new view controller and pass suitable data.
     PageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
     pageContentViewController.titleText = self.pageTitles[index];
     pageContentViewController.imageBG = self.pageBGImage[index];
@@ -148,9 +144,6 @@
 - (void)decodeRestorableStateWithCoder:(NSCoder *)coder
 {
     NSLog(@"%s", __PRETTY_FUNCTION__);
-    
-    // Restore what you need here
-    
     [super decodeRestorableStateWithCoder:coder];
 }
 
@@ -158,8 +151,6 @@
 - (void)applicationFinishedRestoringState
 {
     NSLog(@"%s", __PRETTY_FUNCTION__);
-    
-    // Call whatever function you need to visually restore
     [self customSetup];
 }
 

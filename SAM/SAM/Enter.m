@@ -16,6 +16,33 @@
 
 @implementation Enter
 
+
+#pragma mark ViewDidLoad
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    
+    self.textFieldNumber.placeholder = @"Номер телефона";
+    self.textFieldPassword.placeholder = @"Пароль";
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+    
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.activityIndicator.alpha = 0.f;
+    [self.view addSubview:self.activityIndicator];
+    self.activityIndicator.center = CGPointMake([[UIScreen mainScreen]bounds].size.width/2, [[UIScreen mainScreen]bounds].size.height/2);
+    self.activityIndicator.color = [UIColor whiteColor];
+    [self.view setUserInteractionEnabled:YES];
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+#pragma mark API
+
 -(void) authUser:(NSString *) username
         password:(NSString *) password {
     
@@ -27,8 +54,10 @@
                         NSLog(@"%@",responseObject);
                         
                         if ([responseObject objectForKey:@"token"]) {
+                            
                             [[API apiManager]setToken:[NSString stringWithFormat:@"Token %@",[responseObject objectForKey:@"token"]]];
                             [[Payment save]setPhoneNumber:username];
+                            
                             [self.activityIndicator stopAnimating];
                             [self.view setUserInteractionEnabled:YES];
                             [self performSegueWithIdentifier:@"enter" sender:self];
@@ -38,7 +67,6 @@
                     [self.view setUserInteractionEnabled:YES];
                     [self.activityIndicator stopAnimating];
                     [self alerts];
-                        NSLog(@"%@",error);
 }];
     
 }
@@ -54,32 +82,13 @@
                                 style:UIAlertActionStyleDefault
                                 handler:^(UIAlertAction * action)
                                 {
-                                    
                                 }];
     
     [alert addAction:yesButton];
-    
     [self presentViewController:alert animated:YES completion:nil];
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
-
-    self.textFieldNumber.placeholder = @"Номер телефона";
-    self.textFieldPassword.placeholder = @"Пароль";
-    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
-    [self.view addGestureRecognizer:tap];
-    
-    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    self.activityIndicator.alpha = 0.f;
-    [self.view addSubview:self.activityIndicator];
-    self.activityIndicator.center = CGPointMake([[UIScreen mainScreen]bounds].size.width/2, [[UIScreen mainScreen]bounds].size.height/2);
-    self.activityIndicator.color = [UIColor whiteColor];
-    [self.view setUserInteractionEnabled:YES];
-    
-}
+#pragma mark TextField and Keyboard
 
 -(void) dismissKeyboard{
     
@@ -104,45 +113,32 @@
 
 - (BOOL) textFieldShouldClear:(UITextField *)textField{
     
- 
     self.textFieldNumber.text = @"+7";
-    
-    
     return NO;
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     
     if ([textField isEqual:self.textFieldNumber]) {
-        
         [self.textFieldPassword becomeFirstResponder];
-        
     } else {
         [self.view setUserInteractionEnabled:NO];
         self.activityIndicator.alpha = 1.f;
         [self.activityIndicator startAnimating];
+        
         if (self.textFieldNumber.text.length <= 0) {
             [self authUser:self.textFieldNumber.text password:self.textFieldPassword.text];
-            
         } else {
             NSMutableString *stringRange = [self.textFieldNumber.text mutableCopy];
             NSRange range = NSMakeRange(0, 1);
             [stringRange deleteCharactersInRange:range];
             [self authUser:stringRange password:self.textFieldPassword.text];
         }
-
     }
-    
-    
     return YES;
 }
 
-
+#pragma mark ActButton
 
 - (IBAction)actEnterBtn:(id)sender {
     
@@ -159,7 +155,6 @@
         [stringRange deleteCharactersInRange:range];
         [self authUser:stringRange password:self.textFieldPassword.text];
     }
-
 }
 
 - (IBAction)actNumTel:(id)sender {
@@ -167,5 +162,7 @@
 }
 
 - (IBAction)actPass:(id)sender {
+    
 }
+
 @end

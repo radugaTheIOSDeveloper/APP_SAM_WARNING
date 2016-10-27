@@ -23,8 +23,8 @@
 
 - (IBAction)actBtnRegistr:(id)sender;
 - (IBAction)actTextField:(id)sender;
-@property (strong , nonatomic) NSString * demoTel;
 
+@property (strong , nonatomic) NSString * demoTel;
 @property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
 
 

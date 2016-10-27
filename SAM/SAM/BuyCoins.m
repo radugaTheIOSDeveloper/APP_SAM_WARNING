@@ -39,8 +39,6 @@
     self.lableQuantity.alpha = 0.f;
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoMenu"]];
     self.buyCoinsOtl.enabled = NO;
-    NSLog(@"%@",self.titleStr);
- //   self.titleWashing.text = self.titleStr;
     [self backButton];
     
 }
@@ -55,11 +53,10 @@
 
 - (void)backTapped:(id)sender {
 
-    
     if ([self.titleStr isEqualToString:@"MyCoin"]) {
         [self performSegueWithIdentifier:@"backBuyCoin" sender:self];
     }else {
-          [self.navigationController popViewControllerAnimated:YES];
+        [self.navigationController popViewControllerAnimated:YES];
     }
     
 }
@@ -143,24 +140,9 @@
 }
 
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    
-//    QREncoder * segueS;
-//    self.buy = [NSString stringWithFormat:@"%ld*%ld",(long)four,(long)two];
-//    NSLog(@"купить: %@",self.buy);
-//    
-//    if ([[segue identifier] isEqualToString:@"buyToken"]){
-//        
-//        segueS = [segue destinationViewController];
-//        segueS.stringQR = self.buy;
-//        
-//    }
-//}
-
 
 - (IBAction)buyCoins:(id)sender {
     if (totalPrice == 0) {
-        NSLog(@"NO");
     }else{
         NSString * sum = self.lableQuantity.text;
         NSString * article = [NSString stringWithFormat:@"%ld*%ld",(long)four,(long)two];

@@ -11,18 +11,13 @@
 @interface ConfirmRegister : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-
 @property (weak, nonatomic) IBOutlet UITextField *confirmNumber;
-
 @property (strong, nonatomic) NSString * saveTelephone;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UILabel *labelInfo;
+@property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
 
 - (IBAction)actConfirm:(id)sender;
 - (IBAction)buttonConfirm:(id)sender;
-
-@property (weak, nonatomic) IBOutlet UILabel *labelInfo;
-
-@property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
-
 
 @end

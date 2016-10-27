@@ -16,11 +16,13 @@
 @property (strong, nonatomic) NSArray *pageImages;
 @property (strong, nonatomic) NSArray * pageDetail;
 @property (strong, nonatomic) NSMutableArray * arrayImages;
-- (IBAction)skipBtn:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *nextOtl;
 @property (weak, nonatomic) IBOutlet UIButton *skipOtl;
 @property (assign, nonatomic) NSInteger index;
 
+- (IBAction)nextBtn:(id)sender;
+- (IBAction)skipBtn:(id)sender;
 
 
 @end

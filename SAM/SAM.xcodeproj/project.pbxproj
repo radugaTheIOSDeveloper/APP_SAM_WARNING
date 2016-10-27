@@ -66,7 +66,6 @@
 		CEF84FFC1DB386D800CD7137 /* SkipScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF84FFB1DB386D800CD7137 /* SkipScreen.m */; };
 		CEF84FFF1DB386FC00CD7137 /* PageContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF84FFE1DB386FC00CD7137 /* PageContentController.m */; };
 		CEFA86571D992397001C5F3E /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFA86561D992397001C5F3E /* PageContentViewController.m */; };
-		CEFEBB991D9CFE7D00A50CEB /* AnimatedStartScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFEBB981D9CFE7D00A50CEB /* AnimatedStartScreen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,8 +193,6 @@
 		CEF84FFE1DB386FC00CD7137 /* PageContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentController.m; sourceTree = "<group>"; };
 		CEFA86551D992397001C5F3E /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
 		CEFA86561D992397001C5F3E /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
-		CEFEBB971D9CFE7D00A50CEB /* AnimatedStartScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedStartScreen.h; sourceTree = "<group>"; };
-		CEFEBB981D9CFE7D00A50CEB /* AnimatedStartScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedStartScreen.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -440,8 +437,6 @@
 			isa = PBXGroup;
 			children = (
 				CEF84FF91DB3869100CD7137 /* SliderAnimation */,
-				CEFEBB971D9CFE7D00A50CEB /* AnimatedStartScreen.h */,
-				CEFEBB981D9CFE7D00A50CEB /* AnimatedStartScreen.m */,
 			);
 			name = AnimationScreen;
 			sourceTree = "<group>";
@@ -740,7 +735,6 @@
 				CEE7C9B41DB0E73800490B0F /* SWRevealViewController.m in Sources */,
 				CE032CBB1D7D905500851FF4 /* MyTabBar.m in Sources */,
 				CE6BE0AA1D8815D4000F5CE4 /* StartScreenView.m in Sources */,
-				CEFEBB991D9CFE7D00A50CEB /* AnimatedStartScreen.m in Sources */,
 				CE032CE91D7DA9AA00851FF4 /* bitstream.c in Sources */,
 				CE032CEC1D7DA9AA00851FF4 /* rscode.c in Sources */,
 				CE032C671D7D880600851FF4 /* AppDelegate.m in Sources */,
@@ -917,7 +911,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = HL7PGCM524;
 				INFOPLIST_FILE = SAM/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = itstack.SAM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -933,7 +927,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = HL7PGCM524;
 				INFOPLIST_FILE = SAM/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = itstack.SAM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
