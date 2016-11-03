@@ -18,8 +18,13 @@
     
     [super viewDidLoad];
     
-    self.pageTitles = @[@"Оплатите жетоны",@"Приехай на мойку САМ",@"Просканируйте QR код",@"Получите жетоны"];
-    self.pageDetail = @[@"Жетоны нужны для получения услуг автомойки самообслуживания САМ",@"Подойдите к разменному аппарату и получите жетоны с помощью QR кода",@"Поднесите смартфон к считывающему устройству на разменном аппарате",@"Спасибо за пользование автомойкой самообслуживания САМ"];
+    self.pageTitles = @[@"Оплатите жетоны",@"На автомойке САМ",@"Просканируйте QR код",@"Получите жетоны"];
+    
+    self.pageDetail = @[@"",
+                        @"Подойдите к разменному аппарату и получите жетоны с помощью QR кода",
+                        @"Поднесите смартфон к считывающему устройству на разменном аппарате",
+                        @"Жетоны можно использовать на всех атомойках САМ "];
+    
     self.pageImages = @[@"rPos5",@"carPos4",@"qrPos4",@"coinPos3"];
     
     NSMutableArray * animationOne = [NSMutableArray arrayWithObjects:[UIImage imageNamed:@"rPos0"],[UIImage imageNamed:@"rPos1"],[UIImage imageNamed:@"rPos2"],[UIImage imageNamed:@"rPos3"],[UIImage imageNamed:@"rPos4"],[UIImage imageNamed:@"rPos5"], nil];
@@ -39,7 +44,6 @@
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
-    // Change the size of page view controller
     self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30);
     
     [self addChildViewController:_pageViewController];

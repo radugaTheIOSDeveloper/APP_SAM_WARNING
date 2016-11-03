@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Coins@1x.png",
+      "filename" : "Coins1x.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Coins@2x.png",
+      "filename" : "Coins2x.png",
       "scale" : "2x"
     },
     {

@@ -33,11 +33,6 @@
 		CE032CB91D7D905500851FF4 /* MyNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CE032CB41D7D905500851FF4 /* MyNavigationBar.m */; };
 		CE032CBA1D7D905500851FF4 /* MyNavigationControll.m in Sources */ = {isa = PBXBuildFile; fileRef = CE032CB61D7D905500851FF4 /* MyNavigationControll.m */; };
 		CE032CBB1D7D905500851FF4 /* MyTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CE032CB81D7D905500851FF4 /* MyTabBar.m */; };
-		CE032CC91D7D97E000851FF4 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE032CC81D7D97E000851FF4 /* MapViewController.m */; };
-		CE032CD21D7D992100851FF4 /* CalloutAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE032CCB1D7D992100851FF4 /* CalloutAnnotation.m */; };
-		CE032CD31D7D992100851FF4 /* CalloutAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE032CCD1D7D992100851FF4 /* CalloutAnnotationView.m */; };
-		CE032CD41D7D992100851FF4 /* PinAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE032CCF1D7D992100851FF4 /* PinAnnotation.m */; };
-		CE032CD51D7D992100851FF4 /* UIView+MKAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE032CD11D7D992100851FF4 /* UIView+MKAnnotationView.m */; };
 		CE032CD81D7D99A700851FF4 /* BuyCoins.m in Sources */ = {isa = PBXBuildFile; fileRef = CE032CD71D7D99A700851FF4 /* BuyCoins.m */; };
 		CE032CDB1D7DA8CA00851FF4 /* QREncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = CE032CDA1D7DA8CA00851FF4 /* QREncoder.m */; };
 		CE032CE91D7DA9AA00851FF4 /* bitstream.c in Sources */ = {isa = PBXBuildFile; fileRef = CE032CDC1D7DA9AA00851FF4 /* bitstream.c */; };
@@ -59,6 +54,9 @@
 		CE53C9751DAE798F004BDB27 /* Payment.m in Sources */ = {isa = PBXBuildFile; fileRef = CE53C9741DAE798F004BDB27 /* Payment.m */; };
 		CE6BE0AA1D8815D4000F5CE4 /* StartScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6BE0A91D8815D4000F5CE4 /* StartScreenView.m */; };
 		CE6BE0AD1D884F15000F5CE4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6BE0AC1D884F15000F5CE4 /* WebKit.framework */; };
+		CECB7AD31DC75DA2008CA095 /* AppleMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECB7AD21DC75DA2008CA095 /* AppleMapViewController.m */; };
+		CECB7AD51DC75E31008CA095 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECB7AD41DC75E31008CA095 /* CoreLocation.framework */; };
+		CECB7AD91DC7822C008CA095 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECB7AD81DC7822C008CA095 /* NewsViewController.m */; };
 		CED618DC1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = CED618DB1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m */; };
 		CEE35A911DA2724E008D916C /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE35A901DA2724E008D916C /* API.m */; };
 		CEE7C9B41DB0E73800490B0F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE7C9B31DB0E73800490B0F /* SWRevealViewController.m */; };
@@ -127,16 +125,6 @@
 		CE032CB61D7D905500851FF4 /* MyNavigationControll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyNavigationControll.m; path = generalClass/MyNavigationControll.m; sourceTree = SOURCE_ROOT; };
 		CE032CB71D7D905500851FF4 /* MyTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyTabBar.h; path = generalClass/MyTabBar.h; sourceTree = SOURCE_ROOT; };
 		CE032CB81D7D905500851FF4 /* MyTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyTabBar.m; path = generalClass/MyTabBar.m; sourceTree = SOURCE_ROOT; };
-		CE032CC71D7D97E000851FF4 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
-		CE032CC81D7D97E000851FF4 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
-		CE032CCA1D7D992100851FF4 /* CalloutAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalloutAnnotation.h; path = MAP/CalloutAnnotation.h; sourceTree = SOURCE_ROOT; };
-		CE032CCB1D7D992100851FF4 /* CalloutAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalloutAnnotation.m; path = MAP/CalloutAnnotation.m; sourceTree = SOURCE_ROOT; };
-		CE032CCC1D7D992100851FF4 /* CalloutAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalloutAnnotationView.h; path = MAP/CalloutAnnotationView.h; sourceTree = SOURCE_ROOT; };
-		CE032CCD1D7D992100851FF4 /* CalloutAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalloutAnnotationView.m; path = MAP/CalloutAnnotationView.m; sourceTree = SOURCE_ROOT; };
-		CE032CCE1D7D992100851FF4 /* PinAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PinAnnotation.h; path = MAP/PinAnnotation.h; sourceTree = SOURCE_ROOT; };
-		CE032CCF1D7D992100851FF4 /* PinAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PinAnnotation.m; path = MAP/PinAnnotation.m; sourceTree = SOURCE_ROOT; };
-		CE032CD01D7D992100851FF4 /* UIView+MKAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+MKAnnotationView.h"; path = "MAP/UIView+MKAnnotationView.h"; sourceTree = SOURCE_ROOT; };
-		CE032CD11D7D992100851FF4 /* UIView+MKAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+MKAnnotationView.m"; path = "MAP/UIView+MKAnnotationView.m"; sourceTree = SOURCE_ROOT; };
 		CE032CD61D7D99A700851FF4 /* BuyCoins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyCoins.h; sourceTree = "<group>"; };
 		CE032CD71D7D99A700851FF4 /* BuyCoins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyCoins.m; sourceTree = "<group>"; };
 		CE032CD91D7DA8CA00851FF4 /* QREncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QREncoder.h; sourceTree = "<group>"; };
@@ -179,6 +167,11 @@
 		CE6BE0A81D8815D4000F5CE4 /* StartScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScreenView.h; sourceTree = "<group>"; };
 		CE6BE0A91D8815D4000F5CE4 /* StartScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScreenView.m; sourceTree = "<group>"; };
 		CE6BE0AC1D884F15000F5CE4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		CECB7AD11DC75DA2008CA095 /* AppleMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleMapViewController.h; sourceTree = "<group>"; };
+		CECB7AD21DC75DA2008CA095 /* AppleMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleMapViewController.m; sourceTree = "<group>"; };
+		CECB7AD41DC75E31008CA095 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CECB7AD71DC7822C008CA095 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		CECB7AD81DC7822C008CA095 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		CED618DA1DA3D1EA00B0FED3 /* ChoosePaymentMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoosePaymentMethod.h; sourceTree = "<group>"; };
 		CED618DB1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoosePaymentMethod.m; sourceTree = "<group>"; };
 		CEE35A8F1DA2724E008D916C /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
@@ -200,6 +193,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CECB7AD51DC75E31008CA095 /* CoreLocation.framework in Frameworks */,
 				CE6BE0AD1D884F15000F5CE4 /* WebKit.framework in Frameworks */,
 				CE032C961D7D881200851FF4 /* MapKit.framework in Frameworks */,
 				CAB483A45247B902485EC05D /* libPods-SAM.a in Frameworks */,
@@ -259,6 +253,8 @@
 		CE032C611D7D880600851FF4 /* SAM */ = {
 			isa = PBXGroup;
 			children = (
+				CECB7AD61DC78218008CA095 /* News */,
+				CECB7AD01DC75D72008CA095 /* MAP */,
 				CEE7C9B11DB0E64D00490B0F /* RevealViewController */,
 				CED618D91DA3CB7900B0FED3 /* Yandex */,
 				CEE35A8E1DA27207008D916C /* singletone */,
@@ -269,7 +265,6 @@
 				CE032CF51D7DAB3E00851FF4 /* MyCoin */,
 				CE032CBF1D7D952E00851FF4 /* QR */,
 				CE032CBD1D7D951100851FF4 /* BuyCoin */,
-				CE032CBC1D7D950A00851FF4 /* MAPKit */,
 				CE032CB21D7D8FE300851FF4 /* GeneralClass */,
 				CE032C971D7D8F4400851FF4 /* Font */,
 				CE032C651D7D880600851FF4 /* AppDelegate.h */,
@@ -343,23 +338,6 @@
 				CE032CB81D7D905500851FF4 /* MyTabBar.m */,
 			);
 			name = GeneralClass;
-			sourceTree = "<group>";
-		};
-		CE032CBC1D7D950A00851FF4 /* MAPKit */ = {
-			isa = PBXGroup;
-			children = (
-				CE032CC71D7D97E000851FF4 /* MapViewController.h */,
-				CE032CC81D7D97E000851FF4 /* MapViewController.m */,
-				CE032CCA1D7D992100851FF4 /* CalloutAnnotation.h */,
-				CE032CCB1D7D992100851FF4 /* CalloutAnnotation.m */,
-				CE032CCC1D7D992100851FF4 /* CalloutAnnotationView.h */,
-				CE032CCD1D7D992100851FF4 /* CalloutAnnotationView.m */,
-				CE032CCE1D7D992100851FF4 /* PinAnnotation.h */,
-				CE032CCF1D7D992100851FF4 /* PinAnnotation.m */,
-				CE032CD01D7D992100851FF4 /* UIView+MKAnnotationView.h */,
-				CE032CD11D7D992100851FF4 /* UIView+MKAnnotationView.m */,
-			);
-			name = MAPKit;
 			sourceTree = "<group>";
 		};
 		CE032CBD1D7D951100851FF4 /* BuyCoin */ = {
@@ -465,6 +443,24 @@
 			name = StartScreen;
 			sourceTree = "<group>";
 		};
+		CECB7AD01DC75D72008CA095 /* MAP */ = {
+			isa = PBXGroup;
+			children = (
+				CECB7AD11DC75DA2008CA095 /* AppleMapViewController.h */,
+				CECB7AD21DC75DA2008CA095 /* AppleMapViewController.m */,
+			);
+			name = MAP;
+			sourceTree = "<group>";
+		};
+		CECB7AD61DC78218008CA095 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				CECB7AD71DC7822C008CA095 /* NewsViewController.h */,
+				CECB7AD81DC7822C008CA095 /* NewsViewController.m */,
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
 		CED618D91DA3CB7900B0FED3 /* Yandex */ = {
 			isa = PBXGroup;
 			children = (
@@ -522,6 +518,7 @@
 		D56C57A03E8647476ED3869F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CECB7AD41DC75E31008CA095 /* CoreLocation.framework */,
 				57F047F4E6F5015035479EF4 /* libPods-SAM.a */,
 				63E4B72AABD4503A5AE7D0A1 /* libPods-SAMTests.a */,
 				97F9360CB2BC398680DE2D27 /* libPods-SAMUITests.a */,
@@ -726,7 +723,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE032CF21D7DA9BB00851FF4 /* qrencode.c in Sources */,
-				CE032CD41D7D992100851FF4 /* PinAnnotation.m in Sources */,
 				CE128D331DA7CF1C00050099 /* PaymentWebView.m in Sources */,
 				CEFA86571D992397001C5F3E /* PageContentViewController.m in Sources */,
 				CE370DF51DA2B0660027D66B /* ConfirmRegister.m in Sources */,
@@ -739,30 +735,28 @@
 				CE032CEC1D7DA9AA00851FF4 /* rscode.c in Sources */,
 				CE032C671D7D880600851FF4 /* AppDelegate.m in Sources */,
 				CEF84FFC1DB386D800CD7137 /* SkipScreen.m in Sources */,
-				CE032CD31D7D992100851FF4 /* CalloutAnnotationView.m in Sources */,
 				CE032C641D7D880600851FF4 /* main.m in Sources */,
 				CE032CBA1D7D905500851FF4 /* MyNavigationControll.m in Sources */,
 				CE39BA421D94239E00C5256A /* Enter.m in Sources */,
-				CE032CD21D7D992100851FF4 /* CalloutAnnotation.m in Sources */,
 				CEE7CA001DB0F71A00490B0F /* MenuViewController.m in Sources */,
 				CE032CF41D7DA9BB00851FF4 /* split.c in Sources */,
-				CE032CD51D7D992100851FF4 /* UIView+MKAnnotationView.m in Sources */,
 				CE53C9751DAE798F004BDB27 /* Payment.m in Sources */,
 				CE53C9721DAE7969004BDB27 /* Payments.m in Sources */,
 				CE032CFD1D7DABBB00851FF4 /* Help.m in Sources */,
 				CEE35A911DA2724E008D916C /* API.m in Sources */,
 				CE032CD81D7D99A700851FF4 /* BuyCoins.m in Sources */,
+				CECB7AD91DC7822C008CA095 /* NewsViewController.m in Sources */,
 				CEF84FFF1DB386FC00CD7137 /* PageContentController.m in Sources */,
 				CE032CB91D7D905500851FF4 /* MyNavigationBar.m in Sources */,
 				CED618DC1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m in Sources */,
 				CE032CEA1D7DA9AA00851FF4 /* qrenc.c in Sources */,
+				CECB7AD31DC75DA2008CA095 /* AppleMapViewController.m in Sources */,
 				CE032CEB1D7DA9AA00851FF4 /* qrinput.c in Sources */,
 				CE2ADAFE1DBE117E005BFAED /* SetPassController.m in Sources */,
 				CE032CF11D7DA9BB00851FF4 /* mask.c in Sources */,
 				CE39BA3F1D9406EA00C5256A /* RegistrClass.m in Sources */,
 				CE032CDB1D7DA8CA00851FF4 /* QREncoder.m in Sources */,
 				CE032CF81D7DAB7F00851FF4 /* MyCoin.m in Sources */,
-				CE032CC91D7D97E000851FF4 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

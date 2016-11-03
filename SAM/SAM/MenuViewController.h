@@ -21,5 +21,6 @@
 
 - (IBAction)btnClose:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *closeOtl;
 
 @end

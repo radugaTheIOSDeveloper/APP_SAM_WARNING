@@ -36,6 +36,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.closeOtl.alpha = 0.f;
     NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:0 forKey:@"need_activate"];
 }
@@ -57,7 +59,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -76,6 +78,10 @@
             
         case 2:
             CellIdentifier = @"help";
+            break;
+            
+        case 3:
+            CellIdentifier = @"news";
             break;
     }
     

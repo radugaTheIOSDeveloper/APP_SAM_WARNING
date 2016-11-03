@@ -24,7 +24,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.titleLabel.text = self.titleText;
     self.detailLabel.text = self.detailText;
     self.animatedView.image = [UIImage imageNamed:self.imageName];
@@ -34,8 +34,6 @@
     [self.animatedView startAnimating];
     
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

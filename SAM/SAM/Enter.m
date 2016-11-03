@@ -64,9 +64,10 @@
                         }
                         
 }                   onFailure:^(NSError *error, NSInteger statusCode) {
-                    [self.view setUserInteractionEnabled:YES];
-                    [self.activityIndicator stopAnimating];
-                    [self alerts];
+    
+                        [self.view setUserInteractionEnabled:YES];
+                        [self.activityIndicator stopAnimating];
+                        [self alerts];
 }];
     
 }
@@ -128,11 +129,14 @@
         
         if (self.textFieldNumber.text.length <= 0) {
             [self authUser:self.textFieldNumber.text password:self.textFieldPassword.text];
+            NSLog(@"%@,%@",self.textFieldNumber.text,self.textFieldPassword.text);
         } else {
             NSMutableString *stringRange = [self.textFieldNumber.text mutableCopy];
             NSRange range = NSMakeRange(0, 1);
             [stringRange deleteCharactersInRange:range];
             [self authUser:stringRange password:self.textFieldPassword.text];
+            NSLog(@"%@,%@",stringRange,self.textFieldPassword.text);
+
         }
     }
     return YES;
