@@ -18,7 +18,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Apple Map View Controller-->
+        <!--Карта-->
         <scene sceneID="iSc-e7-1sm">
             <objects>
                 <viewController id="fch-tj-Z2h" customClass="AppleMapViewController" sceneMemberID="viewController">
@@ -107,7 +107,7 @@
                             <constraint firstItem="GeE-Nf-fwq" firstAttribute="leading" secondItem="9fQ-FF-zDb" secondAttribute="leading" id="siW-6g-Yvu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dyZ-Vs-QAE">
+                    <navigationItem key="navigationItem" title="Карта" id="dyZ-Vs-QAE">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="kUE-9y-m6V"/>
                     </navigationItem>
                     <connections>
@@ -880,7 +880,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screenStart" translatesAutoresizingMaskIntoConstraints="NO" id="pjr-Lz-E7s"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screenStart" highlightedImage="screenStart" translatesAutoresizingMaskIntoConstraints="NO" id="pjr-Lz-E7s"/>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jp9-J9-dK7">
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="glF-zS-wKc">
@@ -1146,6 +1146,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.89411764709999997" green="0.0" blue="0.043137254899999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="QW8-Rk-XZa" kind="relationship" relationship="rootViewController" id="fTD-hd-vHl"/>
@@ -1155,10 +1158,10 @@
             </objects>
             <point key="canvasLocation" x="531" y="378"/>
         </scene>
-        <!--My Coin-->
+        <!--Мои Покупки-->
         <scene sceneID="aGL-Cj-Hj8">
             <objects>
-                <viewController storyboardIdentifier="MyCoin" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QW8-Rk-XZa" customClass="MyCoin" sceneMemberID="viewController">
+                <viewController id="QW8-Rk-XZa" customClass="MyCoin" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Egh-ae-PAs"/>
                         <viewControllerLayoutGuide type="bottom" id="Qdb-XT-lUH"/>
@@ -1373,7 +1376,7 @@
                             <constraint firstItem="j6t-ON-WOI" firstAttribute="leading" secondItem="pbY-cm-hUb" secondAttribute="leading" id="oIc-bD-NAg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="1my-IO-0dr">
+                    <navigationItem key="navigationItem" title="Мои Покупки" id="1my-IO-0dr">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="6cS-Xf-D87"/>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -1396,7 +1399,7 @@
         <!--Reveal View Controller-->
         <scene sceneID="8p8-QK-PYj">
             <objects>
-                <viewController storyboardIdentifier="SWRevealViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="e62-U4-z8E" customClass="SWRevealViewController" sceneMemberID="viewController">
+                <viewController id="e62-U4-z8E" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="o98-o5-BiB"/>
                         <viewControllerLayoutGuide type="bottom" id="rgO-wO-0oc"/>
@@ -1413,7 +1416,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A9R-aE-jpk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-866" y="1038"/>
+            <point key="canvasLocation" x="-866" y="1057"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="PU5-2i-IqS">
@@ -1633,6 +1636,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.89411764709999997" green="0.0" blue="0.043137254899999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="fch-tj-Z2h" kind="relationship" relationship="rootViewController" id="0jQ-YH-Moo"/>
@@ -1640,7 +1646,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eIs-cO-Ots" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-196" y="1057"/>
+            <point key="canvasLocation" x="-196" y="1039"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sDW-ia-qY2">
@@ -1650,6 +1656,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.89411764709999997" green="0.0" blue="0.043137254899999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="pqb-yJ-Ut0" kind="relationship" relationship="rootViewController" id="Q9x-RA-WB9"/>
@@ -1659,7 +1668,7 @@
             </objects>
             <point key="canvasLocation" x="-207" y="1725"/>
         </scene>
-        <!--News View Controller-->
+        <!--События-->
         <scene sceneID="H7v-zg-aJA">
             <objects>
                 <viewController id="pqb-yJ-Ut0" customClass="NewsViewController" sceneMemberID="viewController">
@@ -1734,7 +1743,7 @@
                             <constraint firstAttribute="trailing" secondItem="Qbi-iZ-IVW" secondAttribute="trailing" id="rWq-7R-w9y"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="BkS-eX-YPU">
+                    <navigationItem key="navigationItem" title="События" id="BkS-eX-YPU">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="Eoe-aB-EeB"/>
                     </navigationItem>
                     <connections>
@@ -1754,6 +1763,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.89411764709999997" green="0.0" blue="0.043137254899999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="mnA-Ma-2rf" kind="relationship" relationship="rootViewController" id="yzh-gl-iJK"/>
@@ -1763,7 +1775,7 @@
             </objects>
             <point key="canvasLocation" x="529" y="1057"/>
         </scene>
-        <!--Help-->
+        <!--Как пользоваться -->
         <scene sceneID="giM-UD-Br6">
             <objects>
                 <viewController id="mnA-Ma-2rf" customClass="Help" sceneMemberID="viewController">
@@ -1776,7 +1788,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="NaP-bY-GNW">
+                    <navigationItem key="navigationItem" title="Как пользоваться " id="NaP-bY-GNW">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="qxG-hJ-Xqy"/>
                     </navigationItem>
                     <connections>
@@ -1800,7 +1812,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oyb-wU-KLg"/>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="C8D1CBAD-DD89-4147-B20B-1C6BC8D34FF8" translatesAutoresizingMaskIntoConstraints="NO" id="lV2-8V-1AA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="97C55BD2-DB9E-4B73-BCDF-4DE38296C74D" translatesAutoresizingMaskIntoConstraints="NO" id="lV2-8V-1AA">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="8tz-Dt-Nh7"/>
                                     <constraint firstAttribute="width" constant="120" id="XzS-nC-P8z"/>
@@ -1868,7 +1880,7 @@
                 <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="none" id="jyx-WF-Esy" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcl-8M-dEa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1900" y="1038"/>
+            <point key="canvasLocation" x="1868" y="1038"/>
         </scene>
         <!--Enter-->
         <scene sceneID="Vtd-Mb-Yu0">
@@ -2038,7 +2050,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="C8D1CBAD-DD89-4147-B20B-1C6BC8D34FF8" width="83" height="43">
+        <image name="97C55BD2-DB9E-4B73-BCDF-4DE38296C74D" width="83" height="43">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -2340,20 +2352,20 @@ Qg4AAAAAAAACAQAAAAAAAABBAAAAAAAAAAAAAAAAAABCEA
         <image name="menuMapIcon" width="21" height="21"/>
         <image name="minus" width="50" height="50"/>
         <image name="mobLogo" width="176" height="29"/>
-        <image name="newsIcon" width="49" height="46"/>
+        <image name="newsIcon" width="24" height="23"/>
         <image name="plus" width="50" height="50"/>
         <image name="qiwiLogo" width="120" height="47"/>
         <image name="registrBtn" width="184" height="47"/>
         <image name="screenStart" width="281" height="500"/>
-        <image name="uilms" width="1017" height="440"/>
+        <image name="uilms" width="508" height="220"/>
         <image name="zheton" width="37" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ONJ-g1-OZg"/>
-        <segue reference="36p-sQ-Xz6"/>
-        <segue reference="KdF-rO-OkA"/>
-        <segue reference="KGA-Te-pWq"/>
-        <segue reference="fTD-hd-vHl"/>
         <segue reference="m5k-AW-6pe"/>
+        <segue reference="KdF-rO-OkA"/>
+        <segue reference="jaR-IE-nhO"/>
+        <segue reference="36p-sQ-Xz6"/>
+        <segue reference="JDt-iV-eka"/>
+        <segue reference="fTD-hd-vHl"/>
     </inferredMetricsTieBreakers>
 </document>

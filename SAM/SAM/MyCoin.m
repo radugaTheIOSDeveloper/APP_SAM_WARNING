@@ -35,7 +35,7 @@
     [self getUserQRCode];
     [self.tableView reloadData];
     
-    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoMenu"]];
+  //  self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoMenu"]];
     
     self.activeView.backgroundColor = [UIColor redColor];
     self.pastView.backgroundColor = [UIColor whiteColor];
@@ -56,7 +56,7 @@
     self.refreshControl.tintColor = [UIColor redColor];
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    [self customSetup];
+    self.navigationItem.title = @"Мои покупки";
     
     self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     self.activityIndicator.alpha = 1.f;
@@ -65,6 +65,14 @@
     self.activityIndicator.color = [UIColor redColor];
     [self.view setUserInteractionEnabled:NO];
     [self.activityIndicator startAnimating];
+    
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController )
+    {
+        [self.revealButtonItem setTarget: self.revealViewController];
+        [self.revealButtonItem setAction: @selector( revealToggle: )];
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
     
 }
 
@@ -131,16 +139,7 @@
 
 #pragma mark Refresh
 
-- (void)customSetup
-{
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if ( revealViewController )
-    {
-        [self.revealButtonItem setTarget: revealViewController];
-        [self.revealButtonItem setAction: @selector( revealToggle: )];
-        [self.navigationController.navigationBar addGestureRecognizer:revealViewController.panGestureRecognizer];
-    }
-}
+
 
 -(void) refreshView: (UIRefreshControl *) refresh{
     
@@ -243,7 +242,7 @@
             
                 UITableViewCell * cellNoBuys = [tableView dequeueReusableCellWithIdentifier:ideNo];
                 UILabel * nonLabel = (UILabel *)[cellNoBuys.contentView viewWithTag:97];
-                nonLabel.text = @"У вас нет покупок.Чтобы приобрести жетоны нажмите на \"+\"";
+                nonLabel.text = @"У вас нет использованных жетонов";
                 self.tableView.allowsSelection = NO;
                 self.tableView.scrollEnabled = NO;
                 self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -362,23 +361,5 @@
     
 }
 
-#pragma mark state preservation / restoration
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super encodeRestorableStateWithCoder:coder];
-}
-
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    [super decodeRestorableStateWithCoder:coder];
-}
-
-
-- (void)applicationFinishedRestoringState
-{
-    [self customSetup];
-}
 
 @end

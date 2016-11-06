@@ -8,6 +8,8 @@
 
 #import "MenuViewController.h"
 #import "API.h"
+#import "SWRevealViewController.h"
+
 
 @implementation SWUITableViewCell
 @end
@@ -15,23 +17,11 @@
 
 @end
 
-@implementation MenuViewController
+@implementation MenuViewController{
+    NSArray *menuItems;
 
-- (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
-{
-    // configure the destination view controller:
-    if ( [sender isKindOfClass:[UITableViewCell class]] )
-    {
-//        UILabel* c = [(SWUITableViewCell *)sender label];
-//        UINavigationController *navController = segue.destinationViewController;
-//        ColorViewController* cvc = [navController childViewControllers].firstObject;
-//        if ( [cvc isKindOfClass:[ColorViewController class]] )
-//        {
-//            cvc.color = c.textColor;
-//            cvc.text = c.text;
-//        }
-    }
 }
+
 
 
 - (void)viewDidLoad {
@@ -40,6 +30,8 @@
     self.closeOtl.alpha = 0.f;
     NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:0 forKey:@"need_activate"];
+    
+        menuItems = @[@"map", @"myCoin", @"help", @"news"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,61 +51,36 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return menuItems.count;
+;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    
-    switch ( indexPath.row )
-    {
-        case 0:
-            CellIdentifier = @"map";
-            break;
-            
-        case 1:
-            CellIdentifier = @"myCoin";
-            break;
-            
-        case 2:
-            CellIdentifier = @"help";
-            break;
-            
-        case 3:
-            CellIdentifier = @"news";
-            break;
-    }
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath: indexPath];
+    NSString *CellIdentifier = [menuItems objectAtIndex:indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     return cell;
 }
 
 
 
-
-#pragma mark state preservation / restoration
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    // TODO save what you need here
+    // Set the title of navigation bar by using the menu items
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    UINavigationController *destViewController = (UINavigationController*)segue.destinationViewController;
+    destViewController.title = [[menuItems objectAtIndex:indexPath.row] capitalizedString];
     
-    [super encodeRestorableStateWithCoder:coder];
+    // Set the photo if it navigates to the PhotoView
+//    if ([segue.identifier isEqualToString:@"showPhoto"]) {
+//        UINavigationController *navController = segue.destinationViewController;
+//        PhotoViewController *photoController = [navController childViewControllers].firstObject;
+//        NSString *photoFilename = [NSString stringWithFormat:@"%@_photo", [menuItems objectAtIndex:indexPath.row]];
+//        photoController.photoFilename = photoFilename;
+//    }
 }
 
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    
-    // TODO restore what you need here
-    
-    [super decodeRestorableStateWithCoder:coder];
-}
-
-- (void)applicationFinishedRestoringState {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    
-}
 
 - (IBAction)btnClose:(id)sender {
     [[API apiManager]setToken:NULL];

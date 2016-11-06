@@ -52,6 +52,7 @@
 		CE39BA421D94239E00C5256A /* Enter.m in Sources */ = {isa = PBXBuildFile; fileRef = CE39BA411D94239E00C5256A /* Enter.m */; };
 		CE53C9721DAE7969004BDB27 /* Payments.m in Sources */ = {isa = PBXBuildFile; fileRef = CE53C9711DAE7969004BDB27 /* Payments.m */; };
 		CE53C9751DAE798F004BDB27 /* Payment.m in Sources */ = {isa = PBXBuildFile; fileRef = CE53C9741DAE798F004BDB27 /* Payment.m */; };
+		CE590DDA1DCF405E00816B4E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE590DD91DCF405E00816B4E /* SWRevealViewController.m */; };
 		CE6BE0AA1D8815D4000F5CE4 /* StartScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6BE0A91D8815D4000F5CE4 /* StartScreenView.m */; };
 		CE6BE0AD1D884F15000F5CE4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6BE0AC1D884F15000F5CE4 /* WebKit.framework */; };
 		CECB7AD31DC75DA2008CA095 /* AppleMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECB7AD21DC75DA2008CA095 /* AppleMapViewController.m */; };
@@ -59,7 +60,6 @@
 		CECB7AD91DC7822C008CA095 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECB7AD81DC7822C008CA095 /* NewsViewController.m */; };
 		CED618DC1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = CED618DB1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m */; };
 		CEE35A911DA2724E008D916C /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE35A901DA2724E008D916C /* API.m */; };
-		CEE7C9B41DB0E73800490B0F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE7C9B31DB0E73800490B0F /* SWRevealViewController.m */; };
 		CEE7CA001DB0F71A00490B0F /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE7C9FF1DB0F71A00490B0F /* MenuViewController.m */; };
 		CEF84FFC1DB386D800CD7137 /* SkipScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF84FFB1DB386D800CD7137 /* SkipScreen.m */; };
 		CEF84FFF1DB386FC00CD7137 /* PageContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF84FFE1DB386FC00CD7137 /* PageContentController.m */; };
@@ -164,6 +164,8 @@
 		CE53C9711DAE7969004BDB27 /* Payments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Payments.m; sourceTree = "<group>"; };
 		CE53C9731DAE798F004BDB27 /* Payment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Payment.h; sourceTree = "<group>"; };
 		CE53C9741DAE798F004BDB27 /* Payment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Payment.m; sourceTree = "<group>"; };
+		CE590DD81DCF405E00816B4E /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = SOURCE_ROOT; };
+		CE590DD91DCF405E00816B4E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = SOURCE_ROOT; };
 		CE6BE0A81D8815D4000F5CE4 /* StartScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScreenView.h; sourceTree = "<group>"; };
 		CE6BE0A91D8815D4000F5CE4 /* StartScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScreenView.m; sourceTree = "<group>"; };
 		CE6BE0AC1D884F15000F5CE4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -176,8 +178,6 @@
 		CED618DB1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoosePaymentMethod.m; sourceTree = "<group>"; };
 		CEE35A8F1DA2724E008D916C /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
 		CEE35A901DA2724E008D916C /* API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
-		CEE7C9B21DB0E73800490B0F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = SOURCE_ROOT; };
-		CEE7C9B31DB0E73800490B0F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = SOURCE_ROOT; };
 		CEE7C9FE1DB0F71A00490B0F /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		CEE7C9FF1DB0F71A00490B0F /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		CEF84FFA1DB386D800CD7137 /* SkipScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkipScreen.h; sourceTree = "<group>"; };
@@ -488,9 +488,9 @@
 		CEE7C9B11DB0E64D00490B0F /* RevealViewController */ = {
 			isa = PBXGroup;
 			children = (
+				CE590DD81DCF405E00816B4E /* SWRevealViewController.h */,
+				CE590DD91DCF405E00816B4E /* SWRevealViewController.m */,
 				CEE7C9FD1DB0EE3B00490B0F /* MyClassReveal */,
-				CEE7C9B21DB0E73800490B0F /* SWRevealViewController.h */,
-				CEE7C9B31DB0E73800490B0F /* SWRevealViewController.m */,
 			);
 			name = RevealViewController;
 			sourceTree = "<group>";
@@ -728,8 +728,8 @@
 				CE370DF51DA2B0660027D66B /* ConfirmRegister.m in Sources */,
 				CE032C6A1D7D880600851FF4 /* ViewController.m in Sources */,
 				CE032CF31D7DA9BB00851FF4 /* qrspec.c in Sources */,
-				CEE7C9B41DB0E73800490B0F /* SWRevealViewController.m in Sources */,
 				CE032CBB1D7D905500851FF4 /* MyTabBar.m in Sources */,
+				CE590DDA1DCF405E00816B4E /* SWRevealViewController.m in Sources */,
 				CE6BE0AA1D8815D4000F5CE4 /* StartScreenView.m in Sources */,
 				CE032CE91D7DA9AA00851FF4 /* bitstream.c in Sources */,
 				CE032CEC1D7DA9AA00851FF4 /* rscode.c in Sources */,
@@ -905,7 +905,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = HL7PGCM524;
 				INFOPLIST_FILE = SAM/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = itstack.SAM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -921,7 +921,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = HL7PGCM524;
 				INFOPLIST_FILE = SAM/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = itstack.SAM;
 				PRODUCT_NAME = "$(TARGET_NAME)";

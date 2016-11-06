@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoMenu"]];
+  //  self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoMenu"]];
     
     self.pageTitles = @[@"1 ПРОГРАММА\n МОЙКА",
                         @"2 ПРОГРАММА\n ОПОЛАСКИВАНИЕ",
@@ -56,19 +56,18 @@
     [self.view addSubview:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-     [self customSetup];
-}
-
-- (void)customSetup
-{
+    
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
     {
-        [self.revealButtonItem setTarget: revealViewController];
+        [self.revealButtonItem setTarget: self.revealViewController];
         [self.revealButtonItem setAction: @selector( revealToggle: )];
-        [self.navigationController.navigationBar addGestureRecognizer:revealViewController.panGestureRecognizer];
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
+
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -128,30 +127,6 @@
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
 {
     return 0;
-}
-#pragma mark state preservation / restoration
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    
-    // Save what you need here
-;
-    
-    [super encodeRestorableStateWithCoder:coder];
-}
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    [super decodeRestorableStateWithCoder:coder];
-}
-
-
-- (void)applicationFinishedRestoringState
-{
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    [self customSetup];
 }
 
 @end
