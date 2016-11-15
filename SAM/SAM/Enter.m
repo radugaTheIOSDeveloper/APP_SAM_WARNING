@@ -9,6 +9,8 @@
 #import "Enter.h"
 #import "API.h"
 #import "Payment.h"
+#import <Security/Security.h>
+#import <KeychainItemWrapper.h>
 
 @interface Enter ()
 
@@ -56,6 +58,7 @@
                         if ([responseObject objectForKey:@"token"]) {
                             
                             [[API apiManager]setToken:[NSString stringWithFormat:@"Token %@",[responseObject objectForKey:@"token"]]];
+                            
                             [[Payment save]setPhoneNumber:username];
                             
                             [self.activityIndicator stopAnimating];

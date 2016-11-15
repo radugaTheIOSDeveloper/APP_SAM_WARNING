@@ -9,6 +9,8 @@
 #import "MenuViewController.h"
 #import "API.h"
 #import "SWRevealViewController.h"
+#import <Security/Security.h>
+#import <KeychainItemWrapper.h>
 
 
 @implementation SWUITableViewCell
@@ -22,16 +24,15 @@
 
 }
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.closeOtl.alpha = 0.f;
     NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:0 forKey:@"need_activate"];
     
-        menuItems = @[@"map", @"myCoin", @"help", @"news"];
+        menuItems = @[@"map", @"myCoin", @"help", @"news",@"support"];
+    
+    NSLog(@"%@",[[API apiManager]getToken]);
 }
 
 - (void)didReceiveMemoryWarning {

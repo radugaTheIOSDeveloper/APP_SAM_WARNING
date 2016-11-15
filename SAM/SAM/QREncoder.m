@@ -23,7 +23,7 @@ void freeRawData(void *info, const void *data, size_t size);
 - (void)viewWillAppear:(BOOL)animated
 {
     self.nonActive.alpha = 0.f;
-    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoMenu"]];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"LogoMenu"]];
     [super viewWillAppear:animated];
     UIImage *image = [self quickResponseImageForString:self.stringQR withDimension:182];
     

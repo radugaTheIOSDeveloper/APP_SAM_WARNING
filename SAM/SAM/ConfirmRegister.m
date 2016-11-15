@@ -54,21 +54,15 @@
                             confirm:confirm
                           onSuccess:^(NSDictionary *responseObject) {
                               
+                              NSLog(@"%@",responseObject);
+                              
                               self.messages = [responseObject objectForKey:@"message"];
                               [self.activityIndicator stopAnimating];
                               [self.view setUserInteractionEnabled:YES];
-                              
-                              if ([responseObject objectForKey:@"token"]) {
+                              [self performSegueWithIdentifier:@"setPass" sender:self];
                                   
-                                  [[API apiManager]setToken:[NSString stringWithFormat:@"Token %@",[responseObject objectForKey:@"token"]]];
-                                  [self performSegueWithIdentifier:@"setPass" sender:self];
-                                  
-                              } else {
-                                  self.typeMessages = @"Ошибка подтверждения!";
-                                  [self alerts];
-                              }
                               
-}                               onFailure:^(NSError *error, NSInteger statusCode) {
+}                          onFailure:^(NSError *error, NSInteger statusCode) {
                                     self.typeMessages = @"Ошибка подтверждения!";
                                     [self.activityIndicator stopAnimating];
                                     [self.view setUserInteractionEnabled:YES];
@@ -128,6 +122,7 @@
 #pragma mark Button action
 
 - (IBAction)buttonConfirm:(id)sender {
+    
     self.activityIndicator.alpha = 1.f;
     [self.activityIndicator startAnimating];
     [self confirmRegister:self.saveTelephone confirm:self.confirmNumber.text];

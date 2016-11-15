@@ -38,7 +38,7 @@
                         
                         if ([userDefaults integerForKey:@"need_activate"] == 1) {
                             
-                            [self performSegueWithIdentifier:@"confirmSegue" sender:self];
+                            [self performSegueWithIdentifier:@"registrSegue" sender:self];
                         } else  {
                             
                             [self performSegueWithIdentifier:@"enterSegue" sender:self];

@@ -40,19 +40,14 @@
 
 #pragma mark API
 
--(void) registerUser:(NSString *)numTel
-            password:(NSString *)password{
+-(void) prepareForRegister:(NSString *)numTel{
     
-    [[API apiManager]registerUser:numTel
-                         password:password
+    [[API apiManager]prepareForRegister:numTel
                         onSuccess:^(NSDictionary *responseObject) {
                             
                             [self.activityIndicator stopAnimating];
                             [self.view setUserInteractionEnabled:YES];
-                            
-                            if ([responseObject objectForKey:@"phone"]) {
-                                self.demoTel = [responseObject objectForKey:@"phone"];
-                            }
+                            self.demoTel = numTel;
                             
         [self performSegueWithIdentifier:@"confirm" sender:self];
     }                   onFailure:^(NSError *error, NSInteger statusCode) {
@@ -121,7 +116,7 @@
             
             self.activityIndicator.alpha = 1.f;
             [self.activityIndicator startAnimating];
-            [self registerUser:self.textField.text password:@"123456789"];
+            [self prepareForRegister:self.textField.text];
             
         } else {
             
@@ -130,7 +125,7 @@
             NSMutableString *stringRange = [self.textField.text mutableCopy];
             NSRange range = NSMakeRange(0, 1);
             [stringRange deleteCharactersInRange:range];
-            [self registerUser:stringRange password:@"123456789"];
+            [self prepareForRegister:stringRange];
         }
         
     }
@@ -145,7 +140,7 @@
         
         self.activityIndicator.alpha = 1.f;
         [self.activityIndicator startAnimating];
-        [self registerUser:self.textField.text password:@"123456789"];
+        [self prepareForRegister:self.textField.text];
         
     } else {
         
@@ -154,7 +149,7 @@
         NSMutableString *stringRange = [self.textField.text mutableCopy];
         NSRange range = NSMakeRange(0, 1);
         [stringRange deleteCharactersInRange:range];
-        [self registerUser:stringRange password:@"123456789"];
+        [self prepareForRegister:stringRange];
 
     }
 }

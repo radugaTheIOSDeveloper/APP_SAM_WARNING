@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoMenu"]];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"LogoMenu"]];
     
     NSLog(@"type =%@",self.pymentType);
     NSLog(@"sum =%@",[[Payment save]getMySum]);
@@ -27,20 +27,19 @@
     NSString *urlString = @"https://demomoney.yandex.ru/eshop.xml";
     NSURL *url = [NSURL URLWithString:urlString];
     NSString *body = [NSString stringWithFormat: @"shopId=%@&scid=%@&sum=%@&customerNumber=%@&paymentType=%@&article=%@", @"71175",@"541436",[[Payment save]getMySum],[[Payment save]getPhoneNumber],self.pymentType,[[Payment save]getMyArticle]];
-    //    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+    
+//    NSLog(@"%@",body);
+//    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
     
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:60.0];
     [request setHTTPMethod: @"POST"];
     [request setHTTPBody: [body dataUsingEncoding: NSUTF8StringEncoding]];
     [self.webView loadRequest: request];
-//
     
     [self backButton];
-    
     [self.indicatorView startAnimating];
     [self.view setUserInteractionEnabled:NO];
 
-    
 }
 
 -(void) backButton {

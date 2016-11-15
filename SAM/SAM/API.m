@@ -7,7 +7,8 @@
 //
 
 #import "API.h"
-
+#import <Security/Security.h>
+#import <KeychainItemWrapper.h>
 @implementation API
 
 
@@ -36,29 +37,35 @@
 
 -(void) setToken:(NSString *) token{
     
+//    KeychainItemWrapper * wraper = [[KeychainItemWrapper alloc]initWithIdentifier:@"token" accessGroup:nil];
+//    [wraper setObject:token forKey:(id)kSecValueData];
+//   
     NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:token forKey:@"token"];
     
 }
 
 -(NSString *) getToken{
+    
+//    KeychainItemWrapper * wraper = [[KeychainItemWrapper alloc]initWithIdentifier:@"token" accessGroup:nil];
+//    return [wraper objectForKey:(id)kSecValueData];
+    
     NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
     return [userDefaults objectForKey:@"token"];
-    
+
 }
 
 //#pragma mark Register and Auth
 //
--(void) registerUser:(NSString *)numPhone
-            password:(NSString *)password
+-(void) prepareForRegister:(NSString *)numPhone
            onSuccess:(void(^)(NSDictionary * responseObject)) success
            onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure{
     
         NSDictionary * params = [NSDictionary dictionaryWithObjectsAndKeys:
-                             numPhone, @"phone",
-                             password, @"password",nil];
+                             numPhone, @"phone",nil];
     
-    [self.sessionManager POST:@"register/"
+    
+    [self.sessionManager POST:@"prepareForRegister/"
                    parameters:params
                      progress:nil
                       success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
@@ -86,6 +93,8 @@
     NSDictionary * params = [NSDictionary dictionaryWithObjectsAndKeys:
                              numPhone, @"phone",
                              confirm,  @"confirm_code",nil];
+    
+    NSLog(@"%@",params);
     
     [self.sessionManager POST:@"confirmRegister/"
                    parameters:params
@@ -192,18 +201,42 @@
                         }];
 }
 
-// setRegistr
+//getEvents
 
--(void) setPass:(NSString *) newPass
-      onSuccess:(void(^)(NSDictionary * responseObject)) success
-      onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure{
+-(void)getEvents:(void (^)(NSDictionary *))success onFailure:(void (^)(NSError *, NSInteger))failure{
     
-    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
-    [self.sessionManager.requestSerializer setValue:[userDefaults objectForKey:@"token"] forHTTPHeaderField:@"Authorization"];
+    [self.sessionManager GET:@"getEvents/"
+                  parameters:nil
+                    progress:nil
+                     success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
+                         
+                         if(success){
+                             success(responseObject);
+                         }
+                     }
+     
+                     failure:^(NSURLSessionTask *operation, NSError *error) {
+                         NSLog(@"error%@",error);
+                         if(failure){
+                             NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
+                             failure(error, response.statusCode);
+                         }
+                     }];
+
+    
+}
+/////
+
+-(void) passRegistr:(NSString *)numPhone
+           password:(NSString *)password
+          onSuccess:(void(^)(NSDictionary * responseObject)) success
+          onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure{
+    
     NSDictionary * params = [NSDictionary dictionaryWithObjectsAndKeys:
-                             newPass, @"newPass",nil];
+                             numPhone, @"phone",
+                             password, @"password",nil];
     
-    [self.sessionManager POST:@"setPass/"
+    [self.sessionManager POST:@"register/"
                    parameters:params
                      progress:nil
                       success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
@@ -219,10 +252,6 @@
                               failure(error, response.statusCode);
                           }
                       }];
-
 }
-
-
-
 
 @end

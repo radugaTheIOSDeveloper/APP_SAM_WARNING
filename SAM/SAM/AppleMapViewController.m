@@ -69,7 +69,6 @@
     float betweenDistance6 = [startLocation distanceFromLocation:location6];
     float betweenDistance7 = [startLocation distanceFromLocation:location7];
     
-    
     [self.locations setObject:@(betweenDistance/1000) forKey:location];
     [self.locations setObject:@(betweenDistance1/1000) forKey:location1];
     [self.locations setObject:@(betweenDistance2/1000) forKey:location2];
@@ -101,7 +100,6 @@
     
     self.status = 0;
     
- //  self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoMenu"]];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 
     self.myLocationManager = [[CLLocationManager alloc] init];
@@ -110,7 +108,6 @@
     [self.myLocationManager startMonitoringSignificantLocationChanges];
     [self.myLocationManager startUpdatingLocation];
 
-    
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
     {
@@ -120,8 +117,6 @@
     }
     
 }
-
-
 
 -(void) sortDistance:(NSMutableDictionary *) distance
         sortLocation:(NSMutableDictionary *) location{

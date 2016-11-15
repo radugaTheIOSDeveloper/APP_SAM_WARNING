@@ -9,7 +9,10 @@
 #import "SetPassController.h"
 #import "API.h"
 
+
 @interface SetPassController ()
+
+@property (strong, nonatomic) NSString * phone;
 
 @end
 
@@ -32,6 +35,9 @@
     self.activityIndicator.color = [UIColor whiteColor];
     [self.view setUserInteractionEnabled:YES];
     
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    self.phone = [userDefaults objectForKey:@"user_phone"];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,22 +46,30 @@
 
 #pragma mark API
 
--(void) setPass:(NSString *) newPass {
+-(void) registr:(NSString*)numPhone
+       password:(NSString *)password{
     
-    [[API apiManager] setPass:newPass
-                   onSuccess:^(NSDictionary *responseObject) {
-                       
-                       [self.activityIndicator stopAnimating];
-                       [self.view setUserInteractionEnabled:YES];
-                       [self performSegueWithIdentifier:@"success" sender:self];
-                       
-}                  onFailure:^(NSError *error, NSInteger statusCode) {
-
-                        [self.activityIndicator stopAnimating];
-                        [self.view setUserInteractionEnabled:YES];
-                        [self alerts];
+    [[API apiManager]passRegistr:numPhone
+                        password:password onSuccess:^(NSDictionary *responseObject) {
+                            
+                            NSLog(@"%@",responseObject);
+                            if ([responseObject objectForKey:@"token"]) {
+                            [[API apiManager]setToken:[NSString stringWithFormat:@"Token %@",[responseObject objectForKey:@"token"]]];
+                                
+                                [self.activityIndicator stopAnimating];
+                                [self performSegueWithIdentifier:@"success" sender:self];
+                            }
+                            
+                            
+                      }onFailure:^(NSError *error, NSInteger statusCode) {
+                          [self.activityIndicator stopAnimating];
+                          NSLog(@"%@",error);
 }];
+    
+    
 }
+
+
 
 -(void) alerts{
     
@@ -100,7 +114,7 @@
     if ([textField isEqual:self.pasTextField]) {
         self.activityIndicator.alpha = 1.f;
         [self.activityIndicator startAnimating];
-        [self setPass:self.pasTextField.text];
+        [self registr:self.phone password:self.pasTextField.text];
     }
     return YES;
 }
@@ -115,7 +129,7 @@
     
     self.activityIndicator.alpha = 1.f;
     [self.activityIndicator startAnimating];
-    [self setPass:self.pasTextField.text];
+    [self registr:self.phone password:self.pasTextField.text];
 
 }
 

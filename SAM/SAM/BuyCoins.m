@@ -30,6 +30,8 @@
     
     [super viewDidLoad];
     
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"LogoMenu"]];
+    
     four = 0;
     two = 0;
     buy50 = 0;
@@ -37,7 +39,7 @@
     totalPrice = 0;
     self.lableRub.alpha = 0.f;
     self.lableQuantity.alpha = 0.f;
-    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoMenu"]];
+  
     self.buyCoinsOtl.enabled = NO;
     [self backButton];
     

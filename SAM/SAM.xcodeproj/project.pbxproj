@@ -55,10 +55,13 @@
 		CE590DDA1DCF405E00816B4E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE590DD91DCF405E00816B4E /* SWRevealViewController.m */; };
 		CE6BE0AA1D8815D4000F5CE4 /* StartScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6BE0A91D8815D4000F5CE4 /* StartScreenView.m */; };
 		CE6BE0AD1D884F15000F5CE4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6BE0AC1D884F15000F5CE4 /* WebKit.framework */; };
+		CE7B6D391DDB34F3004852FB /* libKeychainItemWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B6D381DDB34F3004852FB /* libKeychainItemWrapper.a */; };
+		CE7B6D3D1DDB4626004852FB /* RecoveryPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7B6D3C1DDB4626004852FB /* RecoveryPassword.m */; };
 		CECB7AD31DC75DA2008CA095 /* AppleMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECB7AD21DC75DA2008CA095 /* AppleMapViewController.m */; };
 		CECB7AD51DC75E31008CA095 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECB7AD41DC75E31008CA095 /* CoreLocation.framework */; };
 		CECB7AD91DC7822C008CA095 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECB7AD81DC7822C008CA095 /* NewsViewController.m */; };
 		CED618DC1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = CED618DB1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m */; };
+		CEDA75CC1DD087B6009B1211 /* Support.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDA75CB1DD087B6009B1211 /* Support.m */; };
 		CEE35A911DA2724E008D916C /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE35A901DA2724E008D916C /* API.m */; };
 		CEE7CA001DB0F71A00490B0F /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE7C9FF1DB0F71A00490B0F /* MenuViewController.m */; };
 		CEF84FFC1DB386D800CD7137 /* SkipScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF84FFB1DB386D800CD7137 /* SkipScreen.m */; };
@@ -169,6 +172,10 @@
 		CE6BE0A81D8815D4000F5CE4 /* StartScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScreenView.h; sourceTree = "<group>"; };
 		CE6BE0A91D8815D4000F5CE4 /* StartScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScreenView.m; sourceTree = "<group>"; };
 		CE6BE0AC1D884F15000F5CE4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		CE7B6D371DDB34D0004852FB /* SAM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = SAM.entitlements; path = SAM/SAM.entitlements; sourceTree = "<group>"; };
+		CE7B6D381DDB34F3004852FB /* libKeychainItemWrapper.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKeychainItemWrapper.a; path = "Pods/../build/Debug-iphoneos/KeychainItemWrapper/libKeychainItemWrapper.a"; sourceTree = "<group>"; };
+		CE7B6D3B1DDB4626004852FB /* RecoveryPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecoveryPassword.h; sourceTree = "<group>"; };
+		CE7B6D3C1DDB4626004852FB /* RecoveryPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecoveryPassword.m; sourceTree = "<group>"; };
 		CECB7AD11DC75DA2008CA095 /* AppleMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleMapViewController.h; sourceTree = "<group>"; };
 		CECB7AD21DC75DA2008CA095 /* AppleMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleMapViewController.m; sourceTree = "<group>"; };
 		CECB7AD41DC75E31008CA095 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -176,6 +183,8 @@
 		CECB7AD81DC7822C008CA095 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		CED618DA1DA3D1EA00B0FED3 /* ChoosePaymentMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoosePaymentMethod.h; sourceTree = "<group>"; };
 		CED618DB1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoosePaymentMethod.m; sourceTree = "<group>"; };
+		CEDA75CA1DD087B6009B1211 /* Support.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Support.h; sourceTree = "<group>"; };
+		CEDA75CB1DD087B6009B1211 /* Support.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Support.m; sourceTree = "<group>"; };
 		CEE35A8F1DA2724E008D916C /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
 		CEE35A901DA2724E008D916C /* API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
 		CEE7C9FE1DB0F71A00490B0F /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -193,6 +202,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7B6D391DDB34F3004852FB /* libKeychainItemWrapper.a in Frameworks */,
 				CECB7AD51DC75E31008CA095 /* CoreLocation.framework in Frameworks */,
 				CE6BE0AD1D884F15000F5CE4 /* WebKit.framework in Frameworks */,
 				CE032C961D7D881200851FF4 /* MapKit.framework in Frameworks */,
@@ -253,6 +263,7 @@
 		CE032C611D7D880600851FF4 /* SAM */ = {
 			isa = PBXGroup;
 			children = (
+				CEDA75C91DD087A0009B1211 /* Support */,
 				CECB7AD61DC78218008CA095 /* News */,
 				CECB7AD01DC75D72008CA095 /* MAP */,
 				CEE7C9B11DB0E64D00490B0F /* RevealViewController */,
@@ -395,6 +406,7 @@
 		CE032CF91D7DAB8200851FF4 /* SAM */ = {
 			isa = PBXGroup;
 			children = (
+				CE7B6D371DDB34D0004852FB /* SAM.entitlements */,
 				CE032C611D7D880600851FF4 /* SAM */,
 			);
 			name = SAM;
@@ -422,6 +434,7 @@
 		CE39BA3C1D9406A200C5256A /* Registr */ = {
 			isa = PBXGroup;
 			children = (
+				CE7B6D3A1DDB45EA004852FB /* recovery  */,
 				CE39BA3D1D9406EA00C5256A /* RegistrClass.h */,
 				CE39BA3E1D9406EA00C5256A /* RegistrClass.m */,
 				CE39BA401D94239E00C5256A /* Enter.h */,
@@ -441,6 +454,15 @@
 				CE6BE0A91D8815D4000F5CE4 /* StartScreenView.m */,
 			);
 			name = StartScreen;
+			sourceTree = "<group>";
+		};
+		CE7B6D3A1DDB45EA004852FB /* recovery  */ = {
+			isa = PBXGroup;
+			children = (
+				CE7B6D3B1DDB4626004852FB /* RecoveryPassword.h */,
+				CE7B6D3C1DDB4626004852FB /* RecoveryPassword.m */,
+			);
+			name = "recovery ";
 			sourceTree = "<group>";
 		};
 		CECB7AD01DC75D72008CA095 /* MAP */ = {
@@ -470,6 +492,15 @@
 				CE128D321DA7CF1C00050099 /* PaymentWebView.m */,
 			);
 			name = Yandex;
+			sourceTree = "<group>";
+		};
+		CEDA75C91DD087A0009B1211 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				CEDA75CA1DD087B6009B1211 /* Support.h */,
+				CEDA75CB1DD087B6009B1211 /* Support.m */,
+			);
+			name = Support;
 			sourceTree = "<group>";
 		};
 		CEE35A8E1DA27207008D916C /* singletone */ = {
@@ -518,6 +549,7 @@
 		D56C57A03E8647476ED3869F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE7B6D381DDB34F3004852FB /* libKeychainItemWrapper.a */,
 				CECB7AD41DC75E31008CA095 /* CoreLocation.framework */,
 				57F047F4E6F5015035479EF4 /* libPods-SAM.a */,
 				63E4B72AABD4503A5AE7D0A1 /* libPods-SAMTests.a */,
@@ -591,6 +623,9 @@
 		CE032C571D7D880600851FF4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = freshtech;
 				TargetAttributes = {
@@ -598,6 +633,11 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = HL7PGCM524;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					CE032C771D7D880600851FF4 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -739,6 +779,7 @@
 				CE032CBA1D7D905500851FF4 /* MyNavigationControll.m in Sources */,
 				CE39BA421D94239E00C5256A /* Enter.m in Sources */,
 				CEE7CA001DB0F71A00490B0F /* MenuViewController.m in Sources */,
+				CEDA75CC1DD087B6009B1211 /* Support.m in Sources */,
 				CE032CF41D7DA9BB00851FF4 /* split.c in Sources */,
 				CE53C9751DAE798F004BDB27 /* Payment.m in Sources */,
 				CE53C9721DAE7969004BDB27 /* Payments.m in Sources */,
@@ -750,6 +791,7 @@
 				CE032CB91D7D905500851FF4 /* MyNavigationBar.m in Sources */,
 				CED618DC1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m in Sources */,
 				CE032CEA1D7DA9AA00851FF4 /* qrenc.c in Sources */,
+				CE7B6D3D1DDB4626004852FB /* RecoveryPassword.m in Sources */,
 				CECB7AD31DC75DA2008CA095 /* AppleMapViewController.m in Sources */,
 				CE032CEB1D7DA9AA00851FF4 /* qrinput.c in Sources */,
 				CE2ADAFE1DBE117E005BFAED /* SetPassController.m in Sources */,
@@ -902,11 +944,16 @@
 			baseConfigurationReference = 436258D0220DE5B3CE095429 /* Pods-SAM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SAM/SAM.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = HL7PGCM524;
 				INFOPLIST_FILE = SAM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/KeychainItemWrapper",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = itstack.SAM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -918,11 +965,16 @@
 			baseConfigurationReference = B91BD7A479C9816403620E1B /* Pods-SAM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SAM/SAM.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = HL7PGCM524;
 				INFOPLIST_FILE = SAM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/KeychainItemWrapper",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = itstack.SAM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;

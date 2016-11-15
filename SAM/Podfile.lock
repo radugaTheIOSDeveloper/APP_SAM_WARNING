@@ -14,13 +14,16 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - KeychainItemWrapper (1.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - KeychainItemWrapper
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  KeychainItemWrapper: 67a240172ed669842bc6bc13ed554dcd50469fa2
 
-PODFILE CHECKSUM: 2c5ef27ba818b76bb8c8609405c7d1784f6349c5
+PODFILE CHECKSUM: 2127d5995aca38316ee1b05106cd968112408cae
 
 COCOAPODS: 1.0.0

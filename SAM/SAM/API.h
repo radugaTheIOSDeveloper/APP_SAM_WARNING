@@ -21,8 +21,7 @@
 
 //registr
 
--(void) registerUser:(NSString *)numPhone
-            password:(NSString *)password
+-(void) prepareForRegister:(NSString *)numPhone
            onSuccess:(void(^)(NSDictionary * responseObject)) success
            onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
 
@@ -32,6 +31,11 @@
              onSuccess:(void(^)(NSDictionary * responseObject)) success
              onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
 
+
+-(void) passRegistr:(NSString *)numPhone
+           password:(NSString *)password
+          onSuccess:(void(^)(NSDictionary * responseObject)) success
+          onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
 
 -(void) authUser:(NSString *)username
         password:(NSString *)password
@@ -47,9 +51,8 @@
            onSuccess:(void(^)(NSDictionary * responseObject)) success
            onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
 
-//set registr
+//getEvents
+-(void) getEvents:(void(^)(NSDictionary * responceObject))success
+        onFailure:(void(^)(NSError * error, NSInteger statusCode))failure;
 
--(void) setPass:(NSString *) newPass
-      onSuccess:(void(^)(NSDictionary * responseObject)) success
-      onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
 @end
