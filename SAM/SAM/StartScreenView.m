@@ -18,7 +18,8 @@
     [super viewDidLoad];
     
     self.logoImage.alpha = 0.f;
-    
+
+
     [UIView animateWithDuration:1.6 animations:^{
         self.logoImage.alpha = 1.0f;
     } completion:^(BOOL finished) {
@@ -27,33 +28,60 @@
             CGRect newLogoFrame = self.logoImage.frame;
             newLogoFrame.origin.y= 60.0f;
             self.logoImage.frame=newLogoFrame;
-        } completion:^(BOOL finished) {
-            
-            NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
-                if ([userDefaults integerForKey:@"show_animated"] == 1) {
-                    if ([userDefaults objectForKey:@"token"]) {
+
+                } completion:^(BOOL finished) {
+                    
+                    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+                    
+                    if ([userDefaults integerForKey:@"show_animated"] == 1) {
                         
-                        [self performSegueWithIdentifier:@"mapSegue" sender:self];
+                        if ([userDefaults objectForKey:@"token"]) {
+                                    
+                            [self performSegueWithIdentifier:@"mapSegue" sender:self];
+                            
+                        } else {
+                                    
+                                if ([userDefaults integerForKey:@"need_activate"] == 1) {
+                                    
+                                    [self performSegueWithIdentifier:@"registrSegue" sender:self];
+                                    
+                                } else  {
+                                    
+                                    [self performSegueWithIdentifier:@"enterSegue" sender:self];
+                                    
+                                }
+                            }
+                                
                     } else {
-                        
-                        if ([userDefaults integerForKey:@"need_activate"] == 1) {
-                            
-                            [self performSegueWithIdentifier:@"registrSegue" sender:self];
-                        } else  {
-                            
-                            [self performSegueWithIdentifier:@"enterSegue" sender:self];
-                        }
+                                
+                        [self performSegueWithIdentifier:@"segue" sender:self];
                     }
-                    
-                } else {
-                    
-                    [self performSegueWithIdentifier:@"segue" sender:self];
-                }
-        }];
+                            
+                }];
         
-    }];
+            }];
     
 }
+
+-(void) alert {
+    
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:@"Ошибка соединения"
+                                  message:@"Проверьте интернет подключение"
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* yesButton = [UIAlertAction
+                                actionWithTitle:@"OK"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action)
+                                {
+                                }];
+    
+    [alert addAction:yesButton];
+    [self presentViewController:alert animated:YES completion:nil];
+
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

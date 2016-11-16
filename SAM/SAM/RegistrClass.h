@@ -13,12 +13,9 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *logoSAM;
 @property (weak, nonatomic) IBOutlet UILabel *lableRegist;
-
 @property (weak, nonatomic) IBOutlet UITextField *textField;
-
 @property (weak, nonatomic) IBOutlet UIImageView *line;
 @property (weak, nonatomic) IBOutlet UIButton *btnRegistr;
-
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 - (IBAction)actBtnRegistr:(id)sender;
@@ -26,9 +23,6 @@
 
 @property (strong , nonatomic) NSString * demoTel;
 @property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
-
-
-//array
 
 
 @end

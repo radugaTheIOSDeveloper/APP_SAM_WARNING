@@ -10,6 +10,8 @@
 
 @interface RecoveryPassword () <UITextFieldDelegate>
 
+@property (assign, nonatomic) BOOL status;
+
 @end
 
 @implementation RecoveryPassword
@@ -17,8 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-   // self.smsTextField.alpha = 0.f;
-
+    self.status = false;
+    self.smsTextField.alpha = 0.f;
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
 }
@@ -34,16 +36,16 @@
 
 -(void) textFieldDidBeginEditing:(UITextField *)textField{
     
-    self.logo.alpha = 0;
+    self.titleLabel.alpha = 0.f;
     CGPoint scrollPoint = CGPointMake(0, 130);
-    [self.scrollView setContentOffset:scrollPoint animated:NO];
+    [self.scrollView setContentOffset:scrollPoint animated:YES];
     
 }
 
 -(void)textFieldDidEndEditing:(UITextField*)textField{
     
-    self.logo.alpha = 1;
-    [self.scrollView setContentOffset:CGPointZero animated:NO];
+    self.titleLabel.alpha = 1.f;
+    [self.scrollView setContentOffset:CGPointZero animated:YES];
 }
 
 - (BOOL)textFieldShouldClear:(UITextField *)textField{
@@ -77,25 +79,30 @@
 //}
 
 //
-//-(void) animatedText {
-//    
-//    [UIView animateWithDuration:0.6f animations:^{
-//        self.telTextField.alpha = 0.f;
-//    } completion:^(BOOL finished) {
-//        [UIView animateWithDuration:0.8f animations:^{
-//            self.smsTextField.alpha = 1.f;
-//            
-//        } completion:^(BOOL finished) {
-//            NSLog(@"finish");
-//        }];
-//    }];
-//    
-//}
-
-- (IBAction)recoveryAct:(id)sender {
-  //  [self animatedText];
+-(void) animatedText {
+    
+    [UIView animateWithDuration:0.6f animations:^{
+        self.textFieldNum.alpha = 0.f;
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.8f animations:^{
+            [self dismissKeyboard];
+            self.detailLabel.text = @"На ваш номер отправлено SMS сообщение с кодом подтверждения";
+            self.smsTextField.alpha = 1.f;
+            
+        } completion:^(BOOL finished) {
+            self.status = true;
+        }];
+    }];
+    
 }
 
+- (IBAction)recoveryAct:(id)sender {
+    if (self.status == false) {
+        [self animatedText];
+    } else {
+        [self performSegueWithIdentifier:@"newPassword" sender:self];
+    }
+}
 
 - (IBAction)textFieldActTel:(id)sender {
     self.textFieldNum.text = @"+7";

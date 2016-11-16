@@ -57,6 +57,7 @@
 		CE6BE0AD1D884F15000F5CE4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6BE0AC1D884F15000F5CE4 /* WebKit.framework */; };
 		CE7B6D391DDB34F3004852FB /* libKeychainItemWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B6D381DDB34F3004852FB /* libKeychainItemWrapper.a */; };
 		CE7B6D3D1DDB4626004852FB /* RecoveryPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7B6D3C1DDB4626004852FB /* RecoveryPassword.m */; };
+		CEA421F01DDC49BE00917653 /* NewPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA421EF1DDC49BE00917653 /* NewPassword.m */; };
 		CECB7AD31DC75DA2008CA095 /* AppleMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECB7AD21DC75DA2008CA095 /* AppleMapViewController.m */; };
 		CECB7AD51DC75E31008CA095 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECB7AD41DC75E31008CA095 /* CoreLocation.framework */; };
 		CECB7AD91DC7822C008CA095 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECB7AD81DC7822C008CA095 /* NewsViewController.m */; };
@@ -176,6 +177,8 @@
 		CE7B6D381DDB34F3004852FB /* libKeychainItemWrapper.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKeychainItemWrapper.a; path = "Pods/../build/Debug-iphoneos/KeychainItemWrapper/libKeychainItemWrapper.a"; sourceTree = "<group>"; };
 		CE7B6D3B1DDB4626004852FB /* RecoveryPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecoveryPassword.h; sourceTree = "<group>"; };
 		CE7B6D3C1DDB4626004852FB /* RecoveryPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecoveryPassword.m; sourceTree = "<group>"; };
+		CEA421EE1DDC49BE00917653 /* NewPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPassword.h; sourceTree = "<group>"; };
+		CEA421EF1DDC49BE00917653 /* NewPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPassword.m; sourceTree = "<group>"; };
 		CECB7AD11DC75DA2008CA095 /* AppleMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleMapViewController.h; sourceTree = "<group>"; };
 		CECB7AD21DC75DA2008CA095 /* AppleMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleMapViewController.m; sourceTree = "<group>"; };
 		CECB7AD41DC75E31008CA095 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -461,6 +464,8 @@
 			children = (
 				CE7B6D3B1DDB4626004852FB /* RecoveryPassword.h */,
 				CE7B6D3C1DDB4626004852FB /* RecoveryPassword.m */,
+				CEA421EE1DDC49BE00917653 /* NewPassword.h */,
+				CEA421EF1DDC49BE00917653 /* NewPassword.m */,
 			);
 			name = "recovery ";
 			sourceTree = "<group>";
@@ -785,6 +790,7 @@
 				CE53C9721DAE7969004BDB27 /* Payments.m in Sources */,
 				CE032CFD1D7DABBB00851FF4 /* Help.m in Sources */,
 				CEE35A911DA2724E008D916C /* API.m in Sources */,
+				CEA421F01DDC49BE00917653 /* NewPassword.m in Sources */,
 				CE032CD81D7D99A700851FF4 /* BuyCoins.m in Sources */,
 				CECB7AD91DC7822C008CA095 /* NewsViewController.m in Sources */,
 				CEF84FFF1DB386FC00CD7137 /* PageContentController.m in Sources */,

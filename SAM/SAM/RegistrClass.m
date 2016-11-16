@@ -48,8 +48,8 @@
                             [self.activityIndicator stopAnimating];
                             [self.view setUserInteractionEnabled:YES];
                             self.demoTel = numTel;
+                            [self performSegueWithIdentifier:@"confirm" sender:self];
                             
-        [self performSegueWithIdentifier:@"confirm" sender:self];
     }                   onFailure:^(NSError *error, NSInteger statusCode) {
         
                             [self.activityIndicator stopAnimating];
@@ -61,7 +61,7 @@
 
 -(void) alerts{
     
-    UIAlertController * alert=   [UIAlertController
+    UIAlertController * alert = [UIAlertController
                                   alertControllerWithTitle:@"Ошибка регистрации!"
                                   message:@"Недопустимый номер телефона!"
                                   preferredStyle:UIAlertControllerStyleAlert];
@@ -161,7 +161,6 @@
 #pragma mark Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
     ConfirmRegister * conReg;
     if ([[segue identifier] isEqualToString:@"confirm"]){
         conReg = [segue destinationViewController];

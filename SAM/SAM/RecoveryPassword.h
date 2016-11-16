@@ -12,14 +12,13 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *logo;
+@property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *lineOne;
-
 @property (weak, nonatomic) IBOutlet UIButton *btnRecovey;
 
-- (IBAction)recoveryAct:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldNum;
+@property (weak, nonatomic) IBOutlet UITextField *smsTextField;
+
 - (IBAction)textFieldActTel:(id)sender;
-
-
+- (IBAction)recoveryAct:(id)sender;
 @end

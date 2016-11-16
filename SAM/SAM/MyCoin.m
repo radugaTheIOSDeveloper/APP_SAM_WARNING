@@ -20,11 +20,11 @@
 @property (strong, nonatomic) NSString * typeQR;
 @property (strong, nonatomic) UIButton * buyCoin;
 @property (strong, nonatomic) UIRefreshControl * refreshControl;
+@property (assign, nonatomic) BOOL statusInternet;
 
 @end
 
 @implementation MyCoin
-
 
 #pragma mark ViewDidLoad
 
@@ -34,8 +34,6 @@
     
     [self getUserQRCode];
     [self.tableView reloadData];
-    
-  //  self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoMenu"]];
     
     self.activeView.backgroundColor = [UIColor redColor];
     self.pastView.backgroundColor = [UIColor whiteColor];
@@ -78,7 +76,6 @@
 
 #pragma marl API DELETE
 
-
 -(void) deleteUsedQR:(NSString *) qrCodeID {
     [[API apiManager] deleteUsedQR:qrCodeID
                          onSuccess:^(NSDictionary *responseObject) {
@@ -117,7 +114,7 @@
     
     [[API apiManager]getUserQR:^(NSDictionary *responceObject) {
         NSLog(@"%@",responceObject);        
-        self.activityIndicator.alpha = 1.f;
+        self.activityIndicator.alpha = 0.f;
         [self.view setUserInteractionEnabled:YES];
         [self.activityIndicator stopAnimating];
         
@@ -125,21 +122,22 @@
         self.activeCount = active;
         NSMutableArray * nonActive = [responceObject valueForKey:@"inactive"];
         self.pastCount = nonActive;
-        [self.tableView reloadData];
         [self.refreshControl endRefreshing];
+        self.statusInternet = true;
+        [self.tableView reloadData];
 
     } onFailure:^(NSError *error, NSInteger statusCode) {
         NSLog(@"%@",error);
-        self.activityIndicator.alpha = 1.f;
+        self.activityIndicator.alpha = 0.f;
         [self.view setUserInteractionEnabled:YES];
         [self.activityIndicator stopAnimating];
+        self.statusInternet = false;
+        [self.tableView reloadData];
         
     }];
 }
 
 #pragma mark Refresh
-
-
 
 -(void) refreshView: (UIRefreshControl *) refresh{
     
@@ -164,58 +162,87 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 85.f;
+    
+    if (self.statusInternet == false) {
+        return 40.f;
+    } else {
+        return 85.f;
+    }
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     if (self.indexBtn == 0) {
+            
+            if (self.statusInternet == false) {
+                return 1;
+            } else {
+                
+                if ([self.activeCount count] == 0) {
+                    return  1;
+                } else {
+                    return [self.activeCount count];
+                }
+            }
         
-        if ([self.activeCount count] == 0) {
-            return  1;
+        } else if (self.indexBtn == 1) {
+            
+            if (self.statusInternet == false) {
+                return 1;
+            }else {
+                if ([self.pastCount count] == 0) {
+                    return  1;
+                } else {
+                    return [self.pastCount count];
+                }
+            }
+        
         } else {
-            return [self.activeCount count];
+            return 0;
         }
-        
-        
-    } else if (self.indexBtn == 1) {
-        
-        if ([self.pastCount count] == 0) {
-            return  1;
-        } else {
-            return [self.pastCount count];
-        }
-
-        
-    } else {
-        
-        return 0;
-        
-    }
 
 }
+    
+    
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     static NSString * ideActive = @"cell";
     static NSString * idePast = @"callPast";
     static NSString * ideNo = @"cellNoBuy";
+    static NSString * ideInternet = @"errorCell";
+    
     
     if (self.indexBtn == 0) {
         
-        if ([self.activeCount count] == 0) {
+        if (self.statusInternet == false) {
             
-            UITableViewCell * cellNoBuy = [tableView dequeueReusableCellWithIdentifier:ideNo];
-            UILabel * nonLabel = (UILabel *)[cellNoBuy.contentView viewWithTag:97];
-            nonLabel.text = @"У вас нет покупок.Чтобы приобрести жетоны нажмите на \"+\"";
+            UITableViewCell * cellIdeInternet = [tableView dequeueReusableCellWithIdentifier:ideInternet];
+            UILabel * label = (UILabel *)[cellIdeInternet.contentView viewWithTag:107];
+            label.text = @"Нет доступа к сети.\nОжидание соединения...";
             self.tableView.allowsSelection = NO;
             self.tableView.scrollEnabled = NO;
             self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
+            return cellIdeInternet;
             
-            return cellNoBuy;
+        } else {
             
+            if ([self.activeCount count] == 0) {
+                
+                UITableViewCell * cellNoBuy = [tableView dequeueReusableCellWithIdentifier:ideNo];
+                UILabel * nonLabel = (UILabel *)[cellNoBuy.contentView viewWithTag:97];
+                nonLabel.text = @"У вас нет покупок.Чтобы приобрести жетоны нажмите на \"+\"";
+                self.tableView.allowsSelection = NO;
+                self.tableView.scrollEnabled = NO;
+                self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+                
+                return cellNoBuy;
+                
             } else {
-            
+                
                 self.tableView.scrollEnabled = YES;
                 self.tableView.allowsSelection = YES;
                 self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
@@ -226,31 +253,47 @@
                 UILabel * date = (UILabel *)[cellACtive.contentView viewWithTag:12];
                 UILabel * detailLabel = (UILabel *)[cellACtive.contentView viewWithTag:60];
                 detailLabel.text = [NSString stringWithFormat:@"Жетонов на 4 минуты: %@ Жетонов на 2 минуты: %@",[curCoinActive objectForKey:@"4minutes_str"],[curCoinActive objectForKey:@"2minutes_str"]];
-            
+                
                 imageCoin.image = [UIImage imageNamed:@"coinPast"];
                 nameSam.textColor = [UIColor colorWithRed:111/255.0f green:113/255.0f blue:121/255.0f alpha:1];
                 nameSam.text = [curCoinActive objectForKey:@"minutes_str"];
                 date.text = [curCoinActive objectForKey:@"pay_date"];
-            
-                    return cellACtive;
-            
+                
+                return cellACtive;
+                
             }
+
+        }
         
-        } else if (self.indexBtn == 1) {
         
-            if ([self.pastCount count] == 0) {
+    } else if (self.indexBtn == 1) {
+        
+        if (self.statusInternet == false) {
+                
+            UITableViewCell * cellIdeInternet = [tableView dequeueReusableCellWithIdentifier:ideInternet];
+            UILabel * label = (UILabel *)[cellIdeInternet.contentView viewWithTag:107];
+            label.text = @"Нет доступа к сети.\nОжидание соединения...";
+            self.tableView.allowsSelection = NO;
+            self.tableView.scrollEnabled = NO;
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+            return cellIdeInternet;
             
-                UITableViewCell * cellNoBuys = [tableView dequeueReusableCellWithIdentifier:ideNo];
-                UILabel * nonLabel = (UILabel *)[cellNoBuys.contentView viewWithTag:97];
-                nonLabel.text = @"У вас нет использованных жетонов";
-                self.tableView.allowsSelection = NO;
-                self.tableView.scrollEnabled = NO;
-                self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
             
-                return cellNoBuys;
-            
+            } else {
+                
+                if ([self.pastCount count] == 0) {
+                    
+                    UITableViewCell * cellNoBuys = [tableView dequeueReusableCellWithIdentifier:ideNo];
+                    UILabel * nonLabel = (UILabel *)[cellNoBuys.contentView viewWithTag:97];
+                    nonLabel.text = @"У вас нет использованных жетонов";
+                    self.tableView.allowsSelection = NO;
+                    self.tableView.scrollEnabled = NO;
+                    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+                    
+                    return cellNoBuys;
+                    
                 } else {
-            
+                    
                     self.tableView.scrollEnabled = YES;
                     self.tableView.allowsSelection = YES;
                     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
@@ -265,15 +308,18 @@
                     nameSam.textColor = [UIColor colorWithRed:236/255.0f green:88/255.0f blue:98/255.0f alpha:1];
                     nameSam.text = [curCoinPast objectForKey:@"minutes_str"];
                     date.text = [curCoinPast objectForKey:@"pay_date"];
-        
+                    
                     return cellPast;
                 }
+
+            }
             
         } else {
             
             return nil;
-    }
+        }
 }
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
