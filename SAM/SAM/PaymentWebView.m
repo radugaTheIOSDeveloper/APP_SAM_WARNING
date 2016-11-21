@@ -27,9 +27,7 @@
     NSString *urlString = @"https://demomoney.yandex.ru/eshop.xml";
     NSURL *url = [NSURL URLWithString:urlString];
     NSString *body = [NSString stringWithFormat: @"shopId=%@&scid=%@&sum=%@&customerNumber=%@&paymentType=%@&article=%@", @"71175",@"541436",[[Payment save]getMySum],[[Payment save]getPhoneNumber],self.pymentType,[[Payment save]getMyArticle]];
-    
-//    NSLog(@"%@",body);
-//    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+
     
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:60.0];
     [request setHTTPMethod: @"POST"];

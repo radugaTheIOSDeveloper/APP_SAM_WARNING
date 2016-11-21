@@ -82,9 +82,9 @@
 //    }
 }
 
-
 - (IBAction)btnClose:(id)sender {
     [[API apiManager]setToken:NULL];
     [self performSegueWithIdentifier:@"closeApp" sender:self];
 }
+
 @end

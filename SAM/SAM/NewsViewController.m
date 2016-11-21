@@ -36,11 +36,9 @@
     }];
 }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-  //self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoMenu"]];
+
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 
     SWRevealViewController *revealViewController = self.revealViewController;
@@ -50,38 +48,20 @@
         [self.revealButtonItem setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
-    
-    
     self.arNews = [NSMutableArray array];
-      //  _groupArr = [[NSArray alloc] initWithObjects:_array, nil];
- 
-//    self.tableView.estimatedRowHeight = 400.0;
-//    self.tableView.rowHeight = UITableViewAutomaticDimension;
-
 
     [self getEvents];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
 #pragma mark UITableViewDelegate
-//
-//-(CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-//    return 50.f;
-//}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 0.5f;
 }
-
-
-
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-//    return 1;
-//}
 
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     UIView *tempView=[[UIView alloc]init];
@@ -89,7 +69,6 @@
     tempView.backgroundColor=[UIColor lightGrayColor];
     return tempView;
 }
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
@@ -100,19 +79,16 @@
     }
 }
 
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if ([self.arNews count] == 0) {
         return 50.f;
     } else{
-        return  520.f;
+        return 520.f;
     }
-    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     
     if ([self.arNews count] == 0) {
         
@@ -136,7 +112,6 @@
         detail.text = [curNews objectForKey:@"eventDescription"];
         
         UIImageView * images = (UIImageView *)[cell.contentView viewWithTag:871];
-        //images.image = [UIImage imageNamed:@"news"];
         NSString * strUrl;
         NSURL *url;
         NSURLRequest *imageRequest;
@@ -153,7 +128,6 @@
                                failure:nil];
         
         return cell;
-        
     }
     
 }

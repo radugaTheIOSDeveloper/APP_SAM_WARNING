@@ -21,8 +21,19 @@
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor redColor];
     pageControl.backgroundColor = [UIColor whiteColor];
-    // Override point for customization after application launch.
+    
+    [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+     [[UIApplication sharedApplication] registerForRemoteNotifications];
+    
     return YES;
+}
+//push
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken  {
+    NSLog(@"My token is: %@", deviceToken);
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    NSLog(@"Failed to get token, error: %@", error);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

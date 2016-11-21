@@ -15,9 +15,11 @@
 
 @property (strong, nonatomic) NSArray * sortedDistance;
 @property (strong, nonatomic) NSArray * sortedLocation;
+@property (strong, nonatomic) NSArray * sortedImages;
 @property (nonatomic, strong) CLLocationManager *myLocationManager;
 @property (strong, nonatomic) NSMutableDictionary * distance;
 @property (strong, nonatomic) NSMutableDictionary * locations;
+@property (strong, nonatomic) NSMutableDictionary * imageMap;
 @property (assign, nonatomic) NSInteger status;
 @end
 
@@ -35,8 +37,7 @@
             [self start];
         
     }else {
-            UIAlertView *errorAlert = [[UIAlertView alloc]
-                                             initWithTitle:@"Error" message:@"Failed to Get Your Location"
+            UIAlertView *errorAlert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Failed to Get Your Location"
                                              delegate:nil
                                              cancelButtonTitle:@"OK"
                                              otherButtonTitles:nil];
@@ -55,10 +56,11 @@
     CLLocation *location4 = [[CLLocation alloc] initWithLatitude:54.209238 longitude:37.645939];
     CLLocation *location5 = [[CLLocation alloc] initWithLatitude:54.167056 longitude:37.631806];
     CLLocation *location6 = [[CLLocation alloc] initWithLatitude:54.211388 longitude:37.696394];
-    CLLocation *location7 = [[CLLocation alloc] initWithLatitude:54.196345 longitude:37.604139];
+    
     
     self.distance = [NSMutableDictionary dictionary];
     self.locations = [NSMutableDictionary dictionary];
+    self.imageMap = [NSMutableDictionary dictionary];
     
     float betweenDistance = [startLocation distanceFromLocation:location];
     float betweenDistance1 = [startLocation distanceFromLocation:location1];
@@ -67,8 +69,7 @@
     float betweenDistance4 = [startLocation distanceFromLocation:location4];
     float betweenDistance5= [startLocation distanceFromLocation:location5];
     float betweenDistance6 = [startLocation distanceFromLocation:location6];
-    float betweenDistance7 = [startLocation distanceFromLocation:location7];
-    
+
     [self.locations setObject:@(betweenDistance/1000) forKey:location];
     [self.locations setObject:@(betweenDistance1/1000) forKey:location1];
     [self.locations setObject:@(betweenDistance2/1000) forKey:location2];
@@ -76,7 +77,14 @@
     [self.locations setObject:@(betweenDistance4/1000) forKey:location4];
     [self.locations setObject:@(betweenDistance5/1000) forKey:location5];
     [self.locations setObject:@(betweenDistance6/1000) forKey:location6];
-    [self.locations setObject:@(betweenDistance7/1000) forKey:location7];
+    
+    [self.imageMap setObject:@(betweenDistance/1000) forKey:@"1"];
+    [self.imageMap setObject:@(betweenDistance1/1000) forKey:@"2"];
+    [self.imageMap setObject:@(betweenDistance2/1000) forKey:@"3"];
+    [self.imageMap setObject:@(betweenDistance3/1000) forKey:@"4"];
+    [self.imageMap setObject:@(betweenDistance4/1000) forKey:@"5"];
+    [self.imageMap setObject:@(betweenDistance5/1000) forKey:@"6"];
+    [self.imageMap setObject:@(betweenDistance6/1000) forKey:@"7"];
     
     [self.distance setObject:@(betweenDistance/1000) forKey:@"г. Новомосковск, ул. Космонавтов (где автосалон КИА)"];
     [self.distance setObject:@(betweenDistance1/1000) forKey: @"г. Щекино, пос.Первомайский, ул.Пролетарская, д.19"];
@@ -85,9 +93,8 @@
     [self.distance setObject:@(betweenDistance4/1000) forKey:@"г. Тула, Центральный район, пересечение ул. Каракозова"];
     [self.distance setObject:@(betweenDistance5/1000) forKey: @"г. Тула, Центральный район, ул. Рязанская, дом 46-а"];
     [self.distance setObject:@(betweenDistance6/1000) forKey: @"г. Тула, Пролетарский район, ул. Вильямса (напротив д. 46)"];
-    [self.distance setObject:@(betweenDistance7/1000) forKey:@"Тест проверка"];
     
-    [self sortDistance:self.distance sortLocation:self.locations];
+    [self sortDistance:self.distance sortLocation:self.locations sortImages:self.imageMap];
     
     self.status = 1;
     [self.tableView reloadData];
@@ -119,7 +126,8 @@
 }
 
 -(void) sortDistance:(NSMutableDictionary *) distance
-        sortLocation:(NSMutableDictionary *) location{
+        sortLocation:(NSMutableDictionary *) location
+          sortImages:(NSMutableDictionary*) images{
 
     self.sortedDistance = [NSArray array];
     self.sortedDistance = [distance keysSortedByValueUsingComparator: ^(id obj1, id obj2)
@@ -151,7 +159,21 @@
                          
                          return (NSComparisonResult)NSOrderedSame;
                      }];
-    
+
+    self.sortedImages = [NSArray array];
+    self.sortedImages = [images keysSortedByValueUsingComparator: ^(id obj1, id obj2)
+                           {
+                               if ([obj1 floatValue] > [obj2 floatValue])
+                               {
+                                   return (NSComparisonResult)NSOrderedDescending;
+                               }
+                               if ([obj1 floatValue] < [obj2 floatValue])
+                               {
+                                   return (NSComparisonResult)NSOrderedAscending;
+                               }
+                               
+                               return (NSComparisonResult)NSOrderedSame;
+                           }];
 
     
 }
@@ -179,22 +201,25 @@
     
     NSMutableArray* rowss = [[NSMutableArray alloc] init];
     NSMutableArray* addr = [[NSMutableArray alloc] init];
+    NSMutableArray * images = [[NSMutableArray alloc]init];
     
+
     for (NSString* key in self.sortedDistance)
     {
         CGFloat distance = [[self.distance objectForKey:key] floatValue];
         [rowss addObject:[NSString stringWithFormat:@"До мойки осталось %.02f км", distance]];
         [addr addObject:key];
-        
+    }
+    for (NSString* keys in self.sortedImages){
+        [images addObject:keys];
     }
     
     UILabel * addrLabel = (UILabel*)[cell.contentView viewWithTag:1];
     UILabel * distance = (UILabel*)[cell.contentView viewWithTag:7];
-    
     UIImageView * imageLogo = (UIImageView*)[cell.contentView viewWithTag:2];
     addrLabel.text = [addr objectAtIndex:indexPath.row];
     distance.text = [rowss objectAtIndex:indexPath.row];
-    imageLogo.image = [UIImage imageNamed:@"bg"];
+    imageLogo.image = [UIImage imageNamed:[images objectAtIndex:indexPath.row]];
     
     return cell;
 }
@@ -209,17 +234,16 @@
         [addrs addObject:key];
     }
     
+    NSLog(@"%@",addrs);
     CLLocation * location = [addrs objectAtIndex:indexPath.row];
     CGFloat strLatitude = location.coordinate.latitude;
     CGFloat strLongitude = location.coordinate.longitude;
     
     NSString *appleLink2 = [NSString stringWithFormat:@"http://maps.apple.com/?sll=&daddr=%f,%f&t=s",strLatitude,strLongitude];
-    NSURL *URL = [NSURL URLWithString:appleLink2];
- 
-    if([[UIApplication sharedApplication] canOpenURL:URL]){ dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{ [[UIApplication sharedApplication] openURL:URL];
-    });
-    }
     
+    NSURL * URL = [NSURL URLWithString:appleLink2];
+    UIApplication *application = [UIApplication sharedApplication];
+    [application openURL:URL options:@{} completionHandler:nil];
 }
 
 @end

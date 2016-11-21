@@ -86,7 +86,7 @@
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.8f animations:^{
             [self dismissKeyboard];
-            self.detailLabel.text = @"На ваш номер отправлено SMS сообщение с кодом подтверждения";
+            self.detailLabel.text = @"На Ваш номер отправлено SMS сообщение с кодом подтверждения";
             self.smsTextField.alpha = 1.f;
             
         } completion:^(BOOL finished) {

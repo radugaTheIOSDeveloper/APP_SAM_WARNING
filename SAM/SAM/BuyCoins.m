@@ -134,14 +134,11 @@
         self.lableQuantity.alpha = 1.f;
         self.lableRub.alpha = 1.f;
         self.buyCoinsOtl.enabled = YES;
-        //Максон поменял # на * потому что ебанный raspberry pi не читает #
         NSString * title = [NSString stringWithFormat:@"%ld",(long)buttonTitle];
         self.lableQuantity.text = title;
         [self.buyCoinsOtl setTitle:@"" forState:UIControlStateNormal];
     }
 }
-
-
 
 - (IBAction)buyCoins:(id)sender {
     if (totalPrice == 0) {

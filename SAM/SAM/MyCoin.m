@@ -46,7 +46,7 @@
     [self.buyCoin addTarget:self action:@selector(buyCoinBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.buyCoin setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.buyCoin setBackgroundImage:[UIImage imageNamed:@"btnBuy"] forState:UIControlStateNormal];
-    [self.view addSubview: self.buyCoin];
+    [self.view addSubview:self.buyCoin];
     
     self.refreshControl = [[UIRefreshControl alloc]init];
     [self.tableView addSubview:self.refreshControl];
@@ -77,6 +77,7 @@
 #pragma marl API DELETE
 
 -(void) deleteUsedQR:(NSString *) qrCodeID {
+    
     [[API apiManager] deleteUsedQR:qrCodeID
                          onSuccess:^(NSDictionary *responseObject) {
                              [self getUserQRCode];
@@ -85,19 +86,18 @@
                          } onFailure:^(NSError *error, NSInteger statusCode) {
                              [self alerts];
                          }];
-    
 }
 
 -(void) alerts{
     
-    UIAlertController * alert=   [UIAlertController
-                                alertControllerWithTitle:@"Ошибка удаления"
-                                  message:nil
-                                  preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController * alert = [UIAlertController
+                          alertControllerWithTitle:@"Ошибка удаления"
+                                           message:nil
+                                    preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* yesButton = [UIAlertAction
                                 actionWithTitle:@"OK"
-                                style:UIAlertActionStyleDefault
+                                          style:UIAlertActionStyleDefault
                                 handler:^(UIAlertAction * action)
                                 {
                                     
@@ -127,6 +127,7 @@
         [self.tableView reloadData];
 
     } onFailure:^(NSError *error, NSInteger statusCode) {
+        
         NSLog(@"%@",error);
         self.activityIndicator.alpha = 0.f;
         [self.view setUserInteractionEnabled:YES];
@@ -146,7 +147,7 @@
 }
 
 
-#pragma mark TableView DataSource Delegate
+#pragma mark TableView DataSource/Delegate
 
 - (NSInteger)numberOfSectionsInTableView: (UITableView *) tableView{
     return 1;
@@ -161,163 +162,112 @@
     [super didReceiveMemoryWarning];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    if (self.statusInternet == false) {
-        return 40.f;
-    } else {
-        return 85.f;
-    }
-    
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 85.f;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     if (self.indexBtn == 0) {
             
-            if (self.statusInternet == false) {
-                return 1;
-            } else {
-                
-                if ([self.activeCount count] == 0) {
-                    return  1;
-                } else {
-                    return [self.activeCount count];
-                }
-            }
-        
-        } else if (self.indexBtn == 1) {
-            
-            if (self.statusInternet == false) {
-                return 1;
-            }else {
-                if ([self.pastCount count] == 0) {
-                    return  1;
-                } else {
-                    return [self.pastCount count];
-                }
-            }
-        
+        if ([self.activeCount count] == 0) {
+            return  1;
         } else {
-            return 0;
+            return [self.activeCount count];
         }
 
-}
-    
-    
+    } else if (self.indexBtn == 1) {
+            
+        if ([self.pastCount count] == 0) {
+            return  1;
+        } else {
+            return [self.pastCount count];
+        }
+        
+    } else {
+        return 0;
+    }
 
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     static NSString * ideActive = @"cell";
     static NSString * idePast = @"callPast";
     static NSString * ideNo = @"cellNoBuy";
-    static NSString * ideInternet = @"errorCell";
-    
+//    static NSString * ideInternet = @"errorCell";
     
     if (self.indexBtn == 0) {
         
-        if (self.statusInternet == false) {
-            
-            UITableViewCell * cellIdeInternet = [tableView dequeueReusableCellWithIdentifier:ideInternet];
-            UILabel * label = (UILabel *)[cellIdeInternet.contentView viewWithTag:107];
-            label.text = @"Нет доступа к сети.\nОжидание соединения...";
+        if ([self.activeCount count] == 0) {
+                
+            UITableViewCell * cellNoBuy = [tableView dequeueReusableCellWithIdentifier:ideNo];
+            UILabel * nonLabel = (UILabel *)[cellNoBuy.contentView viewWithTag:97];
+            nonLabel.text = @"У вас нет покупок.Чтобы приобрести жетоны нажмите на \"+\"";
             self.tableView.allowsSelection = NO;
             self.tableView.scrollEnabled = NO;
             self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-
-            return cellIdeInternet;
-            
+                
+            return cellNoBuy;
+                
         } else {
-            
-            if ([self.activeCount count] == 0) {
                 
-                UITableViewCell * cellNoBuy = [tableView dequeueReusableCellWithIdentifier:ideNo];
-                UILabel * nonLabel = (UILabel *)[cellNoBuy.contentView viewWithTag:97];
-                nonLabel.text = @"У вас нет покупок.Чтобы приобрести жетоны нажмите на \"+\"";
-                self.tableView.allowsSelection = NO;
-                self.tableView.scrollEnabled = NO;
-                self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+            self.tableView.scrollEnabled = YES;
+            self.tableView.allowsSelection = YES;
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+            NSDictionary * curCoinActive = [self.activeCount objectAtIndex:indexPath.row];
+            UITableViewCell * cellACtive = [tableView dequeueReusableCellWithIdentifier:ideActive];
+            UIImageView * imageCoin = (UIImageView *)[cellACtive.contentView viewWithTag:10];
+            UILabel * nameSam = (UILabel *)[cellACtive.contentView viewWithTag:11];
+            UILabel * date = (UILabel *)[cellACtive.contentView viewWithTag:12];
+            UILabel * detailLabel = (UILabel *)[cellACtive.contentView viewWithTag:60];
+            detailLabel.text = [NSString stringWithFormat:@"Жетонов на 4 минуты: %@ Жетонов на 2 минуты: %@",[curCoinActive objectForKey:@"4minutes_str"],[curCoinActive objectForKey:@"2minutes_str"]];
                 
-                return cellNoBuy;
+            imageCoin.image = [UIImage imageNamed:@"coinPast"];
+            nameSam.textColor = [UIColor colorWithRed:111/255.0f green:113/255.0f blue:121/255.0f alpha:1];
+            nameSam.text = [curCoinActive objectForKey:@"minutes_str"];
+            date.text = [curCoinActive objectForKey:@"pay_date"];
                 
-            } else {
-                
-                self.tableView.scrollEnabled = YES;
-                self.tableView.allowsSelection = YES;
-                self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-                NSDictionary * curCoinActive = [self.activeCount objectAtIndex:indexPath.row];
-                UITableViewCell * cellACtive = [tableView dequeueReusableCellWithIdentifier:ideActive];
-                UIImageView * imageCoin = (UIImageView *)[cellACtive.contentView viewWithTag:10];
-                UILabel * nameSam = (UILabel *)[cellACtive.contentView viewWithTag:11];
-                UILabel * date = (UILabel *)[cellACtive.contentView viewWithTag:12];
-                UILabel * detailLabel = (UILabel *)[cellACtive.contentView viewWithTag:60];
-                detailLabel.text = [NSString stringWithFormat:@"Жетонов на 4 минуты: %@ Жетонов на 2 минуты: %@",[curCoinActive objectForKey:@"4minutes_str"],[curCoinActive objectForKey:@"2minutes_str"]];
-                
-                imageCoin.image = [UIImage imageNamed:@"coinPast"];
-                nameSam.textColor = [UIColor colorWithRed:111/255.0f green:113/255.0f blue:121/255.0f alpha:1];
-                nameSam.text = [curCoinActive objectForKey:@"minutes_str"];
-                date.text = [curCoinActive objectForKey:@"pay_date"];
-                
-                return cellACtive;
-                
-            }
-
+            return cellACtive;
         }
         
         
     } else if (self.indexBtn == 1) {
         
-        if (self.statusInternet == false) {
-                
-            UITableViewCell * cellIdeInternet = [tableView dequeueReusableCellWithIdentifier:ideInternet];
-            UILabel * label = (UILabel *)[cellIdeInternet.contentView viewWithTag:107];
-            label.text = @"Нет доступа к сети.\nОжидание соединения...";
+        if ([self.pastCount count] == 0) {
+                    
+            UITableViewCell * cellNoBuys = [tableView dequeueReusableCellWithIdentifier:ideNo];
+            UILabel * nonLabel = (UILabel *)[cellNoBuys.contentView viewWithTag:97];
+            nonLabel.text = @"У вас нет использованных жетонов";
             self.tableView.allowsSelection = NO;
             self.tableView.scrollEnabled = NO;
             self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-            return cellIdeInternet;
-            
-            
-            } else {
-                
-                if ([self.pastCount count] == 0) {
                     
-                    UITableViewCell * cellNoBuys = [tableView dequeueReusableCellWithIdentifier:ideNo];
-                    UILabel * nonLabel = (UILabel *)[cellNoBuys.contentView viewWithTag:97];
-                    nonLabel.text = @"У вас нет использованных жетонов";
-                    self.tableView.allowsSelection = NO;
-                    self.tableView.scrollEnabled = NO;
-                    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+            return cellNoBuys;
                     
-                    return cellNoBuys;
-                    
-                } else {
-                    
-                    self.tableView.scrollEnabled = YES;
-                    self.tableView.allowsSelection = YES;
-                    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-                    NSDictionary * curCoinPast = [self.pastCount objectAtIndex:indexPath.row];
-                    UITableViewCell * cellPast = [tableView dequeueReusableCellWithIdentifier:idePast];
-                    UIImageView * imageCoin = (UIImageView *)[cellPast.contentView viewWithTag:20];
-                    UILabel * nameSam = (UILabel *)[cellPast.contentView viewWithTag:21];
-                    UILabel * date = (UILabel *)[cellPast.contentView viewWithTag:22];
-                    UILabel * detailLabel = (UILabel *)[cellPast.contentView viewWithTag:61];
-                    detailLabel.text = [NSString stringWithFormat:@"Жетонов на 4 минуты: %@ Жетонов на 2 минуты: %@",[curCoinPast objectForKey:@"4minutes_str"],[curCoinPast objectForKey:@"2minutes_str"]];
-                    imageCoin.image = [UIImage imageNamed:@"coinPast"];
-                    nameSam.textColor = [UIColor colorWithRed:236/255.0f green:88/255.0f blue:98/255.0f alpha:1];
-                    nameSam.text = [curCoinPast objectForKey:@"minutes_str"];
-                    date.text = [curCoinPast objectForKey:@"pay_date"];
-                    
-                    return cellPast;
-                }
-
-            }
-            
         } else {
-            
-            return nil;
+                    
+            self.tableView.scrollEnabled = YES;
+            self.tableView.allowsSelection = YES;
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+            NSDictionary * curCoinPast = [self.pastCount objectAtIndex:indexPath.row];
+            UITableViewCell * cellPast = [tableView dequeueReusableCellWithIdentifier:idePast];
+            UIImageView * imageCoin = (UIImageView *)[cellPast.contentView viewWithTag:20];
+            UILabel * nameSam = (UILabel *)[cellPast.contentView viewWithTag:21];
+            UILabel * date = (UILabel *)[cellPast.contentView viewWithTag:22];
+            UILabel * detailLabel = (UILabel *)[cellPast.contentView viewWithTag:61];
+            detailLabel.text = [NSString stringWithFormat:@"Жетонов на 4 минуты: %@ Жетонов на 2 минуты: %@",[curCoinPast objectForKey:@"4minutes_str"],[curCoinPast objectForKey:@"2minutes_str"]];
+            imageCoin.image = [UIImage imageNamed:@"coinPast"];
+            nameSam.textColor = [UIColor colorWithRed:236/255.0f green:88/255.0f blue:98/255.0f alpha:1];
+            nameSam.text = [curCoinPast objectForKey:@"minutes_str"];
+            date.text = [curCoinPast objectForKey:@"pay_date"];
+                    
+            return cellPast;
         }
+            
+    } else {
+        return nil;
+    }
 }
 
 
@@ -330,9 +280,8 @@
          NSDictionary * curCoinPast = [self.pastCount objectAtIndex:indexPath.row];
          self.stringQR = [curCoinPast objectForKey:@"qr_code"];
      }
-    [self performSegueWithIdentifier:@"myBuy" sender:self];
+        [self performSegueWithIdentifier:@"myBuy" sender:self];
 }
-
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -343,13 +292,11 @@
     } else {
         return YES;
     }
-    
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSDictionary * curCoinPast = [self.pastCount objectAtIndex:indexPath.row];
-    
     if (self.indexBtn == 1) {
         
         NSLog(@"%@",[curCoinPast objectForKey:@"qr_code_id"]);
@@ -395,17 +342,14 @@
     self.pastView.backgroundColor = [UIColor whiteColor];
     self.indexBtn = 0;
     [self.tableView reloadData];
-    
 }
 
 - (IBAction)btnPastBuy:(id)sender {
-
     self.activeView.backgroundColor = [UIColor whiteColor];
     self.pastView.backgroundColor = [UIColor redColor];
     self.indexBtn = 1;
     [self.tableView reloadData];
     
 }
-
 
 @end

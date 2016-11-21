@@ -19,9 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-//
     NSMutableAttributedString * str = [[NSMutableAttributedString alloc] initWithString:@"Если у вас возникли проблемы, отправьте письмо на\n support@pomoysam.ru\n Спасибо ждем вас снова!"];
     [str addAttribute: NSLinkAttributeName value: @"http://support@pomoysam.ru" range: NSMakeRange(51, 19)];
     self.textView.attributedText = str;
@@ -37,13 +35,11 @@
         [self.revealButtonItem setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
-
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
 
 @end

@@ -1084,7 +1084,6 @@ const int FrontViewPositionNone = 0xff;
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)recognizer
 {
-    // only allow gesture if no previous request is in process
     if ( _animationQueue.count == 0 )
     {
         if ( recognizer == _panGestureRecognizer )

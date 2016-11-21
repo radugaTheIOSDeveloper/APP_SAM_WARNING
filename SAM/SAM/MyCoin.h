@@ -15,11 +15,8 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *activeOtl;
 @property (weak, nonatomic) IBOutlet UIButton *pastOtl;
-
 @property (weak, nonatomic) IBOutlet UIView *activeView;
-
 @property (weak, nonatomic) IBOutlet UIView *pastView;
-
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 -(void) refreshView: (UIRefreshControl *) refresh;

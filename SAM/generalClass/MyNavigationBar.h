@@ -10,7 +10,7 @@
 
 @interface MyNavigationBar : UINavigationBar
 
-- (void)drawRect:(CGRect)rect ;
+- (void)drawRect:(CGRect)rect;
 
 @end
 
