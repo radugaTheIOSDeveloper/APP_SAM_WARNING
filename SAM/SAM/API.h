@@ -54,5 +54,27 @@
 //getEvents
 -(void) getEvents:(void(^)(NSDictionary * responceObject))success
         onFailure:(void(^)(NSError * error, NSInteger statusCode))failure;
+//resetPassword
+
+-(void) prepareForResetPassword:(NSString *)numPhone
+                      onSuccess:(void(^)(NSDictionary * responseObject)) success
+                      onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
+
+-(void) confirmResetPassword:(NSString *)numPhone
+                 confirmCode:(NSString *)confirmCode
+                   onSuccess:(void(^)(NSDictionary * responseObject)) success
+                   onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
+
+-(void) setNewPassword:(NSString *)newPassword
+              numPhone:(NSString *)numPhone
+             onSuccess:(void(^)(NSDictionary * responseObject)) success
+             onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
+
+// saveAPNSToken
+
+-(void) saveAPNSToken:(NSString *)token
+            onSuccess:(void(^)(NSDictionary * responseObject)) success
+            onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
+
 
 @end

@@ -17,6 +17,8 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
+@property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
+
 - (IBAction)btnConfirm:(id)sender;
 
 @end

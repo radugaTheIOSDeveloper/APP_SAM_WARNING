@@ -224,7 +224,6 @@
     return cell;
 }
 
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     NSMutableArray* addrs = [[NSMutableArray alloc] init];
@@ -242,8 +241,13 @@
     NSString *appleLink2 = [NSString stringWithFormat:@"http://maps.apple.com/?sll=&daddr=%f,%f&t=s",strLatitude,strLongitude];
     
     NSURL * URL = [NSURL URLWithString:appleLink2];
-    UIApplication *application = [UIApplication sharedApplication];
-    [application openURL:URL options:@{} completionHandler:nil];
+//    UIApplication *application = [UIApplication sharedApplication];
+//    [application openURL:URL options:@{} completionHandler:nil];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[UIApplication sharedApplication] openURL:URL];
+    });
+    
 }
 
 @end

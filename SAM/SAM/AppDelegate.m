@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <UserNotificationsUI/UserNotificationsUI.h>
 
 @interface AppDelegate ()
 
@@ -15,8 +16,8 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
     UIPageControl *pageControl = [UIPageControl appearance];
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor redColor];
@@ -25,15 +26,20 @@
     [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
      [[UIApplication sharedApplication] registerForRemoteNotifications];
     
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    NSLog(@"%@",[userDefaults objectForKey:@"token_push"]);
+    
     return YES;
 }
-//push
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken  {
-    NSLog(@"My token is: %@", deviceToken);
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:deviceToken forKey:@"token_push"];
+    NSLog(@"%@",[userDefaults objectForKey:@"token_push"]);
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
-    NSLog(@"Failed to get token, error: %@", error);
+    NSLog(@"Failed to get token, error: %@",error);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

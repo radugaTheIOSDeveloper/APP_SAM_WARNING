@@ -13,6 +13,7 @@
 @interface SetPassController ()
 
 @property (strong, nonatomic) NSString * phone;
+@property (strong, nonatomic) NSString * messageAlert;
 
 @end
 
@@ -52,29 +53,35 @@
     [[API apiManager]passRegistr:numPhone
                         password:password onSuccess:^(NSDictionary *responseObject) {
                             
-                            NSLog(@"%@",responseObject);
+                            self.activityIndicator.alpha = 0.f;
+                            [self.activityIndicator stopAnimating];
+
                             if ([responseObject objectForKey:@"token"]) {
-                            [[API apiManager]setToken:[NSString stringWithFormat:@"Token %@",[responseObject objectForKey:@"token"]]];
                                 
-                                [self.activityIndicator stopAnimating];
+                                [[API apiManager]setToken:[NSString stringWithFormat:@"Token %@",[responseObject objectForKey:@"token"]]];
+                                NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+                                [userDefaults setObject:@"true" forKey:@"token"];
                                 [self performSegueWithIdentifier:@"success" sender:self];
+                            } else {
+                                self.messageAlert = [responseObject objectForKey:@"message"];
+                                [self alerts];
                             }
-                            
-                            
+                              
                       }onFailure:^(NSError *error, NSInteger statusCode) {
+                          
+                          self.activityIndicator.alpha = 0.f;
                           [self.activityIndicator stopAnimating];
-                          NSLog(@"%@",error);
+                          self.messageAlert = @"Повторите попытку";
+                          [self alerts];
+                          
 }];
     
-    
 }
-
-
 
 -(void) alerts{
     
     UIAlertController * alert=   [UIAlertController
-                                  alertControllerWithTitle:@"Ошибка регистрации"                                  message:@"Недопустимый пароль"
+                                  alertControllerWithTitle:@"Ошибка!"                                  message:self.messageAlert
                                   preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* yesButton = [UIAlertAction

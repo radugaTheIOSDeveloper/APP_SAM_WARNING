@@ -54,18 +54,21 @@
                             confirm:confirm
                           onSuccess:^(NSDictionary *responseObject) {
                               
-                              NSLog(@"%@",responseObject);
-                              
-                              self.messages = [responseObject objectForKey:@"message"];
                               [self.activityIndicator stopAnimating];
                               [self.view setUserInteractionEnabled:YES];
-                              [self performSegueWithIdentifier:@"setPass" sender:self];
-                                  
+                              
+                              if ([responseObject objectForKey:@"message"]) {
+                                self.messages = [responseObject objectForKey:@"message"];
+                                  [self alerts];
+                              } else {
+                                  [self performSegueWithIdentifier:@"setPass" sender:self];
+
+                              }
                               
 }                          onFailure:^(NSError *error, NSInteger statusCode) {
-                                    self.typeMessages = @"Ошибка подтверждения!";
                                     [self.activityIndicator stopAnimating];
                                     [self.view setUserInteractionEnabled:YES];
+                                    self.messages = @"Повторите попытку";
                                     [self alerts];
     }];
 }
@@ -73,7 +76,7 @@
 -(void) alerts{
     
     UIAlertController * alert=   [UIAlertController
-                                  alertControllerWithTitle:self.typeMessages
+                                  alertControllerWithTitle:@"Ошибка!"
                                   message:self.messages
                                   preferredStyle:UIAlertControllerStyleAlert];
     

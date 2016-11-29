@@ -28,7 +28,8 @@
     self.textView.selectable = YES;
     [self.textView setTextAlignment:NSTextAlignmentCenter];
 
-    SWRevealViewController *revealViewController = self.revealViewController;
+    SWRevealViewController * revealViewController = self.revealViewController;
+    
     if ( revealViewController )
     {
         [self.revealButtonItem setTarget: self.revealViewController];

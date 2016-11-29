@@ -30,7 +30,7 @@
     NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:0 forKey:@"need_activate"];
     
-        menuItems = @[@"map", @"myCoin", @"help", @"news",@"support"];
+        menuItems = @[@"map", @"myCoin", @"help", @"news",@"support",@"social"];
     
     NSLog(@"%@",[[API apiManager]getToken]);
 }
@@ -64,8 +64,6 @@
     return cell;
 }
 
-
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     // Set the title of navigation bar by using the menu items
@@ -85,6 +83,8 @@
 - (IBAction)btnClose:(id)sender {
     [[API apiManager]setToken:NULL];
     [self performSegueWithIdentifier:@"closeApp" sender:self];
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:NULL forKey:@"token"];
 }
 
 @end

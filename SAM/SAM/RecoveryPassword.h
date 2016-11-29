@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *textFieldNum;
 @property (weak, nonatomic) IBOutlet UITextField *smsTextField;
 
+@property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
+
 - (IBAction)textFieldActTel:(id)sender;
 - (IBAction)recoveryAct:(id)sender;
 @end

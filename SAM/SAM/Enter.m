@@ -14,6 +14,8 @@
 
 @interface Enter ()
 
+@property (strong, nonatomic) NSString * messageAlert;
+
 @end
 
 @implementation Enter
@@ -45,6 +47,20 @@
 
 #pragma mark API
 
+//
+//-(void) saveAPNSToken:(NSString *)token {
+//    
+//    [[API apiManager] saveAPNSToken:token
+//                          onSuccess:^(NSDictionary *responseObject) {
+//                              NSLog(@"%@",responseObject);
+//                             // [self performSegueWithIdentifier:@"enter" sender:self];
+//
+//                          } onFailure:^(NSError *error, NSInteger statusCode) {
+//                              NSLog(@"%@",error);
+//                          }];
+//    
+//}
+
 -(void) authUser:(NSString *) username
         password:(NSString *) password {
     
@@ -53,20 +69,20 @@
      
                     onSuccess:^(NSDictionary *responseObject) {
                         
-                        NSLog(@"%@",responseObject);
+                        [self.activityIndicator stopAnimating];
+                        [self.view setUserInteractionEnabled:YES];
                         
                         if ([responseObject objectForKey:@"token"]) {
-                            
                             [[API apiManager]setToken:[NSString stringWithFormat:@"Token %@",[responseObject objectForKey:@"token"]]];
-                            
                             [[Payment save]setPhoneNumber:username];
-                            
-                            [self.activityIndicator stopAnimating];
-                            [self.view setUserInteractionEnabled:YES];
+                            NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+                            [userDefaults setObject:@"true" forKey:@"token"];
                             [self performSegueWithIdentifier:@"enter" sender:self];
+                            
+                        } else  {
+                            [self alerts];
                         }
-                        
-}                   onFailure:^(NSError *error, NSInteger statusCode) {
+                    }onFailure:^(NSError *error, NSInteger statusCode) {
     
                         [self.view setUserInteractionEnabled:YES];
                         [self.activityIndicator stopAnimating];
@@ -78,7 +94,7 @@
     
     UIAlertController * alert=   [UIAlertController
                                   alertControllerWithTitle:@"Ошибка Авторизации!"
-                                  message:@"Неверные имя пользователя или пароль"
+                                  message:@"Неверное имя пользователя или пароль"
                                   preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* yesButton = [UIAlertAction

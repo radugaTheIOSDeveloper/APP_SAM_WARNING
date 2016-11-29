@@ -7,14 +7,106 @@
 //
 
 #import "RecoveryPassword.h"
+#import "API.h"
+#import "Payment.h"
+
 
 @interface RecoveryPassword () <UITextFieldDelegate>
 
 @property (assign, nonatomic) BOOL status;
+@property (strong, nonatomic) NSString * messages;
+@property (strong, nonatomic) NSString * phoneNumber;
 
 @end
 
 @implementation RecoveryPassword
+
+#pragma mark API
+// num phone
+-(void) prepareForResetPassword:(NSString*)numPhone {
+    
+    [[API apiManager]prepareForResetPassword:numPhone
+                                   onSuccess:^(NSDictionary *responseObject) {
+                                       
+                                     NSLog(@"%@",responseObject);
+                                       
+                                       [self.activityIndicator stopAnimating];
+                                       [self.view setUserInteractionEnabled:YES];
+                                       
+                                       if ([responseObject objectForKey:@"message"]) {
+                                           self.messages = [responseObject objectForKey:@"message"];
+                                           [self alert];
+                                       } else {
+                                           NSLog(@"Good");
+                                           [self animatedText];
+                                       }
+                                       
+                                 } onFailure:^(NSError *error, NSInteger statusCode) {
+                                     
+                                     [self.activityIndicator stopAnimating];
+                                     [self.view setUserInteractionEnabled:YES];
+                                     
+                                     NSLog(@"%@",error);
+                                     self.messages = @"Повторите попытку";
+                                     [self alert];
+                                }];
+    
+}
+
+// confirm code
+
+-(void) confirmResetPassword:(NSString *)numPhone
+                 confirmCode:(NSString *)confirmCode{
+    
+    [[API apiManager]confirmResetPassword:numPhone confirmCode:confirmCode
+                                onSuccess:^(NSDictionary *responseObject) {
+                                    [self.activityIndicator stopAnimating];
+                                    [self.view setUserInteractionEnabled:YES];
+                                    
+                                    if ([responseObject objectForKey:@"message"]) {
+                                        self.messages = [responseObject objectForKey:@"message"];
+                                        [self alert];
+                                        
+                                    } else {
+                                        [[Payment save]setPhoneNumber:numPhone];
+                                        [self performSegueWithIdentifier:@"newPassword" sender:self];
+
+                                    }
+                                    
+                                } onFailure:^(NSError *error, NSInteger statusCode) {
+                                    
+                                    [self.activityIndicator stopAnimating];
+                                    [self.view setUserInteractionEnabled:YES];
+                                    NSLog(@"%@",error);
+                                    self.messages = @"Повторите попытку";
+                                    [self alert];
+}];
+    
+}
+
+#pragma mark Alert 
+
+-(void) alert {
+    
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:@"Ошибка восстановления!"
+                                  message:self.messages
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* yesButton = [UIAlertAction
+                                actionWithTitle:@"OK"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action)
+                                {
+                                }];
+    
+    [alert addAction:yesButton];
+    [self presentViewController:alert animated:YES completion:nil];
+
+    
+}
+
+#pragma mark ViewDidLoad
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,6 +115,14 @@
     self.smsTextField.alpha = 0.f;
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
+    
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.activityIndicator.alpha = 0.f;
+    [self.view addSubview:self.activityIndicator];
+    self.activityIndicator.center = CGPointMake([[UIScreen mainScreen]bounds].size.width/2, [[UIScreen mainScreen]bounds].size.height/2);
+    self.activityIndicator.color = [UIColor whiteColor];
+    [self.view setUserInteractionEnabled:YES];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,30 +153,35 @@
     return NO;
 }
 //
-//- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
 
-//    
-//    if ([textField isEqual:self.textFieldNumber]) {
-//        [self.textFieldPassword becomeFirstResponder];
-//    } else {
-//        [self.view setUserInteractionEnabled:NO];
-//        self.activityIndicator.alpha = 1.f;
-//        [self.activityIndicator startAnimating];
-//        
-//        if (self.textFieldNumber.text.length <= 0) {
-//            [self authUser:self.textFieldNumber.text password:self.textFieldPassword.text];
-//            NSLog(@"%@,%@",self.textFieldNumber.text,self.textFieldPassword.text);
-//        } else {
-//            NSMutableString *stringRange = [self.textFieldNumber.text mutableCopy];
-//            NSRange range = NSMakeRange(0, 1);
-//            [stringRange deleteCharactersInRange:range];
-//            [self authUser:stringRange password:self.textFieldPassword.text];
-//            NSLog(@"%@,%@",stringRange,self.textFieldPassword.text);
-//            
-//        }
-//    }
-//    return YES;
-//}
+    
+       if (self.status == false) {
+           
+           [self.view setUserInteractionEnabled:NO];
+           self.activityIndicator.alpha = 1.f;
+           [self.activityIndicator startAnimating];
+           
+           if ([textField isEqual:self.textFieldNum]) {
+               
+               NSMutableString *stringRange = [self.textFieldNum.text mutableCopy];
+               NSRange range = NSMakeRange(0, 1);
+               [stringRange deleteCharactersInRange:range];
+               self.phoneNumber = stringRange;
+               [self prepareForResetPassword:self.phoneNumber];
+           }
+           
+       } else {
+           
+           [self.view setUserInteractionEnabled:NO];
+           self.activityIndicator.alpha = 1.f;
+           [self.activityIndicator startAnimating];
+           
+           [self confirmResetPassword:self.phoneNumber confirmCode:self.smsTextField.text];
+       }
+    
+    return YES;
+}
 
 //
 -(void) animatedText {
@@ -97,10 +202,26 @@
 }
 
 - (IBAction)recoveryAct:(id)sender {
+    
     if (self.status == false) {
-        [self animatedText];
+
+        [self.view setUserInteractionEnabled:NO];
+        self.activityIndicator.alpha = 1.f;
+        [self.activityIndicator startAnimating];
+        
+        NSMutableString *stringRange = [self.textFieldNum.text mutableCopy];
+        NSRange range = NSMakeRange(0, 1);
+        [stringRange deleteCharactersInRange:range];
+        self.phoneNumber = stringRange;
+        [self prepareForResetPassword:self.phoneNumber];
+        
     } else {
-        [self performSegueWithIdentifier:@"newPassword" sender:self];
+        
+        [self.view setUserInteractionEnabled:NO];
+        self.activityIndicator.alpha = 1.f;
+        [self.activityIndicator startAnimating];
+        
+        [self confirmResetPassword:self.phoneNumber confirmCode:self.smsTextField.text];
     }
 }
 

@@ -12,6 +12,8 @@
 
 @interface RegistrClass ()<UITextFieldDelegate>
 
+@property (strong, nonatomic) NSString * messageAlert;
+
 @end
 
 @implementation RegistrClass
@@ -47,13 +49,21 @@
                             
                             [self.activityIndicator stopAnimating];
                             [self.view setUserInteractionEnabled:YES];
-                            self.demoTel = numTel;
-                            [self performSegueWithIdentifier:@"confirm" sender:self];
+                            
+                            if ([responseObject objectForKey:@"message"]) {
+                                self.messageAlert = [responseObject objectForKey:@"message"];
+                                [self alerts];
+                            } else {
+                                self.demoTel = numTel;
+                                [self performSegueWithIdentifier:@"confirm" sender:self];
+                            }
+                            
                             
     }                   onFailure:^(NSError *error, NSInteger statusCode) {
         
                             [self.activityIndicator stopAnimating];
                             [self.view setUserInteractionEnabled:YES];
+                            self.messageAlert = @"Повторите попытку";
                             [self alerts];
     }];
 }
@@ -63,7 +73,7 @@
     
     UIAlertController * alert = [UIAlertController
                                   alertControllerWithTitle:@"Ошибка регистрации!"
-                                  message:@"Недопустимый номер телефона!"
+                                  message:self.messageAlert
                                   preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* yesButton = [UIAlertAction
                                 actionWithTitle:@"OK"

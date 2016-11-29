@@ -26,7 +26,7 @@
 -(id)init{
     self = [super init];
     if (self) {
-        NSURL * url = [NSURL URLWithString:@"http://5.200.55.169:8080/api/v0/"];
+        NSURL * url = [NSURL URLWithString:@"http://5.200.53.108:8080/api/v0/"];
         self.sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:url];
         
     }
@@ -37,22 +37,16 @@
 
 -(void) setToken:(NSString *) token{
     
-//    KeychainItemWrapper * wraper = [[KeychainItemWrapper alloc]initWithIdentifier:@"token" accessGroup:nil];
-//    [wraper setObject:token forKey:(id)kSecValueData];
+    KeychainItemWrapper * wraper = [[KeychainItemWrapper alloc]initWithIdentifier:@"token" accessGroup:nil];
+    [wraper setObject:token forKey:(id)kSecValueData];
+    NSLog(@"%@",[wraper objectForKey:(id)kSecValueData]);
 //   
-    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:token forKey:@"token"];
     
 }
 
 -(NSString *) getToken{
-    
-//    KeychainItemWrapper * wraper = [[KeychainItemWrapper alloc]initWithIdentifier:@"token" accessGroup:nil];
-//    return [wraper objectForKey:(id)kSecValueData];
-    
-    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
-    return [userDefaults objectForKey:@"token"];
-
+    KeychainItemWrapper * wraper = [[KeychainItemWrapper alloc]initWithIdentifier:@"token" accessGroup:nil];
+    return [wraper objectForKey:(id)kSecValueData];
 }
 
 //#pragma mark Register and Auth
@@ -93,7 +87,6 @@
     NSDictionary * params = [NSDictionary dictionaryWithObjectsAndKeys:
                              numPhone, @"phone",
                              confirm,  @"confirm_code",nil];
-    
     NSLog(@"%@",params);
     
     [self.sessionManager POST:@"confirmRegister/"
@@ -147,9 +140,8 @@
 -(void) getUserQR:(void(^)(NSDictionary * responceObject))success
         onFailure:(void(^)(NSError * error, NSInteger statusCode))failure{
     
-    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
     
-    [self.sessionManager.requestSerializer setValue:[userDefaults objectForKey:@"token"] forHTTPHeaderField:@"Authorization"];
+    [self.sessionManager.requestSerializer setValue:[self getToken] forHTTPHeaderField:@"Authorization"];
     [self.sessionManager GET:@"getUserQR/"
                   parameters:nil
                     progress:nil
@@ -175,8 +167,8 @@
            onSuccess:(void(^)(NSDictionary * responseObject)) success
            onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure{
     
-    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
-    [self.sessionManager.requestSerializer setValue:[userDefaults objectForKey:@"token"] forHTTPHeaderField:@"Authorization"];
+    
+    [self.sessionManager.requestSerializer setValue:[self getToken] forHTTPHeaderField:@"Authorization"];
     self.sessionManager.requestSerializer.HTTPMethodsEncodingParametersInURI = [NSSet setWithObjects:@"GET", @"HEAD", nil];
     
     NSDictionary * params = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -252,6 +244,124 @@
                               failure(error, response.statusCode);
                           }
                       }];
+}
+
+//restartPassword
+
+-(void) prepareForResetPassword:(NSString *)numPhone
+                      onSuccess:(void (^)(NSDictionary *))success
+                      onFailure:(void (^)(NSError *, NSInteger))failure {
+    
+    NSDictionary * params = [NSDictionary dictionaryWithObjectsAndKeys:
+                             numPhone, @"user_phone",nil];
+    
+    [self.sessionManager POST:@"prepareForResetPassword/"
+                   parameters:params
+                     progress:nil
+                      success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
+                          
+                          if (success) {
+                              success(responseObject);
+                          }
+                      }
+                      failure: ^(NSURLSessionTask *operation, NSError *error) {
+                          
+                          if (failure) {
+                              NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
+                              failure(error, response.statusCode);
+                          }
+                      }];
+
+}
+
+-(void) confirmResetPassword:(NSString *)numPhone
+                 confirmCode:(NSString *)confirmCode
+                   onSuccess:(void (^)(NSDictionary *))success
+                   onFailure:(void (^)(NSError *, NSInteger))failure {
+    
+    NSDictionary * params = [NSDictionary dictionaryWithObjectsAndKeys:
+                             numPhone, @"user_phone",
+                             confirmCode,@"confirm_code", nil];
+    
+    [self.sessionManager POST:@"confirmResetPassword/"
+                   parameters:params
+                     progress:nil
+                      success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
+                          
+                          if (success) {
+                              success(responseObject);
+                          }
+                      }
+                      failure: ^(NSURLSessionTask *operation, NSError *error) {
+                          
+                          if (failure) {
+                              NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
+                              failure(error, response.statusCode);
+                          }
+                      }];
+
+}
+
+-(void) setNewPassword:(NSString *)newPassword
+              numPhone:(NSString *)numPhone
+             onSuccess:(void (^)(NSDictionary *))success
+             onFailure:(void (^)(NSError *, NSInteger))failure {
+    
+    NSDictionary * params = [NSDictionary dictionaryWithObjectsAndKeys:
+                             newPassword, @"password",
+                             numPhone, @"user_phone", nil];
+    
+    [self.sessionManager POST:@"setNewPassword/"
+                   parameters:params
+                     progress:nil
+                      success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
+                          
+                          if (success) {
+                              success(responseObject);
+                          }
+                      }
+                      failure: ^(NSURLSessionTask *operation, NSError *error) {
+                          
+                          if (failure) {
+                              NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
+                              failure(error, response.statusCode);
+                          }
+                      }];
+
+}
+// saveAPNSToken
+
+-(void) saveAPNSToken:(NSString *)token
+            onSuccess:(void (^)(NSDictionary *))success
+            onFailure:(void (^)(NSError *, NSInteger))failure{
+    
+    
+    NSDictionary * params = [NSDictionary dictionaryWithObjectsAndKeys:
+                             token, @"ios_token", nil];
+    
+    [self.sessionManager.requestSerializer setValue:[self getToken] forHTTPHeaderField:@"Authorization"];
+    self.sessionManager.requestSerializer.HTTPMethodsEncodingParametersInURI = [NSSet setWithObjects:@"GET", @"HEAD", nil];
+
+    [self.sessionManager POST:@"saveAPNSToken/"
+                   parameters:params
+                     progress:nil
+                      success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
+                          
+                          if (success) {
+                              success(responseObject);
+                          }
+                      }
+                      failure: ^(NSURLSessionTask *operation, NSError *error) {
+                          
+                          if (failure) {
+                              NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
+                              failure(error, response.statusCode);
+                          }
+                      }];
+
+    
+    
+    
 }
 
 @end

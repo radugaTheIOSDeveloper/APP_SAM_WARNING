@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -45,6 +45,8 @@
 		CE032CF41D7DA9BB00851FF4 /* split.c in Sources */ = {isa = PBXBuildFile; fileRef = CE032CF01D7DA9BB00851FF4 /* split.c */; };
 		CE032CF81D7DAB7F00851FF4 /* MyCoin.m in Sources */ = {isa = PBXBuildFile; fileRef = CE032CF71D7DAB7F00851FF4 /* MyCoin.m */; };
 		CE032CFD1D7DABBB00851FF4 /* Help.m in Sources */ = {isa = PBXBuildFile; fileRef = CE032CFC1D7DABBB00851FF4 /* Help.m */; };
+		CE1227391DE820B9008289AA /* SocialController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1227381DE820B9008289AA /* SocialController.m */; };
+		CE122AE41DE83138008289AA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE122AE31DE83138008289AA /* Social.framework */; };
 		CE128D331DA7CF1C00050099 /* PaymentWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE128D321DA7CF1C00050099 /* PaymentWebView.m */; };
 		CE2ADAFE1DBE117E005BFAED /* SetPassController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2ADAFD1DBE117E005BFAED /* SetPassController.m */; };
 		CE370DF51DA2B0660027D66B /* ConfirmRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = CE370DF41DA2B0660027D66B /* ConfirmRegister.m */; };
@@ -55,15 +57,16 @@
 		CE590DDA1DCF405E00816B4E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE590DD91DCF405E00816B4E /* SWRevealViewController.m */; };
 		CE6BE0AA1D8815D4000F5CE4 /* StartScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6BE0A91D8815D4000F5CE4 /* StartScreenView.m */; };
 		CE6BE0AD1D884F15000F5CE4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6BE0AC1D884F15000F5CE4 /* WebKit.framework */; };
-		CE727DA51DE1AFA9008D2691 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE727DA41DE1AFA9008D2691 /* UserNotifications.framework */; };
+		CE727DA51DE1AFA9008D2691 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE727DA41DE1AFA9008D2691 /* UserNotifications.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		CE7B6D391DDB34F3004852FB /* libKeychainItemWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B6D381DDB34F3004852FB /* libKeychainItemWrapper.a */; };
 		CE7B6D3D1DDB4626004852FB /* RecoveryPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7B6D3C1DDB4626004852FB /* RecoveryPassword.m */; };
 		CEA421F01DDC49BE00917653 /* NewPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA421EF1DDC49BE00917653 /* NewPassword.m */; };
 		CECB7AD31DC75DA2008CA095 /* AppleMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECB7AD21DC75DA2008CA095 /* AppleMapViewController.m */; };
-		CECB7AD51DC75E31008CA095 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECB7AD41DC75E31008CA095 /* CoreLocation.framework */; };
+		CECB7AD51DC75E31008CA095 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECB7AD41DC75E31008CA095 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		CECB7AD91DC7822C008CA095 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECB7AD81DC7822C008CA095 /* NewsViewController.m */; };
 		CED618DC1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = CED618DB1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m */; };
 		CEDA75CC1DD087B6009B1211 /* Support.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDA75CB1DD087B6009B1211 /* Support.m */; };
+		CEE34DE41DEC36A700EBF5D2 /* ConfirmAuthorize.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE34DE31DEC36A700EBF5D2 /* ConfirmAuthorize.m */; };
 		CEE35A911DA2724E008D916C /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE35A901DA2724E008D916C /* API.m */; };
 		CEE7CA001DB0F71A00490B0F /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE7C9FF1DB0F71A00490B0F /* MenuViewController.m */; };
 		CEF84FFC1DB386D800CD7137 /* SkipScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF84FFB1DB386D800CD7137 /* SkipScreen.m */; };
@@ -155,6 +158,9 @@
 		CE032CF71D7DAB7F00851FF4 /* MyCoin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCoin.m; sourceTree = "<group>"; };
 		CE032CFB1D7DABBB00851FF4 /* Help.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Help.h; sourceTree = "<group>"; };
 		CE032CFC1D7DABBB00851FF4 /* Help.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Help.m; sourceTree = "<group>"; };
+		CE1227371DE820B9008289AA /* SocialController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialController.h; sourceTree = "<group>"; };
+		CE1227381DE820B9008289AA /* SocialController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialController.m; sourceTree = "<group>"; };
+		CE122AE31DE83138008289AA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		CE128D311DA7CF1C00050099 /* PaymentWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentWebView.h; sourceTree = "<group>"; };
 		CE128D321DA7CF1C00050099 /* PaymentWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentWebView.m; sourceTree = "<group>"; };
 		CE2ADAFC1DBE117E005BFAED /* SetPassController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPassController.h; sourceTree = "<group>"; };
@@ -190,6 +196,8 @@
 		CED618DB1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoosePaymentMethod.m; sourceTree = "<group>"; };
 		CEDA75CA1DD087B6009B1211 /* Support.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Support.h; sourceTree = "<group>"; };
 		CEDA75CB1DD087B6009B1211 /* Support.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Support.m; sourceTree = "<group>"; };
+		CEE34DE21DEC36A700EBF5D2 /* ConfirmAuthorize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmAuthorize.h; sourceTree = "<group>"; };
+		CEE34DE31DEC36A700EBF5D2 /* ConfirmAuthorize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmAuthorize.m; sourceTree = "<group>"; };
 		CEE35A8F1DA2724E008D916C /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
 		CEE35A901DA2724E008D916C /* API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
 		CEE7C9FE1DB0F71A00490B0F /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -207,6 +215,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE122AE41DE83138008289AA /* Social.framework in Frameworks */,
 				CE727DA51DE1AFA9008D2691 /* UserNotifications.framework in Frameworks */,
 				CE7B6D391DDB34F3004852FB /* libKeychainItemWrapper.a in Frameworks */,
 				CECB7AD51DC75E31008CA095 /* CoreLocation.framework in Frameworks */,
@@ -269,6 +278,7 @@
 		CE032C611D7D880600851FF4 /* SAM */ = {
 			isa = PBXGroup;
 			children = (
+				CE1227361DE81A9A008289AA /* Social */,
 				CEDA75C91DD087A0009B1211 /* Support */,
 				CECB7AD61DC78218008CA095 /* News */,
 				CECB7AD01DC75D72008CA095 /* MAP */,
@@ -429,6 +439,15 @@
 			name = Help;
 			sourceTree = "<group>";
 		};
+		CE1227361DE81A9A008289AA /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				CE1227371DE820B9008289AA /* SocialController.h */,
+				CE1227381DE820B9008289AA /* SocialController.m */,
+			);
+			name = Social;
+			sourceTree = "<group>";
+		};
 		CE29D7481D9BE2EE0083AC1B /* AnimationScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -469,6 +488,8 @@
 				CE7B6D3C1DDB4626004852FB /* RecoveryPassword.m */,
 				CEA421EE1DDC49BE00917653 /* NewPassword.h */,
 				CEA421EF1DDC49BE00917653 /* NewPassword.m */,
+				CEE34DE21DEC36A700EBF5D2 /* ConfirmAuthorize.h */,
+				CEE34DE31DEC36A700EBF5D2 /* ConfirmAuthorize.m */,
 			);
 			name = "recovery ";
 			sourceTree = "<group>";
@@ -557,6 +578,7 @@
 		D56C57A03E8647476ED3869F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE122AE31DE83138008289AA /* Social.framework */,
 				CE727DA41DE1AFA9008D2691 /* UserNotifications.framework */,
 				CE7B6D381DDB34F3004852FB /* libKeychainItemWrapper.a */,
 				CECB7AD41DC75E31008CA095 /* CoreLocation.framework */,
@@ -640,7 +662,6 @@
 				TargetAttributes = {
 					CE032C5E1D7D880600851FF4 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = HL7PGCM524;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -659,7 +680,7 @@
 				};
 			};
 			buildConfigurationList = CE032C5A1D7D880600851FF4 /* Build configuration list for PBXProject "SAM" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -798,8 +819,10 @@
 				CE032CD81D7D99A700851FF4 /* BuyCoins.m in Sources */,
 				CECB7AD91DC7822C008CA095 /* NewsViewController.m in Sources */,
 				CEF84FFF1DB386FC00CD7137 /* PageContentController.m in Sources */,
+				CE1227391DE820B9008289AA /* SocialController.m in Sources */,
 				CE032CB91D7D905500851FF4 /* MyNavigationBar.m in Sources */,
 				CED618DC1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m in Sources */,
+				CEE34DE41DEC36A700EBF5D2 /* ConfirmAuthorize.m in Sources */,
 				CE032CEA1D7DA9AA00851FF4 /* qrenc.c in Sources */,
 				CE7B6D3D1DDB4626004852FB /* RecoveryPassword.m in Sources */,
 				CECB7AD31DC75DA2008CA095 /* AppleMapViewController.m in Sources */,
@@ -958,7 +981,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = HL7PGCM524;
 				INFOPLIST_FILE = SAM/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -979,7 +1002,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = HL7PGCM524;
 				INFOPLIST_FILE = SAM/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
