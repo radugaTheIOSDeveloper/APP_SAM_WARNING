@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mSo-yx-OvH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="e62-U4-z8E">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -421,7 +421,7 @@
                                             <action selector="mobBtn:" destination="cla-gg-DWN" eventType="touchUpInside" id="IJX-en-qLQ"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mobLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Kep-d2-L57">
+                                    <imageView userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mobLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Kep-d2-L57">
                                         <rect key="frame" x="23" y="337" width="225" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="Ph5-lZ-W2L"/>
@@ -445,7 +445,7 @@
                                             <action selector="qiwiBtn:" destination="cla-gg-DWN" eventType="touchUpInside" id="n5l-uR-MrM"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qiwiLogo" translatesAutoresizingMaskIntoConstraints="NO" id="xkr-W1-Akh">
+                                    <imageView userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qiwiLogo" translatesAutoresizingMaskIntoConstraints="NO" id="xkr-W1-Akh">
                                         <rect key="frame" x="90" y="450" width="140" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="0Mv-mg-icL"/>
@@ -471,7 +471,7 @@
                                             <constraint firstAttribute="height" constant="51" id="gv8-Fd-SLt"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mq9-6f-I3Q">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mq9-6f-I3Q">
                                         <rect key="frame" x="270" y="337" width="20" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="textColor" red="0.89411764709999997" green="0.0" blue="0.043137254899999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -581,7 +581,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sNI-SZ-wdA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1770" y="-622.18309859154931"/>
+            <point key="canvasLocation" x="1935" y="-505"/>
         </scene>
         <!--Payment Web View-->
         <scene sceneID="eBi-sk-OmI">
@@ -2369,14 +2369,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="supportLogo" translatesAutoresizingMaskIntoConstraints="NO" id="ieO-9i-FdS">
-                                <rect key="frame" x="90" y="200" width="140" height="160"/>
+                                <rect key="frame" x="90" y="156" width="140" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="DWd-oG-zBQ"/>
                                     <constraint firstAttribute="height" constant="160" id="JmK-Uf-pMV"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oQQ-xv-O9R">
-                                <rect key="frame" x="25" y="72" width="269" height="120"/>
+                                <rect key="frame" x="25" y="28" width="269" height="120"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="34j-dY-DVr"/>
@@ -2445,39 +2445,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txl-hg-ve4">
-                                <rect key="frame" x="137" y="143" width="46" height="30"/>
+                                <rect key="frame" x="40" y="344" width="240" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="vk"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="16"/>
+                                <state key="normal" title="Поделиться" backgroundImage="buttonMap">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <action selector="vkBtn:" destination="iKH-kT-auT" eventType="touchUpInside" id="wvZ-Jg-Y7f"/>
+                                    <action selector="shareBtn:" destination="iKH-kT-auT" eventType="touchUpInside" id="VSE-bq-6tq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbk-1U-Owv">
-                                <rect key="frame" x="137" y="193" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="f"/>
-                                <connections>
-                                    <action selector="facebookBtn:" destination="iKH-kT-auT" eventType="touchUpInside" id="l18-hW-15f"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMz-WG-ski">
-                                <rect key="frame" x="137" y="243" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="t"/>
-                                <connections>
-                                    <action selector="twiterBtn:" destination="iKH-kT-auT" eventType="touchUpInside" id="rva-J1-YUv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AjW-MS-5Wx">
-                                <rect key="frame" x="137" y="291" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="o"/>
-                                <connections>
-                                    <action selector="classBtn:" destination="iKH-kT-auT" eventType="touchUpInside" id="QMX-up-g5s"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="supportLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Dfy-6I-5sB">
+                                <rect key="frame" x="115" y="72" width="90" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="Csb-CT-zPf"/>
+                                    <constraint firstAttribute="height" constant="100" id="KBb-Ob-IzL"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Поделитесь c друзьями в ваших социальных сетях!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KtS-6W-dRS">
+                                <rect key="frame" x="60" y="180" width="200" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="EqO-Ru-bBW"/>
+                                    <constraint firstAttribute="height" constant="80" id="OmX-jC-l8V"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="15"/>
+                                <color key="textColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dfy-6I-5sB" firstAttribute="top" secondItem="gYQ-lH-Wwk" secondAttribute="bottom" constant="8" id="3RV-gU-zdj"/>
+                            <constraint firstItem="Dfy-6I-5sB" firstAttribute="centerX" secondItem="57v-Ax-tEW" secondAttribute="centerX" id="3bh-ZJ-Ljl"/>
+                            <constraint firstItem="KtS-6W-dRS" firstAttribute="centerX" secondItem="57v-Ax-tEW" secondAttribute="centerX" id="WW0-tC-rgY"/>
+                            <constraint firstItem="KtS-6W-dRS" firstAttribute="top" secondItem="Dfy-6I-5sB" secondAttribute="bottom" constant="8" id="m8f-Ye-cSF"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Поделиться" id="4wC-sb-aBd">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="aZ9-um-6sz"/>
@@ -2488,7 +2490,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sS8-WQ-e4k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="529" y="3262"/>
+            <point key="canvasLocation" x="528.75" y="3261.9718309859154"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dps-k3-CRj">
@@ -2551,7 +2553,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oyb-wU-KLg">
                                 <rect key="frame" x="0.0" y="0.0" width="319" height="568"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6F520469-D9CC-44FB-A88D-C14C7F8CEC4A" translatesAutoresizingMaskIntoConstraints="NO" id="lV2-8V-1AA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="E1F9C506-C231-4158-9F95-C96F127B9C43" translatesAutoresizingMaskIntoConstraints="NO" id="lV2-8V-1AA">
                                 <rect key="frame" x="100" y="150" width="120" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="8tz-Dt-Nh7"/>
@@ -2822,7 +2824,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="6F520469-D9CC-44FB-A88D-C14C7F8CEC4A" width="83" height="43">
+        <image name="E1F9C506-C231-4158-9F95-C96F127B9C43" width="83" height="43">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -3138,9 +3140,9 @@ Qg4AAAAAAAACAQAAAAAAAABBAAAAAAAAAAAAAAAAAABCEA
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fTD-hd-vHl"/>
-        <segue reference="6nd-pK-u6i"/>
-        <segue reference="ONJ-g1-OZg"/>
-        <segue reference="e8Z-w0-Upd"/>
+        <segue reference="36p-sQ-Xz6"/>
+        <segue reference="A93-cx-b6B"/>
+        <segue reference="KdF-rO-OkA"/>
         <segue reference="KGA-Te-pWq"/>
     </inferredMetricsTieBreakers>
 </document>

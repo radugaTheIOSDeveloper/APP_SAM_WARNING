@@ -26,9 +26,7 @@
     [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
      [[UIApplication sharedApplication] registerForRemoteNotifications];
     
-    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
-    NSLog(@"%@",[userDefaults objectForKey:@"token_push"]);
-    
+      
     return YES;
 }
 

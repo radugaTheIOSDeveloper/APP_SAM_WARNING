@@ -45,15 +45,18 @@
 }
 */
 
-- (IBAction)vkBtn:(id)sender {
-}
 
-- (IBAction)facebookBtn:(id)sender {
-}
-
-- (IBAction)twiterBtn:(id)sender {
-}
-
-- (IBAction)classBtn:(id)sender {
+- (IBAction)shareBtn:(id)sender {
+    
+    NSString * message = @"Я рекомундую мойку самообслуживания САМ!!!";
+    
+    UIImage * image = [UIImage imageNamed:@"supportLogo"];
+    
+    NSArray * shareItems = @[message, image];
+    
+    UIActivityViewController * avc = [[UIActivityViewController alloc] initWithActivityItems:shareItems applicationActivities:nil];
+    
+    [self presentViewController:avc animated:YES completion:nil];
+    
 }
 @end

@@ -12,9 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
 
-- (IBAction)vkBtn:(id)sender;
-- (IBAction)facebookBtn:(id)sender;
-- (IBAction)twiterBtn:(id)sender;
-- (IBAction)classBtn:(id)sender;
+- (IBAction)shareBtn:(id)sender;
+
 
 @end
