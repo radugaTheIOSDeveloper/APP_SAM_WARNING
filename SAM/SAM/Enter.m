@@ -47,19 +47,7 @@
 
 #pragma mark API
 
-//
-//-(void) saveAPNSToken:(NSString *)token {
-//    
-//    [[API apiManager] saveAPNSToken:token
-//                          onSuccess:^(NSDictionary *responseObject) {
-//                              NSLog(@"%@",responseObject);
-//                             // [self performSegueWithIdentifier:@"enter" sender:self];
-//
-//                          } onFailure:^(NSError *error, NSInteger statusCode) {
-//                              NSLog(@"%@",error);
-//                          }];
-//    
-//}
+
 
 -(void) authUser:(NSString *) username
         password:(NSString *) password {

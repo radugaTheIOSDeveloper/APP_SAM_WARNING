@@ -23,6 +23,7 @@
 
 @property (strong , nonatomic) NSString * demoTel;
 @property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UILabel *termOfUse;
 
 
 @end

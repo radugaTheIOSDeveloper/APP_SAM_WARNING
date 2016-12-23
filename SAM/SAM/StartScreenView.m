@@ -18,8 +18,7 @@
     [super viewDidLoad];
     
     self.logoImage.alpha = 0.f;
-
-
+    
     [UIView animateWithDuration:1.6 animations:^{
         self.logoImage.alpha = 1.0f;
     } completion:^(BOOL finished) {

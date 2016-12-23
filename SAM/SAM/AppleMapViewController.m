@@ -57,7 +57,6 @@
     CLLocation *location5 = [[CLLocation alloc] initWithLatitude:54.167056 longitude:37.631806];
     CLLocation *location6 = [[CLLocation alloc] initWithLatitude:54.211388 longitude:37.696394];
     
-    
     self.distance = [NSMutableDictionary dictionary];
     self.locations = [NSMutableDictionary dictionary];
     self.imageMap = [NSMutableDictionary dictionary];
@@ -98,7 +97,6 @@
     
     self.status = 1;
     [self.tableView reloadData];
-    
 }
 
 - (void)viewDidLoad {
@@ -122,7 +120,6 @@
         [self.revealButtonItem setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
-    
 }
 
 -(void) sortDistance:(NSMutableDictionary *) distance

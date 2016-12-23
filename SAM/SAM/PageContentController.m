@@ -29,8 +29,8 @@
     self.detailLabel.text = self.detailText;
     self.animatedView.image = [UIImage imageNamed:self.imageName];
     self.animatedView.animationImages = self.arrayImage;
-    self.animatedView.animationDuration = 0.63f;
-    self.animatedView.animationRepeatCount = 1;
+    self.animatedView.animationDuration = 1.0f;
+   // self.animatedView.animationRepeatCount = 1;
     [self.animatedView startAnimating];
     
 }

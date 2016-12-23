@@ -24,9 +24,8 @@
     pageControl.backgroundColor = [UIColor whiteColor];
     
     [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
-     [[UIApplication sharedApplication] registerForRemoteNotifications];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
     
-      
     return YES;
 }
 

@@ -1,21 +1,22 @@
 //
-//  Payments.m
+//  FailViewController.m
 //  SAM
 //
-//  Created by User on 12.10.16.
+//  Created by User on 12.12.16.
 //  Copyright © 2016 freshtech. All rights reserved.
 //
 
-#import "Payments.h"
+#import "FailViewController.h"
 
-@interface Payments ()
+@interface FailViewController ()
 
 @end
 
-@implementation Payments
+@implementation FailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
 - (void)didReceiveMemoryWarning {

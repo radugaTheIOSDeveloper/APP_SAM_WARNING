@@ -14,6 +14,8 @@
 
 @property (strong, nonatomic) NSString * messageAlert;
 
+
+
 @end
 
 @implementation RegistrClass
@@ -37,8 +39,21 @@
     
     NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setInteger:1 forKey:@"show_animated"];
+    
+    UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(userTappedOnLink:)];
+    [self.termOfUse setUserInteractionEnabled:YES];
+    [self.termOfUse addGestureRecognizer:gesture];
+    NSMutableAttributedString * string = [[NSMutableAttributedString alloc] initWithString:self.termOfUse.text];
+    [string addAttribute:NSForegroundColorAttributeName value:[UIColor yellowColor] range:NSMakeRange(61,27)];
+    self.termOfUse.attributedText = string;
+
+
 }
 
+- (void)userTappedOnLink:(UIGestureRecognizer*)gestureRecognizer{
+    
+   [self performSegueWithIdentifier:@"termOfUse" sender:self];
+}
 
 #pragma mark API
 
@@ -57,7 +72,6 @@
                                 self.demoTel = numTel;
                                 [self performSegueWithIdentifier:@"confirm" sender:self];
                             }
-                            
                             
     }                   onFailure:^(NSError *error, NSInteger statusCode) {
         

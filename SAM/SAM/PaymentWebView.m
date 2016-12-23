@@ -16,17 +16,15 @@
 @implementation PaymentWebView
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"LogoMenu"]];
     
-    NSLog(@"type =%@",self.pymentType);
-    NSLog(@"sum =%@",[[Payment save]getMySum]);
-    NSLog(@"article =%@",[[Payment save]getMyArticle]);
-    NSLog(@"phone = %@",[[Payment save]getPhoneNumber]);
-    
-    NSString *urlString = @"https://demomoney.yandex.ru/eshop.xml";
+    NSLog(@"shopId=71175 \nscid=68953 type =%@\n sum =%@\narticle =%@\nphone = %@",self.pymentType,[[Payment save]getMySum],[[Payment save]getMyArticle],[[Payment save]getPhoneNumber]);
+
+    NSString *urlString = @"https://money.yandex.ru/eshop.xml";
     NSURL *url = [NSURL URLWithString:urlString];
-    NSString *body = [NSString stringWithFormat: @"shopId=%@&scid=%@&sum=%@&customerNumber=%@&paymentType=%@&article=%@", @"71175",@"541436",[[Payment save]getMySum],[[Payment save]getPhoneNumber],self.pymentType,[[Payment save]getMyArticle]];
+    NSString *body = [NSString stringWithFormat: @"shopId=%@&scid=%@&sum=%@&customerNumber=%@&paymentType=%@&article=%@", @"71175",@"68953",[[Payment save]getMySum],[[Payment save]getPhoneNumber],self.pymentType,[[Payment save]getMyArticle]];
 
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:60.0];
     [request setHTTPMethod: @"POST"];
@@ -55,28 +53,37 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
+
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
     
     [self.indicatorView stopAnimating];
     self.indicatorLabel.alpha = 0.f;
     self.indicatorView.alpha = 0.f;
     [self.view setUserInteractionEnabled:YES];
+    NSString *currentURL = webView.request.URL.absoluteString;
+
+    NSLog(@"%@",currentURL);
 
     
-    NSString *currentURL = webView.request.URL.absoluteString;
     NSMutableString *stringRange = [currentURL mutableCopy];
-    NSRange range = NSMakeRange(33, currentURL.length - 33);
+    NSRange range = NSMakeRange(32, currentURL.length - 32);
     [stringRange deleteCharactersInRange:range];
-    NSLog(@"%@",stringRange);
-    if ([stringRange isEqualToString:@"http://5.200.55.169:8080/success/"]) {
-    [self performSegueWithIdentifier:@"success" sender:self];
+    NSString * str = stringRange;
+    
+    
+    if ([str isEqualToString:@"https://app.pomoysam.ru/success/"]) {
+        
+        [self performSegueWithIdentifier:@"success" sender:self];
+        
+    } else if ([str isEqualToString:@"https://app.pomoysam.ru/fail/?or"]) {
+        [self performSegueWithIdentifier:@"fail" sender:self];
+    }
+  }
+
+- (void)webViewDidStartLoad:(UIWebView *)webView{
+    NSLog(@"yes");//1345
 }
-}
-//}
-//
-//- (void)webViewDidStartLoad:(UIWebView *)webView{
-//    NSLog(@"yes");
-//}
 
 
 /*

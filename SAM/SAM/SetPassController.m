@@ -47,6 +47,24 @@
 
 #pragma mark API
 
+
+//
+-(void) saveAPNSToken:(NSString *)token {
+
+    [[API apiManager] saveAPNSToken:token
+                          onSuccess:^(NSDictionary *responseObject) {
+                              NSLog(@"%@",responseObject);
+                              NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+                              [userDefaults setInteger:12 forKey:@"pushTokenStatus"];
+                              
+                              [self performSegueWithIdentifier:@"success" sender:self];
+
+                          } onFailure:^(NSError *error, NSInteger statusCode) {
+                              NSLog(@"%@",error);
+                          }];
+
+}
+
 -(void) registr:(NSString*)numPhone
        password:(NSString *)password{
     
@@ -61,7 +79,15 @@
                                 [[API apiManager]setToken:[NSString stringWithFormat:@"Token %@",[responseObject objectForKey:@"token"]]];
                                 NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
                                 [userDefaults setObject:@"true" forKey:@"token"];
-                                [self performSegueWithIdentifier:@"success" sender:self];
+                                
+                                if ([userDefaults integerForKey:@"pushTokenStatus"] == 12) {
+                                    NSLog(@"token save");
+                                    [self performSegueWithIdentifier:@"success" sender:self];
+                                } else {
+                                    [self saveAPNSToken:[userDefaults objectForKey:@"token_push"]];
+                                }
+                                
+                                NSLog(@"%@",[userDefaults objectForKey:@"token_push"]);
                             } else {
                                 self.messageAlert = [responseObject objectForKey:@"message"];
                                 [self alerts];

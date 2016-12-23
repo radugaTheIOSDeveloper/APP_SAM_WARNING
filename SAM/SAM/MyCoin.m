@@ -138,6 +138,8 @@
     }];
 }
 
+
+
 #pragma mark Refresh
 
 -(void) refreshView: (UIRefreshControl *) refresh{
@@ -205,11 +207,10 @@
             UILabel * nonLabel = (UILabel *)[cellNoBuy.contentView viewWithTag:97];
             nonLabel.text = @"У вас нет покупок.Чтобы приобрести жетоны нажмите на \"+\"";
             self.tableView.allowsSelection = NO;
-            self.tableView.scrollEnabled = NO;
             self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
                 
             return cellNoBuy;
-                
+            
         } else {
                 
             self.tableView.scrollEnabled = YES;
@@ -240,7 +241,6 @@
             UILabel * nonLabel = (UILabel *)[cellNoBuys.contentView viewWithTag:97];
             nonLabel.text = @"У вас нет использованных жетонов";
             self.tableView.allowsSelection = NO;
-            self.tableView.scrollEnabled = NO;
             self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
                     
             return cellNoBuys;

@@ -52,12 +52,14 @@
 		CE370DF51DA2B0660027D66B /* ConfirmRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = CE370DF41DA2B0660027D66B /* ConfirmRegister.m */; };
 		CE39BA3F1D9406EA00C5256A /* RegistrClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CE39BA3E1D9406EA00C5256A /* RegistrClass.m */; };
 		CE39BA421D94239E00C5256A /* Enter.m in Sources */ = {isa = PBXBuildFile; fileRef = CE39BA411D94239E00C5256A /* Enter.m */; };
+		CE4F32E41DFEB28B0023F0AA /* FailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4F32E31DFEB28B0023F0AA /* FailViewController.m */; };
 		CE53C9721DAE7969004BDB27 /* Payments.m in Sources */ = {isa = PBXBuildFile; fileRef = CE53C9711DAE7969004BDB27 /* Payments.m */; };
 		CE53C9751DAE798F004BDB27 /* Payment.m in Sources */ = {isa = PBXBuildFile; fileRef = CE53C9741DAE798F004BDB27 /* Payment.m */; };
 		CE590DDA1DCF405E00816B4E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE590DD91DCF405E00816B4E /* SWRevealViewController.m */; };
 		CE6BE0AA1D8815D4000F5CE4 /* StartScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6BE0A91D8815D4000F5CE4 /* StartScreenView.m */; };
 		CE6BE0AD1D884F15000F5CE4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6BE0AC1D884F15000F5CE4 /* WebKit.framework */; };
 		CE727DA51DE1AFA9008D2691 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE727DA41DE1AFA9008D2691 /* UserNotifications.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		CE7A0B971E0BEF66002FFD9F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7A0B961E0BEF66002FFD9F /* MessageUI.framework */; };
 		CE7B6D391DDB34F3004852FB /* libKeychainItemWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B6D381DDB34F3004852FB /* libKeychainItemWrapper.a */; };
 		CE7B6D3D1DDB4626004852FB /* RecoveryPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7B6D3C1DDB4626004852FB /* RecoveryPassword.m */; };
 		CEA421F01DDC49BE00917653 /* NewPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA421EF1DDC49BE00917653 /* NewPassword.m */; };
@@ -69,6 +71,7 @@
 		CEE34DE41DEC36A700EBF5D2 /* ConfirmAuthorize.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE34DE31DEC36A700EBF5D2 /* ConfirmAuthorize.m */; };
 		CEE35A911DA2724E008D916C /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE35A901DA2724E008D916C /* API.m */; };
 		CEE7CA001DB0F71A00490B0F /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE7C9FF1DB0F71A00490B0F /* MenuViewController.m */; };
+		CEEA754E1E02BCCC000D73D3 /* TermOfUse.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEA754D1E02BCCC000D73D3 /* TermOfUse.m */; };
 		CEF84FFC1DB386D800CD7137 /* SkipScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF84FFB1DB386D800CD7137 /* SkipScreen.m */; };
 		CEF84FFF1DB386FC00CD7137 /* PageContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF84FFE1DB386FC00CD7137 /* PageContentController.m */; };
 		CEFA86571D992397001C5F3E /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFA86561D992397001C5F3E /* PageContentViewController.m */; };
@@ -171,6 +174,8 @@
 		CE39BA3E1D9406EA00C5256A /* RegistrClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrClass.m; sourceTree = "<group>"; };
 		CE39BA401D94239E00C5256A /* Enter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enter.h; sourceTree = "<group>"; };
 		CE39BA411D94239E00C5256A /* Enter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enter.m; sourceTree = "<group>"; };
+		CE4F32E21DFEB28B0023F0AA /* FailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FailViewController.h; sourceTree = "<group>"; };
+		CE4F32E31DFEB28B0023F0AA /* FailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FailViewController.m; sourceTree = "<group>"; };
 		CE53C9701DAE7969004BDB27 /* Payments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Payments.h; sourceTree = "<group>"; };
 		CE53C9711DAE7969004BDB27 /* Payments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Payments.m; sourceTree = "<group>"; };
 		CE53C9731DAE798F004BDB27 /* Payment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Payment.h; sourceTree = "<group>"; };
@@ -181,6 +186,7 @@
 		CE6BE0A91D8815D4000F5CE4 /* StartScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScreenView.m; sourceTree = "<group>"; };
 		CE6BE0AC1D884F15000F5CE4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		CE727DA41DE1AFA9008D2691 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		CE7A0B961E0BEF66002FFD9F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		CE7B6D371DDB34D0004852FB /* SAM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = SAM.entitlements; path = SAM/SAM.entitlements; sourceTree = "<group>"; };
 		CE7B6D381DDB34F3004852FB /* libKeychainItemWrapper.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKeychainItemWrapper.a; path = "Pods/../build/Debug-iphoneos/KeychainItemWrapper/libKeychainItemWrapper.a"; sourceTree = "<group>"; };
 		CE7B6D3B1DDB4626004852FB /* RecoveryPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecoveryPassword.h; sourceTree = "<group>"; };
@@ -202,6 +208,8 @@
 		CEE35A901DA2724E008D916C /* API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
 		CEE7C9FE1DB0F71A00490B0F /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		CEE7C9FF1DB0F71A00490B0F /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		CEEA754C1E02BCCC000D73D3 /* TermOfUse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermOfUse.h; sourceTree = "<group>"; };
+		CEEA754D1E02BCCC000D73D3 /* TermOfUse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermOfUse.m; sourceTree = "<group>"; };
 		CEF84FFA1DB386D800CD7137 /* SkipScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkipScreen.h; sourceTree = "<group>"; };
 		CEF84FFB1DB386D800CD7137 /* SkipScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkipScreen.m; sourceTree = "<group>"; };
 		CEF84FFD1DB386FC00CD7137 /* PageContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentController.h; sourceTree = "<group>"; };
@@ -215,6 +223,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7A0B971E0BEF66002FFD9F /* MessageUI.framework in Frameworks */,
 				CE122AE41DE83138008289AA /* Social.framework in Frameworks */,
 				CE727DA51DE1AFA9008D2691 /* UserNotifications.framework in Frameworks */,
 				CE7B6D391DDB34F3004852FB /* libKeychainItemWrapper.a in Frameworks */,
@@ -468,6 +477,8 @@
 				CE370DF41DA2B0660027D66B /* ConfirmRegister.m */,
 				CE2ADAFC1DBE117E005BFAED /* SetPassController.h */,
 				CE2ADAFD1DBE117E005BFAED /* SetPassController.m */,
+				CEEA754C1E02BCCC000D73D3 /* TermOfUse.h */,
+				CEEA754D1E02BCCC000D73D3 /* TermOfUse.m */,
 			);
 			name = Registr;
 			sourceTree = "<group>";
@@ -519,6 +530,8 @@
 				CED618DB1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m */,
 				CE128D311DA7CF1C00050099 /* PaymentWebView.h */,
 				CE128D321DA7CF1C00050099 /* PaymentWebView.m */,
+				CE4F32E21DFEB28B0023F0AA /* FailViewController.h */,
+				CE4F32E31DFEB28B0023F0AA /* FailViewController.m */,
 			);
 			name = Yandex;
 			sourceTree = "<group>";
@@ -578,6 +591,7 @@
 		D56C57A03E8647476ED3869F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE7A0B961E0BEF66002FFD9F /* MessageUI.framework */,
 				CE122AE31DE83138008289AA /* Social.framework */,
 				CE727DA41DE1AFA9008D2691 /* UserNotifications.framework */,
 				CE7B6D381DDB34F3004852FB /* libKeychainItemWrapper.a */,
@@ -662,6 +676,7 @@
 				TargetAttributes = {
 					CE032C5E1D7D880600851FF4 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -807,11 +822,13 @@
 				CE032CE91D7DA9AA00851FF4 /* bitstream.c in Sources */,
 				CE032CEC1D7DA9AA00851FF4 /* rscode.c in Sources */,
 				CE032C671D7D880600851FF4 /* AppDelegate.m in Sources */,
+				CEEA754E1E02BCCC000D73D3 /* TermOfUse.m in Sources */,
 				CEF84FFC1DB386D800CD7137 /* SkipScreen.m in Sources */,
 				CE032C641D7D880600851FF4 /* main.m in Sources */,
 				CE032CBA1D7D905500851FF4 /* MyNavigationControll.m in Sources */,
 				CE39BA421D94239E00C5256A /* Enter.m in Sources */,
 				CEE7CA001DB0F71A00490B0F /* MenuViewController.m in Sources */,
+				CE4F32E41DFEB28B0023F0AA /* FailViewController.m in Sources */,
 				CEDA75CC1DD087B6009B1211 /* Support.m in Sources */,
 				CE032CF41D7DA9BB00851FF4 /* split.c in Sources */,
 				CE53C9751DAE798F004BDB27 /* Payment.m in Sources */,
@@ -980,6 +997,7 @@
 			baseConfigurationReference = 436258D0220DE5B3CE095429 /* Pods-SAM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SAM/SAM.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = HL7PGCM524;
@@ -992,6 +1010,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = itstack.SAM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SAM/SAM-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1001,6 +1022,7 @@
 			baseConfigurationReference = B91BD7A479C9816403620E1B /* Pods-SAM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SAM/SAM.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = HL7PGCM524;
@@ -1013,6 +1035,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = itstack.SAM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SAM/SAM-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

@@ -9,6 +9,8 @@
 #import "API.h"
 #import <Security/Security.h>
 #import <KeychainItemWrapper.h>
+
+
 @implementation API
 
 
@@ -26,13 +28,12 @@
 -(id)init{
     self = [super init];
     if (self) {
-        NSURL * url = [NSURL URLWithString:@"http://5.200.53.108:8080/api/v0/"];
+        NSURL * url = [NSURL URLWithString:@"https://app.pomoysam.ru/api/v0/"];
         self.sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:url];
-        
     }
     return self;
 }
-//
+
 //#pragma mark Token
 
 -(void) setToken:(NSString *) token{
@@ -40,7 +41,6 @@
     KeychainItemWrapper * wraper = [[KeychainItemWrapper alloc]initWithIdentifier:@"token" accessGroup:nil];
     [wraper setObject:token forKey:(id)kSecValueData];
     NSLog(@"%@",[wraper objectForKey:(id)kSecValueData]);
-//   
     
 }
 
@@ -50,7 +50,7 @@
 }
 
 //#pragma mark Register and Auth
-//
+
 -(void) prepareForRegister:(NSString *)numPhone
            onSuccess:(void(^)(NSDictionary * responseObject)) success
            onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure{
@@ -140,7 +140,6 @@
 -(void) getUserQR:(void(^)(NSDictionary * responceObject))success
         onFailure:(void(^)(NSError * error, NSInteger statusCode))failure{
     
-    
     [self.sessionManager.requestSerializer setValue:[self getToken] forHTTPHeaderField:@"Authorization"];
     [self.sessionManager GET:@"getUserQR/"
                   parameters:nil
@@ -149,9 +148,9 @@
                          
                          if(success){
                              success(responseObject);
+                             NSLog(@"%@",responseObject);
                          }
                      }
-     
                      failure:^(NSURLSessionTask *operation, NSError *error) {
                          NSLog(@"error%@",error);
                          if(failure){
@@ -160,6 +159,7 @@
                          }
                      }];
 }
+
 
 // METHOD DELETE
 
@@ -197,6 +197,7 @@
 
 -(void)getEvents:(void (^)(NSDictionary *))success onFailure:(void (^)(NSError *, NSInteger))failure{
     
+    self.sessionManager.requestSerializer.cachePolicy = NSURLRequestReturnCacheDataElseLoad;
     [self.sessionManager GET:@"getEvents/"
                   parameters:nil
                     progress:nil
@@ -215,7 +216,6 @@
                          }
                      }];
 
-    
 }
 /////
 
@@ -273,7 +273,6 @@
                       }];
 
 }
-
 -(void) confirmResetPassword:(NSString *)numPhone
                  confirmCode:(NSString *)confirmCode
                    onSuccess:(void (^)(NSDictionary *))success
@@ -310,7 +309,7 @@
     NSDictionary * params = [NSDictionary dictionaryWithObjectsAndKeys:
                              newPassword, @"password",
                              numPhone, @"user_phone", nil];
-    
+
     [self.sessionManager POST:@"setNewPassword/"
                    parameters:params
                      progress:nil
@@ -358,9 +357,6 @@
                               failure(error, response.statusCode);
                           }
                       }];
-
-    
-    
     
 }
 

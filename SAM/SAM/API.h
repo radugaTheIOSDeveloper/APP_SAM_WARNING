@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <AFNetworking.h>
+#import <Security/Security.h>
 
 
 @interface API : NSObject
@@ -45,6 +46,7 @@
 
 -(void) getUserQR:(void(^)(NSDictionary * responceObject))success
         onFailure:(void(^)(NSError * error, NSInteger statusCode))failure;
+
 
 //error
 -(void) deleteUsedQR:(NSString *)qrCodeID
