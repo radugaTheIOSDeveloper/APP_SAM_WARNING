@@ -11,6 +11,8 @@
 #import "QREncoder.h"
 #import "API.h"
 #import "SWRevealViewController.h"
+#import  <Reachability.h>
+
 
 @interface MyCoin () <UITableViewDelegate, UITableViewDataSource>
 
@@ -21,7 +23,8 @@
 @property (strong, nonatomic) UIButton * buyCoin;
 @property (strong, nonatomic) UIRefreshControl * refreshControl;
 @property (assign, nonatomic) BOOL statusInternet;
-
+@property (strong, nonatomic) UIView * entFailedView;
+@property (strong, nonatomic) UILabel * entLabel;
 @end
 
 @implementation MyCoin
@@ -32,8 +35,6 @@
     
     [super viewDidLoad];
     
-    [self getUserQRCode];
-    [self.tableView reloadData];
     
     self.activeView.backgroundColor = [UIColor redColor];
     self.pastView.backgroundColor = [UIColor whiteColor];
@@ -41,6 +42,7 @@
     
     self.activeCount = [NSMutableArray array];
     self.pastCount = [NSMutableArray array];
+    
     self.buyCoin = [UIButton buttonWithType:UIButtonTypeCustom];
     self.buyCoin.frame = CGRectMake(self.view.frame.size.width/2 + 80, self.view.frame.size.height/2 + 170, 80, 80);
     [self.buyCoin addTarget:self action:@selector(buyCoinBtn:) forControlEvents:UIControlEventTouchUpInside];
@@ -48,6 +50,23 @@
     [self.buyCoin setBackgroundImage:[UIImage imageNamed:@"btnBuy"] forState:UIControlStateNormal];
     [self.view addSubview:self.buyCoin];
     
+    self.entFailedView = [[UIView alloc] init];
+    self.entFailedView.frame = CGRectMake(self.view.frame.size.width/2 - 100 ,self.view.frame.size.height/2 + 100,200, 50);
+    self.entFailedView.backgroundColor = [UIColor colorWithRed:228/255.0f green:0/255.0f blue:11/255.0f alpha:1];
+    [self.view addSubview:self.entFailedView];
+    self.entFailedView.layer.cornerRadius = 25.0f;
+    self.entFailedView.alpha = 0.f;
+    
+    self.entLabel = [[UILabel alloc]init];
+    self.entLabel.frame = CGRectMake(self.entFailedView.frame.size.width/2 - 60, 15, 120, 20);
+    [self.entFailedView addSubview:self.entLabel];
+    self.entLabel.textColor = [UIColor whiteColor];
+    self.entLabel.text = @"Нет доступа к сети";
+    self.entLabel.textAlignment = NSTextAlignmentCenter;
+    UIFont * customFont = [UIFont fontWithName:@"Optima" size:12]; 
+    [self.entLabel setFont:customFont];
+    
+    //refresh
     self.refreshControl = [[UIRefreshControl alloc]init];
     [self.tableView addSubview:self.refreshControl];
     [self.refreshControl addTarget:self action:@selector(refreshView:) forControlEvents:UIControlEventValueChanged];
@@ -57,13 +76,29 @@
     self.navigationItem.title = @"Мои покупки";
     
     self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    self.activityIndicator.alpha = 1.f;
     [self.view addSubview:self.activityIndicator];
     self.activityIndicator.center = CGPointMake([[UIScreen mainScreen]bounds].size.width/2, [[UIScreen mainScreen]bounds].size.height/2);
     self.activityIndicator.color = [UIColor redColor];
+    
+   // [self.tableView reloadData];
+    
+    self.activityIndicator.alpha = 1.f;
     [self.view setUserInteractionEnabled:NO];
     [self.activityIndicator startAnimating];
     
+    if ([[Reachability reachabilityForInternetConnection]currentReachabilityStatus]==NotReachable)
+    {
+        [self getUserQRCode];
+      
+    }
+    else
+    {
+        [self getRefreshUserQR];
+
+
+    }
+
+
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
     {
@@ -75,6 +110,14 @@
 }
 
 #pragma marl API DELETE
+
+-(void) stopActivityIndicator {
+    
+    self.activityIndicator.alpha = 0.f;
+    [self.view setUserInteractionEnabled:YES];
+    [self.activityIndicator stopAnimating];
+    
+}
 
 -(void) deleteUsedQR:(NSString *) qrCodeID {
     
@@ -111,13 +154,12 @@
 #pragma mark API "GET USER QR"
 
 -(void) getUserQRCode {
+
     
     [[API apiManager]getUserQR:^(NSDictionary *responceObject) {
-        NSLog(@"%@",responceObject);        
-        self.activityIndicator.alpha = 0.f;
-        [self.view setUserInteractionEnabled:YES];
-        [self.activityIndicator stopAnimating];
-        
+        NSLog(@"%@",responceObject);
+    
+        [self  stopActivityIndicator];
         NSMutableArray * active = [responceObject valueForKey:@"active"];
         self.activeCount = active;
         NSMutableArray * nonActive = [responceObject valueForKey:@"inactive"];
@@ -129,9 +171,8 @@
     } onFailure:^(NSError *error, NSInteger statusCode) {
         
         NSLog(@"%@",error);
-        self.activityIndicator.alpha = 0.f;
-        [self.view setUserInteractionEnabled:YES];
-        [self.activityIndicator stopAnimating];
+        
+        [self  stopActivityIndicator];
         self.statusInternet = false;
         [self.tableView reloadData];
         
@@ -140,13 +181,60 @@
 
 
 
+-(void)getRefreshUserQR{
+    
+    
+        [[API apiManager] getRefreshUserQR:^(NSDictionary *responceObject) {
+            
+            NSLog(@"%@",responceObject);
+            [self  stopActivityIndicator];
+
+            NSMutableArray * active = [responceObject valueForKey:@"active"];
+            self.activeCount = active;
+            NSMutableArray * nonActive = [responceObject valueForKey:@"inactive"];
+            self.pastCount = nonActive;
+            [self.refreshControl endRefreshing];
+            self.statusInternet = true;
+            [self.tableView reloadData];
+            
+            
+        } onFailure:^(NSError *error, NSInteger statusCode) {
+            
+            [self  stopActivityIndicator];
+            [self.tableView reloadData];
+            
+        }];
+    
+}
+
+
+
+
 #pragma mark Refresh
 
 -(void) refreshView: (UIRefreshControl *) refresh{
     
-    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Идет обновление..."];
-    [self getUserQRCode];
+   // refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Идет обновление..."];
+    
+    if ([[Reachability reachabilityForInternetConnection]currentReachabilityStatus]==NotReachable)
+    {
+        
+        [UIView animateWithDuration:0.8 animations:^{
+             self.entFailedView.alpha = 1.0;
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:2.0 animations:^{
+                self.entFailedView.alpha = 0.0;
+            }];
+        }];
+        
+        [self.refreshControl endRefreshing];
+        
+    }else{
+        self.entFailedView.alpha = 0.f;
+        [self getRefreshUserQR];
+    }
 }
+
 
 
 #pragma mark TableView DataSource/Delegate

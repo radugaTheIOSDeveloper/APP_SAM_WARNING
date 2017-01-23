@@ -13,14 +13,11 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
+
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activitiIndicator;
 @property (weak, nonatomic) IBOutlet UILabel *labelLoad;
 
-@property (weak, nonatomic) IBOutlet UIView *viewDetail;
-
-@property (weak, nonatomic) IBOutlet UILabel *lablelDistance;
 
 
 @end

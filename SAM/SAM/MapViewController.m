@@ -31,7 +31,6 @@
 @implementation MapViewController
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
-    MKCoordinateRegion mapRegion;
     
   //  [mapView setRegion:mapRegion animated:NO];
     
@@ -51,55 +50,14 @@
 //        mapRegion.center = location;
 //        [self.mapView setRegion:mapRegion animated:YES];
 
-        if (self.routeDistance <= 0.01f) {
-            [self alerts];
-            
-        } else {
-            
-            [self.directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *  response, NSError *  error) {
-                if (error) {
-                    NSLog(@"1231");
-                } else if ([response.routes count]== 0) {
-                    NSLog(@"123");
-                } else {
-                    [self showRoute:response];
-                }
-                
-            }];
-            
-        }
+      
     } else {
         NSLog(@"123");
     }
 
     
-    
 }
 
-
--(void) alerts{
-    
-    UIAlertController * alert = [UIAlertController
-                                 alertControllerWithTitle:@"Вы приехали"
-                                  message:nil
-                                  preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction* yesButton = [UIAlertAction
-                                actionWithTitle:@"OK"
-                                style:UIAlertActionStyleDefault
-                                handler:^(UIAlertAction * action)
-                                {
-                                    self.viewDetail.alpha = 0.f;
-                                    [self.mapView removeOverlays:[self.mapView overlays]];
-                                    self.viewDetail.alpha = 0.f;
-                                    self.routeDistance = 1000.f;
-                                    self.status = false;
-                                }];
-    
-    [alert addAction:yesButton];
-   
-    [self presentViewController:alert animated:YES completion:nil];
-}
 - (void)dealloc{
     
     [self.mapView removeFromSuperview]; // release crashes app
@@ -113,11 +71,10 @@
     
     self.routeDistance = 1000.f;
     [super viewDidLoad];
-    self.viewDetail.alpha = 0.f;
     self.status = false;
     
     self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1];
-    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoMenu"]];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"LogoMenu"]];
     
     [self.mapView setDelegate:self];
     [self.mapView setShowsUserLocation:YES];
@@ -173,12 +130,6 @@
     annotation6.coordinate = CLLocationCoordinate2DMake(54.211388, 37.696394);
     annotation6.title = @"г. Тула, Пролетарский район, ул. Вильямса (напротив д. 46)";
     [self.mapView addAnnotation:annotation6];
-    
-    
-    PinAnnotation * annotation7 = [[PinAnnotation alloc]init];
-    annotation7.coordinate = CLLocationCoordinate2DMake(54.196345, 37.604139);
-    annotation7.title = @"ТЕСТ";
-    [self.mapView addAnnotation:annotation7];
 
    
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
@@ -187,53 +138,24 @@
 
 
     self.navigationItem.rightBarButtonItem = zoomButton;
-    [self customSetup];
     
     [self.activitiIndicator startAnimating];
 
+    [self backButton];
+
+}
+-(void) backButton {
+    
+    UIBarButtonItem * btn = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"backImage"] style:UIBarButtonItemStylePlain target:self action:@selector(backTapped:)];
+    self.navigationItem.leftBarButtonItem = btn;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
 }
 
-- (void)customSetup
-{
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if ( revealViewController )
-    {
-        [self.revealButtonItem setTarget: self.revealViewController];
-        [self.revealButtonItem setAction: @selector( revealToggle: )];
-        [self.navigationController.navigationBar addGestureRecognizer: self.revealViewController.panGestureRecognizer];
-    }
+- (void)backTapped:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+
 }
-#pragma mark state preservation / restoration
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    
-    // Save what you need here
-    
-    [super encodeRestorableStateWithCoder:coder];
-}
-
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    
-    // Restore what you need here
-    
-    [super decodeRestorableStateWithCoder:coder];
-}
-
-
-- (void)applicationFinishedRestoringState
-{
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    
-    // Call whatever function you need to visually restore
-    [self customSetup];
-}
-
-
 
 - (void)actionShowAll:(id)sender {
     
@@ -291,111 +213,21 @@
 
 -(void)route:(UIButton*)sender{
 
-    [self mapView:self.mapView didDeselectAnnotationView:self.annotationView];
-    [UIView animateWithDuration:0.2f
-                     animations:^(void) {
-                         
-                         CLLocation *location = [_locationManager location];
-                         CLLocationCoordinate2D  coordinate = [location coordinate];
-                         _mapView.region = MKCoordinateRegionMakeWithDistance(coordinate, 100, 100);
-                     }];
+    CGFloat strLatitude = self.annotationView.annotation.coordinate.latitude;
+    CGFloat strLongitude = self.annotationView.annotation.coordinate.longitude;
     
-    self.viewDetail.alpha = 1.f;
-//    [UIView animateWithDuration:0.1 animations:^{
-//        self.viewDetail.alpha = 1.f;
-//    } completion:^(BOOL finished) {
-//        
-//        [UIView animateWithDuration:0.3f animations:^{
-//            
-//            self.viewDetail.frame = CGRectMake(self.viewDetail.frame.origin.x,self.viewDetail.frame.origin.y - 64 ,self.viewDetail.frame.origin.x,self.viewDetail.frame.origin.y);
-//            
-//            
-//        }];
-//    }];
-
-    self.activitiIndicator.alpha = 1.f;
-    self.labelLoad.alpha = 1.f;
+    NSString *appleLink2 = [NSString stringWithFormat:@"http://maps.apple.com/?sll=&daddr=%f,%f&t=s",strLatitude,strLongitude];
     
-    self.labelLoad.text = @"Загрузка...";
-    [self.activitiIndicator startAnimating];
+    NSURL * URL = [NSURL URLWithString:appleLink2];
+    //    UIApplication *application = [UIApplication sharedApplication];
+    //    [application openURL:URL options:@{} completionHandler:nil];
     
-    self.status = true;
-    
-    [self getDirections];
-    
-  }
-
-- (void)getDirections
-{
-    
-    if (!_annotationView) {
-        return;
-    }
-    
-    if ([self.directions isCalculating]) {
-        [self.directions cancel];
-    }
-    
-    CLLocationCoordinate2D coordinate = _annotationView.annotation.coordinate;
-    MKDirectionsRequest * request = [[MKDirectionsRequest alloc]init];
-    request.source = [MKMapItem mapItemForCurrentLocation];
-    MKPlacemark * placemark = [[MKPlacemark alloc]initWithCoordinate:coordinate addressDictionary:nil];
-    MKMapItem * destination = [[MKMapItem alloc]initWithPlacemark:placemark];
-    request.destination = destination;
-    request.transportType = MKDirectionsTransportTypeAutomobile;
-    
-    self.directions = [[MKDirections alloc]initWithRequest:request];
-    [self.directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *  response, NSError *  error) {
-        if (error) {
-            NSLog(@"1231");
-        } else if ([response.routes count] == 0) {
-            NSLog(@"123");
-        } else {
-     
-            [self showRoute:response];
-        }
-    }];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[UIApplication sharedApplication] openURL:URL];
+    });
     
 }
 
--(void)showRoute:(MKDirectionsResponse *)response
-{
-    
-    [self.mapView removeOverlays:[self.mapView overlays]];
-    
-    NSMutableArray * array =  [NSMutableArray array];
-    
-   
-    for (MKRoute *route in response.routes)
-    {
-        [array addObject:route.polyline];
-        [self.mapView
-         addOverlay:route.polyline level:MKOverlayLevelAboveRoads];
-         self.lablelDistance.text = [NSString stringWithFormat:@"До чистой машины осталось %.02f км",(float)route.distance / 1000];
-        self.routeDistance = route.distance / 1000;
-        
-        self.activitiIndicator.alpha = 0.f;
-        self.labelLoad.alpha = 0.f;
-        [self.activitiIndicator stopAnimating];
-     
-        for (MKRouteStep *step in route.steps)
-        {
-            NSLog(@"%@", step.instructions);
-        }
-    }
-}
-
--(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
-    
-    if ([overlay isKindOfClass:[MKPolyline class]]) {
-        MKPolylineRenderer * renderer = [[MKPolylineRenderer alloc]initWithOverlay:overlay];
-        renderer.lineWidth = 2.f;
-        renderer.strokeColor = [UIColor redColor];
-        
-        return renderer;
-    }
-    return nil;
-}
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
     if ([view.annotation isKindOfClass:[PinAnnotation class]]) {

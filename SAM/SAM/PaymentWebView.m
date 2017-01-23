@@ -64,7 +64,6 @@
     NSString *currentURL = webView.request.URL.absoluteString;
 
     NSLog(@"%@",currentURL);
-
     
     NSMutableString *stringRange = [currentURL mutableCopy];
     NSRange range = NSMakeRange(32, currentURL.length - 32);

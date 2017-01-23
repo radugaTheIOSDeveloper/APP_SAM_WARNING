@@ -85,6 +85,8 @@
     [self performSegueWithIdentifier:@"closeApp" sender:self];
     NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:NULL forKey:@"token"];
+    
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
 }
 
 @end

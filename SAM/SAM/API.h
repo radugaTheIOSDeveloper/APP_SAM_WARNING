@@ -47,6 +47,9 @@
 -(void) getUserQR:(void(^)(NSDictionary * responceObject))success
         onFailure:(void(^)(NSError * error, NSInteger statusCode))failure;
 
+-(void) getRefreshUserQR:(void(^)(NSDictionary * responceObject))success
+        onFailure:(void(^)(NSError * error, NSInteger statusCode))failure;
+
 
 //error
 -(void) deleteUsedQR:(NSString *)qrCodeID
@@ -78,5 +81,17 @@
             onSuccess:(void(^)(NSDictionary * responseObject)) success
             onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
 
+//checkCardBind
+
+-(void) checkCardBind:(void(^)(NSDictionary * responceObject))success
+            onFailure:(void(^)(NSError * error, NSInteger statusCode))failure;
+
+-(void) cancelCardBind:(void(^)(NSDictionary * responceObject))success
+             onFailure:(void(^)(NSError * error, NSInteger statusCode))failure;
+
+//repeatCardPayment
+-(void) repeatCardPayment:(NSString *)article
+                onSuccess:(void(^)(NSDictionary * responseObject)) success
+                onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
 
 @end

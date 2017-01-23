@@ -32,8 +32,6 @@
     UITapGestureRecognizer *listener = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
     [self.textView addGestureRecognizer:listener];
 
-
-    
     SWRevealViewController * revealViewController = self.revealViewController;
     
     if ( revealViewController )
@@ -47,7 +45,6 @@
 - (void)tapAction:(UITapGestureRecognizer *)sender
 
 {
-    
     if ([MFMailComposeViewController canSendMail])
     {
         NSString *messageBody = @"";
@@ -109,7 +106,5 @@
     
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
-
-
 
 @end

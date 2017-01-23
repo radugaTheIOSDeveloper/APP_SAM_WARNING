@@ -20,4 +20,13 @@
 
 @property (strong, nonatomic) NSString * typePyment;
 
+@property (weak, nonatomic) IBOutlet UIButton *unbindBtn;
+
+@property (weak, nonatomic) IBOutlet UIView *myView;
+
+- (IBAction)actUnbind:(id)sender;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *vidthConstr;
+@property (weak, nonatomic) IBOutlet UIView *viewCheck;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
 @end

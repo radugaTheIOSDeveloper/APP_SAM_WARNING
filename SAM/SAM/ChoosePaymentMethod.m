@@ -8,6 +8,9 @@
 
 #import "ChoosePaymentMethod.h"
 #import "PaymentWebView.h"
+#import "API.h"
+#import "Payment.h"
+
 
 @interface ChoosePaymentMethod () <UITableViewDelegate, UITabBarDelegate>
 
@@ -15,13 +18,98 @@
 
 @implementation ChoosePaymentMethod
 
+
+#pragma mark API
+
+-(void) checkCardBind {
+    
+    [[API apiManager]checkCardBind:^(NSDictionary *responceObject) {
+        
+        [self stopLoad];
+        
+        if ([[responceObject objectForKey:@"status"] isEqualToString:@"ok"]) {
+            self.unbindBtn.alpha = 1.f;
+            self.vidthConstr.constant = 0;
+        } else {
+            self.unbindBtn.alpha = 0.f;
+            self.vidthConstr.constant = -40;
+        }
+        
+    } onFailure:^(NSError *error, NSInteger statusCode) {
+        NSLog(@"%@",error);
+        [self stopLoad];
+
+    }];
+}
+
+-(void) cancelCardBind {
+    
+    [[API apiManager] cancelCardBind:^(NSDictionary *responceObject) {
+        
+        [self stopLoad];
+        
+        if ([[responceObject objectForKey:@"status"] isEqualToString:@"ok"]) {
+            self.unbindBtn.alpha = 0.f;
+            self.vidthConstr.constant = -40;
+        }
+        
+    } onFailure:^(NSError *error, NSInteger statusCode) {
+        NSLog(@"%@",error);
+        [self stopLoad];
+
+    }];
+}
+
+
+-(void) repeatCardPayment:(NSString *) article {
+    
+    [[API apiManager]repeatCardPayment:article onSuccess:^(NSDictionary *responseObject) {
+        
+        [self stopLoad];
+        NSLog(@"%@",responseObject);
+        if ([[responseObject objectForKey:@"status"] isEqualToString:@"0"]) {
+            [self performSegueWithIdentifier:@"repatPayment" sender:self];
+        } else {
+            [self performSegueWithIdentifier:@"choosePayment" sender:self];
+        }
+        
+    } onFailure:^(NSError *error, NSInteger statusCode) {
+        NSLog(@"%@",error);
+        [self stopLoad];
+
+    }];
+    
+}
+
+#pragma mark ViewDidLoad
+
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
 
-        self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"LogoMenu"]];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"LogoMenu"]];
     [self backButton];
 
+    self.unbindBtn.alpha = 0.f;
+    self.vidthConstr.constant = -40;
+
+    
+    [self startLoad];
+    [self checkCardBind];
+}
+
+-(void) startLoad {
+    self.viewCheck.alpha = 0.6f;
+    [self.activityIndicator startAnimating];
+    [self.view setUserInteractionEnabled:NO];
+}
+
+-(void) stopLoad{
+    self.activityIndicator.alpha = 0.f;
+    self.viewCheck.alpha = 0.f;
+    [self.activityIndicator stopAnimating];
+    [self.view setUserInteractionEnabled:YES];
 }
 
 -(void) backButton {
@@ -42,12 +130,16 @@
 }
 
 - (IBAction)yandexBtn:(id)sender {
-    self.typePyment = @"yandex";
+    
+    self.typePyment = @"PC";
+    [self performSegueWithIdentifier:@"choosePayment" sender:self];
 }
 
 - (IBAction)bancBtn:(id)sender {
+    
+    [self startLoad];
     self.typePyment = @"AC";
-    [self performSegueWithIdentifier:@"choosePayment" sender:self];
+    [self repeatCardPayment:[[Payment save]getMyArticle]];
 }
 
 - (IBAction)mobBtn:(id)sender {
@@ -68,4 +160,9 @@
     }
 }
 
+- (IBAction)actUnbind:(id)sender {
+    
+    [self startLoad];
+    [self cancelCardBind];
+}
 @end

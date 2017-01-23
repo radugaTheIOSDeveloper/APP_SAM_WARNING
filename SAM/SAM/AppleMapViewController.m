@@ -1,7 +1,5 @@
-     //
 //  AppleMapViewController.m
 //  SAM
-//
 //  Created by User on 31.10.16.
 //  Copyright © 2016 freshtech. All rights reserved.
 //
@@ -24,20 +22,17 @@
 @end
 
 @implementation AppleMapViewController
-//
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     CLLocation *newLocation = locations[[locations count] -1];
     CLLocation *currentLocation = newLocation;
-//    NSString *longitude = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
-//    NSString *latitude = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
     
     if (currentLocation != nil) {
         
             [self start];
         
     }else {
-            UIAlertView *errorAlert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Failed to Get Your Location"
+        UIAlertView *errorAlert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Failed to Get Your Location"
                                              delegate:nil
                                              cancelButtonTitle:@"OK"
                                              otherButtonTitles:nil];
@@ -230,7 +225,6 @@
         [addrs addObject:key];
     }
     
-    NSLog(@"%@",addrs);
     CLLocation * location = [addrs objectAtIndex:indexPath.row];
     CGFloat strLatitude = location.coordinate.latitude;
     CGFloat strLongitude = location.coordinate.longitude;

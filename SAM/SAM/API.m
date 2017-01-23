@@ -140,7 +140,35 @@
 -(void) getUserQR:(void(^)(NSDictionary * responceObject))success
         onFailure:(void(^)(NSError * error, NSInteger statusCode))failure{
     
+    //returnCacheDataElseLoad
+   // [manager.requestSerializer setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+    
     [self.sessionManager.requestSerializer setValue:[self getToken] forHTTPHeaderField:@"Authorization"];
+    [self.sessionManager.requestSerializer setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
+    [self.sessionManager GET:@"getUserQR/"
+                  parameters:nil
+                    progress:nil
+                     success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
+                         
+                         if(success){
+                             success(responseObject);
+                             NSLog(@"Nenenene%@",responseObject);
+                         }
+                     }
+                     failure:^(NSURLSessionTask *operation, NSError *error) {
+                         NSLog(@"error%@",error);
+                         if(failure){
+                             NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
+                             failure(error, response.statusCode);
+                         }
+                     }];
+}
+
+-(void) getRefreshUserQR:(void(^)(NSDictionary * responceObject))success
+               onFailure:(void(^)(NSError * error, NSInteger statusCode))failure{
+    
+    [self.sessionManager.requestSerializer setValue:[self getToken] forHTTPHeaderField:@"Authorization"];
+    [self.sessionManager.requestSerializer setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
     [self.sessionManager GET:@"getUserQR/"
                   parameters:nil
                     progress:nil
@@ -158,8 +186,8 @@
                              failure(error, response.statusCode);
                          }
                      }];
-}
 
+}
 
 // METHOD DELETE
 
@@ -357,6 +385,86 @@
                               failure(error, response.statusCode);
                           }
                       }];
+    
+}
+
+// cardBind
+-(void) checkCardBind:(void(^)(NSDictionary * responceObject))success
+            onFailure:(void(^)(NSError * error, NSInteger statusCode))failure{
+    
+    [self.sessionManager.requestSerializer setValue:[self getToken] forHTTPHeaderField:@"Authorization"];
+    
+    [self.sessionManager POST:@"checkCardBind/"
+                   parameters:nil
+                     progress:nil
+                      success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
+                          
+                          if (success) {
+                              success(responseObject);
+                          }
+                      }
+                      failure: ^(NSURLSessionTask *operation, NSError *error) {
+                          
+                          if (failure) {
+                              NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
+                              failure(error, response.statusCode);
+                          }
+                      }];
+
+    
+}
+
+-(void) cancelCardBind:(void(^)(NSDictionary * responceObject))success
+             onFailure:(void(^)(NSError * error, NSInteger statusCode))failure{
+    
+    [self.sessionManager.requestSerializer setValue:[self getToken] forHTTPHeaderField:@"Authorization"];
+    
+    [self.sessionManager POST:@"cancelCardBind/"
+                   parameters:nil
+                     progress:nil
+                      success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
+                          
+                          if (success) {
+                              success(responseObject);
+                          }
+                      }
+                      failure: ^(NSURLSessionTask *operation, NSError *error) {
+                          
+                          if (failure) {
+                              NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
+                              failure(error, response.statusCode);
+                          }
+                      }];
+
+}
+//repeatCardPayment
+
+-(void) repeatCardPayment:(NSString *)article
+                onSuccess:(void(^)(NSDictionary * responseObject)) success
+                onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure{
+    
+    NSDictionary * params = [NSDictionary dictionaryWithObjectsAndKeys:
+                             article, @"article",nil];
+    
+    [self.sessionManager.requestSerializer setValue:[self getToken] forHTTPHeaderField:@"Authorization"];
+    
+    [self.sessionManager POST:@"repeatCardPayment/"
+                   parameters:params
+                     progress:nil
+                      success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
+                          
+                          if (success) {
+                              success(responseObject);
+                          }
+                      }
+                      failure: ^(NSURLSessionTask *operation, NSError *error) {
+                          
+                          if (failure) {
+                              NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
+                              failure(error, response.statusCode);
+                          }
+                      }];
+
     
 }
 
