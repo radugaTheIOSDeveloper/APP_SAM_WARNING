@@ -54,7 +54,14 @@
 		CE238C7C1E26345C006AF131 /* UIView+MKAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE238C781E26345B006AF131 /* UIView+MKAnnotationView.m */; };
 		CE238C7F1E263473006AF131 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE238C7E1E263473006AF131 /* MapViewController.m */; };
 		CE2ADAFE1DBE117E005BFAED /* SetPassController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2ADAFD1DBE117E005BFAED /* SetPassController.m */; };
+		CE2DFA5E22FD82C400669C69 /* ActiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2DFA5D22FD82C400669C69 /* ActiveViewController.m */; };
+		CE2DFA6122FD82E900669C69 /* InactiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2DFA6022FD82E900669C69 /* InactiveViewController.m */; };
+		CE2DFA6422FD82FE00669C69 /* BallsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2DFA6322FD82FE00669C69 /* BallsViewController.m */; };
+		CE2DFA6722FD88D000669C69 /* MyBySwitchController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2DFA6622FD88D000669C69 /* MyBySwitchController.m */; };
+		CE2DFA6B22FDBE3900669C69 /* MyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2DFA6A22FDBE3900669C69 /* MyTabBarController.m */; };
 		CE370DF51DA2B0660027D66B /* ConfirmRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = CE370DF41DA2B0660027D66B /* ConfirmRegister.m */; };
+		CE376D931E35F58B00B0FCFD /* SwitchMap.m in Sources */ = {isa = PBXBuildFile; fileRef = CE376D921E35F58B00B0FCFD /* SwitchMap.m */; };
+		CE376D961E36263100B0FCFD /* SelectCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE376D951E36263100B0FCFD /* SelectCardView.m */; };
 		CE39BA3F1D9406EA00C5256A /* RegistrClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CE39BA3E1D9406EA00C5256A /* RegistrClass.m */; };
 		CE39BA421D94239E00C5256A /* Enter.m in Sources */ = {isa = PBXBuildFile; fileRef = CE39BA411D94239E00C5256A /* Enter.m */; };
 		CE4F32E41DFEB28B0023F0AA /* FailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4F32E31DFEB28B0023F0AA /* FailViewController.m */; };
@@ -184,8 +191,22 @@
 		CE238C7E1E263473006AF131 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		CE2ADAFC1DBE117E005BFAED /* SetPassController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPassController.h; sourceTree = "<group>"; };
 		CE2ADAFD1DBE117E005BFAED /* SetPassController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPassController.m; sourceTree = "<group>"; };
+		CE2DFA5C22FD82C400669C69 /* ActiveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActiveViewController.h; sourceTree = "<group>"; };
+		CE2DFA5D22FD82C400669C69 /* ActiveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActiveViewController.m; sourceTree = "<group>"; };
+		CE2DFA5F22FD82E900669C69 /* InactiveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InactiveViewController.h; sourceTree = "<group>"; };
+		CE2DFA6022FD82E900669C69 /* InactiveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InactiveViewController.m; sourceTree = "<group>"; };
+		CE2DFA6222FD82FE00669C69 /* BallsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BallsViewController.h; sourceTree = "<group>"; };
+		CE2DFA6322FD82FE00669C69 /* BallsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BallsViewController.m; sourceTree = "<group>"; };
+		CE2DFA6522FD88D000669C69 /* MyBySwitchController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyBySwitchController.h; sourceTree = "<group>"; };
+		CE2DFA6622FD88D000669C69 /* MyBySwitchController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyBySwitchController.m; sourceTree = "<group>"; };
+		CE2DFA6922FDBE3900669C69 /* MyTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTabBarController.h; sourceTree = "<group>"; };
+		CE2DFA6A22FDBE3900669C69 /* MyTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTabBarController.m; sourceTree = "<group>"; };
 		CE370DF31DA2B0660027D66B /* ConfirmRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmRegister.h; sourceTree = "<group>"; };
 		CE370DF41DA2B0660027D66B /* ConfirmRegister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmRegister.m; sourceTree = "<group>"; };
+		CE376D911E35F58B00B0FCFD /* SwitchMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchMap.h; sourceTree = "<group>"; };
+		CE376D921E35F58B00B0FCFD /* SwitchMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchMap.m; sourceTree = "<group>"; };
+		CE376D941E36263100B0FCFD /* SelectCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCardView.h; sourceTree = "<group>"; };
+		CE376D951E36263100B0FCFD /* SelectCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCardView.m; sourceTree = "<group>"; };
 		CE39BA3D1D9406EA00C5256A /* RegistrClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrClass.h; sourceTree = "<group>"; };
 		CE39BA3E1D9406EA00C5256A /* RegistrClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrClass.m; sourceTree = "<group>"; };
 		CE39BA401D94239E00C5256A /* Enter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enter.h; sourceTree = "<group>"; };
@@ -303,6 +324,8 @@
 		CE032C611D7D880600851FF4 /* SAM */ = {
 			isa = PBXGroup;
 			children = (
+				CE2DFA6822FDBE1600669C69 /* TabBarController */,
+				CE2DFA5B22FD829700669C69 /* MyByControllers */,
 				CE1227361DE81A9A008289AA /* Social */,
 				CEDA75C91DD087A0009B1211 /* Support */,
 				CECB7AD61DC78218008CA095 /* News */,
@@ -496,6 +519,30 @@
 			name = AnimationScreen;
 			sourceTree = "<group>";
 		};
+		CE2DFA5B22FD829700669C69 /* MyByControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE2DFA5C22FD82C400669C69 /* ActiveViewController.h */,
+				CE2DFA5D22FD82C400669C69 /* ActiveViewController.m */,
+				CE2DFA5F22FD82E900669C69 /* InactiveViewController.h */,
+				CE2DFA6022FD82E900669C69 /* InactiveViewController.m */,
+				CE2DFA6222FD82FE00669C69 /* BallsViewController.h */,
+				CE2DFA6322FD82FE00669C69 /* BallsViewController.m */,
+				CE2DFA6522FD88D000669C69 /* MyBySwitchController.h */,
+				CE2DFA6622FD88D000669C69 /* MyBySwitchController.m */,
+			);
+			name = MyByControllers;
+			sourceTree = "<group>";
+		};
+		CE2DFA6822FDBE1600669C69 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				CE2DFA6922FDBE3900669C69 /* MyTabBarController.h */,
+				CE2DFA6A22FDBE3900669C69 /* MyTabBarController.m */,
+			);
+			name = TabBarController;
+			sourceTree = "<group>";
+		};
 		CE39BA3C1D9406A200C5256A /* Registr */ = {
 			isa = PBXGroup;
 			children = (
@@ -544,6 +591,8 @@
 				CECB7AD21DC75DA2008CA095 /* AppleMapViewController.m */,
 				CE238C7D1E263473006AF131 /* MapViewController.h */,
 				CE238C7E1E263473006AF131 /* MapViewController.m */,
+				CE376D911E35F58B00B0FCFD /* SwitchMap.h */,
+				CE376D921E35F58B00B0FCFD /* SwitchMap.m */,
 			);
 			name = MAP;
 			sourceTree = "<group>";
@@ -566,6 +615,8 @@
 				CE128D321DA7CF1C00050099 /* PaymentWebView.m */,
 				CE4F32E21DFEB28B0023F0AA /* FailViewController.h */,
 				CE4F32E31DFEB28B0023F0AA /* FailViewController.m */,
+				CE376D941E36263100B0FCFD /* SelectCardView.h */,
+				CE376D951E36263100B0FCFD /* SelectCardView.m */,
 			);
 			name = Yandex;
 			sourceTree = "<group>";
@@ -851,8 +902,11 @@
 				CE128D331DA7CF1C00050099 /* PaymentWebView.m in Sources */,
 				CEFA86571D992397001C5F3E /* PageContentViewController.m in Sources */,
 				CE370DF51DA2B0660027D66B /* ConfirmRegister.m in Sources */,
+				CE2DFA5E22FD82C400669C69 /* ActiveViewController.m in Sources */,
+				CE2DFA6422FD82FE00669C69 /* BallsViewController.m in Sources */,
 				CE032C6A1D7D880600851FF4 /* ViewController.m in Sources */,
 				CE238C7B1E26345C006AF131 /* PinAnnotation.m in Sources */,
+				CE376D931E35F58B00B0FCFD /* SwitchMap.m in Sources */,
 				CE032CF31D7DA9BB00851FF4 /* qrspec.c in Sources */,
 				CE032CBB1D7D905500851FF4 /* MyTabBar.m in Sources */,
 				CE590DDA1DCF405E00816B4E /* SWRevealViewController.m in Sources */,
@@ -864,13 +918,16 @@
 				CEF84FFC1DB386D800CD7137 /* SkipScreen.m in Sources */,
 				CE032C641D7D880600851FF4 /* main.m in Sources */,
 				CE032CBA1D7D905500851FF4 /* MyNavigationControll.m in Sources */,
+				CE376D961E36263100B0FCFD /* SelectCardView.m in Sources */,
 				CE39BA421D94239E00C5256A /* Enter.m in Sources */,
 				CE238C7C1E26345C006AF131 /* UIView+MKAnnotationView.m in Sources */,
 				CEE7CA001DB0F71A00490B0F /* MenuViewController.m in Sources */,
+				CE2DFA6722FD88D000669C69 /* MyBySwitchController.m in Sources */,
 				CE4F32E41DFEB28B0023F0AA /* FailViewController.m in Sources */,
 				CEDA75CC1DD087B6009B1211 /* Support.m in Sources */,
 				CE032CF41D7DA9BB00851FF4 /* split.c in Sources */,
 				CE53C9751DAE798F004BDB27 /* Payment.m in Sources */,
+				CE2DFA6B22FDBE3900669C69 /* MyTabBarController.m in Sources */,
 				CE53C9721DAE7969004BDB27 /* Payments.m in Sources */,
 				CE032CFD1D7DABBB00851FF4 /* Help.m in Sources */,
 				CE238C7F1E263473006AF131 /* MapViewController.m in Sources */,
@@ -894,6 +951,7 @@
 				CE39BA3F1D9406EA00C5256A /* RegistrClass.m in Sources */,
 				CE032CDB1D7DA8CA00851FF4 /* QREncoder.m in Sources */,
 				CE032CF81D7DAB7F00851FF4 /* MyCoin.m in Sources */,
+				CE2DFA6122FD82E900669C69 /* InactiveViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

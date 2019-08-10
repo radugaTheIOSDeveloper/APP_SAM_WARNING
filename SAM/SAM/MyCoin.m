@@ -123,7 +123,18 @@
     
     [[API apiManager] deleteUsedQR:qrCodeID
                          onSuccess:^(NSDictionary *responseObject) {
-                             [self getUserQRCode];
+                             [self getRefreshUserQR];
+                             if ([[Reachability reachabilityForInternetConnection]currentReachabilityStatus]==NotReachable)
+                             {
+                                 [self alerts];
+                             }
+                             else
+                             {
+                                 [self getRefreshUserQR];
+                                 
+                                 
+                             }
+
                              [self.activityIndicator startAnimating];
                              [self.tableView reloadData];
                          } onFailure:^(NSError *error, NSInteger statusCode) {
@@ -135,7 +146,7 @@
     
     UIAlertController * alert = [UIAlertController
                           alertControllerWithTitle:@"Ошибка удаления"
-                                           message:nil
+                                 message:@"Ошибка соединения"
                                     preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* yesButton = [UIAlertAction
@@ -157,7 +168,6 @@
 
     
     [[API apiManager]getUserQR:^(NSDictionary *responceObject) {
-        NSLog(@"%@",responceObject);
     
         [self  stopActivityIndicator];
         NSMutableArray * active = [responceObject valueForKey:@"active"];
@@ -169,8 +179,6 @@
         [self.tableView reloadData];
 
     } onFailure:^(NSError *error, NSInteger statusCode) {
-        
-        NSLog(@"%@",error);
         
         [self  stopActivityIndicator];
         self.statusInternet = false;
@@ -186,7 +194,6 @@
     
         [[API apiManager] getRefreshUserQR:^(NSDictionary *responceObject) {
             
-            NSLog(@"%@",responceObject);
             [self  stopActivityIndicator];
 
             NSMutableArray * active = [responceObject valueForKey:@"active"];

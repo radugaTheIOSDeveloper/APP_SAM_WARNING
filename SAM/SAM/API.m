@@ -40,7 +40,7 @@
     
     KeychainItemWrapper * wraper = [[KeychainItemWrapper alloc]initWithIdentifier:@"token" accessGroup:nil];
     [wraper setObject:token forKey:(id)kSecValueData];
-    NSLog(@"%@",[wraper objectForKey:(id)kSecValueData]);
+   // NSLog(@"%@",[wraper objectForKey:(id)kSecValueData]);
     
 }
 
@@ -152,11 +152,11 @@
                          
                          if(success){
                              success(responseObject);
-                             NSLog(@"Nenenene%@",responseObject);
+                           //  NSLog(@"Nenenene%@",responseObject);
                          }
                      }
                      failure:^(NSURLSessionTask *operation, NSError *error) {
-                         NSLog(@"error%@",error);
+                       //  NSLog(@"error%@",error);
                          if(failure){
                              NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
                              failure(error, response.statusCode);
@@ -176,11 +176,11 @@
                          
                          if(success){
                              success(responseObject);
-                             NSLog(@"%@",responseObject);
+                       //      NSLog(@"%@",responseObject);
                          }
                      }
                      failure:^(NSURLSessionTask *operation, NSError *error) {
-                         NSLog(@"error%@",error);
+                     //    NSLog(@"error%@",error);
                          if(failure){
                              NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
                              failure(error, response.statusCode);
@@ -225,7 +225,8 @@
 
 -(void)getEvents:(void (^)(NSDictionary *))success onFailure:(void (^)(NSError *, NSInteger))failure{
     
-    self.sessionManager.requestSerializer.cachePolicy = NSURLRequestReturnCacheDataElseLoad;
+    [self.sessionManager.requestSerializer setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
+    
     [self.sessionManager GET:@"getEvents/"
                   parameters:nil
                     progress:nil
@@ -237,7 +238,7 @@
                      }
      
                      failure:^(NSURLSessionTask *operation, NSError *error) {
-                         NSLog(@"error%@",error);
+                       //  NSLog(@"error%@",error);
                          if(failure){
                              NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
                              failure(error, response.statusCode);
@@ -245,6 +246,32 @@
                      }];
 
 }
+
+-(void) getRefreshEvents:(void(^)(NSDictionary * responceObject))success
+               onFailure:(void(^)(NSError * error, NSInteger statusCode))failure{
+    
+      [self.sessionManager.requestSerializer setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
+    [self.sessionManager GET:@"getEvents/"
+                  parameters:nil
+                    progress:nil
+                     success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
+                         
+                         if(success){
+                             success(responseObject);
+                         }
+                     }
+     
+                     failure:^(NSURLSessionTask *operation, NSError *error) {
+                         //  NSLog(@"error%@",error);
+                         if(failure){
+                             NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
+                             failure(error, response.statusCode);
+                             
+                         }
+                     }];
+
+}
+
 /////
 
 -(void) passRegistr:(NSString *)numPhone

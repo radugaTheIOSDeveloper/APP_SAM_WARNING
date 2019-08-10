@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
+@property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
 
 @end

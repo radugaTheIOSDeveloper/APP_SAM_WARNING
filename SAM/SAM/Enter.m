@@ -16,6 +16,7 @@
 
 @property (strong, nonatomic) NSString * messageAlert;
 
+
 @end
 
 @implementation Enter
@@ -61,6 +62,7 @@
                         [self.view setUserInteractionEnabled:YES];
                         
                         if ([responseObject objectForKey:@"token"]) {
+                            
                             [[API apiManager]setToken:[NSString stringWithFormat:@"Token %@",[responseObject objectForKey:@"token"]]];
                             [[Payment save]setPhoneNumber:username];
                             NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
@@ -121,7 +123,13 @@
 
 - (BOOL) textFieldShouldClear:(UITextField *)textField{
     
-    self.textFieldNumber.text = @"+7";
+    if ([textField isEqual:self.textFieldNumber]) {
+        textField.text = @"+7";
+    } else {
+        textField.text = @"";
+    }
+   // [textField resignFirstResponder];
+
     return NO;
 }
 

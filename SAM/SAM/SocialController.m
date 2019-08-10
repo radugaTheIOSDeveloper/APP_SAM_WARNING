@@ -35,13 +35,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
 - (IBAction)shareBtn:(id)sender {
     
-    NSString * message = @"Я рекомундую мойку самообслуживания САМ!";
+    NSString * message = @"Я рекомендую сеть автомоек самообслуживания САМ\nБудь вкурсе всех новостей:\nНаш сайт: https://pomoysam.ru\nМы в VK: https://vk.com/pomoysamru\nМы в Одноклассниках: http://ok.ru/group/54177483260148\nМы в Инстаграмме: https://www.instagram.com/moykasam/\nСкачайте приложение:\nApp Store: https://itunes.apple.com/us/app/mojka-sam/id1166195716?l=ru&ls=1&mt=8\nGoogle Play: https://play.google.com/store/apps/details?id=ru.pomoysam.itstack";
     
-    UIImage * image = [UIImage imageNamed:@"supportLogo"];
+    UIImage * image = [UIImage imageNamed:@"screenSocial"];
     
     NSArray * shareItems = @[message, image];
     

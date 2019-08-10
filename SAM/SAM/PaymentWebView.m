@@ -20,7 +20,7 @@
     [super viewDidLoad];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"LogoMenu"]];
     
-    NSLog(@"shopId=71175 \nscid=68953 type =%@\n sum =%@\narticle =%@\nphone = %@",self.pymentType,[[Payment save]getMySum],[[Payment save]getMyArticle],[[Payment save]getPhoneNumber]);
+ //   NSLog(@"shopId=71175 \nscid=68953 type =%@\n sum =%@\narticle =%@\nphone = %@",self.pymentType,[[Payment save]getMySum],[[Payment save]getMyArticle],[[Payment save]getPhoneNumber]);
 
     NSString *urlString = @"https://money.yandex.ru/eshop.xml";
     NSURL *url = [NSURL URLWithString:urlString];
@@ -63,25 +63,32 @@
     [self.view setUserInteractionEnabled:YES];
     NSString *currentURL = webView.request.URL.absoluteString;
 
-    NSLog(@"%@",currentURL);
+    //NSLog(@"%@",currentURL);
     
     NSMutableString *stringRange = [currentURL mutableCopy];
     NSRange range = NSMakeRange(32, currentURL.length - 32);
     [stringRange deleteCharactersInRange:range];
-    NSString * str = stringRange;
+    NSString * succesString = stringRange;
     
+    NSMutableString *stringRangeFail = [currentURL mutableCopy];
+    NSRange rangeFail = NSMakeRange(29, currentURL.length - 29);
+    [stringRangeFail deleteCharactersInRange:rangeFail];
+    NSString * failString = stringRangeFail;
     
-    if ([str isEqualToString:@"https://app.pomoysam.ru/success/"]) {
+   // NSLog(@"%@==================FAIL==========", stringRangeFail);
+    
+    if ([succesString isEqualToString:@"https://app.pomoysam.ru/success/"]) {
         
         [self performSegueWithIdentifier:@"success" sender:self];
         
-    } else if ([str isEqualToString:@"https://app.pomoysam.ru/fail/?or"]) {
+    } else if ([failString isEqualToString:@"https://app.pomoysam.ru/fail/"]) {
+        
         [self performSegueWithIdentifier:@"fail" sender:self];
     }
   }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView{
-    NSLog(@"yes");//1345
+    //NSLog(@"yes");
 }
 
 

@@ -21,10 +21,10 @@
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
-    NSMutableAttributedString * str = [[NSMutableAttributedString alloc] initWithString:@"Если у Вас возникли проблемы, отправьте письмо на\n support@pomoysam.ru\n Спасибо ждем Вас снова!"];
-    [str addAttribute: NSLinkAttributeName value: @"mailto:" range: NSMakeRange(51, 19)];
+    NSMutableAttributedString * str = [[NSMutableAttributedString alloc] initWithString:@"Помогите нам стать лучше!\nЖдем от Вас предложений, замечаний по работе приложения и автомоек САМ\nsupport@pomoysam.ru"];
+    [str addAttribute: NSLinkAttributeName value: @"mailto:" range: NSMakeRange(97, 19)];
     self.textView.attributedText = str;
-    [self.textView  setFont: [UIFont fontWithName:@"Optima" size:16]];
+    [self.textView  setFont: [UIFont fontWithName:@"Optima" size:14]];
     [self.textView setTextColor:[UIColor colorWithRed:40.0/255 green:40.0/255 blue:40.0/255 alpha:1.0]];
     self.textView.selectable = YES;
     [self.textView setTextAlignment:NSTextAlignmentCenter];
@@ -83,8 +83,7 @@
 
 
 
-- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
-{
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
     
     switch (result) {
         case MFMailComposeResultSent:

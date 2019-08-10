@@ -51,10 +51,7 @@
                                 }
                             }
                                 
-                    } else {
-                                
-                        [self performSegueWithIdentifier:@"segue" sender:self];
-                    }
+                    } 
                             
                 }];
         

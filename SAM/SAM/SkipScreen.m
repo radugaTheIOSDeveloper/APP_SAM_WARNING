@@ -29,7 +29,7 @@
     
     NSMutableArray * animationOne = [NSMutableArray arrayWithObjects:[UIImage imageNamed:@"rPos0"],[UIImage imageNamed:@"rPos1"],[UIImage imageNamed:@"rPos2"],[UIImage imageNamed:@"rPos3"],[UIImage imageNamed:@"rPos4"],[UIImage imageNamed:@"rPos5"], nil];
     
-    NSMutableArray * animationTree = [NSMutableArray arrayWithObjects:[UIImage imageNamed:@"qrPos0"],[UIImage imageNamed:@"qrPos1"],[UIImage imageNamed:@"qrPos2"],[UIImage imageNamed:@"qrPos3"],[UIImage imageNamed:@"qrPos4"], nil];
+    NSMutableArray * animationTree = [NSMutableArray arrayWithObjects:[UIImage imageNamed:@"qrPos0"],[UIImage imageNamed:@"qrPos1"],[UIImage imageNamed:@"qrPos2"],[UIImage imageNamed:@"qrPos3"],[UIImage imageNamed:@"qrPos4"],[UIImage imageNamed:@"qrPos4"],[UIImage imageNamed:@"qrPos4"], nil];
     
     NSMutableArray * animationTwo = [NSMutableArray arrayWithObjects:[UIImage imageNamed:@"carPos0"],[UIImage imageNamed:@"carPos1"],[UIImage imageNamed:@"carPos2"],[UIImage imageNamed:@"carPos3"],[UIImage imageNamed:@"carPos4"], nil];
     
@@ -44,7 +44,8 @@
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
-    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30);
+    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width,
+                                                    self.view.frame.size.height - 30);
     
     [self addChildViewController:_pageViewController];
     [self.view addSubview:_pageViewController.view];

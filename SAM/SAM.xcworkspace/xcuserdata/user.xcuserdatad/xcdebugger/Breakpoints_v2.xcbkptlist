@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SAM/RegistrClass.m"
-            timestampString = "504097295.515548"
+            timestampString = "587060207.550302"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SAM/RegistrClass.m"
-            timestampString = "504097295.515548"
+            timestampString = "587060207.550706"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
@@ -144,6 +144,22 @@
             startingLineNumber = "60"
             endingLineNumber = "60"
             landmarkName = "-saveAPNSToken:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SAM/MyCoin.m"
+            timestampString = "587054201.642176"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "-alerts"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -9,7 +9,7 @@
 #import "SWRevealViewController.h"
 
 
-@interface AppleMapViewController () <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate>
+@interface AppleMapViewController () <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate,UIAlertViewDelegate>
 
 @property (strong, nonatomic) NSArray * sortedDistance;
 @property (strong, nonatomic) NSArray * sortedLocation;
@@ -19,6 +19,7 @@
 @property (strong, nonatomic) NSMutableDictionary * locations;
 @property (strong, nonatomic) NSMutableDictionary * imageMap;
 @property (assign, nonatomic) NSInteger status;
+@property (assign, nonatomic) BOOL statusLocation;
 @end
 
 @implementation AppleMapViewController
@@ -29,20 +30,36 @@
     
     if (currentLocation != nil) {
         
+            self.statusLocation = true;
             [self start];
         
     }else {
-        UIAlertView *errorAlert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Failed to Get Your Location"
-                                             delegate:nil
-                                             cancelButtonTitle:@"OK"
-                                             otherButtonTitles:nil];
-                  [errorAlert show];
-              }
+      
+    }
+}
+
+
+
+-(CLLocation *) location {
+    
+    CLLocation *LocationAtual = [[CLLocation alloc]init];;
+    
+    if (self.statusLocation == true) {
+        
+        LocationAtual = self.myLocationManager.location;
+        
+    } else {
+        LocationAtual = [[CLLocation alloc] initWithLatitude:-56.6462520 longitude:-36.6462520];
+    }
+    
+    return LocationAtual;
 }
 
 -(void) start {
     
-    CLLocation *startLocation = self.myLocationManager.location;
+ 
+    
+    CLLocation *startLocation = [self location];
     
     CLLocation *location = [[CLLocation alloc] initWithLatitude:54.007482 longitude:38.252156];
     CLLocation *location1 = [[CLLocation alloc] initWithLatitude:54.033654 longitude:37.489695];
@@ -100,22 +117,33 @@
     
     self.status = 0;
     
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-
+    self.tableView.contentInset = UIEdgeInsetsZero;
+    self.automaticallyAdjustsScrollViewInsets = NO;    
     self.myLocationManager = [[CLLocationManager alloc] init];
     self.myLocationManager.delegate=self;
+    
+
     [self.myLocationManager requestWhenInUseAuthorization];
     [self.myLocationManager startMonitoringSignificantLocationChanges];
     [self.myLocationManager startUpdatingLocation];
 
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if ( revealViewController )
-    {
-        [self.revealButtonItem setTarget: self.revealViewController];
-        [self.revealButtonItem setAction: @selector( revealToggle: )];
-        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    if ([CLLocationManager locationServicesEnabled]){
+        
+        NSLog(@"Location Services Enabled");
+        
+        
+        if ([CLLocationManager authorizationStatus]==kCLAuthorizationStatusDenied){
+            
+            self.statusLocation = false;
+            [self start];
+            
+        }
     }
+    
 }
+
+
+
 
 -(void) sortDistance:(NSMutableDictionary *) distance
         sortLocation:(NSMutableDictionary *) location
@@ -210,9 +238,13 @@
     UILabel * distance = (UILabel*)[cell.contentView viewWithTag:7];
     UIImageView * imageLogo = (UIImageView*)[cell.contentView viewWithTag:2];
     addrLabel.text = [addr objectAtIndex:indexPath.row];
-    distance.text = [rowss objectAtIndex:indexPath.row];
     imageLogo.image = [UIImage imageNamed:[images objectAtIndex:indexPath.row]];
     
+    if (self.statusLocation == true) {
+        distance.text = [rowss objectAtIndex:indexPath.row];
+    } else {
+        distance.text = @"Служба геолокации отключена!";
+    }
     return cell;
 }
 
@@ -235,9 +267,42 @@
 //    UIApplication *application = [UIApplication sharedApplication];
 //    [application openURL:URL options:@{} completionHandler:nil];
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [[UIApplication sharedApplication] openURL:URL];
-    });
+    
+    if (self.statusLocation == true) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[UIApplication sharedApplication] openURL:URL];
+        });
+    } else {
+        
+        UIAlertController * alert=   [UIAlertController
+                                      alertControllerWithTitle:@"Служба геолокации отключена!"
+                                      message:@"Включить службу геолокации в настройках?"
+                                      preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                                 
+                             }];
+        UIAlertAction* cancel = [UIAlertAction
+                                 actionWithTitle:@"Cancel"
+                                 style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction * action)
+                                 {
+                                     [alert dismissViewControllerAnimated:YES completion:nil];
+                                 }];
+        [alert addAction:ok];
+        [alert addAction:cancel];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+
+    }
+    
     
 }
 

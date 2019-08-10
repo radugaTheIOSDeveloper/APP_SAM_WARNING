@@ -123,7 +123,9 @@
 }
 
 -(BOOL)textFieldShouldClear:(UITextField *)textField {
+    
     textField.text = @"+7";
+    
     return NO;
 }
 
@@ -173,7 +175,6 @@
         NSMutableString *stringRange = [self.textField.text mutableCopy];
         NSRange range = NSMakeRange(0, 1);
         [stringRange deleteCharactersInRange:range];
-        [self prepareForRegister:stringRange];
 
     }
 }

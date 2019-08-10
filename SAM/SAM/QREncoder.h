@@ -14,8 +14,11 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @property (strong, nonatomic) NSString * stringQR;
+@property (strong, nonatomic) NSString * timeQR;
+
 
 - (UIImage *)quickResponseImageForString:(NSString *)dataString withDimension:(int)imageWidth;
 @property (weak, nonatomic) IBOutlet UILabel *nonActive;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @end

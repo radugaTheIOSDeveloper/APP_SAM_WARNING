@@ -10,13 +10,17 @@
 #import "PaymentWebView.h"
 #import "API.h"
 #import "Payment.h"
+#import "SelectCardView.h"
 
 
 @interface ChoosePaymentMethod () <UITableViewDelegate, UITabBarDelegate>
 
+@property (strong, nonatomic) NSString * cardMask;
+
 @end
 
 @implementation ChoosePaymentMethod
+
 
 
 #pragma mark API
@@ -27,58 +31,22 @@
         
         [self stopLoad];
         
-        if ([[responceObject objectForKey:@"status"] isEqualToString:@"ok"]) {
-            self.unbindBtn.alpha = 1.f;
-            self.vidthConstr.constant = 0;
-        } else {
-            self.unbindBtn.alpha = 0.f;
-            self.vidthConstr.constant = -40;
-        }
-        
-    } onFailure:^(NSError *error, NSInteger statusCode) {
-        NSLog(@"%@",error);
-        [self stopLoad];
-
-    }];
-}
-
--(void) cancelCardBind {
-    
-    [[API apiManager] cancelCardBind:^(NSDictionary *responceObject) {
-        
-        [self stopLoad];
+       // NSLog(@"%@",responceObject);
         
         if ([[responceObject objectForKey:@"status"] isEqualToString:@"ok"]) {
-            self.unbindBtn.alpha = 0.f;
-            self.vidthConstr.constant = -40;
-        }
-        
-    } onFailure:^(NSError *error, NSInteger statusCode) {
-        NSLog(@"%@",error);
-        [self stopLoad];
-
-    }];
-}
-
-
--(void) repeatCardPayment:(NSString *) article {
-    
-    [[API apiManager]repeatCardPayment:article onSuccess:^(NSDictionary *responseObject) {
-        
-        [self stopLoad];
-        NSLog(@"%@",responseObject);
-        if ([[responseObject objectForKey:@"status"] isEqualToString:@"0"]) {
+            
+            self.cardMask = [responceObject valueForKey:@"card_mask"];
             [self performSegueWithIdentifier:@"repatPayment" sender:self];
+            
         } else {
             [self performSegueWithIdentifier:@"choosePayment" sender:self];
         }
         
     } onFailure:^(NSError *error, NSInteger statusCode) {
-        NSLog(@"%@",error);
+     //   NSLog(@"%@",error);
         [self stopLoad];
 
     }];
-    
 }
 
 #pragma mark ViewDidLoad
@@ -91,16 +59,14 @@
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"LogoMenu"]];
     [self backButton];
 
-    self.unbindBtn.alpha = 0.f;
-    self.vidthConstr.constant = -40;
+    NSLog(@"%@",[[Payment save]getMyArticle]);
+    self.viewCheck.alpha = 0.f;
 
-    
-    [self startLoad];
-    [self checkCardBind];
 }
 
 -(void) startLoad {
     self.viewCheck.alpha = 0.6f;
+    self.activityIndicator.alpha = 1.f;
     [self.activityIndicator startAnimating];
     [self.view setUserInteractionEnabled:NO];
 }
@@ -139,7 +105,7 @@
     
     [self startLoad];
     self.typePyment = @"AC";
-    [self repeatCardPayment:[[Payment save]getMyArticle]];
+    [self checkCardBind];
 }
 
 - (IBAction)mobBtn:(id)sender {
@@ -153,16 +119,17 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     PaymentWebView * payment;
+    SelectCardView * selectCardView;
+    
     if ([[segue identifier] isEqualToString:@"choosePayment"]){
         payment = [segue destinationViewController];
         payment.pymentType = self.typePyment;
         
+    }else if ([[segue identifier] isEqualToString:@"repatPayment"]){
+        selectCardView = [segue destinationViewController];
+        selectCardView.cardMaskStr = self.cardMask;
     }
 }
 
-- (IBAction)actUnbind:(id)sender {
-    
-    [self startLoad];
-    [self cancelCardBind];
-}
+
 @end

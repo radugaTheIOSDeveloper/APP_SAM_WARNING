@@ -40,22 +40,8 @@
 
     if (self.status == true) {
         [self.mapView setCenterCoordinate:mapView.userLocation.location.coordinate animated:YES];
-//        MKCoordinateSpan span;
-//        span.latitudeDelta = 0.005;
-//        span.longitudeDelta = 0.005;
-//        CLLocationCoordinate2D location;
-//        location.latitude = userLocation.coordinate.latitude;
-//        location.longitude = userLocation.coordinate.longitude;
-//        mapRegion.span = span;
-//        mapRegion.center = location;
-//        [self.mapView setRegion:mapRegion animated:YES];
 
-      
-    } else {
-        NSLog(@"123");
-    }
-
-    
+    }    
 }
 
 - (void)dealloc{
@@ -69,12 +55,12 @@
 
 - (void)viewDidLoad {
     
+    
+    
     self.routeDistance = 1000.f;
     [super viewDidLoad];
     self.status = false;
     
-    self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1];
-    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"LogoMenu"]];
     
     [self.mapView setDelegate:self];
     [self.mapView setShowsUserLocation:YES];
@@ -141,21 +127,57 @@
     
     [self.activitiIndicator startAnimating];
 
-    [self backButton];
-
-}
--(void) backButton {
+    if ([CLLocationManager locationServicesEnabled]){
+        
+        NSLog(@"Location Services Enabled");
+        
+        
+        if ([CLLocationManager authorizationStatus]==kCLAuthorizationStatusDenied){
+            
+            [self.activitiIndicator stopAnimating];
+            self.activitiIndicator.alpha = 0.f;
+            self.labelLoad.alpha = 0.f;
+            
+            UIAlertController * alert=   [UIAlertController
+                                          alertControllerWithTitle:@"Служба геолокации отключена!"
+                                          message:@"Включить службу геолокации в настройках?"
+                                          preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* ok = [UIAlertAction
+                                 actionWithTitle:@"OK"
+                                 style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction * action)
+                                 {
+                                     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+                                     
+                                     [alert dismissViewControllerAnimated:YES completion:nil];
+                                     
+                                 }];
+            UIAlertAction* cancel = [UIAlertAction
+                                     actionWithTitle:@"Cancel"
+                                     style:UIAlertActionStyleDefault
+                                     handler:^(UIAlertAction * action)
+                                     {
+                                         [alert dismissViewControllerAnimated:YES completion:nil];
+                                     }];
+            [alert addAction:ok];
+            [alert addAction:cancel];
+            
+            dispatch_async(dispatch_get_main_queue(), ^ {
+                [self presentViewController:alert animated:YES completion:nil];
+            });
+        }
+        
+        
+    }
     
-    UIBarButtonItem * btn = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"backImage"] style:UIBarButtonItemStylePlain target:self action:@selector(backTapped:)];
-    self.navigationItem.leftBarButtonItem = btn;
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+
+    
     
 }
 
-- (void)backTapped:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
 
-}
+
 
 - (void)actionShowAll:(id)sender {
     

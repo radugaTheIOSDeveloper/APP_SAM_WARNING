@@ -34,7 +34,7 @@
         [self addSubview:self.titleLabel];
         
         _button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [self.button setFrame:CGRectMake(40,60, 220,50)];
+        [self.button setFrame:CGRectMake(40,60, 220,40)];
         [self.button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [self.button setTitle:@"Помыть машину" forState:UIControlStateNormal];
         [self.button setImage:[UIImage imageNamed:@"buttonMap"] forState:UIControlStateNormal];
