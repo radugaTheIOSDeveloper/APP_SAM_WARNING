@@ -25,14 +25,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.titleLable.text = self.titleText;
     self.backgroundImage.image = [UIImage imageNamed:self.imageBG];
-    self.logoImage.image= [UIImage imageNamed:self.imageLogo];
-    self.detailLable.text = self.detailText;
-    self.textField.text = self.textInfo;
 }
 - (void)viewDidLayoutSubviews {
-    [self.textField setContentOffset:CGPointZero animated:NO];
+    
 }
 
 

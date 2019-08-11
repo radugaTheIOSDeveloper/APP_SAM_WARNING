@@ -27,9 +27,10 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *buyCoinsOtl;
 - (IBAction)buyCoins:(id)sender;
-@property (weak, nonatomic) IBOutlet UILabel *lableRub;
-@property (weak, nonatomic) IBOutlet UILabel *lableQuantity;
-@property (weak, nonatomic) IBOutlet UILabel *titleWashing;
+
+@property (weak, nonatomic) IBOutlet UILabel *minutsInfo;
+@property (weak, nonatomic) IBOutlet UILabel *summInfo;
+@property (weak, nonatomic) IBOutlet UILabel *ballsInfo;
 
 @property (strong,nonatomic)NSString * titleStr;
 

@@ -22,6 +22,12 @@ DEPENDENCIES:
   - KeychainItemWrapper
   - Reachability (~> 3.2)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - KeychainItemWrapper
+    - Reachability
+
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   KeychainItemWrapper: 67a240172ed669842bc6bc13ed554dcd50469fa2
@@ -29,4 +35,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 2340728c796339aa5aad1ebea9dea2b92a629210
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.7.5

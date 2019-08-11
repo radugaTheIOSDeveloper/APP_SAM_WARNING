@@ -23,7 +23,10 @@
     NSInteger two;
     NSInteger buy100;
     NSInteger buy50;
+    NSInteger twoMinuts;
+    NSInteger fourMinuts;
     NSInteger totalPrice;
+    NSInteger totalMinuts;
 }
 
 - (void)viewDidLoad {
@@ -37,9 +40,12 @@
     buy50 = 0;
     buy100 = 0;
     totalPrice = 0;
-    self.lableRub.alpha = 0.f;
-    self.lableQuantity.alpha = 0.f;
-  
+    totalMinuts = 0;
+    
+    self.summInfo.text = [NSString stringWithFormat:@"0 рублей"];
+    self.minutsInfo.text = [NSString stringWithFormat:@"0 минут"];
+    self.ballsInfo.text = [NSString stringWithFormat:@"20 баллов"];
+    
     self.buyCoinsOtl.enabled = NO;
     [self backButton];
     
@@ -54,12 +60,12 @@
 }
 
 - (void)backTapped:(id)sender {
-
-    if ([self.titleStr isEqualToString:@"MyCoin"]) {
-        [self performSegueWithIdentifier:@"backBuyCoin" sender:self];
-    }else {
-        [self.navigationController popViewControllerAnimated:YES];
-    }
+//
+//    if ([self.titleStr isEqualToString:@"MyCoin"]) {
+//        [self performSegueWithIdentifier:@"backBuyCoin" sender:self];
+//    }else {
+//        [self.navigationController popViewControllerAnimated:YES];
+//    }
     
 }
 
@@ -72,26 +78,41 @@
     if (four == 0) {
         
         four = 0;
+        fourMinuts = 0;
         _quantityTokenFour.text = [NSString stringWithFormat:@"%ld",(long)four];
         
     }else{
         
+        
         buy100 = buy100 -100;
         totalPrice = buy100 + buy50;
         four--;
+        fourMinuts= fourMinuts - 4;
+        totalMinuts = fourMinuts + twoMinuts;
         _quantityTokenFour.text = [NSString stringWithFormat:@"%ld",(long)four];
         [self titleButton:totalPrice];
         
     }
+    
+    self.minutsInfo.text = [NSString stringWithFormat:@"%ld минут",totalMinuts];
+
+    self.summInfo.text = [NSString stringWithFormat:@"%ld рублей",totalPrice];
+    
 }
 
 - (IBAction)plusFour:(id)sender {
     
     buy100 = buy100 +100;
     totalPrice = buy100 + buy50;
+    fourMinuts = fourMinuts +4;
     four++;
+    totalMinuts = fourMinuts + twoMinuts;
+
     _quantityTokenFour.text = [NSString stringWithFormat:@"%ld",(long)four];
-    [self titleButton:totalPrice];
+    
+    self.minutsInfo.text = [NSString stringWithFormat:@"%ld минут",totalMinuts];
+    
+    self.summInfo.text = [NSString stringWithFormat:@"%ld рублей",totalPrice];
     
 }
 
@@ -99,16 +120,24 @@
     
     if (two == 0) {
         two = 0;
+        
+        twoMinuts = 0;
         _quantityTokenTwo.text = [NSString stringWithFormat:@"%ld",(long)two];
         
     }else{
         buy50 =buy50 - 50;
         totalPrice = buy100 + buy50;
+        twoMinuts =twoMinuts - 2;
         two--;
+        totalMinuts = fourMinuts + twoMinuts;
+
         _quantityTokenTwo.text = [NSString stringWithFormat:@"%ld",(long)two];
         [self titleButton:totalPrice];
         
     }
+    self.minutsInfo.text = [NSString stringWithFormat:@"%ld минут",totalMinuts];
+    
+    self.summInfo.text = [NSString stringWithFormat:@"%ld рублей",totalPrice];
     
 }
 
@@ -116,8 +145,15 @@
     buy50 = buy50 + 50;
     totalPrice = buy100 + buy50;
     two++;
+    twoMinuts = twoMinuts +2;
+    totalMinuts = fourMinuts + twoMinuts;
+
     _quantityTokenTwo.text = [NSString stringWithFormat:@"%ld",(long)two];
     [self titleButton:totalPrice];
+    
+    self.minutsInfo.text = [NSString stringWithFormat:@"%ld минут",totalMinuts];
+    
+    self.summInfo.text = [NSString stringWithFormat:@"%ld рублей",totalPrice];
     
 }
 
@@ -128,14 +164,10 @@
         [self.buyCoinsOtl setTitle:@"Купить жетоны" forState:UIControlStateNormal
 
          ];
-        self.lableQuantity.alpha = 0.f;
-        self.lableRub.alpha = 0.f;
+
     }else{
-        self.lableQuantity.alpha = 1.f;
-        self.lableRub.alpha = 1.f;
+
         self.buyCoinsOtl.enabled = YES;
-        NSString * title = [NSString stringWithFormat:@"%ld",(long)buttonTitle];
-        self.lableQuantity.text = title;
         [self.buyCoinsOtl setTitle:@"" forState:UIControlStateNormal];
     }
 }
@@ -143,10 +175,12 @@
 - (IBAction)buyCoins:(id)sender {
     if (totalPrice == 0) {
     }else{
-        NSString * sum = self.lableQuantity.text;
+    
         NSString * article = [NSString stringWithFormat:@"%ld*%ld",(long)four,(long)two];
-        [[Payment save]setMySum:sum];
+        [[Payment save]setMySum:@"123"];
         [[Payment save]setMyArticle:article];
-        [self performSegueWithIdentifier:@"choosePayment" sender:nil];    }
+        [self performSegueWithIdentifier:@"choosePayment" sender:nil];
+        
+    }
     
 }@end
