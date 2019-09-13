@@ -35,6 +35,7 @@
     
     [super viewDidLoad];
     
+    self.navigationController.navigationItem.backBarButtonItem = false;
     
     self.activeView.backgroundColor = [UIColor redColor];
     self.pastView.backgroundColor = [UIColor whiteColor];

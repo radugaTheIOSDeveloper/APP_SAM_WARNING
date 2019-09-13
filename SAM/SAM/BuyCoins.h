@@ -12,16 +12,12 @@
 
 //otl
 
-@property (weak, nonatomic) IBOutlet UIButton *fourMinutsMinusOtl;
-@property (weak, nonatomic) IBOutlet UIButton *fourMinutsPlusOtl;
-@property (weak, nonatomic) IBOutlet UILabel *quantityTokenFour;
+
 @property (weak, nonatomic) IBOutlet UILabel *quantityTokenTwo;
 @property (weak, nonatomic) IBOutlet UIButton *twoMinutsMinusOtl;
 @property (weak, nonatomic) IBOutlet UIButton *twoMinutsPlusOtl;
 
-//act
-- (IBAction)minusFour:(id)sender;
-- (IBAction)plusFour:(id)sender;
+
 - (IBAction)minusTwo:(id)sender;
 - (IBAction)plusTwo:(id)sender;
 

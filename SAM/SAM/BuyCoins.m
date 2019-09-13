@@ -19,12 +19,9 @@
 
 @implementation BuyCoins{
     
-    NSInteger four;
     NSInteger two;
-    NSInteger buy100;
     NSInteger buy50;
     NSInteger twoMinuts;
-    NSInteger fourMinuts;
     NSInteger totalPrice;
     NSInteger totalMinuts;
 }
@@ -35,10 +32,10 @@
     
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"LogoMenu"]];
     
-    four = 0;
+
     two = 0;
     buy50 = 0;
-    buy100 = 0;
+
     totalPrice = 0;
     totalMinuts = 0;
     
@@ -67,54 +64,18 @@
 //        [self.navigationController popViewControllerAnimated:YES];
 //    }
     
+        [self performSegueWithIdentifier:@"backBuyCoin" sender:self];
+
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-- (IBAction)minusFour:(id)sender {
-    
-    if (four == 0) {
-        
-        four = 0;
-        fourMinuts = 0;
-        _quantityTokenFour.text = [NSString stringWithFormat:@"%ld",(long)four];
-        
-    }else{
-        
-        
-        buy100 = buy100 -100;
-        totalPrice = buy100 + buy50;
-        four--;
-        fourMinuts= fourMinuts - 4;
-        totalMinuts = fourMinuts + twoMinuts;
-        _quantityTokenFour.text = [NSString stringWithFormat:@"%ld",(long)four];
-        [self titleButton:totalPrice];
-        
-    }
-    
-    self.minutsInfo.text = [NSString stringWithFormat:@"%ld минут",totalMinuts];
 
-    self.summInfo.text = [NSString stringWithFormat:@"%ld рублей",totalPrice];
-    
-}
 
-- (IBAction)plusFour:(id)sender {
-    
-    buy100 = buy100 +100;
-    totalPrice = buy100 + buy50;
-    fourMinuts = fourMinuts +4;
-    four++;
-    totalMinuts = fourMinuts + twoMinuts;
 
-    _quantityTokenFour.text = [NSString stringWithFormat:@"%ld",(long)four];
-    
-    self.minutsInfo.text = [NSString stringWithFormat:@"%ld минут",totalMinuts];
-    
-    self.summInfo.text = [NSString stringWithFormat:@"%ld рублей",totalPrice];
-    
-}
 
 - (IBAction)minusTwo:(id)sender {
     
@@ -126,10 +87,10 @@
         
     }else{
         buy50 =buy50 - 50;
-        totalPrice = buy100 + buy50;
+        totalPrice =  buy50;
         twoMinuts =twoMinuts - 2;
         two--;
-        totalMinuts = fourMinuts + twoMinuts;
+        totalMinuts =  twoMinuts;
 
         _quantityTokenTwo.text = [NSString stringWithFormat:@"%ld",(long)two];
         [self titleButton:totalPrice];
@@ -143,10 +104,10 @@
 
 - (IBAction)plusTwo:(id)sender {
     buy50 = buy50 + 50;
-    totalPrice = buy100 + buy50;
+    totalPrice =  buy50;
     two++;
     twoMinuts = twoMinuts +2;
-    totalMinuts = fourMinuts + twoMinuts;
+    totalMinuts =   twoMinuts;
 
     _quantityTokenTwo.text = [NSString stringWithFormat:@"%ld",(long)two];
     [self titleButton:totalPrice];
@@ -166,9 +127,8 @@
          ];
 
     }else{
-
         self.buyCoinsOtl.enabled = YES;
-        [self.buyCoinsOtl setTitle:@"" forState:UIControlStateNormal];
+      //  [self.buyCoinsOtl setTitle:@"" forState:UIControlStateNormal];
     }
 }
 
@@ -176,10 +136,11 @@
     if (totalPrice == 0) {
     }else{
     
-        NSString * article = [NSString stringWithFormat:@"%ld*%ld",(long)four,(long)two];
-        [[Payment save]setMySum:@"123"];
-        [[Payment save]setMyArticle:article];
-        [self performSegueWithIdentifier:@"choosePayment" sender:nil];
+//        NSString * article = [NSString stringWithFormat:@"%ld*%ld",(long)four,(long)two];
+//        [[Payment save]setMySum:@"123"];
+//        [[Payment save]setMyArticle:article];
+        
+  //      [self performSegueWithIdentifier:@"choosePayment" sender:nil];
         
     }
     

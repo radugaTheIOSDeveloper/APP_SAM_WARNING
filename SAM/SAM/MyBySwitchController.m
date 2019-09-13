@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
+    [self.navigationItem setHidesBackButton:YES];
     
     [self.tabBar setDelegate:self];
 
