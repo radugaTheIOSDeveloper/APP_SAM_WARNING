@@ -14,6 +14,8 @@
 		4C5986E122FF15DA00D59269 /* Instruction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5986E022FF15DA00D59269 /* Instruction.m */; };
 		4C8483532300632300871616 /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8483522300632300871616 /* FAQViewController.m */; };
 		4C84835623006A5700871616 /* UIColor+AppColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C84835523006A5700871616 /* UIColor+AppColors.m */; };
+		4CBCC4B6232FE0C900D478CE /* FAQFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCC4B5232FE0C900D478CE /* FAQFormViewController.m */; };
+		4CBCC4B9232FE0D800D478CE /* FAQCoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCC4B8232FE0D800D478CE /* FAQCoolViewController.m */; };
 		CAB483A45247B902485EC05D /* libPods-SAM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F047F4E6F5015035479EF4 /* libPods-SAM.a */; };
 		CE032C641D7D880600851FF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE032C631D7D880600851FF4 /* main.m */; };
 		CE032C671D7D880600851FF4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE032C661D7D880600851FF4 /* AppDelegate.m */; };
@@ -129,6 +131,10 @@
 		4C8483522300632300871616 /* FAQViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAQViewController.m; sourceTree = "<group>"; };
 		4C84835423006A5700871616 /* UIColor+AppColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AppColors.h"; sourceTree = "<group>"; };
 		4C84835523006A5700871616 /* UIColor+AppColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AppColors.m"; sourceTree = "<group>"; };
+		4CBCC4B4232FE0C900D478CE /* FAQFormViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FAQFormViewController.h; sourceTree = "<group>"; };
+		4CBCC4B5232FE0C900D478CE /* FAQFormViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAQFormViewController.m; sourceTree = "<group>"; };
+		4CBCC4B7232FE0D800D478CE /* FAQCoolViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FAQCoolViewController.h; sourceTree = "<group>"; };
+		4CBCC4B8232FE0D800D478CE /* FAQCoolViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAQCoolViewController.m; sourceTree = "<group>"; };
 		57F047F4E6F5015035479EF4 /* libPods-SAM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SAM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E4B72AABD4503A5AE7D0A1 /* libPods-SAMTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SAMTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97F9360CB2BC398680DE2D27 /* libPods-SAMUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SAMUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -333,6 +339,10 @@
 				4C84835523006A5700871616 /* UIColor+AppColors.m */,
 				4C8483512300632300871616 /* FAQViewController.h */,
 				4C8483522300632300871616 /* FAQViewController.m */,
+				4CBCC4B4232FE0C900D478CE /* FAQFormViewController.h */,
+				4CBCC4B5232FE0C900D478CE /* FAQFormViewController.m */,
+				4CBCC4B7232FE0D800D478CE /* FAQCoolViewController.h */,
+				4CBCC4B8232FE0D800D478CE /* FAQCoolViewController.m */,
 			);
 			name = Faq;
 			sourceTree = "<group>";
@@ -944,6 +954,7 @@
 				CEEA754E1E02BCCC000D73D3 /* TermOfUse.m in Sources */,
 				CEF84FFC1DB386D800CD7137 /* SkipScreen.m in Sources */,
 				CE032C641D7D880600851FF4 /* main.m in Sources */,
+				4CBCC4B9232FE0D800D478CE /* FAQCoolViewController.m in Sources */,
 				CE032CBA1D7D905500851FF4 /* MyNavigationControll.m in Sources */,
 				CE376D961E36263100B0FCFD /* SelectCardView.m in Sources */,
 				CE39BA421D94239E00C5256A /* Enter.m in Sources */,
@@ -975,6 +986,7 @@
 				4C8483532300632300871616 /* FAQViewController.m in Sources */,
 				4C5986DB22FF05CA00D59269 /* NewsSam.m in Sources */,
 				CE7B6D3D1DDB4626004852FB /* RecoveryPassword.m in Sources */,
+				4CBCC4B6232FE0C900D478CE /* FAQFormViewController.m in Sources */,
 				CECB7AD31DC75DA2008CA095 /* AppleMapViewController.m in Sources */,
 				CE032CEB1D7DA9AA00851FF4 /* qrinput.c in Sources */,
 				CE2ADAFE1DBE117E005BFAED /* SetPassController.m in Sources */,

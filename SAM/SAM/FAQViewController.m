@@ -101,7 +101,8 @@ static int const kHeaderSectionTag = 6900;
     [header addSubview:theImageView];
     
 
-    
+    NSLog(@" view controller");
+
     // make headers touchable
     header.tag = section;
     UITapGestureRecognizer *headerTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(sectionHeaderWasTouched:)];

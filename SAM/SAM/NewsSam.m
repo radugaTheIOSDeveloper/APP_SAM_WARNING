@@ -28,6 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSLog(@"news view controller");
     
     self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     [self.view addSubview:self.activityIndicator];
