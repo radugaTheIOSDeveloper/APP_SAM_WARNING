@@ -44,7 +44,16 @@ void freeRawData(void *info, const void *data, size_t size);
 }
 
 - (void)backTapped:(id)sender {
-    [self performSegueWithIdentifier:@"backmyby" sender:self];
+    //
+    //    if ([self.titleStr isEqualToString:@"MyCoin"]) {
+    //        [self performSegueWithIdentifier:@"backBuyCoin" sender:self];
+    //    }else {
+    //        [self.navigationController popViewControllerAnimated:YES];
+    //    }
+    
+    [self performSegueWithIdentifier:@"testPushTabs" sender:self];
+    
+    
 }
 
 void freeRawData(void *info, const void *data, size_t size) {

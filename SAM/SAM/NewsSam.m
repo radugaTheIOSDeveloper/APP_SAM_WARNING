@@ -57,7 +57,7 @@
     [self.entLabel setFont:customFont];
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.navigationItem.title = @"Мои покупки";
+    self.navigationItem.title = @"Новости";
     
     
 #pragma mark PageViewControllelr
@@ -76,8 +76,6 @@
     [self addChildViewController:_pageViewController];
     [self.viewPage addSubview:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
-    
-    
     
     
     [self getUserQRCode];
@@ -231,6 +229,28 @@
     
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSDictionary * curCoinPast = [self.activeCount objectAtIndex:indexPath.row];
+    self.stringQR = [curCoinPast objectForKey:@"qr_code"];
+    self.timeQR = [curCoinPast objectForKey:@"minutes_str"];
+    
+    [self performSegueWithIdentifier:@"qrcods" sender:self];
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    QREncoder * segueMyBuy;
+    if ([[segue identifier] isEqualToString:@"qrcods"]){
+        
+        segueMyBuy = [segue destinationViewController];
+        
+        segueMyBuy.stringQR = self.stringQR;
+        segueMyBuy.timeQR = self.timeQR;
+        
+    }
+}
 
 
 - (IBAction)byCoinAct:(id)sender {

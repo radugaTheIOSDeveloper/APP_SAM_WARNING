@@ -16,14 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.hidesBackButton = YES;
-    self.navigationItem.backBarButtonItem = nil;
-    self.navigationItem.leftBarButtonItem = nil;
-    
-    [self.tabBarController setSelectedIndex:1];
 
     
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationItem.hidesBackButton = YES;
     
+
 }
 
 - (void)didReceiveMemoryWarning {

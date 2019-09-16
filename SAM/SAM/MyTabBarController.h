@@ -9,6 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MyTabBarController : UITabBarController
-@property (weak, nonatomic) IBOutlet UITabBar *tabNarController;
 
 @end
