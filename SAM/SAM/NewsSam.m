@@ -9,7 +9,6 @@
 #import "NewsSam.h"
 #import "QREncoder.h"
 #import "API.h"
-#import "SWRevealViewController.h"
 #import  <Reachability.h>
 
 @interface NewsSam ()  <UITableViewDelegate, UITableViewDataSource>

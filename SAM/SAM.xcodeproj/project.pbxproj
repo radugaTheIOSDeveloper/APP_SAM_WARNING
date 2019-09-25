@@ -11,7 +11,6 @@
 		4C5986D722FF044B00D59269 /* BallsGood.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5986D622FF044B00D59269 /* BallsGood.m */; };
 		4C5986DB22FF05CA00D59269 /* NewsSam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5986DA22FF05CA00D59269 /* NewsSam.m */; };
 		4C5986DE22FF0C4F00D59269 /* PageContentViewControllerNews.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5986DD22FF0C4F00D59269 /* PageContentViewControllerNews.m */; };
-		4C5986E122FF15DA00D59269 /* Instruction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5986E022FF15DA00D59269 /* Instruction.m */; };
 		4C8483532300632300871616 /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8483522300632300871616 /* FAQViewController.m */; };
 		4C84835623006A5700871616 /* UIColor+AppColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C84835523006A5700871616 /* UIColor+AppColors.m */; };
 		4CBCC4B6232FE0C900D478CE /* FAQFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCC4B5232FE0C900D478CE /* FAQFormViewController.m */; };
@@ -53,7 +52,6 @@
 		CE032CF31D7DA9BB00851FF4 /* qrspec.c in Sources */ = {isa = PBXBuildFile; fileRef = CE032CEF1D7DA9BB00851FF4 /* qrspec.c */; };
 		CE032CF41D7DA9BB00851FF4 /* split.c in Sources */ = {isa = PBXBuildFile; fileRef = CE032CF01D7DA9BB00851FF4 /* split.c */; };
 		CE032CF81D7DAB7F00851FF4 /* MyCoin.m in Sources */ = {isa = PBXBuildFile; fileRef = CE032CF71D7DAB7F00851FF4 /* MyCoin.m */; };
-		CE1227391DE820B9008289AA /* SocialController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1227381DE820B9008289AA /* SocialController.m */; };
 		CE122AE41DE83138008289AA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE122AE31DE83138008289AA /* Social.framework */; };
 		CE128D331DA7CF1C00050099 /* PaymentWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE128D321DA7CF1C00050099 /* PaymentWebView.m */; };
 		CE238C791E26345B006AF131 /* CalloutAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE238C721E26345B006AF131 /* CalloutAnnotation.m */; };
@@ -75,7 +73,6 @@
 		CE4F32E41DFEB28B0023F0AA /* FailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4F32E31DFEB28B0023F0AA /* FailViewController.m */; };
 		CE53C9721DAE7969004BDB27 /* Payments.m in Sources */ = {isa = PBXBuildFile; fileRef = CE53C9711DAE7969004BDB27 /* Payments.m */; };
 		CE53C9751DAE798F004BDB27 /* Payment.m in Sources */ = {isa = PBXBuildFile; fileRef = CE53C9741DAE798F004BDB27 /* Payment.m */; };
-		CE590DDA1DCF405E00816B4E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE590DD91DCF405E00816B4E /* SWRevealViewController.m */; };
 		CE6BE0AA1D8815D4000F5CE4 /* StartScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6BE0A91D8815D4000F5CE4 /* StartScreenView.m */; };
 		CE6BE0AD1D884F15000F5CE4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6BE0AC1D884F15000F5CE4 /* WebKit.framework */; };
 		CE6DA26D1E24D38E0072CEC9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6DA26C1E24D38E0072CEC9 /* SystemConfiguration.framework */; };
@@ -86,16 +83,12 @@
 		CEA421F01DDC49BE00917653 /* NewPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA421EF1DDC49BE00917653 /* NewPassword.m */; };
 		CECB7AD31DC75DA2008CA095 /* AppleMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECB7AD21DC75DA2008CA095 /* AppleMapViewController.m */; };
 		CECB7AD51DC75E31008CA095 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECB7AD41DC75E31008CA095 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		CECB7AD91DC7822C008CA095 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECB7AD81DC7822C008CA095 /* NewsViewController.m */; };
 		CED618DC1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = CED618DB1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m */; };
-		CEDA75CC1DD087B6009B1211 /* Support.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDA75CB1DD087B6009B1211 /* Support.m */; };
 		CEE34DE41DEC36A700EBF5D2 /* ConfirmAuthorize.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE34DE31DEC36A700EBF5D2 /* ConfirmAuthorize.m */; };
 		CEE35A911DA2724E008D916C /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE35A901DA2724E008D916C /* API.m */; };
-		CEE7CA001DB0F71A00490B0F /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE7C9FF1DB0F71A00490B0F /* MenuViewController.m */; };
 		CEEA754E1E02BCCC000D73D3 /* TermOfUse.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEA754D1E02BCCC000D73D3 /* TermOfUse.m */; };
 		CEF84FFC1DB386D800CD7137 /* SkipScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF84FFB1DB386D800CD7137 /* SkipScreen.m */; };
 		CEF84FFF1DB386FC00CD7137 /* PageContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF84FFE1DB386FC00CD7137 /* PageContentController.m */; };
-		CEFA86571D992397001C5F3E /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFA86561D992397001C5F3E /* PageContentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,8 +118,6 @@
 		4C5986DA22FF05CA00D59269 /* NewsSam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsSam.m; sourceTree = "<group>"; };
 		4C5986DC22FF0C4F00D59269 /* PageContentViewControllerNews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageContentViewControllerNews.h; sourceTree = "<group>"; };
 		4C5986DD22FF0C4F00D59269 /* PageContentViewControllerNews.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageContentViewControllerNews.m; sourceTree = "<group>"; };
-		4C5986DF22FF15DA00D59269 /* Instruction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Instruction.h; sourceTree = "<group>"; };
-		4C5986E022FF15DA00D59269 /* Instruction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Instruction.m; sourceTree = "<group>"; };
 		4C8483512300632300871616 /* FAQViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FAQViewController.h; sourceTree = "<group>"; };
 		4C8483522300632300871616 /* FAQViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAQViewController.m; sourceTree = "<group>"; };
 		4C84835423006A5700871616 /* UIColor+AppColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AppColors.h"; sourceTree = "<group>"; };
@@ -198,8 +189,6 @@
 		CE032CF01D7DA9BB00851FF4 /* split.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = split.c; path = QR/QRLib/split.c; sourceTree = SOURCE_ROOT; };
 		CE032CF61D7DAB7F00851FF4 /* MyCoin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCoin.h; sourceTree = "<group>"; };
 		CE032CF71D7DAB7F00851FF4 /* MyCoin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCoin.m; sourceTree = "<group>"; };
-		CE1227371DE820B9008289AA /* SocialController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialController.h; sourceTree = "<group>"; };
-		CE1227381DE820B9008289AA /* SocialController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialController.m; sourceTree = "<group>"; };
 		CE122AE31DE83138008289AA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		CE128D311DA7CF1C00050099 /* PaymentWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentWebView.h; sourceTree = "<group>"; };
 		CE128D321DA7CF1C00050099 /* PaymentWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentWebView.m; sourceTree = "<group>"; };
@@ -241,8 +230,6 @@
 		CE53C9711DAE7969004BDB27 /* Payments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Payments.m; sourceTree = "<group>"; };
 		CE53C9731DAE798F004BDB27 /* Payment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Payment.h; sourceTree = "<group>"; };
 		CE53C9741DAE798F004BDB27 /* Payment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Payment.m; sourceTree = "<group>"; };
-		CE590DD81DCF405E00816B4E /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = SOURCE_ROOT; };
-		CE590DD91DCF405E00816B4E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = SOURCE_ROOT; };
 		CE6BE0A81D8815D4000F5CE4 /* StartScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScreenView.h; sourceTree = "<group>"; };
 		CE6BE0A91D8815D4000F5CE4 /* StartScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScreenView.m; sourceTree = "<group>"; };
 		CE6BE0AC1D884F15000F5CE4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -258,26 +245,18 @@
 		CECB7AD11DC75DA2008CA095 /* AppleMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleMapViewController.h; sourceTree = "<group>"; };
 		CECB7AD21DC75DA2008CA095 /* AppleMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleMapViewController.m; sourceTree = "<group>"; };
 		CECB7AD41DC75E31008CA095 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		CECB7AD71DC7822C008CA095 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
-		CECB7AD81DC7822C008CA095 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		CED618DA1DA3D1EA00B0FED3 /* ChoosePaymentMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoosePaymentMethod.h; sourceTree = "<group>"; };
 		CED618DB1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoosePaymentMethod.m; sourceTree = "<group>"; };
-		CEDA75CA1DD087B6009B1211 /* Support.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Support.h; sourceTree = "<group>"; };
-		CEDA75CB1DD087B6009B1211 /* Support.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Support.m; sourceTree = "<group>"; };
 		CEE34DE21DEC36A700EBF5D2 /* ConfirmAuthorize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmAuthorize.h; sourceTree = "<group>"; };
 		CEE34DE31DEC36A700EBF5D2 /* ConfirmAuthorize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmAuthorize.m; sourceTree = "<group>"; };
 		CEE35A8F1DA2724E008D916C /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
 		CEE35A901DA2724E008D916C /* API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
-		CEE7C9FE1DB0F71A00490B0F /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
-		CEE7C9FF1DB0F71A00490B0F /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		CEEA754C1E02BCCC000D73D3 /* TermOfUse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermOfUse.h; sourceTree = "<group>"; };
 		CEEA754D1E02BCCC000D73D3 /* TermOfUse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermOfUse.m; sourceTree = "<group>"; };
 		CEF84FFA1DB386D800CD7137 /* SkipScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkipScreen.h; sourceTree = "<group>"; };
 		CEF84FFB1DB386D800CD7137 /* SkipScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkipScreen.m; sourceTree = "<group>"; };
 		CEF84FFD1DB386FC00CD7137 /* PageContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentController.h; sourceTree = "<group>"; };
 		CEF84FFE1DB386FC00CD7137 /* PageContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentController.m; sourceTree = "<group>"; };
-		CEFA86551D992397001C5F3E /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
-		CEFA86561D992397001C5F3E /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -385,18 +364,14 @@
 				4C5986D822FF05B300D59269 /* New Group */,
 				4C5986D122FEE6A100D59269 /* Balss */,
 				CE2DFA6822FDBE1600669C69 /* TabBarController */,
-				CE2DFA5B22FD829700669C69 /* MyByControllers */,
-				CE1227361DE81A9A008289AA /* Social */,
-				CEDA75C91DD087A0009B1211 /* Support */,
+				CE2DFA5B22FD829700669C69 /* MyTabControllers */,
 				CECB7AD61DC78218008CA095 /* News */,
 				CECB7AD01DC75D72008CA095 /* MAP */,
-				CEE7C9B11DB0E64D00490B0F /* RevealViewController */,
 				CED618D91DA3CB7900B0FED3 /* Yandex */,
 				CEE35A8E1DA27207008D916C /* singletone */,
 				CE29D7481D9BE2EE0083AC1B /* AnimationScreen */,
 				CE39BA3C1D9406A200C5256A /* Registr */,
 				CE6BE0AB1D8815D9000F5CE4 /* StartScreen */,
-				CE032CFA1D7DABA900851FF4 /* Help */,
 				CE032CF51D7DAB3E00851FF4 /* MyCoin */,
 				CE032CBF1D7D952E00851FF4 /* QR */,
 				CE032CBD1D7D951100851FF4 /* BuyCoin */,
@@ -536,26 +511,6 @@
 			name = SAM;
 			sourceTree = "<group>";
 		};
-		CE032CFA1D7DABA900851FF4 /* Help */ = {
-			isa = PBXGroup;
-			children = (
-				CEFA86551D992397001C5F3E /* PageContentViewController.h */,
-				CEFA86561D992397001C5F3E /* PageContentViewController.m */,
-				4C5986DF22FF15DA00D59269 /* Instruction.h */,
-				4C5986E022FF15DA00D59269 /* Instruction.m */,
-			);
-			name = Help;
-			sourceTree = "<group>";
-		};
-		CE1227361DE81A9A008289AA /* Social */ = {
-			isa = PBXGroup;
-			children = (
-				CE1227371DE820B9008289AA /* SocialController.h */,
-				CE1227381DE820B9008289AA /* SocialController.m */,
-			);
-			name = Social;
-			sourceTree = "<group>";
-		};
 		CE238C701E26345B006AF131 /* MAP */ = {
 			isa = PBXGroup;
 			children = (
@@ -579,7 +534,7 @@
 			name = AnimationScreen;
 			sourceTree = "<group>";
 		};
-		CE2DFA5B22FD829700669C69 /* MyByControllers */ = {
+		CE2DFA5B22FD829700669C69 /* MyTabControllers */ = {
 			isa = PBXGroup;
 			children = (
 				CE2DFA5C22FD82C400669C69 /* ActiveViewController.h */,
@@ -591,7 +546,7 @@
 				CE2DFA6522FD88D000669C69 /* MyBySwitchController.h */,
 				CE2DFA6622FD88D000669C69 /* MyBySwitchController.m */,
 			);
-			name = MyByControllers;
+			name = MyTabControllers;
 			sourceTree = "<group>";
 		};
 		CE2DFA6822FDBE1600669C69 /* TabBarController */ = {
@@ -660,8 +615,6 @@
 		CECB7AD61DC78218008CA095 /* News */ = {
 			isa = PBXGroup;
 			children = (
-				CECB7AD71DC7822C008CA095 /* NewsViewController.h */,
-				CECB7AD81DC7822C008CA095 /* NewsViewController.m */,
 				4C5986D922FF05CA00D59269 /* NewsSam.h */,
 				4C5986DA22FF05CA00D59269 /* NewsSam.m */,
 				4C5986DC22FF0C4F00D59269 /* PageContentViewControllerNews.h */,
@@ -685,15 +638,6 @@
 			name = Yandex;
 			sourceTree = "<group>";
 		};
-		CEDA75C91DD087A0009B1211 /* Support */ = {
-			isa = PBXGroup;
-			children = (
-				CEDA75CA1DD087B6009B1211 /* Support.h */,
-				CEDA75CB1DD087B6009B1211 /* Support.m */,
-			);
-			name = Support;
-			sourceTree = "<group>";
-		};
 		CEE35A8E1DA27207008D916C /* singletone */ = {
 			isa = PBXGroup;
 			children = (
@@ -705,25 +649,6 @@
 				CE53C9741DAE798F004BDB27 /* Payment.m */,
 			);
 			name = singletone;
-			sourceTree = "<group>";
-		};
-		CEE7C9B11DB0E64D00490B0F /* RevealViewController */ = {
-			isa = PBXGroup;
-			children = (
-				CE590DD81DCF405E00816B4E /* SWRevealViewController.h */,
-				CE590DD91DCF405E00816B4E /* SWRevealViewController.m */,
-				CEE7C9FD1DB0EE3B00490B0F /* MyClassReveal */,
-			);
-			name = RevealViewController;
-			sourceTree = "<group>";
-		};
-		CEE7C9FD1DB0EE3B00490B0F /* MyClassReveal */ = {
-			isa = PBXGroup;
-			children = (
-				CEE7C9FE1DB0F71A00490B0F /* MenuViewController.h */,
-				CEE7C9FF1DB0F71A00490B0F /* MenuViewController.m */,
-			);
-			name = MyClassReveal;
 			sourceTree = "<group>";
 		};
 		CEF84FF91DB3869100CD7137 /* SliderAnimation */ = {
@@ -936,17 +861,14 @@
 			files = (
 				CE032CF21D7DA9BB00851FF4 /* qrencode.c in Sources */,
 				CE128D331DA7CF1C00050099 /* PaymentWebView.m in Sources */,
-				CEFA86571D992397001C5F3E /* PageContentViewController.m in Sources */,
 				CE370DF51DA2B0660027D66B /* ConfirmRegister.m in Sources */,
 				CE2DFA5E22FD82C400669C69 /* ActiveViewController.m in Sources */,
-				4C5986E122FF15DA00D59269 /* Instruction.m in Sources */,
 				CE2DFA6422FD82FE00669C69 /* BallsViewController.m in Sources */,
 				CE032C6A1D7D880600851FF4 /* ViewController.m in Sources */,
 				CE238C7B1E26345C006AF131 /* PinAnnotation.m in Sources */,
 				CE376D931E35F58B00B0FCFD /* SwitchMap.m in Sources */,
 				CE032CF31D7DA9BB00851FF4 /* qrspec.c in Sources */,
 				CE032CBB1D7D905500851FF4 /* MyTabBar.m in Sources */,
-				CE590DDA1DCF405E00816B4E /* SWRevealViewController.m in Sources */,
 				CE6BE0AA1D8815D4000F5CE4 /* StartScreenView.m in Sources */,
 				CE032CE91D7DA9AA00851FF4 /* bitstream.c in Sources */,
 				CE032CEC1D7DA9AA00851FF4 /* rscode.c in Sources */,
@@ -959,11 +881,9 @@
 				CE376D961E36263100B0FCFD /* SelectCardView.m in Sources */,
 				CE39BA421D94239E00C5256A /* Enter.m in Sources */,
 				CE238C7C1E26345C006AF131 /* UIView+MKAnnotationView.m in Sources */,
-				CEE7CA001DB0F71A00490B0F /* MenuViewController.m in Sources */,
 				4C84835623006A5700871616 /* UIColor+AppColors.m in Sources */,
 				CE2DFA6722FD88D000669C69 /* MyBySwitchController.m in Sources */,
 				CE4F32E41DFEB28B0023F0AA /* FailViewController.m in Sources */,
-				CEDA75CC1DD087B6009B1211 /* Support.m in Sources */,
 				CE032CF41D7DA9BB00851FF4 /* split.c in Sources */,
 				CE53C9751DAE798F004BDB27 /* Payment.m in Sources */,
 				CE2DFA6B22FDBE3900669C69 /* MyTabBarController.m in Sources */,
@@ -975,9 +895,7 @@
 				CEA421F01DDC49BE00917653 /* NewPassword.m in Sources */,
 				CE032CD81D7D99A700851FF4 /* BuyCoins.m in Sources */,
 				4C5986D422FEE88A00D59269 /* BallsCount.m in Sources */,
-				CECB7AD91DC7822C008CA095 /* NewsViewController.m in Sources */,
 				CEF84FFF1DB386FC00CD7137 /* PageContentController.m in Sources */,
-				CE1227391DE820B9008289AA /* SocialController.m in Sources */,
 				CE032CB91D7D905500851FF4 /* MyNavigationBar.m in Sources */,
 				CED618DC1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m in Sources */,
 				CEE34DE41DEC36A700EBF5D2 /* ConfirmAuthorize.m in Sources */,

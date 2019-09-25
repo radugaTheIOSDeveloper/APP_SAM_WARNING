@@ -99,6 +99,7 @@
 
 -(void) textFieldDidBeginEditing:(UITextField *)textField{
     self.titleLabel.alpha = 0.f;
+    
     CGPoint scrollPoint = CGPointMake(0, 120);
     [self.scrollView setContentOffset:scrollPoint animated:YES];
 }
