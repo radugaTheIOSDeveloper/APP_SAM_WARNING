@@ -7,7 +7,6 @@
 //
 
 #import "SwitchMap.h"
-#import "SWRevealViewController.h"
 
 
 @interface SwitchMap ()
@@ -38,13 +37,7 @@
 
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if ( revealViewController )
-    {
-        [self.revealButtonItem setTarget: self.revealViewController];
-        [self.revealButtonItem setAction: @selector( revealToggle: )];
-        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    }
+
 }
 
 - (void)didReceiveMemoryWarning {

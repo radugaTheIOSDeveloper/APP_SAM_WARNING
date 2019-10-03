@@ -11,7 +11,6 @@
 #import "CalloutAnnotationView.h"
 #import "UIView+MKAnnotationView.h"
 #import "BuyCoins.h"
-#import "SWRevealViewController.h"
 
 
 #define AllTrim(string) [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];

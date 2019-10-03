@@ -495,4 +495,32 @@
     
 }
 
+-(void) getNews:(void(^)(NSDictionary * responceObject))success
+      onFailure:(void(^)(NSError * error, NSInteger statusCode))failure{
+    
+    
+    [self.sessionManager.requestSerializer setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
+    
+    [self.sessionManager GET:@"news/"
+                  parameters:nil
+                    progress:nil
+                     success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
+                         
+                         if(success){
+                             success(responseObject);
+                         }
+                     }
+     
+                     failure:^(NSURLSessionTask *operation, NSError *error) {
+                           NSLog(@"error%@",error);
+                         if(failure){
+                             NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
+                             failure(error, response.statusCode);
+                         }
+                     }];
+
+    
+}
+
+
 @end

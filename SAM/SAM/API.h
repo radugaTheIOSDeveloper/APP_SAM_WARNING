@@ -62,8 +62,9 @@
 
 -(void) getRefreshEvents:(void(^)(NSDictionary * responceObject))success
         onFailure:(void(^)(NSError * error, NSInteger statusCode))failure;
-
-
+//getNews
+-(void) getNews:(void(^)(NSDictionary * responceObject))success
+        onFailure:(void(^)(NSError * error, NSInteger statusCode))failure;
 //resetPassword
 
 -(void) prepareForResetPassword:(NSString *)numPhone

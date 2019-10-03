@@ -6,7 +6,6 @@
 
 #import "AppleMapViewController.h"
 #import <CoreLocation/CoreLocation.h>
-#import "SWRevealViewController.h"
 
 
 @interface AppleMapViewController () <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate,UIAlertViewDelegate>

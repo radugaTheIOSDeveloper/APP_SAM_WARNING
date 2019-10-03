@@ -37,7 +37,7 @@
     self.activityIndicator.alpha = 1.f;
     [self.view setUserInteractionEnabled:NO];
     [self.activityIndicator startAnimating];
-    
+    self.pageBGImage = [NSMutableArray array];
     
     self.entFailedView = [[UIView alloc] init];
     self.entFailedView.frame = CGRectMake(self.view.frame.size.width/2 - 100 ,self.view.frame.size.height/2 + 100,200, 50);
@@ -58,13 +58,21 @@
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationItem.title = @"Новости";
     
-    
+    [self getUserQRCode];
+    [self getNews];
 #pragma mark PageViewControllelr
     
-    self.pageBGImage = @[@"z",@"z",@"z"];
+//
+   
+    
+    
+}
 
+-(void)pageContentViewControllerNews{
+    
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewControllerB"];
     self.pageViewController.dataSource = self;
+    
     
     PageContentViewControllerNews *startingViewController = [self viewControllerAtIndex:0];
     NSArray *viewControllers = @[startingViewController];
@@ -75,12 +83,8 @@
     [self addChildViewController:_pageViewController];
     [self.viewPage addSubview:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
-    
-    
-    [self getUserQRCode];
-   
-    
 }
+
 
 - (PageContentViewControllerNews *)viewControllerAtIndex:(NSUInteger)index
 {
@@ -132,6 +136,31 @@
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
 {
     return 0;
+}
+
+-(void) getNews{
+    
+    [[API apiManager]getNews:^(NSDictionary *responceObject) {
+        
+        NSLog(@"%@",responceObject);
+        
+        
+        [self stopActivityIndicator];
+        NSMutableArray * active = [responceObject valueForKey:@"image"];
+        NSString * strUrl;
+        for (int i = 0; i < active.count; i++) {
+            strUrl = [NSString stringWithFormat:@"https://app.pomoysam.ru%@",[active objectAtIndex:i]];
+            [self.pageBGImage addObject:strUrl];
+        }
+        
+        
+        
+
+        [self pageContentViewControllerNews];
+        
+    } onFailure:^(NSError *error, NSInteger statusCode) {
+        NSLog(@"%@",error);
+    }];
 }
 
 -(void) getUserQRCode {

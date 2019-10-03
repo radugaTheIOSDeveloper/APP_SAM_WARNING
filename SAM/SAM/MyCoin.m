@@ -10,7 +10,6 @@
 #import "BuyCoins.h"
 #import "QREncoder.h"
 #import "API.h"
-#import "SWRevealViewController.h"
 #import  <Reachability.h>
 
 
@@ -87,6 +86,7 @@
     [self.view setUserInteractionEnabled:NO];
     [self.activityIndicator startAnimating];
     
+    
     if ([[Reachability reachabilityForInternetConnection]currentReachabilityStatus]==NotReachable)
     {
         [self getUserQRCode];
@@ -99,14 +99,6 @@
 
     }
 
-
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if ( revealViewController )
-    {
-        [self.revealButtonItem setTarget: self.revealViewController];
-        [self.revealButtonItem setAction: @selector( revealToggle: )];
-        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    }
     
 }
 

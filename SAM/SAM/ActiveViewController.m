@@ -9,8 +9,7 @@
 #import "ActiveViewController.h"
 #import "QREncoder.h"
 #import "API.h"
-#import "SWRevealViewController.h"
-#import  <Reachability.h>
+#import <Reachability.h>
 
 @interface ActiveViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) UIRefreshControl * refreshControl;
@@ -75,13 +74,6 @@
     }
     
     
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if ( revealViewController )
-    {
-        [self.revealButtonItem setTarget: self.revealViewController];
-        [self.revealButtonItem setAction: @selector( revealToggle: )];
-        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    }
     
     
 }

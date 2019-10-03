@@ -9,7 +9,6 @@
 #import "InactiveViewController.h"
 #import "QREncoder.h"
 #import "API.h"
-#import "SWRevealViewController.h"
 #import  <Reachability.h>
 
 @interface InactiveViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -69,15 +68,9 @@
         
         
     }
+}
     
-    
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if ( revealViewController )
-    {
-        [self.revealButtonItem setTarget: self.revealViewController];
-        [self.revealButtonItem setAction: @selector( revealToggle: )];
-        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    }}
+   
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

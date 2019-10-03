@@ -26,7 +26,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.imageNews.image= [UIImage imageNamed:self.imageBG];
+    
+    
+    NSLog(@"imagebg = %@",self.imageBG);
+    NSURL *imagePostURL = [NSURL URLWithString:self.imageBG];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:imagePostURL];
+    
+    [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        
+        UIImage *postImage = [UIImage  imageWithData:data];
+        
+        self.imageNews.image = postImage;
+    }];
+    
+    
 }
 
 /*

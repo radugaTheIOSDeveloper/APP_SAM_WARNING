@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
 
 @property (weak, nonatomic) IBOutlet UIView *viewPage;
-@property (strong, nonatomic) NSArray *pageBGImage;
+@property (strong, nonatomic) NSMutableArray *pageBGImage;
 
 @end
 
