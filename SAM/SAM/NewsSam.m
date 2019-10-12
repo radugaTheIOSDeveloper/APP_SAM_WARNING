@@ -153,9 +153,6 @@
             [self.pageBGImage addObject:strUrl];
         }
         
-        
-        
-
         [self pageContentViewControllerNews];
         
     } onFailure:^(NSError *error, NSInteger statusCode) {
