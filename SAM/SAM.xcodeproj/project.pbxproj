@@ -11,11 +11,13 @@
 		4C5986D722FF044B00D59269 /* BallsGood.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5986D622FF044B00D59269 /* BallsGood.m */; };
 		4C5986DB22FF05CA00D59269 /* NewsSam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5986DA22FF05CA00D59269 /* NewsSam.m */; };
 		4C5986DE22FF0C4F00D59269 /* PageContentViewControllerNews.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5986DD22FF0C4F00D59269 /* PageContentViewControllerNews.m */; };
+		4C66CF1E23547C9B00A453A4 /* TrustDefender.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C66CF1D23547C9B00A453A4 /* TrustDefender.framework */; };
 		4C8483532300632300871616 /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8483522300632300871616 /* FAQViewController.m */; };
 		4C84835623006A5700871616 /* UIColor+AppColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C84835523006A5700871616 /* UIColor+AppColors.m */; };
 		4CBCC4B6232FE0C900D478CE /* FAQFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCC4B5232FE0C900D478CE /* FAQFormViewController.m */; };
 		4CBCC4B9232FE0D800D478CE /* FAQCoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCC4B8232FE0D800D478CE /* FAQCoolViewController.m */; };
-		CAB483A45247B902485EC05D /* libPods-SAM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F047F4E6F5015035479EF4 /* libPods-SAM.a */; };
+		4CF535D12354771100C4FB65 /* PaymentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF535D02354771100C4FB65 /* PaymentController.swift */; };
+		7A3B621700106061AC1C9CD8 /* Pods_SAM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E7DB50C0ABCC4A5D0C88F4 /* Pods_SAM.framework */; };
 		CE032C641D7D880600851FF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE032C631D7D880600851FF4 /* main.m */; };
 		CE032C671D7D880600851FF4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE032C661D7D880600851FF4 /* AppDelegate.m */; };
 		CE032C6A1D7D880600851FF4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE032C691D7D880600851FF4 /* ViewController.m */; };
@@ -118,6 +120,7 @@
 		4C5986DA22FF05CA00D59269 /* NewsSam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsSam.m; sourceTree = "<group>"; };
 		4C5986DC22FF0C4F00D59269 /* PageContentViewControllerNews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageContentViewControllerNews.h; sourceTree = "<group>"; };
 		4C5986DD22FF0C4F00D59269 /* PageContentViewControllerNews.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageContentViewControllerNews.m; sourceTree = "<group>"; };
+		4C66CF1D23547C9B00A453A4 /* TrustDefender.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TrustDefender.framework; path = Pods/TrustDefender.framework; sourceTree = "<group>"; };
 		4C8483512300632300871616 /* FAQViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FAQViewController.h; sourceTree = "<group>"; };
 		4C8483522300632300871616 /* FAQViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAQViewController.m; sourceTree = "<group>"; };
 		4C84835423006A5700871616 /* UIColor+AppColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AppColors.h"; sourceTree = "<group>"; };
@@ -126,8 +129,9 @@
 		4CBCC4B5232FE0C900D478CE /* FAQFormViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAQFormViewController.m; sourceTree = "<group>"; };
 		4CBCC4B7232FE0D800D478CE /* FAQCoolViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FAQCoolViewController.h; sourceTree = "<group>"; };
 		4CBCC4B8232FE0D800D478CE /* FAQCoolViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAQCoolViewController.m; sourceTree = "<group>"; };
-		57F047F4E6F5015035479EF4 /* libPods-SAM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SAM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CF535D02354771100C4FB65 /* PaymentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentController.swift; sourceTree = "<group>"; };
 		63E4B72AABD4503A5AE7D0A1 /* libPods-SAMTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SAMTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		73E7DB50C0ABCC4A5D0C88F4 /* Pods_SAM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SAM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97F9360CB2BC398680DE2D27 /* libPods-SAMUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SAMUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B91BD7A479C9816403620E1B /* Pods-SAM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAM.release.xcconfig"; path = "Pods/Target Support Files/Pods-SAM/Pods-SAM.release.xcconfig"; sourceTree = "<group>"; };
 		CE032C5F1D7D880600851FF4 /* SAM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAM.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -267,12 +271,13 @@
 				CE6DA26D1E24D38E0072CEC9 /* SystemConfiguration.framework in Frameworks */,
 				CE7A0B971E0BEF66002FFD9F /* MessageUI.framework in Frameworks */,
 				CE122AE41DE83138008289AA /* Social.framework in Frameworks */,
+				4C66CF1E23547C9B00A453A4 /* TrustDefender.framework in Frameworks */,
 				CE727DA51DE1AFA9008D2691 /* UserNotifications.framework in Frameworks */,
 				CE7B6D391DDB34F3004852FB /* libKeychainItemWrapper.a in Frameworks */,
 				CECB7AD51DC75E31008CA095 /* CoreLocation.framework in Frameworks */,
 				CE6BE0AD1D884F15000F5CE4 /* WebKit.framework in Frameworks */,
 				CE032C961D7D881200851FF4 /* MapKit.framework in Frameworks */,
-				CAB483A45247B902485EC05D /* libPods-SAM.a in Frameworks */,
+				7A3B621700106061AC1C9CD8 /* Pods_SAM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +384,7 @@
 				CE032C971D7D8F4400851FF4 /* Font */,
 				CE032C651D7D880600851FF4 /* AppDelegate.h */,
 				CE032C661D7D880600851FF4 /* AppDelegate.m */,
+				4CF535D02354771100C4FB65 /* PaymentController.swift */,
 				CE032C681D7D880600851FF4 /* ViewController.h */,
 				CE032C691D7D880600851FF4 /* ViewController.m */,
 				CE032C6B1D7D880600851FF4 /* Main.storyboard */,
@@ -665,6 +671,7 @@
 		D56C57A03E8647476ED3869F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C66CF1D23547C9B00A453A4 /* TrustDefender.framework */,
 				CE6DA26C1E24D38E0072CEC9 /* SystemConfiguration.framework */,
 				CE032C951D7D881200851FF4 /* MapKit.framework */,
 				CE6BE0AC1D884F15000F5CE4 /* WebKit.framework */,
@@ -673,9 +680,9 @@
 				CE727DA41DE1AFA9008D2691 /* UserNotifications.framework */,
 				CE7B6D381DDB34F3004852FB /* libKeychainItemWrapper.a */,
 				CECB7AD41DC75E31008CA095 /* CoreLocation.framework */,
-				57F047F4E6F5015035479EF4 /* libPods-SAM.a */,
 				63E4B72AABD4503A5AE7D0A1 /* libPods-SAMTests.a */,
 				97F9360CB2BC398680DE2D27 /* libPods-SAMUITests.a */,
+				73E7DB50C0ABCC4A5D0C88F4 /* Pods_SAM.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -691,6 +698,7 @@
 				CE032C5B1D7D880600851FF4 /* Sources */,
 				CE032C5C1D7D880600851FF4 /* Frameworks */,
 				CE032C5D1D7D880600851FF4 /* Resources */,
+				77D44A57DA23522834AF61F9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -834,6 +842,48 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		77D44A57DA23522834AF61F9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SAM/Pods-SAM-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/FunctionalSwift/FunctionalSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainItemWrapper/KeychainItemWrapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/When/When.framework",
+				"${BUILT_PRODUCTS_DIR}/YandexCheckoutPayments/YandexCheckoutPayments.framework",
+				"${BUILT_PRODUCTS_DIR}/YandexCheckoutPaymentsApi/YandexCheckoutPaymentsApi.framework",
+				"${BUILT_PRODUCTS_DIR}/YandexCheckoutShowcaseApi/YandexCheckoutShowcaseApi.framework",
+				"${BUILT_PRODUCTS_DIR}/YandexCheckoutWalletApi/YandexCheckoutWalletApi.framework",
+				"${BUILT_PRODUCTS_DIR}/YandexLoginSDK/YandexLoginSDK.framework",
+				"${PODS_ROOT}/YandexMobileMetrica/dynamic/YandexMobileMetrica.framework",
+				"${PODS_ROOT}/YandexMobileMetrica/dynamic/YandexMobileMetricaCrashes.framework",
+				"${BUILT_PRODUCTS_DIR}/YandexMoneyCoreApi/YandexMoneyCoreApi.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FunctionalSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainItemWrapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/When.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YandexCheckoutPayments.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YandexCheckoutPaymentsApi.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YandexCheckoutShowcaseApi.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YandexCheckoutWalletApi.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YandexLoginSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YandexMobileMetrica.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YandexMobileMetricaCrashes.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YandexMoneyCoreApi.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SAM/Pods-SAM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9D0413B82FEDA10BE941D2F0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -911,6 +961,7 @@
 				CE032CF11D7DA9BB00851FF4 /* mask.c in Sources */,
 				CE238C791E26345B006AF131 /* CalloutAnnotation.m in Sources */,
 				CE39BA3F1D9406EA00C5256A /* RegistrClass.m in Sources */,
+				4CF535D12354771100C4FB65 /* PaymentController.swift in Sources */,
 				CE032CDB1D7DA8CA00851FF4 /* QREncoder.m in Sources */,
 				CE032CF81D7DAB7F00851FF4 /* MyCoin.m in Sources */,
 				CE2DFA6122FD82E900669C69 /* InactiveViewController.m in Sources */,
@@ -1063,6 +1114,11 @@
 				CODE_SIGN_ENTITLEMENTS = SAM/SAM.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = HL7PGCM524;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Pods",
+				);
 				INFOPLIST_FILE = SAM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1074,7 +1130,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SAM/SAM-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1088,6 +1144,11 @@
 				CODE_SIGN_ENTITLEMENTS = SAM/SAM.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = HL7PGCM524;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Pods",
+				);
 				INFOPLIST_FILE = SAM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1098,7 +1159,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = itstack.SAM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SAM/SAM-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -1106,6 +1167,7 @@
 		CE032C901D7D880600851FF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SAMTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1118,6 +1180,7 @@
 		CE032C911D7D880600851FF4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SAMTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1130,6 +1193,7 @@
 		CE032C931D7D880600851FF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SAMUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = freshtech.SAMUITests;
@@ -1141,6 +1205,7 @@
 		CE032C941D7D880600851FF4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SAMUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = freshtech.SAMUITests;
