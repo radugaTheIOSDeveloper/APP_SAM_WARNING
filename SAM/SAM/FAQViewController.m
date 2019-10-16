@@ -8,6 +8,7 @@
 
 #import "FAQViewController.h"
 #import "UIColor+AppColors.h"
+#import "API.h"
 
 
 static int const kHeaderSectionTag = 6900;
@@ -18,6 +19,10 @@ static int const kHeaderSectionTag = 6900;
 @property (assign) UITableViewHeaderFooterView *expandedSectionHeader;
 @property (strong) NSArray *sectionItems;
 @property (strong) NSArray *sectionNames;
+//@property (strong, nonatomic) NSMutableArray * sectionItems;
+//@property (strong, nonatomic) NSMutableArray * sectionNames;
+
+
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -27,23 +32,58 @@ static int const kHeaderSectionTag = 6900;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.sectionNames = @[ @"Вопрос 1", @"Вопрос 2", @"Вопрос 3" ];
-    self.sectionItems = @[ @[@"Это ответ 1"],
-                           @[@"Это ответ 2"],
-                           @[@"Это ответ 3 и он невероятно огромен нахуй так что ты не пизди и смотри в оба чухонец ебаный"]
-                           ];
+//    self.sectionNames = @[ @"Вопрос 1", @"Вопрос 2", @"Вопрос 3" ];
+//    self.sectionItems = @[ @[@"Это ответ 1"],
+//                           @[@"Это ответ 2"],
+//                           @[@"Это ответ 3 и он невероятно огромен нахуй так что ты не пизди и смотри в оба чухонец ебаный"]
+//                           ];
     
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 100;
     self.expandedSectionHeaderNumber = -1;
     
-    
-
+    [self getFAQ];
     
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self.tabBarController setTitle:@"Обратная связь"];
+
+}
+
+
+
+-(void) getFAQ {
+    
+    
+    [[API apiManager]getFAQ:^(NSDictionary *responceObject) {
+       
+        NSLog(@"faq responce = %@", responceObject);
+        NSArray * answer = [responceObject valueForKey:@"question"];
+        self.sectionItems = answer;
+        NSArray * questions = [responceObject valueForKey:@"answer"];
+        self.sectionNames = questions;
+        
+          self.sectionItems = @[ @[@"This will display the lines needed but will reposition the label so its centered horizontally (so that a 1 line and 3 line label are aligned in their horizontal position). To fix that add:"]];
+        
+        
+        [self.tableView reloadData];
+        [self.expandedSectionHeader reloadInputViews];
+        
+    
+        
+    } onFailure:^(NSError *error, NSInteger statusCode) {
+       
+    }];
+    
+
+}
+
+
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
     
     if (self.sectionNames.count > 0) {
         self.tableView.backgroundView = nil;
@@ -54,7 +94,7 @@ static int const kHeaderSectionTag = 6900;
         messageLabel.text = @"Retrieving data.\nPlease wait.";
         messageLabel.numberOfLines = 0;
         messageLabel.textAlignment = NSTextAlignmentCenter;
-        messageLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];
+        messageLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:14];
         [messageLabel sizeToFit];
         self.tableView.backgroundView = messageLabel;
         
@@ -85,17 +125,27 @@ static int const kHeaderSectionTag = 6900;
     return 44.0;
 }
 
+
+
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
+    
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
+    
+    
     header.contentView.backgroundColor =  [UIColor whiteColor];
     header.textLabel.textColor = [UIColor blackColor];
+    header.textLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:14];
+    header.textLabel.numberOfLines = 0;
+    header.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    [header.textLabel sizeToFit];
+    
     UIImageView *viewWithTag = [self.view viewWithTag:kHeaderSectionTag + section];
     if (viewWithTag) {
         [viewWithTag removeFromSuperview];
     }
     // add the arrow image
     CGSize headerFrame = self.view.frame.size;
-    UIImageView *theImageView = [[UIImageView alloc] initWithFrame:CGRectMake(headerFrame.width -60, 13, 18, 18)];
+    UIImageView *theImageView = [[UIImageView alloc] initWithFrame:CGRectMake(260, 17, 10 , 5)];
     theImageView.image = [UIImage imageNamed:@"support"];
     theImageView.tag = kHeaderSectionTag + section;
     [header addSubview:theImageView];
@@ -114,6 +164,11 @@ static int const kHeaderSectionTag = 6900;
     NSArray *section = [self.sectionItems objectAtIndex:indexPath.section];
     
     cell.textLabel.textColor = [UIColor blackColor];
+       cell.textLabel.backgroundColor =[UIColor colorWithRed:231.0f/255.0f
+       green:51.0f/255.0f
+        blue:54.0f/255.0f
+       alpha:0.2f];
+    
     cell.textLabel.text = [section objectAtIndex:indexPath.row];
     
     return cell;
@@ -133,6 +188,11 @@ static int const kHeaderSectionTag = 6900;
 
 - (void)sectionHeaderWasTouched:(UITapGestureRecognizer *)sender {
     UITableViewHeaderFooterView *headerView = (UITableViewHeaderFooterView *)sender.view;
+    headerView.contentView.backgroundColor =  [UIColor colorWithRed:231.0f/255.0f
+                                                              green:51.0f/255.0f
+                                                               blue:54.0f/255.0f
+                                                              alpha:0.2f];
+
     NSInteger section = headerView.tag;
     UIImageView *eImageView = (UIImageView *)[headerView viewWithTag:kHeaderSectionTag + section];
     self.expandedSectionHeader = headerView;

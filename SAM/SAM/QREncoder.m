@@ -29,10 +29,11 @@ void freeRawData(void *info, const void *data, size_t size);
     self.timeLabel.text = self.timeQR;
     
     [imageView setImage: image];
-    [self backButton];
+   // [self backButton];
     
- 
-    
+     UIBarButtonItem *button2 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"backImage"] style:UIBarButtonItemStylePlain target:self action:@selector(backTapped:)];
+     self.navigationItem.leftBarButtonItem = button2;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 -(void) backButton {
@@ -51,7 +52,8 @@ void freeRawData(void *info, const void *data, size_t size);
     //        [self.navigationController popViewControllerAnimated:YES];
     //    }
     
-    [self performSegueWithIdentifier:@"testPushTabs" sender:self];
+    [self.navigationController popViewControllerAnimated:YES];
+
     
     
 }

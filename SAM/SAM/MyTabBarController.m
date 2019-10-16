@@ -19,7 +19,6 @@
 
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.navigationItem.hidesBackButton = YES;
     
 
 }

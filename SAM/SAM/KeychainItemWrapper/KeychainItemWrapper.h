@@ -52,6 +52,7 @@
     simple wrapper to provide a distinct barrier between all the idiosyncracies involved with the Keychain
     CF/NS container objects.
 */
+#import <Foundation/Foundation.h>
 @interface KeychainItemWrapper : NSObject
 
 // Designated initializer.

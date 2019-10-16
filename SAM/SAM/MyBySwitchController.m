@@ -31,11 +31,12 @@
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
+}
 
-    
-    
+-(void)viewWillAppear:(BOOL)animated{
+    [self.tabBarController setTitle:@"Мои покупки"];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -122,4 +123,26 @@
 
 
 
+- (IBAction)active:(id)sender {
+    
+    UIViewController *newViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ComponentActive"];
+        newViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
+        [self cycleFromViewController:self.currentViewController toViewController:newViewController];
+        self.currentViewController = newViewController;
+}
+
+- (IBAction)inactive:(id)sender {
+    UIViewController *newViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ComponentInactive"];
+           newViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
+           [self cycleFromViewController:self.currentViewController toViewController:newViewController];
+           self.currentViewController = newViewController;
+}
+
+- (IBAction)balls:(id)sender {
+    
+    UIViewController *newViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ComponentBallls"];
+           newViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
+           [self cycleFromViewController:self.currentViewController toViewController:newViewController];
+           self.currentViewController = newViewController;
+}
 @end

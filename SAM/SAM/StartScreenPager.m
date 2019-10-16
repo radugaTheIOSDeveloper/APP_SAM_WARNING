@@ -1,29 +1,29 @@
 //
-//  Instruction.m
+//  StartScreenPager.m
 //  SAM
 //
-//  Created by Георгий Зуев on 10/08/2019.
+//  Created by Георгий Зуев on 16/10/2019.
 //  Copyright © 2019 freshtech. All rights reserved.
 //
 
-#import "Instruction.h"
-#import "PageContentViewController.h"
+#import "StartScreenPager.h"
+#import "StartScreenPageContentViewController.h"
 
-@interface Instruction ()
+@interface StartScreenPager ()
 
 @end
 
-@implementation Instruction
+@implementation StartScreenPager
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-  self.pageBGImage = @[@"bgOne",@"bgTwo",@"bgTree",@"bgFour",@"bgFive",@"bgSix"];
+    self.pageBGImage = @[@"cachBack",@"promo"];
     
-    self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
+    self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"startScreenPageContentViewController"];
     self.pageViewController.dataSource = self;
     
-    PageContentViewController *startingViewController = [self viewControllerAtIndex:0];
+    StartScreenPageContentViewController *startingViewController = [self viewControllerAtIndex:0];
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
@@ -33,19 +33,15 @@
     [self.view addSubview:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
     
-
+    
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    [self.tabBarController setTitle:@"Инструкция"];
-
-}
-- (PageContentViewController *)viewControllerAtIndex:(NSUInteger)index
+- (StartScreenPageContentViewController *)viewControllerAtIndex:(NSUInteger)index
 {
     if (([self.pageBGImage count] == 0) || (index >= [self.pageBGImage count])) {
         return nil;
     }
-    PageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
+    StartScreenPageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"nypagecntrl"];
     pageContentViewController.imageBG = self.pageBGImage[index];
     pageContentViewController.pageIndex = index;
     
@@ -55,7 +51,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
-    NSUInteger index = ((PageContentViewController*) viewController).pageIndex;
+    NSUInteger index = ((StartScreenPageContentViewController*) viewController).pageIndex;
     
     if ((index == 0) || (index == NSNotFound)) {
         return nil;
@@ -68,7 +64,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
-    NSUInteger index = ((PageContentViewController*) viewController).pageIndex;
+    NSUInteger index = ((StartScreenPageContentViewController*) viewController).pageIndex;
     
     if (index == NSNotFound) {
         return nil;
@@ -90,5 +86,14 @@
 {
     return 0;
 }
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

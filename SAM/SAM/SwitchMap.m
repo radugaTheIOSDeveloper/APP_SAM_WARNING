@@ -40,6 +40,11 @@
 
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self.tabBarController setTitle:@"Карта"];
+
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C11E4332355B0FA00AD8C3A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C11E4322355B0FA00AD8C3A /* Security.framework */; };
+		4C11E4362355B22800AD8C3A /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C11E4352355B22800AD8C3A /* KeychainItemWrapper.m */; };
 		4C5986D422FEE88A00D59269 /* BallsCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5986D322FEE88A00D59269 /* BallsCount.m */; };
 		4C5986D722FF044B00D59269 /* BallsGood.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5986D622FF044B00D59269 /* BallsGood.m */; };
 		4C5986DB22FF05CA00D59269 /* NewsSam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5986DA22FF05CA00D59269 /* NewsSam.m */; };
@@ -16,6 +18,10 @@
 		4C84835623006A5700871616 /* UIColor+AppColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C84835523006A5700871616 /* UIColor+AppColors.m */; };
 		4CBCC4B6232FE0C900D478CE /* FAQFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCC4B5232FE0C900D478CE /* FAQFormViewController.m */; };
 		4CBCC4B9232FE0D800D478CE /* FAQCoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCC4B8232FE0D800D478CE /* FAQCoolViewController.m */; };
+		4CEF54DA2355F469006F0BF1 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF54D92355F469006F0BF1 /* PageContentViewController.m */; };
+		4CEF54DE2355F47C006F0BF1 /* Instruction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF54DD2355F47C006F0BF1 /* Instruction.m */; };
+		4CEF54E123571534006F0BF1 /* StartScreenPager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF54E023571534006F0BF1 /* StartScreenPager.m */; };
+		4CEF54E4235715D6006F0BF1 /* StartScreenPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF54E3235715D6006F0BF1 /* StartScreenPageContentViewController.m */; };
 		4CF535D12354771100C4FB65 /* PaymentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF535D02354771100C4FB65 /* PaymentController.swift */; };
 		7A3B621700106061AC1C9CD8 /* Pods_SAM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E7DB50C0ABCC4A5D0C88F4 /* Pods_SAM.framework */; };
 		CE032C641D7D880600851FF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE032C631D7D880600851FF4 /* main.m */; };
@@ -80,7 +86,6 @@
 		CE6DA26D1E24D38E0072CEC9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6DA26C1E24D38E0072CEC9 /* SystemConfiguration.framework */; };
 		CE727DA51DE1AFA9008D2691 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE727DA41DE1AFA9008D2691 /* UserNotifications.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		CE7A0B971E0BEF66002FFD9F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7A0B961E0BEF66002FFD9F /* MessageUI.framework */; };
-		CE7B6D391DDB34F3004852FB /* libKeychainItemWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B6D381DDB34F3004852FB /* libKeychainItemWrapper.a */; };
 		CE7B6D3D1DDB4626004852FB /* RecoveryPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7B6D3C1DDB4626004852FB /* RecoveryPassword.m */; };
 		CEA421F01DDC49BE00917653 /* NewPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA421EF1DDC49BE00917653 /* NewPassword.m */; };
 		CECB7AD31DC75DA2008CA095 /* AppleMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECB7AD21DC75DA2008CA095 /* AppleMapViewController.m */; };
@@ -112,6 +117,9 @@
 
 /* Begin PBXFileReference section */
 		436258D0220DE5B3CE095429 /* Pods-SAM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SAM/Pods-SAM.debug.xcconfig"; sourceTree = "<group>"; };
+		4C11E4322355B0FA00AD8C3A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		4C11E4342355B22800AD8C3A /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeychainItemWrapper.h; path = KeychainItemWrapper/KeychainItemWrapper.h; sourceTree = "<group>"; };
+		4C11E4352355B22800AD8C3A /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainItemWrapper.m; path = KeychainItemWrapper/KeychainItemWrapper.m; sourceTree = "<group>"; };
 		4C5986D222FEE88A00D59269 /* BallsCount.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BallsCount.h; sourceTree = "<group>"; };
 		4C5986D322FEE88A00D59269 /* BallsCount.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BallsCount.m; sourceTree = "<group>"; };
 		4C5986D522FF044B00D59269 /* BallsGood.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BallsGood.h; sourceTree = "<group>"; };
@@ -129,6 +137,14 @@
 		4CBCC4B5232FE0C900D478CE /* FAQFormViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAQFormViewController.m; sourceTree = "<group>"; };
 		4CBCC4B7232FE0D800D478CE /* FAQCoolViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FAQCoolViewController.h; sourceTree = "<group>"; };
 		4CBCC4B8232FE0D800D478CE /* FAQCoolViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAQCoolViewController.m; sourceTree = "<group>"; };
+		4CEF54D92355F469006F0BF1 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
+		4CEF54DB2355F46F006F0BF1 /* PageContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
+		4CEF54DC2355F478006F0BF1 /* Instruction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Instruction.h; sourceTree = "<group>"; };
+		4CEF54DD2355F47C006F0BF1 /* Instruction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instruction.m; sourceTree = "<group>"; };
+		4CEF54DF23571534006F0BF1 /* StartScreenPager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartScreenPager.h; sourceTree = "<group>"; };
+		4CEF54E023571534006F0BF1 /* StartScreenPager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartScreenPager.m; sourceTree = "<group>"; };
+		4CEF54E2235715D6006F0BF1 /* StartScreenPageContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartScreenPageContentViewController.h; sourceTree = "<group>"; };
+		4CEF54E3235715D6006F0BF1 /* StartScreenPageContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartScreenPageContentViewController.m; sourceTree = "<group>"; };
 		4CF535D02354771100C4FB65 /* PaymentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentController.swift; sourceTree = "<group>"; };
 		63E4B72AABD4503A5AE7D0A1 /* libPods-SAMTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SAMTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73E7DB50C0ABCC4A5D0C88F4 /* Pods_SAM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SAM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -273,8 +289,8 @@
 				CE122AE41DE83138008289AA /* Social.framework in Frameworks */,
 				4C66CF1E23547C9B00A453A4 /* TrustDefender.framework in Frameworks */,
 				CE727DA51DE1AFA9008D2691 /* UserNotifications.framework in Frameworks */,
-				CE7B6D391DDB34F3004852FB /* libKeychainItemWrapper.a in Frameworks */,
 				CECB7AD51DC75E31008CA095 /* CoreLocation.framework in Frameworks */,
+				4C11E4332355B0FA00AD8C3A /* Security.framework in Frameworks */,
 				CE6BE0AD1D884F15000F5CE4 /* WebKit.framework in Frameworks */,
 				CE032C961D7D881200851FF4 /* MapKit.framework in Frameworks */,
 				7A3B621700106061AC1C9CD8 /* Pods_SAM.framework in Frameworks */,
@@ -312,6 +328,10 @@
 		4C5986D822FF05B300D59269 /* New Group */ = {
 			isa = PBXGroup;
 			children = (
+				4CEF54DC2355F478006F0BF1 /* Instruction.h */,
+				4CEF54DD2355F47C006F0BF1 /* Instruction.m */,
+				4CEF54DB2355F46F006F0BF1 /* PageContentViewController.h */,
+				4CEF54D92355F469006F0BF1 /* PageContentViewController.m */,
 			);
 			name = "New Group";
 			sourceTree = "<group>";
@@ -536,6 +556,10 @@
 			isa = PBXGroup;
 			children = (
 				CEF84FF91DB3869100CD7137 /* SliderAnimation */,
+				4CEF54DF23571534006F0BF1 /* StartScreenPager.h */,
+				4CEF54E023571534006F0BF1 /* StartScreenPager.m */,
+				4CEF54E2235715D6006F0BF1 /* StartScreenPageContentViewController.h */,
+				4CEF54E3235715D6006F0BF1 /* StartScreenPageContentViewController.m */,
 			);
 			name = AnimationScreen;
 			sourceTree = "<group>";
@@ -647,6 +671,8 @@
 		CEE35A8E1DA27207008D916C /* singletone */ = {
 			isa = PBXGroup;
 			children = (
+				4C11E4342355B22800AD8C3A /* KeychainItemWrapper.h */,
+				4C11E4352355B22800AD8C3A /* KeychainItemWrapper.m */,
 				CEE35A8F1DA2724E008D916C /* API.h */,
 				CEE35A901DA2724E008D916C /* API.m */,
 				CE53C9701DAE7969004BDB27 /* Payments.h */,
@@ -671,6 +697,7 @@
 		D56C57A03E8647476ED3869F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C11E4322355B0FA00AD8C3A /* Security.framework */,
 				4C66CF1D23547C9B00A453A4 /* TrustDefender.framework */,
 				CE6DA26C1E24D38E0072CEC9 /* SystemConfiguration.framework */,
 				CE032C951D7D881200851FF4 /* MapKit.framework */,
@@ -851,7 +878,6 @@
 				"${PODS_ROOT}/Target Support Files/Pods-SAM/Pods-SAM-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/FunctionalSwift/FunctionalSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/KeychainItemWrapper/KeychainItemWrapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/When/When.framework",
 				"${BUILT_PRODUCTS_DIR}/YandexCheckoutPayments/YandexCheckoutPayments.framework",
@@ -867,7 +893,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FunctionalSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainItemWrapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/When.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YandexCheckoutPayments.framework",
@@ -914,6 +939,8 @@
 				CE370DF51DA2B0660027D66B /* ConfirmRegister.m in Sources */,
 				CE2DFA5E22FD82C400669C69 /* ActiveViewController.m in Sources */,
 				CE2DFA6422FD82FE00669C69 /* BallsViewController.m in Sources */,
+				4CEF54DE2355F47C006F0BF1 /* Instruction.m in Sources */,
+				4C11E4362355B22800AD8C3A /* KeychainItemWrapper.m in Sources */,
 				CE032C6A1D7D880600851FF4 /* ViewController.m in Sources */,
 				CE238C7B1E26345C006AF131 /* PinAnnotation.m in Sources */,
 				CE376D931E35F58B00B0FCFD /* SwitchMap.m in Sources */,
@@ -933,6 +960,7 @@
 				CE238C7C1E26345C006AF131 /* UIView+MKAnnotationView.m in Sources */,
 				4C84835623006A5700871616 /* UIColor+AppColors.m in Sources */,
 				CE2DFA6722FD88D000669C69 /* MyBySwitchController.m in Sources */,
+				4CEF54DA2355F469006F0BF1 /* PageContentViewController.m in Sources */,
 				CE4F32E41DFEB28B0023F0AA /* FailViewController.m in Sources */,
 				CE032CF41D7DA9BB00851FF4 /* split.c in Sources */,
 				CE53C9751DAE798F004BDB27 /* Payment.m in Sources */,
@@ -953,6 +981,7 @@
 				4C5986D722FF044B00D59269 /* BallsGood.m in Sources */,
 				4C8483532300632300871616 /* FAQViewController.m in Sources */,
 				4C5986DB22FF05CA00D59269 /* NewsSam.m in Sources */,
+				4CEF54E4235715D6006F0BF1 /* StartScreenPageContentViewController.m in Sources */,
 				CE7B6D3D1DDB4626004852FB /* RecoveryPassword.m in Sources */,
 				4CBCC4B6232FE0C900D478CE /* FAQFormViewController.m in Sources */,
 				CECB7AD31DC75DA2008CA095 /* AppleMapViewController.m in Sources */,
@@ -964,6 +993,7 @@
 				4CF535D12354771100C4FB65 /* PaymentController.swift in Sources */,
 				CE032CDB1D7DA8CA00851FF4 /* QREncoder.m in Sources */,
 				CE032CF81D7DAB7F00851FF4 /* MyCoin.m in Sources */,
+				4CEF54E123571534006F0BF1 /* StartScreenPager.m in Sources */,
 				CE2DFA6122FD82E900669C69 /* InactiveViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

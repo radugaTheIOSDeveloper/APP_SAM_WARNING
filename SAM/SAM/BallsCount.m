@@ -75,6 +75,8 @@
 
     }
     
+    //self.infoMinuts.text =[NSMutableArray arrayWithCapacity:28];
+    
     self.infoMinuts.text = [NSString stringWithFormat:@"%ld минут", totalMinuts];
     self.infoBalls.text = [NSString stringWithFormat:@"%ld баллов", totalBalls];
     

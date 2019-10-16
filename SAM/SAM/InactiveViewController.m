@@ -185,7 +185,7 @@
     if ([self.inactiveCount count] == 0) {
         
         UITableViewCell * cellNoBuy = [tableView dequeueReusableCellWithIdentifier:ideNo];
-        UILabel * nonLabel = (UILabel *)[cellNoBuy.contentView viewWithTag:402];
+        UILabel * nonLabel = (UILabel *)[cellNoBuy.contentView viewWithTag:403];
         nonLabel.text = @"У вас нет покупок.";
 
         

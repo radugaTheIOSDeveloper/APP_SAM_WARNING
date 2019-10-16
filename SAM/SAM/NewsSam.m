@@ -55,17 +55,19 @@
     UIFont * customFont = [UIFont fontWithName:@"Optima" size:12];
     [self.entLabel setFont:customFont];
     
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.navigationItem.title = @"Новости";
-    
+//    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+//    self.navigationItem.title = @"Новости";
+
     [self getUserQRCode];
     [self getNews];
 #pragma mark PageViewControllelr
     
-//
-   
-    
-    
+
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self.tabBarController setTitle:@"Новости"];
+
 }
 
 -(void)pageContentViewControllerNews{
@@ -166,6 +168,7 @@
     [[API apiManager]getUserQR:^(NSDictionary *responceObject) {
         
         [self  stopActivityIndicator];
+        NSLog(@"resoine object - %@",responceObject);
         NSMutableArray * active = [responceObject valueForKey:@"active"];
         self.activeCount = active;
         [self.refreshControl endRefreshing];
@@ -230,10 +233,11 @@
         
     } else {
         
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
 
         self.tableView.allowsSelection = YES;
 
-        
         NSDictionary * curCoinActive = [self.activeCount objectAtIndex:0];
         UITableViewCell * cellACtive = [tableView dequeueReusableCellWithIdentifier:ideActive];
         UIImageView * imageCoin = (UIImageView *)[cellACtive.contentView viewWithTag:574];

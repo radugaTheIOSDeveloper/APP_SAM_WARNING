@@ -44,7 +44,7 @@
     self.ballsInfo.text = [NSString stringWithFormat:@"20 баллов"];
     
     self.buyCoinsOtl.enabled = NO;
-    [self backButton];
+  //  [self backButton];
     
 }
 

@@ -100,4 +100,8 @@
                 onSuccess:(void(^)(NSDictionary * responseObject)) success
                 onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
 
+
+-(void) getFAQ:(void(^)(NSDictionary * responceObject))success
+onFailure:(void(^)(NSError * error, NSInteger statusCode))failure;
+
 @end
