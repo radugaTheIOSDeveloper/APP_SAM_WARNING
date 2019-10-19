@@ -25,8 +25,13 @@
     
     [super viewDidLoad];
     NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+ 
     
-    self.confirmNumber.placeholder = @"Код подтверждения";
+    UIColor *color = [UIColor lightTextColor];
+    self.confirmNumber.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Код подтверждения" attributes:@{NSForegroundColorAttributeName: color}];
+    
+    NSLog(@"%@",self.saveTelephone);
+    
     [userDefaults setInteger:1 forKey:@"need_activate"];
     [userDefaults setObject:self.saveTelephone forKey:@"user_phone"];
     
@@ -61,8 +66,13 @@
                                 self.messages = [responseObject objectForKey:@"message"];
                                   [self alerts];
                               } else {
-                                  [self performSegueWithIdentifier:@"setPass" sender:self];
 
+                                        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                        UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"passController"];
+                                        pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                                        [self presentViewController:pvc animated:YES completion:nil];
+                                  
+                                  
                               }
                               
 }                          onFailure:^(NSError *error, NSInteger statusCode) {

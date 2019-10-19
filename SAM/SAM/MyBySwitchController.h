@@ -12,8 +12,8 @@
 @property (weak, nonatomic) IBOutlet UIView *containerMyBy;
 @property (weak, nonatomic) IBOutlet UITabBar *tabBar;
 
-- (IBAction)active:(id)sender;
-- (IBAction)inactive:(id)sender;
-- (IBAction)balls:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentCntr;
+- (IBAction)actSegment:(id)sender;
 
 @end

@@ -18,6 +18,14 @@
 @property (weak, nonatomic) IBOutlet UIButton *twoMinutsPlusOtl;
 
 
+
+//- (IBAction)promoTouch:(id)sender;
+//@property (weak, nonatomic) IBOutlet UITextField *promoTextEdit;
+- (IBAction)promoTouch:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *promoText;
+
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
 - (IBAction)minusTwo:(id)sender;
 - (IBAction)plusTwo:(id)sender;
 

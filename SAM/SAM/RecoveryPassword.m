@@ -69,7 +69,12 @@
                                         
                                     } else {
                                         [[Payment save]setPhoneNumber:numPhone];
-                                        [self performSegueWithIdentifier:@"newPassword" sender:self];
+                                        
+                                        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                        UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"newPassword"];
+                                        pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                                        [self presentViewController:pvc animated:YES completion:nil];
+                                        //[self performSegueWithIdentifier:@"newPassword" sender:self];
 
                                     }
                                     

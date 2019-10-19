@@ -24,7 +24,10 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    self.pasTextField.placeholder = @"введите пароль";
+    
+    
+    UIColor *color = [UIColor lightTextColor];
+    self.pasTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Введите пароль" attributes:@{NSForegroundColorAttributeName: color}];
     
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
@@ -57,7 +60,10 @@
                               NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
                               [userDefaults setInteger:12 forKey:@"pushTokenStatus"];
                               
-                              [self performSegueWithIdentifier:@"success" sender:self];
+                            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                             UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"payControlller"];
+                             pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                            [self presentViewController:pvc animated:YES completion:nil];
 
                           } onFailure:^(NSError *error, NSInteger statusCode) {
                               NSLog(@"%@",error);

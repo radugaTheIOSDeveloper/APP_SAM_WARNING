@@ -27,6 +27,12 @@
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     
     
+//    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+//    UITabBar *tabBar = tabBarController.tabBar;
+
+    // repeat for every tab, but increment the index each time
+
+    
     
     return YES;
 }

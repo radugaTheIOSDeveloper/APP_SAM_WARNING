@@ -5,46 +5,60 @@
 //  Created by Георгий Зуев on 14/10/2019.
 //  Copyright © 2019 freshtech. All rights reserved.
 //
+
 import UIKit
 import WebKit
 import YandexCheckoutPaymentsApi
 import YandexCheckoutPayments
 
 
-class PaymentController: UIViewController, WKUIDelegate {
+/// <#Description#>
+@objcMembers class PaymentController: UIViewController, WKUIDelegate {
+    
+    
+    @objc dynamic var value = 0
     @IBOutlet weak var resultTokenLabel: UILabel!
-
     let clientApplicationKey = "live_NjI5ODE47cquPSD7939_gasmXhbT0ccjlnABYEq9rHg"
-    let amount = Amount(value: 5.00, currency: .rub)
+    let amount = Amount(value: 1.00, currency: .rub)
     var token: Tokens?
     var paymentMethodType: PaymentMethodType?
     
+    @objc dynamic var count:String = String()
+    
+
     private let defaultSession = URLSession(configuration: URLSessionConfiguration.default)
     var webView: WKWebView!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        print("123213 = " ,count);
+       
         moveIn()
     }
     
+    
+   
+
+    
     @IBAction func buyButtonPressed(_ sender: UIButton) {
-        let paymentTypes: PaymentMethodTypes = [.bankCard]
+        
+        let paymentTypes: PaymentMethodTypes = [.bankCard, .applePay]
         let tokenSettings = TokenizationSettings(paymentMethodTypes: paymentTypes,
                              showYandexCheckoutLogo: true)
         let inputData: TokenizationFlow = .tokenization(TokenizationModuleInputData(
             clientApplicationKey: clientApplicationKey,
             shopName: "Космические объекты",
-            purchaseDescription: "\"Комета повышенной яркости, период обращения — 112 лет\"",
+            purchaseDescription: "\"Комета повышенной яркости, период обращения — 112 лет\"",            
             amount: amount,
             tokenizationSettings: tokenSettings,
             testModeSettings: nil,
             cardScanning: nil,
-            applePayMerchantIdentifier: "",
+            applePayMerchantIdentifier: "merchant.sam",
             isLoggingEnabled: true,
             userPhoneNumber: "+7",
-            customizationSettings: CustomizationSettings()
+            customizationSettings: CustomizationSettings(mainScheme:UIColor(red: 228/255, green: 0, blue: 11/255, alpha: 1))
         ))
         let viewController = TokenizationAssembly.makeModule(inputData: inputData,
                                                              moduleOutput: self)
@@ -52,6 +66,9 @@ class PaymentController: UIViewController, WKUIDelegate {
 
     }
 }
+
+
+
 
 extension PaymentController {
     private func moveIn() {
@@ -95,16 +112,16 @@ extension PaymentController: TokenizationModuleOutput {
         }
 
         // Отправьте токен в вашу систему
-        print("Token: \(self.token!.paymentToken))")
-        let tokenInfo: [String: String] = ["token": self.token!.paymentToken]
-        //Отправим сообщение
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "tokenChanged"), object: nil, userInfo: tokenInfo)
-        //Теперь можно вернуться
-        DispatchQueue.main.async {
-            self.moveOut()
-        }
+//        print("Token: \(self.token!.paymentToken)")
+//        let tokenInfo: [String: String] = ["token": self.token!.paymentToken]
+////        Отправим сообщение
+//        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "tokenChanged"), object: nil, userInfo: tokenInfo)
+////        Теперь можно вернуться
+//        DispatchQueue.main.async {
+//            self.moveOut()
+//        }
         //Все остальное можно не использовать
-//        sendRequest()
+        sendRequest()
         
 
     }
@@ -113,7 +130,7 @@ extension PaymentController: TokenizationModuleOutput {
         DispatchQueue.main.async {
             self.resultTokenLabel.text = self.token!.paymentToken
             UIApplication.shared.isNetworkActivityIndicatorVisible = true
-            let params: NSDictionary = ["app_token": self.token!.paymentToken]
+            let params: NSDictionary = ["app_token": self.token!.paymentToken, "oleg":"helllow"]
             self.processExternalPayment(userParameters: params, completion: {(code, data, error) -> Void in
                 if (error != nil) {
                     DispatchQueue.main.async {
@@ -142,6 +159,7 @@ extension PaymentController: TokenizationModuleOutput {
 }
 
 extension PaymentController: URLSessionTaskDelegate, URLSessionDataDelegate {
+    
     func processExternalPayment(userParameters: NSDictionary, completion: @escaping (Int, Data?, Error?) -> ()) {
         let requestString = "https://app.pomoysam.ru/api/v0/payment/"
         let requestUrl = URL(string: requestString)
@@ -158,7 +176,7 @@ extension PaymentController: URLSessionTaskDelegate, URLSessionDataDelegate {
                 print(error.localizedDescription)
                 completion(0, nil, error)
             } else if let httpResponse = response as? HTTPURLResponse {
-                //Нормально
+                
                 completion(httpResponse.statusCode, data, nil)
             }
         }
@@ -174,6 +192,7 @@ extension PaymentController: URLSessionTaskDelegate, URLSessionDataDelegate {
         request.setValue("Yandex.Money.SDK/iOS", forHTTPHeaderField: "User-Agent")
         request.setValue("ru", forHTTPHeaderField: "Accept-Language")
         let value = String(request.httpBody!.count)
+    //    print(request.httpBody);
         request.setValue(value, forHTTPHeaderField: "Content-Length")
         
         return request

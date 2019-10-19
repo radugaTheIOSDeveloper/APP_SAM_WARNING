@@ -5,6 +5,8 @@ use_frameworks!
 target 'SAM' do
 pod 'AFNetworking', '~> 3.0'
 pod 'Reachability', '~> 3.2’
+pod 'CCDropDownMenus'
+
   pod 'YandexCheckoutPayments',
     :git => 'https://github.com/yandex-money/yandex-checkout-payments-swift.git',
     :tag => '2.2.0'

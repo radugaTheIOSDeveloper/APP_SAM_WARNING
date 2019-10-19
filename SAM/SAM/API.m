@@ -143,7 +143,10 @@
    // [manager.requestSerializer setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
     
     [self.sessionManager.requestSerializer setValue:[self getToken] forHTTPHeaderField:@"Authorization"];
-    [self.sessionManager.requestSerializer setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
+    
+    NSLog(@"%@",[self getToken]);
+    
+    [self.sessionManager.requestSerializer setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
     [self.sessionManager GET:@"getUserQR/"
                   parameters:nil
                     progress:nil
@@ -547,5 +550,119 @@
                         }];
 }
 
+
+-(void) userBalance:(void(^)(NSDictionary * responceObject))success
+     onFailure:(void(^)(NSError * error, NSInteger statusCode))failure{
+    
+    
+    //[self.sessionManager.requestSerializer setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
+       
+    
+    NSLog(@"token = %@",[self getToken]);
+    
+       [self.sessionManager.requestSerializer setValue:[self getToken] forHTTPHeaderField:@"Authorization"];
+    
+       [self.sessionManager GET:@"userBalance/"
+                     parameters:nil
+                       progress:nil
+                        success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
+                            
+                            if(success){
+                                success(responseObject);
+                            }
+                        }
+        
+                        failure:^(NSURLSessionTask *operation, NSError *error) {
+                              NSLog(@"error%@",error);
+                            if(failure){
+                                NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
+                                failure(error, response.statusCode);
+                            }
+                        }];
+}
+
+
+
+
+-(void)promo:(NSString *)promocode onSuccess:(void (^)(NSDictionary *))success onFailure:(void (^)(NSError *, NSInteger))failure{
+    
+    NSDictionary * params = [NSDictionary dictionaryWithObjectsAndKeys:
+                             promocode, @"code",nil];
+        [self.sessionManager.requestSerializer setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
+
+          [self.sessionManager.requestSerializer setValue:[self getToken] forHTTPHeaderField:@"Authorization"];
+          
+          [self.sessionManager POST:@"tryPromo/"
+                         parameters:params
+                           progress:nil
+                            success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
+                                
+                                if (success) {
+                                    success(responseObject);
+                                    
+                                }
+                            }
+                            failure: ^(NSURLSessionTask *operation, NSError *error) {
+                                
+                                if (failure) {
+                                    NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
+                                    failure(error, response.statusCode);
+                                }
+                            }];
+       
+}
+
+
+-(void) getPercent:(void(^)(NSDictionary * responceObject))success
+         onFailure:(void(^)(NSError * error, NSInteger statusCode))failure{
+    [self.sessionManager.requestSerializer setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
+
+    [self.sessionManager GET:@"cashBackSetting/"
+                       parameters:nil
+                         progress:nil
+                          success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
+                              
+                              if(success){
+                                  success(responseObject);
+                              }
+                          }
+          
+                          failure:^(NSURLSessionTask *operation, NSError *error) {
+                                NSLog(@"error%@",error);
+                              if(failure){
+                                  NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
+                                  failure(error, response.statusCode);
+                              }
+                          }];
+    
+}
+
+-(void)cashBackPay:(NSString *)cnt onSuccess:(void (^)(NSDictionary *))success onFailure:(void (^)(NSError *, NSInteger))failure{
+    
+    NSDictionary * params = [NSDictionary dictionaryWithObjectsAndKeys:
+                             cnt, @"cnt",nil];
+        [self.sessionManager.requestSerializer setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
+
+          [self.sessionManager.requestSerializer setValue:[self getToken] forHTTPHeaderField:@"Authorization"];
+          
+          [self.sessionManager POST:@"cashBackPay/"
+                         parameters:params
+                           progress:nil
+                            success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
+                                
+                                if (success) {
+                                    success(responseObject);
+                                    
+                                }
+                            }
+                            failure: ^(NSURLSessionTask *operation, NSError *error) {
+                                
+                                if (failure) {
+                                    NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
+                                    failure(error, response.statusCode);
+                                }
+                            }];
+    
+}
 
 @end

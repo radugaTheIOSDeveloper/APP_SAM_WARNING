@@ -14,9 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UILabel *sizeMinuts;
 
-@property (weak, nonatomic) IBOutlet UILabel *sizeCount;
 
 - (IBAction)inMyBuyButton:(id)sender;
+
+@property (nonatomic,assign) NSInteger sizeMin;
+@property (nonatomic,assign) NSInteger sizeTime;
 
 
 @end

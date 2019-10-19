@@ -33,25 +33,49 @@
                     NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
                     
                     if ([userDefaults integerForKey:@"show_animated"] == 1) {
+                  
                         
                         if ([userDefaults objectForKey:@"token"]) {
                                     
-                            [self performSegueWithIdentifier:@"mapSegue" sender:self];
+                            
+                                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"payControlller"];
+                                pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                                [self presentViewController:pvc animated:YES completion:nil];
+
                             
                         } else {
                                     
                                 if ([userDefaults integerForKey:@"need_activate"] == 1) {
                                     
-                                    [self performSegueWithIdentifier:@"registrSegue" sender:self];
                                     
+                                    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                    UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"registrController"];
+                                    pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                                    [self presentViewController:pvc animated:YES completion:nil];
+                                    
+               
                                 } else  {
                                     
-                                    [self performSegueWithIdentifier:@"enterSegue" sender:self];
+                                    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                    UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"enterController"];
+                                    pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                                    [self presentViewController:pvc animated:YES completion:nil];
+                                   
                                     
                                 }
                             }
+                        
+                    }else{
+                        
+                        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                        UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"instructionOne"];
+                        pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                        [self presentViewController:pvc animated:YES completion:nil];
+                        
+                    }
                                 
-                    } 
+                     
                             
                 }];
         
@@ -83,4 +107,6 @@
     [super didReceiveMemoryWarning];
 }
 
+- (IBAction)clear:(id)sender {
+}
 @end

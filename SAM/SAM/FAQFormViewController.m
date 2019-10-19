@@ -7,8 +7,9 @@
 //
 
 #import "FAQFormViewController.h"
+#import <CCDropDownMenus/CCDropDownMenus.h>
 
-@interface FAQFormViewController ()
+@interface FAQFormViewController () <CCDropDownMenuDelegate>
 
 @end
 
@@ -17,18 +18,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSLog(@"hellow view controller");
+ 
+    ManaDropDownMenu * menu =  [[ManaDropDownMenu alloc] initWithFrame:CGRectMake(20  , 200, 300, 50) title:@"Hellow"];
+    menu.delegate = self;
+    menu.numberOfRows = 3;
+
+    menu.indicator = [UIImage imageNamed:@"support"];
+    menu.textOfRows = @[@"123", @"123", @"123"];
+    
+    [self.view addSubview:menu];
 
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+//- (void)dropDownMenu:(CCDropDownMenu *)dropDownMenu didSelectRowAtIndex:(NSInteger)index {
+//
+//
+//
+//}
 
 @end

@@ -11,82 +11,89 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>FunctionalSwift.xcscheme</key>
+		<key>CCDropDownMenus.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>Pods-SAM.xcscheme</key>
+		<key>FunctionalSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>Reachability.xcscheme</key>
+		<key>Pods-SAM.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
-		<key>When.xcscheme</key>
+		<key>Reachability.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-		<key>YandexCheckoutPayments.xcscheme</key>
+		<key>When.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
-		<key>YandexCheckoutPaymentsApi.xcscheme</key>
+		<key>YandexCheckoutPayments.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
-		<key>YandexCheckoutShowcaseApi.xcscheme</key>
+		<key>YandexCheckoutPaymentsApi.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
-		<key>YandexCheckoutWalletApi.xcscheme</key>
+		<key>YandexCheckoutShowcaseApi.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
-		<key>YandexLoginSDK.xcscheme</key>
+		<key>YandexCheckoutWalletApi.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
-		<key>YandexMobileMetrica.xcscheme</key>
+		<key>YandexLoginSDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
-		<key>YandexMoneyCoreApi.xcscheme</key>
+		<key>YandexMobileMetrica.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>11</integer>
+		</dict>
+		<key>YandexMoneyCoreApi.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>12</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

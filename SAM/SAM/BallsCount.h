@@ -18,9 +18,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *scizeBalls;
 
 @property (weak, nonatomic) IBOutlet UILabel *infoMinuts;
+@property(strong, nonatomic) NSString * titleBall;
+@property (retain) NSNumber * ball;
+@property (weak, nonatomic) IBOutlet UILabel *titleLable;
 
 @property (weak, nonatomic) IBOutlet UILabel *infoBalls;
 @property (weak, nonatomic) IBOutlet UIButton *getButton;
+
+@property (strong, nonatomic) NSString * messageAlert;
+@property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
+
 - (IBAction)getActionButton:(id)sender;
 - (IBAction)buttonPlusAct:(id)sender;
 - (IBAction)buttonMinusAction:(id)sender;

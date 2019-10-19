@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4C11E4332355B0FA00AD8C3A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C11E4322355B0FA00AD8C3A /* Security.framework */; };
 		4C11E4362355B22800AD8C3A /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C11E4352355B22800AD8C3A /* KeychainItemWrapper.m */; };
+		4C2A1373235B20AE00DD425C /* StartScreenINstructionOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A1372235B20AE00DD425C /* StartScreenINstructionOne.m */; };
+		4C2A1376235B20C900DD425C /* StartScreenInstructionTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A1375235B20C900DD425C /* StartScreenInstructionTwo.m */; };
 		4C5986D422FEE88A00D59269 /* BallsCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5986D322FEE88A00D59269 /* BallsCount.m */; };
 		4C5986D722FF044B00D59269 /* BallsGood.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5986D622FF044B00D59269 /* BallsGood.m */; };
 		4C5986DB22FF05CA00D59269 /* NewsSam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5986DA22FF05CA00D59269 /* NewsSam.m */; };
@@ -20,8 +22,6 @@
 		4CBCC4B9232FE0D800D478CE /* FAQCoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCC4B8232FE0D800D478CE /* FAQCoolViewController.m */; };
 		4CEF54DA2355F469006F0BF1 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF54D92355F469006F0BF1 /* PageContentViewController.m */; };
 		4CEF54DE2355F47C006F0BF1 /* Instruction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF54DD2355F47C006F0BF1 /* Instruction.m */; };
-		4CEF54E123571534006F0BF1 /* StartScreenPager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF54E023571534006F0BF1 /* StartScreenPager.m */; };
-		4CEF54E4235715D6006F0BF1 /* StartScreenPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF54E3235715D6006F0BF1 /* StartScreenPageContentViewController.m */; };
 		4CF535D12354771100C4FB65 /* PaymentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF535D02354771100C4FB65 /* PaymentController.swift */; };
 		7A3B621700106061AC1C9CD8 /* Pods_SAM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E7DB50C0ABCC4A5D0C88F4 /* Pods_SAM.framework */; };
 		CE032C641D7D880600851FF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE032C631D7D880600851FF4 /* main.m */; };
@@ -94,8 +94,6 @@
 		CEE34DE41DEC36A700EBF5D2 /* ConfirmAuthorize.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE34DE31DEC36A700EBF5D2 /* ConfirmAuthorize.m */; };
 		CEE35A911DA2724E008D916C /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE35A901DA2724E008D916C /* API.m */; };
 		CEEA754E1E02BCCC000D73D3 /* TermOfUse.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEA754D1E02BCCC000D73D3 /* TermOfUse.m */; };
-		CEF84FFC1DB386D800CD7137 /* SkipScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF84FFB1DB386D800CD7137 /* SkipScreen.m */; };
-		CEF84FFF1DB386FC00CD7137 /* PageContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF84FFE1DB386FC00CD7137 /* PageContentController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +118,10 @@
 		4C11E4322355B0FA00AD8C3A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		4C11E4342355B22800AD8C3A /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeychainItemWrapper.h; path = KeychainItemWrapper/KeychainItemWrapper.h; sourceTree = "<group>"; };
 		4C11E4352355B22800AD8C3A /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainItemWrapper.m; path = KeychainItemWrapper/KeychainItemWrapper.m; sourceTree = "<group>"; };
+		4C2A1371235B20AE00DD425C /* StartScreenINstructionOne.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartScreenINstructionOne.h; sourceTree = "<group>"; };
+		4C2A1372235B20AE00DD425C /* StartScreenINstructionOne.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartScreenINstructionOne.m; sourceTree = "<group>"; };
+		4C2A1374235B20C900DD425C /* StartScreenInstructionTwo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartScreenInstructionTwo.h; sourceTree = "<group>"; };
+		4C2A1375235B20C900DD425C /* StartScreenInstructionTwo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartScreenInstructionTwo.m; sourceTree = "<group>"; };
 		4C5986D222FEE88A00D59269 /* BallsCount.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BallsCount.h; sourceTree = "<group>"; };
 		4C5986D322FEE88A00D59269 /* BallsCount.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BallsCount.m; sourceTree = "<group>"; };
 		4C5986D522FF044B00D59269 /* BallsGood.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BallsGood.h; sourceTree = "<group>"; };
@@ -137,14 +139,12 @@
 		4CBCC4B5232FE0C900D478CE /* FAQFormViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAQFormViewController.m; sourceTree = "<group>"; };
 		4CBCC4B7232FE0D800D478CE /* FAQCoolViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FAQCoolViewController.h; sourceTree = "<group>"; };
 		4CBCC4B8232FE0D800D478CE /* FAQCoolViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAQCoolViewController.m; sourceTree = "<group>"; };
+		4CC5ABC62358C1CA009FDD0D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		4CC5ABC72358C1CB009FDD0D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		4CEF54D92355F469006F0BF1 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
 		4CEF54DB2355F46F006F0BF1 /* PageContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
 		4CEF54DC2355F478006F0BF1 /* Instruction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Instruction.h; sourceTree = "<group>"; };
 		4CEF54DD2355F47C006F0BF1 /* Instruction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instruction.m; sourceTree = "<group>"; };
-		4CEF54DF23571534006F0BF1 /* StartScreenPager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartScreenPager.h; sourceTree = "<group>"; };
-		4CEF54E023571534006F0BF1 /* StartScreenPager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartScreenPager.m; sourceTree = "<group>"; };
-		4CEF54E2235715D6006F0BF1 /* StartScreenPageContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartScreenPageContentViewController.h; sourceTree = "<group>"; };
-		4CEF54E3235715D6006F0BF1 /* StartScreenPageContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartScreenPageContentViewController.m; sourceTree = "<group>"; };
 		4CF535D02354771100C4FB65 /* PaymentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentController.swift; sourceTree = "<group>"; };
 		63E4B72AABD4503A5AE7D0A1 /* libPods-SAMTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SAMTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73E7DB50C0ABCC4A5D0C88F4 /* Pods_SAM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SAM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -273,10 +273,6 @@
 		CEE35A901DA2724E008D916C /* API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
 		CEEA754C1E02BCCC000D73D3 /* TermOfUse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermOfUse.h; sourceTree = "<group>"; };
 		CEEA754D1E02BCCC000D73D3 /* TermOfUse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermOfUse.m; sourceTree = "<group>"; };
-		CEF84FFA1DB386D800CD7137 /* SkipScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkipScreen.h; sourceTree = "<group>"; };
-		CEF84FFB1DB386D800CD7137 /* SkipScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkipScreen.m; sourceTree = "<group>"; };
-		CEF84FFD1DB386FC00CD7137 /* PageContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentController.h; sourceTree = "<group>"; };
-		CEF84FFE1DB386FC00CD7137 /* PageContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -394,7 +390,6 @@
 				CECB7AD01DC75D72008CA095 /* MAP */,
 				CED618D91DA3CB7900B0FED3 /* Yandex */,
 				CEE35A8E1DA27207008D916C /* singletone */,
-				CE29D7481D9BE2EE0083AC1B /* AnimationScreen */,
 				CE39BA3C1D9406A200C5256A /* Registr */,
 				CE6BE0AB1D8815D9000F5CE4 /* StartScreen */,
 				CE032CF51D7DAB3E00851FF4 /* MyCoin */,
@@ -552,18 +547,6 @@
 			path = MAP;
 			sourceTree = SOURCE_ROOT;
 		};
-		CE29D7481D9BE2EE0083AC1B /* AnimationScreen */ = {
-			isa = PBXGroup;
-			children = (
-				CEF84FF91DB3869100CD7137 /* SliderAnimation */,
-				4CEF54DF23571534006F0BF1 /* StartScreenPager.h */,
-				4CEF54E023571534006F0BF1 /* StartScreenPager.m */,
-				4CEF54E2235715D6006F0BF1 /* StartScreenPageContentViewController.h */,
-				4CEF54E3235715D6006F0BF1 /* StartScreenPageContentViewController.m */,
-			);
-			name = AnimationScreen;
-			sourceTree = "<group>";
-		};
 		CE2DFA5B22FD829700669C69 /* MyTabControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -611,6 +594,10 @@
 			children = (
 				CE6BE0A81D8815D4000F5CE4 /* StartScreenView.h */,
 				CE6BE0A91D8815D4000F5CE4 /* StartScreenView.m */,
+				4C2A1371235B20AE00DD425C /* StartScreenINstructionOne.h */,
+				4C2A1372235B20AE00DD425C /* StartScreenINstructionOne.m */,
+				4C2A1374235B20C900DD425C /* StartScreenInstructionTwo.h */,
+				4C2A1375235B20C900DD425C /* StartScreenInstructionTwo.m */,
 			);
 			name = StartScreen;
 			sourceTree = "<group>";
@@ -681,17 +668,6 @@
 				CE53C9741DAE798F004BDB27 /* Payment.m */,
 			);
 			name = singletone;
-			sourceTree = "<group>";
-		};
-		CEF84FF91DB3869100CD7137 /* SliderAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				CEF84FFA1DB386D800CD7137 /* SkipScreen.h */,
-				CEF84FFB1DB386D800CD7137 /* SkipScreen.m */,
-				CEF84FFD1DB386FC00CD7137 /* PageContentController.h */,
-				CEF84FFE1DB386FC00CD7137 /* PageContentController.m */,
-			);
-			name = SliderAnimation;
 			sourceTree = "<group>";
 		};
 		D56C57A03E8647476ED3869F /* Frameworks */ = {
@@ -813,8 +789,8 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				English,
-				en,
 				Base,
+				ru,
 			);
 			mainGroup = CE032C561D7D880600851FF4;
 			productRefGroup = CE032C601D7D880600851FF4 /* Products */;
@@ -877,6 +853,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SAM/Pods-SAM-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/CCDropDownMenus/CCDropDownMenus.framework",
 				"${BUILT_PRODUCTS_DIR}/FunctionalSwift/FunctionalSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/When/When.framework",
@@ -892,6 +869,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCDropDownMenus.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FunctionalSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/When.framework",
@@ -934,6 +912,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C2A1376235B20C900DD425C /* StartScreenInstructionTwo.m in Sources */,
 				CE032CF21D7DA9BB00851FF4 /* qrencode.c in Sources */,
 				CE128D331DA7CF1C00050099 /* PaymentWebView.m in Sources */,
 				CE370DF51DA2B0660027D66B /* ConfirmRegister.m in Sources */,
@@ -951,7 +930,6 @@
 				CE032CEC1D7DA9AA00851FF4 /* rscode.c in Sources */,
 				CE032C671D7D880600851FF4 /* AppDelegate.m in Sources */,
 				CEEA754E1E02BCCC000D73D3 /* TermOfUse.m in Sources */,
-				CEF84FFC1DB386D800CD7137 /* SkipScreen.m in Sources */,
 				CE032C641D7D880600851FF4 /* main.m in Sources */,
 				4CBCC4B9232FE0D800D478CE /* FAQCoolViewController.m in Sources */,
 				CE032CBA1D7D905500851FF4 /* MyNavigationControll.m in Sources */,
@@ -973,7 +951,6 @@
 				CEA421F01DDC49BE00917653 /* NewPassword.m in Sources */,
 				CE032CD81D7D99A700851FF4 /* BuyCoins.m in Sources */,
 				4C5986D422FEE88A00D59269 /* BallsCount.m in Sources */,
-				CEF84FFF1DB386FC00CD7137 /* PageContentController.m in Sources */,
 				CE032CB91D7D905500851FF4 /* MyNavigationBar.m in Sources */,
 				CED618DC1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m in Sources */,
 				CEE34DE41DEC36A700EBF5D2 /* ConfirmAuthorize.m in Sources */,
@@ -981,7 +958,6 @@
 				4C5986D722FF044B00D59269 /* BallsGood.m in Sources */,
 				4C8483532300632300871616 /* FAQViewController.m in Sources */,
 				4C5986DB22FF05CA00D59269 /* NewsSam.m in Sources */,
-				4CEF54E4235715D6006F0BF1 /* StartScreenPageContentViewController.m in Sources */,
 				CE7B6D3D1DDB4626004852FB /* RecoveryPassword.m in Sources */,
 				4CBCC4B6232FE0C900D478CE /* FAQFormViewController.m in Sources */,
 				CECB7AD31DC75DA2008CA095 /* AppleMapViewController.m in Sources */,
@@ -993,7 +969,7 @@
 				4CF535D12354771100C4FB65 /* PaymentController.swift in Sources */,
 				CE032CDB1D7DA8CA00851FF4 /* QREncoder.m in Sources */,
 				CE032CF81D7DAB7F00851FF4 /* MyCoin.m in Sources */,
-				4CEF54E123571534006F0BF1 /* StartScreenPager.m in Sources */,
+				4C2A1373235B20AE00DD425C /* StartScreenINstructionOne.m in Sources */,
 				CE2DFA6122FD82E900669C69 /* InactiveViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1034,6 +1010,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CE032C6C1D7D880600851FF4 /* Base */,
+				4CC5ABC62358C1CA009FDD0D /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1042,6 +1019,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CE032C711D7D880600851FF4 /* Base */,
+				4CC5ABC72358C1CB009FDD0D /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1053,6 +1031,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1099,6 +1078,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1143,7 +1123,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SAM/SAM.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = HL7PGCM524;
+				DEVELOPMENT_TEAM = UBFH48Y835;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1173,7 +1153,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SAM/SAM.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = HL7PGCM524;
+				DEVELOPMENT_TEAM = UBFH48Y835;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

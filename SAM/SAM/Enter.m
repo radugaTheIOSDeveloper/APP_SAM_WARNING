@@ -27,8 +27,12 @@
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     
-    self.textFieldNumber.placeholder = @"Номер телефона";
-    self.textFieldPassword.placeholder = @"Пароль";
+    
+    UIColor *color = [UIColor lightTextColor];
+    self.textFieldNumber.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Номер телефона" attributes:@{NSForegroundColorAttributeName: color}];
+    self.textFieldPassword.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Пароль" attributes:@{NSForegroundColorAttributeName: color}];
+    
+  
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
     
@@ -66,7 +70,13 @@
                             [[Payment save]setPhoneNumber:username];
                             NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
                             [userDefaults setObject:@"true" forKey:@"token"];
-                            [self performSegueWithIdentifier:@"enter" sender:self];
+                            
+                            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                            UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"payControlller"];
+                            pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                            [self presentViewController:pvc animated:YES completion:nil];
+
+       
                             
                         } else  {
                             [self alerts];
@@ -175,11 +185,32 @@
     }
 }
 
+- (IBAction)rememberPassword:(id)sender {
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"recoveryPassword"];
+    pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:pvc animated:YES completion:nil];
+    
+    
+}
+
+- (IBAction)registrBtn:(id)sender {
+    
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"registrController"];
+    pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:pvc animated:YES completion:nil];
+}
+
 - (IBAction)actNumTel:(id)sender {
     self.textFieldNumber.text = @"+7";
 }
 
 - (IBAction)actPass:(id)sender {
+    
+    
     
 }
 

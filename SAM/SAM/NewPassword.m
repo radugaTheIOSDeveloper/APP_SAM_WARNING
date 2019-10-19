@@ -35,8 +35,12 @@
                                   self.messageAlert = [responseObject objectForKey:@"message"];
                                   [self alert];
                               } else {
-                              
-                                  [self performSegueWithIdentifier:@"confirmAuthorize" sender:self];
+                                    
+                                  
+                                    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                    UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"confirmAuthorize"];
+                                    pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                                    [self presentViewController:pvc animated:YES completion:nil];
                               }
                               
                           } onFailure:^(NSError *error, NSInteger statusCode) {

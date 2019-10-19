@@ -32,6 +32,11 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     
+//    CGRect frame = self.segmentCntr.frame;
+//    [self.segmentCntr setFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 120)];
+    
+    
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -144,5 +149,27 @@
            newViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
            [self cycleFromViewController:self.currentViewController toViewController:newViewController];
            self.currentViewController = newViewController;
+}
+- (IBAction)actSegment:(id)sender {
+    
+    if (self.segmentCntr.selectedSegmentIndex == 0) {
+        
+     UIViewController *newViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ComponentActive"];
+            newViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
+            [self cycleFromViewController:self.currentViewController toViewController:newViewController];
+            self.currentViewController = newViewController;
+        
+    }else  if (self.segmentCntr.selectedSegmentIndex == 1) {
+        
+        UIViewController *newViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ComponentInactive"];
+               newViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
+               [self cycleFromViewController:self.currentViewController toViewController:newViewController];
+               self.currentViewController = newViewController;
+    }else if   (self.segmentCntr.selectedSegmentIndex == 2) {
+        UIViewController *newViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ComponentBallls"];
+               newViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
+               [self cycleFromViewController:self.currentViewController toViewController:newViewController];
+               self.currentViewController = newViewController;
+    }
 }
 @end

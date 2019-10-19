@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "SAM-Swift.h"
+
 @interface ViewController ()
     @property (weak, nonatomic) IBOutlet UILabel *tokenLabel;
+@property (nonatomic, strong) PaymentController  *pVC;
     
 @end
 
@@ -24,6 +27,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    CGRect frame = self.segment.frame;
+    [self.segment setFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 100)];
+
+
+    NSDictionary* userInfo = @{@"total": @"11123"};
+
+    NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
+    [nc postNotificationName:@"eRXReceived" object:self userInfo:userInfo];
+    
+    
     // Do any additional setup after loading the view.
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receiveNotification:)
@@ -33,13 +47,24 @@
 }
 
 - (IBAction)btnSelectClicked:(id)sender {
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"paymentController"];
     
-    [self addChildViewController: pvc];
-    pvc.view.frame = self.view.frame;
-    [self.view addSubview:pvc.view];
-    [pvc didMoveToParentViewController: self];
+    
+//
+//    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    PaymentController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"paymentController"];
+//  //  [self presentViewController:pvc animated:YES completion:nil];
+//
+//
+//    [self addChildViewController: pvc];
+//    pvc.view.frame = self.view.frame;
+//    pvc.count = @"MAKS =";
+//
+//    [self.view addSubview:pvc.view];
+//    [pvc didMoveToParentViewController: self];
+    
+    [self performSegueWithIdentifier:@"next" sender:self];
+
+    
 }
 
 - (void) receiveNotification:(NSNotification *) notification
@@ -52,6 +77,23 @@
             });
         }
     }
+
+//
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    PaymentController * segueMyBuy;
+    if ([[segue identifier] isEqualToString:@"next"]){
+   
+        segueMyBuy = [segue destinationViewController];
+        segueMyBuy.modalPresentationStyle = UIModalPresentationFullScreen;
+
+        segueMyBuy.count = @"Maks chleb";
+
+        
+    }
+}
+
+
 
 @end
 

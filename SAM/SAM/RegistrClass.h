@@ -25,5 +25,6 @@
 @property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UILabel *termOfUse;
 
+- (IBAction)enterBrn:(id)sender;
 
 @end

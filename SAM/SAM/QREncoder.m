@@ -25,7 +25,7 @@ void freeRawData(void *info, const void *data, size_t size);
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"LogoMenu"]];
     [super viewWillAppear:animated];
     UIImage *image = [self quickResponseImageForString:self.stringQR withDimension:182];
-    
+    NSLog(@"%@",self.stringQR);
     self.timeLabel.text = self.timeQR;
     
     [imageView setImage: image];

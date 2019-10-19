@@ -17,6 +17,8 @@
 @property (strong, nonatomic) NSMutableArray * inactiveCount;
 @property (strong, nonatomic) UIView * entFailedView;
 @property (strong, nonatomic) UILabel * entLabel;
+
+
 @end
 
 @implementation InactiveViewController

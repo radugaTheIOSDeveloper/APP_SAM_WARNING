@@ -20,7 +20,6 @@
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
-
 }
 
 - (void)didReceiveMemoryWarning {

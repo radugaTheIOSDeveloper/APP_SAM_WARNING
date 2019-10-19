@@ -104,4 +104,19 @@
 -(void) getFAQ:(void(^)(NSDictionary * responceObject))success
 onFailure:(void(^)(NSError * error, NSInteger statusCode))failure;
 
+-(void) userBalance:(void(^)(NSDictionary * responceObject))success
+onFailure:(void(^)(NSError * error, NSInteger statusCode))failure;
+
+-(void) getPercent:(void(^)(NSDictionary * responceObject))success
+onFailure:(void(^)(NSError * error, NSInteger statusCode))failure;
+
+
+-(void) promo:(NSString *)promocode onSuccess:(void(^)(NSDictionary * responseObject)) success
+onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
+
+-(void)cashBackPay:(NSString *)cnt
+onSuccess:(void(^)(NSDictionary * responseObject)) success
+onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
+
+
 @end

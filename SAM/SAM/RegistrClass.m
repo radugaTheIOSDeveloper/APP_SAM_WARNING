@@ -25,8 +25,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     [self.navigationController setNavigationBarHidden:YES animated:NO];
-    self.textField.placeholder = @"Номер телефона";
+    
+    UIColor *color = [UIColor lightTextColor];
+    self.textField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Номер телефона" attributes:@{NSForegroundColorAttributeName: color}];
+    
+    
+   // self.textField.placeholder = @"Номер телефона";
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
     
@@ -52,7 +58,12 @@
 
 - (void)userTappedOnLink:(UIGestureRecognizer*)gestureRecognizer{
     
-   [self performSegueWithIdentifier:@"termOfUse" sender:self];
+   UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"termOfUse"];
+    pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:pvc animated:YES completion:nil];
+    
+    
 }
 
 #pragma mark API
@@ -70,7 +81,12 @@
                                 [self alerts];
                             } else {
                                 self.demoTel = numTel;
-                                [self performSegueWithIdentifier:@"confirm" sender:self];
+                                
+                              UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                              ConfirmRegister  *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"confirmController"];
+                               pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                                pvc.saveTelephone = numTel;
+                               [self presentViewController:pvc animated:YES completion:nil];
                             }
                             
     }                   onFailure:^(NSError *error, NSInteger statusCode) {
@@ -81,6 +97,8 @@
                             [self alerts];
     }];
 }
+
+
 
 
 -(void) alerts{
@@ -162,19 +180,24 @@
 
 - (IBAction)actBtnRegistr:(id)sender {
     
+    
+    self.activityIndicator.alpha = 1.f;
+    [self.activityIndicator startAnimating];
+    
     if (self.textField.text.length <= 0) {
+
         
-        self.activityIndicator.alpha = 1.f;
-        [self.activityIndicator startAnimating];
-        [self prepareForRegister:self.textField.text];
-        
+    [self prepareForRegister:self.textField.text];
+
     } else {
-        
-        self.activityIndicator.alpha = 1.f;
-        [self.activityIndicator startAnimating];
-        NSMutableString *stringRange = [self.textField.text mutableCopy];
-        NSRange range = NSMakeRange(0, 1);
-        [stringRange deleteCharactersInRange:range];
+  
+     NSMutableString *stringRange = [self.textField.text mutableCopy];
+     NSRange range = NSMakeRange(0, 1);
+     [stringRange deleteCharactersInRange:range];
+    [self prepareForRegister:stringRange];
+
+
+
 
     }
 }
@@ -193,4 +216,12 @@
     }
 }
 
+- (IBAction)enterBrn:(id)sender {
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"enterController"];
+    pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:pvc animated:YES completion:nil];
+    
+}
 @end

@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface BallsViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *titleLable;
+@property (weak, nonatomic) IBOutlet UILabel *ballance;
+- (IBAction)balls:(id)sender;
 
 @end

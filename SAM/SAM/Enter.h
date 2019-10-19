@@ -26,5 +26,7 @@
 - (IBAction)actPass:(id)sender;
 - (IBAction)actEnterBtn:(id)sender;
 
+- (IBAction)rememberPassword:(id)sender;
+- (IBAction)registrBtn:(id)sender;
 
 @end

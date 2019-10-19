@@ -24,7 +24,13 @@
 
 
 - (IBAction)autoristionButton:(id)sender {
-    [self performSegueWithIdentifier:@"newAutorisation" sender:self];
+    
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"enterController"];
+    pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:pvc animated:YES completion:nil];
+    
 }
 
 @end
