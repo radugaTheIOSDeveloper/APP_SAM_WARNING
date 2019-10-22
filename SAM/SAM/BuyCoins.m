@@ -10,12 +10,15 @@
 #import "QREncoder.h"
 #import "Payment.h"
 #import "API.h"
+#import "SAM-Swift.h"
+#import "ViewController.h"
 
 @interface BuyCoins ()<UITextFieldDelegate>
 
 @property (strong, nonatomic) NSString * buy;
 @property (strong, nonatomic) NSString * priceTitle;
 @property (strong, nonatomic) NSString * messageAlert;
+@property (strong, nonatomic) NSString * tokenLabel;
 
 @end
 
@@ -32,9 +35,15 @@
     NSInteger cahBack;
 }
 
+
+
+
 - (void)viewDidLoad {
-    
+
     [super viewDidLoad];
+    
+
+    
     
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"LogoMenu"]];
     
@@ -59,6 +68,9 @@
     [self.activityIndicator stopAnimating];
 
   //  [self backButton];
+    
+    
+    
     
     [self getPercent];
     
@@ -282,7 +294,13 @@
 
 }
 
+- (IBAction)unwindFromPayment:(UIStoryboardSegue *)segue {
+    
+        dispatch_async(dispatch_get_main_queue(), ^(void){
 
+            });
+
+}
 
 - (IBAction)plusTwo:(id)sender {
     buy50 = buy50 + 50;
@@ -360,15 +378,63 @@
 
 
 - (IBAction)buyCoins:(id)sender {
-    if (totalPrice == 0) {
-    }else{
     
-//        NSString * article = [NSString stringWithFormat:@"%ld*%ld",(long)four,(long)two];
-//        [[Payment save]setMySum:@"123"];
-//        [[Payment save]setMyArticle:article];
-        
-  //      [self performSegueWithIdentifier:@"choosePayment" sender:nil];
+    
+    
+    
+  
+
+    [[Payment save]setSum:totalPrice];
+    [[Payment save]setCntCoin:two];
+    [[Payment save]setMyDiscount:totalPrice];
+    
+    //[[Payment save]setResultCoins:20];
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                UIViewController  *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"pays"];
+                                 pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                                 [self presentViewController:pvc animated:YES completion:nil];
+    
+
+    
+    
+//    if (totalPrice == 0) {
+//    }else{
+//
+//
+//       // [self performSegueWithIdentifier:@"nextPayment" sender:self];
+//
+//
+////        NSString * article = [NSString stringWithFormat:@"%ld*%ld",(long)four,(long)two];
+////        [[Payment save]setMySum:@"123"];
+////        [[Payment save]setMyArticle:article];
+//
+//  //      [self performSegueWithIdentifier:@"choosePayment" sender:nil];
+//
+//    }
+//
+}
+
+
+
+//
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    ViewController * segueMyBuy;
+    
+    if ([[segue identifier] isEqualToString:@"nextPayment"]){
+   
+        segueMyBuy = [segue destinationViewController];
+        segueMyBuy.modalPresentationStyle = UIModalPresentationFullScreen;
+
+        segueMyBuy.rubles = totalPrice;
+        segueMyBuy.cntCoin = two;
+        segueMyBuy.tokenUser = [[API apiManager]getToken];
+        //segueMyBuy.discount = 1;
         
     }
-    
-}@end
+}
+
+
+
+@end

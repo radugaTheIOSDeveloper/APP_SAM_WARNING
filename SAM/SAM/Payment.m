@@ -10,6 +10,8 @@
 
 @implementation Payment
 
+// Передаем на оплату 
+
 
 +(Payment*) save{
     
@@ -36,10 +38,10 @@
 }
 
 //sum
--(void) setMySum:(NSString *) mySum{
+-(void) setMySum:(NSInteger) mySum{
     self.sum = mySum;
 }
--(NSString *)getMySum{
+-(NSInteger)getMySum{
     return  self.sum;
 }
 
@@ -53,6 +55,29 @@
     
     NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
     return [userDefaults objectForKey:@"user_phone"];
+}
+
+-(void)setMyCntCoin:(NSInteger)myCoin{
+    self.cntCoin = myCoin;
+}
+-(NSInteger)getMyCNtCoin{
+    return self.cntCoin;
+}
+
+//-(void)setMyDiscount:(NSString *)myDiscount{
+//    self.discount = myDiscount;
+//}
+//-(NSString *)getMyDiscount{
+//    return self.discount;
+//}
+
+
+
+-(void)setMyDiscount:(NSInteger)myDiscount{
+    self.discount = myDiscount;
+}
+-(NSInteger)getMydiscount{
+    return self.discount;
 }
 
 @end

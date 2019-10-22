@@ -141,6 +141,7 @@
 		4CBCC4B8232FE0D800D478CE /* FAQCoolViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAQCoolViewController.m; sourceTree = "<group>"; };
 		4CC5ABC62358C1CA009FDD0D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		4CC5ABC72358C1CB009FDD0D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		4CCA537A235F26A200D339AE /* SAM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SAM-Bridging-Header.h"; path = "../../Font/SAM-Bridging-Header.h"; sourceTree = "<group>"; };
 		4CEF54D92355F469006F0BF1 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
 		4CEF54DB2355F46F006F0BF1 /* PageContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
 		4CEF54DC2355F478006F0BF1 /* Instruction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Instruction.h; sourceTree = "<group>"; };
@@ -400,6 +401,7 @@
 				CE032C651D7D880600851FF4 /* AppDelegate.h */,
 				CE032C661D7D880600851FF4 /* AppDelegate.m */,
 				4CF535D02354771100C4FB65 /* PaymentController.swift */,
+				4CCA537A235F26A200D339AE /* SAM-Bridging-Header.h */,
 				CE032C681D7D880600851FF4 /* ViewController.h */,
 				CE032C691D7D880600851FF4 /* ViewController.m */,
 				CE032C6B1D7D880600851FF4 /* Main.storyboard */,
@@ -1130,7 +1132,7 @@
 					"$(PROJECT_DIR)/Pods",
 				);
 				INFOPLIST_FILE = SAM/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1138,7 +1140,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = itstack.SAM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SAM/SAM-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/georgiizuev/Desktop/APP_SAM_WARNING/Font/SAM-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1160,7 +1162,7 @@
 					"$(PROJECT_DIR)/Pods",
 				);
 				INFOPLIST_FILE = SAM/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1168,7 +1170,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = itstack.SAM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SAM/SAM-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/georgiizuev/Desktop/APP_SAM_WARNING/Font/SAM-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

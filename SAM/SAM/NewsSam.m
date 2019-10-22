@@ -58,8 +58,7 @@
 //    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 //    self.navigationItem.title = @"Новости";
 
-    [self getUserQRCode];
-    [self getNews];
+
 #pragma mark PageViewControllelr
     
 
@@ -67,6 +66,10 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [self.tabBarController setTitle:@"Новости"];
+    
+    [self.pageBGImage removeAllObjects];
+    [self getUserQRCode];
+    [self getNews];
 
 }
 

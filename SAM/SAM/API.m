@@ -529,8 +529,8 @@
      onFailure:(void(^)(NSError * error, NSInteger statusCode))failure{
     
     
-    [self.sessionManager.requestSerializer setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
-       
+    [self.sessionManager.requestSerializer setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
+
        [self.sessionManager GET:@"faq/"
                      parameters:nil
                        progress:nil

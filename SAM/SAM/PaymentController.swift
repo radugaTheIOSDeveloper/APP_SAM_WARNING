@@ -19,147 +19,266 @@ import YandexCheckoutPayments
     @objc dynamic var value = 0
     @IBOutlet weak var resultTokenLabel: UILabel!
     let clientApplicationKey = "live_NjI5ODE47cquPSD7939_gasmXhbT0ccjlnABYEq9rHg"
-    let amount = Amount(value: 1.00, currency: .rub)
+    
+    @objc var rubles: Int = 1
+    @objc var cntCoin: Int = 1
+    @objc var tokenUser: String = String();
+    @objc var discount: Int = 12;
+    
+    private var amount: Amount!
     var token: Tokens?
     var paymentMethodType: PaymentMethodType?
     
-    @objc dynamic var count:String = String()
-    
-
     private let defaultSession = URLSession(configuration: URLSessionConfiguration.default)
+    private var tokenizationViewController: UIViewController!// & TokenizationModuleInput
     var webView: WKWebView!
+    private var stringToReturn = ""
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        amount = Amount(value: Decimal(rubles)/50, currency: .rub)
+
+        //amount = amount / 50 ;
+        print("rub = ", rubles)
+        print("size minuts = ", cntCoin)
+        print("my token = ", tokenUser);
+        print("discount = ", discount);
+
         
-        print("123213 = " ,count);
-       
-        moveIn()
+//        let paymentTypes: PaymentMethodTypes = [.bankCard, .applePay]
+//                                              let tokenSettings = TokenizationSettings(paymentMethodTypes: paymentTypes,
+//                                                                   showYandexCheckoutLogo: true)
+//                                              let inputData: TokenizationFlow = .tokenization(TokenizationModuleInputData(
+//                                                  clientApplicationKey: clientApplicationKey,
+//                                                  shopName: "Автомойка САМ",
+//                                                  purchaseDescription: "\"Комета повышенной яркости, период обращения — 112 лет\"",
+//                                                  amount: amount,
+//                                                  tokenizationSettings: tokenSettings,
+//                                                  testModeSettings: nil,
+//                                                  cardScanning: nil,
+//                                                  applePayMerchantIdentifier: "merchant.sam",
+//                                                  isLoggingEnabled: true,
+//                                                  userPhoneNumber: "+7",
+//                                                  customizationSettings: CustomizationSettings(mainScheme:UIColor(red: 228/255, green: 0, blue: 11/255, alpha: 1))
+//                                              ))
+//                                              self.tokenizationViewController = TokenizationAssembly.makeModule(inputData: inputData,
+//                                                                                                   moduleOutput: self)
+//                                              present(self.tokenizationViewController, animated: true, completion: nil)
+////
+//
+//
+
+        
     }
     
     
-   
 
+    @IBAction func buttonBackClicked(_ sender: Any) {
+        sendMessage("-1")
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "unwindToParent" {
+            if let vc = segue.destination as? ViewController {
+
+                
+                vc.returnedString = stringToReturn
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    
+    
+//
     @IBAction func buyButtonPressed(_ sender: UIButton) {
+
+        
         
         let paymentTypes: PaymentMethodTypes = [.bankCard, .applePay]
-        let tokenSettings = TokenizationSettings(paymentMethodTypes: paymentTypes,
-                             showYandexCheckoutLogo: true)
-        let inputData: TokenizationFlow = .tokenization(TokenizationModuleInputData(
-            clientApplicationKey: clientApplicationKey,
-            shopName: "Космические объекты",
-            purchaseDescription: "\"Комета повышенной яркости, период обращения — 112 лет\"",            
-            amount: amount,
-            tokenizationSettings: tokenSettings,
-            testModeSettings: nil,
-            cardScanning: nil,
-            applePayMerchantIdentifier: "merchant.sam",
-            isLoggingEnabled: true,
-            userPhoneNumber: "+7",
-            customizationSettings: CustomizationSettings(mainScheme:UIColor(red: 228/255, green: 0, blue: 11/255, alpha: 1))
-        ))
-        let viewController = TokenizationAssembly.makeModule(inputData: inputData,
-                                                             moduleOutput: self)
-        present(viewController, animated: true, completion: nil)
-
-    }
-}
+                                         let tokenSettings = TokenizationSettings(paymentMethodTypes: paymentTypes,
+                                                              showYandexCheckoutLogo: true)
+                                         let inputData: TokenizationFlow = .tokenization(TokenizationModuleInputData(
+                                             clientApplicationKey: clientApplicationKey,
+                                             shopName: "Автомойка САМ",
+                                             purchaseDescription: "\"Комета повышенной яркости, период обращения — 112 лет\"",
+                                             amount: amount,
+                                             tokenizationSettings: tokenSettings,
+                                             testModeSettings: nil,
+                                             cardScanning: nil,
+                                             applePayMerchantIdentifier: "merchant.sam",
+                                             isLoggingEnabled: true,
+                                             userPhoneNumber: "+7",
+                                             customizationSettings: CustomizationSettings(mainScheme:UIColor(red: 228/255, green: 0, blue: 11/255, alpha: 1))
+                                         ))
+                                         self.tokenizationViewController = TokenizationAssembly.makeModule(inputData: inputData,
+                                                                                              moduleOutput: self)
+                                         present(self.tokenizationViewController, animated: true, completion: nil)
 
 
 
-
-extension PaymentController {
-    private func moveIn() {
-        self.view.transform = CGAffineTransform(scaleX: 0.25, y: 0.25)
-        self.view.alpha = 0.0
         
-        UIView.animate(withDuration: 0.24) {
-            self.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-            self.view.alpha = 1.0
-        }
-    }
-    
-    private func moveOut() {
-        UIView.animate(withDuration: 0.24, animations: {
-            self.view.transform = CGAffineTransform(scaleX: 0.25, y: 0.25)
-            self.view.alpha = 0.0
-        }) { _ in
-            self.view.removeFromSuperview()
-        }
     }
 }
+
+
+
+
+//extension PaymentController {
+//    private func moveIn() {
+//        self.view.transform = CGAffineTransform(scaleX: 0.25, y: 0.25)
+//        self.view.alpha = 0.0
+//
+//        UIView.animate(withDuration: 0.24) {
+//            self.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+//            self.view.alpha = 1.0
+//        }
+//    }
+//
+//    private func moveOut() {
+//
+//            self.navigationController?.popViewController(animated: false)
+//
+//////        UIView.animate(withDuration: 0.24, animations: {
+//////            self.view.transform = CGAffineTransform(scaleX: 0.25, y: 0.25)
+//////            self.view.alpha = 0.0
+//////        }) { _ in
+//////
+//////           //self.view.removeFromSuperview()
+//////
+//////        }
+//    }
+//}
+
 
 extension PaymentController: TokenizationModuleOutput {
     
-    func didFinish(on module: TokenizationModuleInput) {
-        DispatchQueue.main.async { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.dismiss(animated: true)
-        }
-    }
+    
+    
+//    func didFinish(on module: TokenizationModuleInput) {
+//        DispatchQueue.main.async { [weak self] in
+//            guard let strongSelf = self else { return }
+//            strongSelf.dismiss(animated: true)
+//        }
+//    }
 
-    func tokenizationModule(_ module: TokenizationModuleInput,
+    public func tokenizationModule(_ module: TokenizationModuleInput,
                             didTokenize token: Tokens,
                             paymentMethodType: PaymentMethodType) {
-        self.token = token
         self.paymentMethodType = paymentMethodType
+
+        // Отправляем токен на сервер
+        print("Token: \(token.paymentToken))")
+        self.sendRequest(token, completion: { (success, result) -> Void in
+            if success, let urlString = result {
+                
+                if result == ""{
+                    
+                    DispatchQueue.main.async { [weak self] in
+                                       guard let strongSelf = self else { return }
+                                       strongSelf.tokenizationViewController.dismiss(animated: false)
+                                       strongSelf.sendMessage("1")
+                    }
+                    
+                }else{
+                    
+                    (self.tokenizationViewController as! TokenizationModuleInput).start3dsProcess(requestUrl: urlString)
+
+                }
+                
+
+            }else {
+                //Сообщим об ошибке
+                DispatchQueue.main.async { [weak self] in
+                    guard let strongSelf = self else { return }
+                    strongSelf.tokenizationViewController.dismiss(animated: false)
+                    strongSelf.sendMessage("2")
+                }
+            }
+        })
+    }
+    
+    func didSuccessfullyPassedCardSec(on module: TokenizationModuleInput) {
+    
+        navigationController?.popViewController(animated: true)
+
+        DispatchQueue.main.async { [weak self] in
+            
+            guard let strongSelf = self else { return }
+            strongSelf.tokenizationViewController.dismiss(animated: false)
+            strongSelf.sendMessage("0")
         
+        }
+    }
+    
+    /// Will be called when the user has not completed the payment and completed the work.
+    ///
+    /// - Parameters:
+    ///   - module: Input for tokenization module.
+    ///             In the process of running mSDK, allows you to run processes using the
+    ///             `TokenizationModuleInput` protocol methods.
+    ///   - error: `YandexCheckoutPaymentsError` error.
+    func didFinish(on module: TokenizationModuleInput,
+                   with error: YandexCheckoutPaymentsError?) {
+        
+        
+    //    navigationController?.popViewController(animated: true)
         DispatchQueue.main.async { [weak self] in
             guard let strongSelf = self else { return }
-            strongSelf.dismiss(animated: true)
-        }
+            strongSelf.tokenizationViewController.dismiss(animated: false)
+       //     strongSelf.sendMessage("6")
 
-        // Отправьте токен в вашу систему
-//        print("Token: \(self.token!.paymentToken)")
-//        let tokenInfo: [String: String] = ["token": self.token!.paymentToken]
-////        Отправим сообщение
-//        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "tokenChanged"), object: nil, userInfo: tokenInfo)
-////        Теперь можно вернуться
-//        DispatchQueue.main.async {
-//            self.moveOut()
-//        }
-        //Все остальное можно не использовать
-        sendRequest()
-        
+        }
 
     }
     
-    private func sendRequest() {
+    private func sendRequest(_ token: Tokens, completion: @escaping (Bool, String?) -> ()) -> Void {
         DispatchQueue.main.async {
-            self.resultTokenLabel.text = self.token!.paymentToken
+            
+            print("token ", token.paymentToken)
+            print("user tiken = ",self.tokenUser)
+            print("coincnt = " , self.cntCoin)
+            print("rubles = ", self.rubles)
+            
             UIApplication.shared.isNetworkActivityIndicatorVisible = true
-            let params: NSDictionary = ["app_token": self.token!.paymentToken, "oleg":"helllow"]
+            let params: NSDictionary = ["app_token": token.paymentToken, "user_token": self.tokenUser, "coins_cnt": String(self.cntCoin), "summ": String(self.rubles)]
             self.processExternalPayment(userParameters: params, completion: {(code, data, error) -> Void in
                 if (error != nil) {
                     DispatchQueue.main.async {
                         print(error?.localizedDescription as Any)
                     }
+                    //Сообщим, что не удалось получить url от сервера
+                    completion(false, error?.localizedDescription)
                 }
                 else {
-                    if let dict = self.convertDataToDict(JSONData: data), let url = dict["confirmation_url"] {
-                        print(url)
-                        DispatchQueue.main.async {
-                            let webConfiguration = WKWebViewConfiguration()
-                            self.webView = WKWebView(frame: .zero, configuration: webConfiguration)
-                            self.webView.uiDelegate = self
-                            self.view = self.webView
-                            let myURL = URL(string: url as! String)
-                            let myRequest = URLRequest(url: myURL!)
-                            self.webView.load(myRequest)
-                        }
+                     if let dict = self.convertDataToDict(JSONData: data), let url = dict["confirmation_url"] as? String {
+                        print("-----------------Redirect url from site: \(url) ------------------------")
+                        completion(true, url)
+
+
                     }
                 }
             })
             
         }
-
+    }
+    
+    private func sendMessage(_ code: String) {
+        /*
+            Предполагается, что будет пять кодов:
+          -1 - когда нажата кнопка "назад"
+          0 - все отлично через банковскую карту
+          1 - все отлично через Apple Pay
+          2 - ошибка, не удалось связаться с сервером и получит url
+          3 - ошибка, не удалось провести 3D-secure
+          */
+         self.stringToReturn = code
+         self.performSegue(withIdentifier: "unwindToParent", sender: self)
     }
 }
 
 extension PaymentController: URLSessionTaskDelegate, URLSessionDataDelegate {
-    
     func processExternalPayment(userParameters: NSDictionary, completion: @escaping (Int, Data?, Error?) -> ()) {
         let requestString = "https://app.pomoysam.ru/api/v0/payment/"
         let requestUrl = URL(string: requestString)
@@ -176,7 +295,7 @@ extension PaymentController: URLSessionTaskDelegate, URLSessionDataDelegate {
                 print(error.localizedDescription)
                 completion(0, nil, error)
             } else if let httpResponse = response as? HTTPURLResponse {
-                
+                //Нормально
                 completion(httpResponse.statusCode, data, nil)
             }
         }
@@ -192,7 +311,6 @@ extension PaymentController: URLSessionTaskDelegate, URLSessionDataDelegate {
         request.setValue("Yandex.Money.SDK/iOS", forHTTPHeaderField: "User-Agent")
         request.setValue("ru", forHTTPHeaderField: "Accept-Language")
         let value = String(request.httpBody!.count)
-    //    print(request.httpBody);
         request.setValue(value, forHTTPHeaderField: "Content-Length")
         
         return request

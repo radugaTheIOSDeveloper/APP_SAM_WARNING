@@ -7,7 +7,7 @@
 //
 
 #import "FAQViewController.h"
-#import "UIColor+AppColors.h"
+//#import "UIColor+AppColors.h"
 #import "API.h"
 
 
@@ -17,9 +17,9 @@ static int const kHeaderSectionTag = 6900;
 
 @property (assign) NSInteger expandedSectionHeaderNumber;
 @property (assign) UITableViewHeaderFooterView *expandedSectionHeader;
-@property (strong) NSArray *sectionItems;
+//@property (strong) NSArray *sectionItems;
 @property (strong) NSArray *sectionNames;
-//@property (strong, nonatomic) NSMutableArray * sectionItems;
+@property (strong, nonatomic) NSMutableArray * sectionItems;
 //@property (strong, nonatomic) NSMutableArray * sectionNames;
 
 
@@ -31,6 +31,10 @@ static int const kHeaderSectionTag = 6900;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.sectionItems = [NSMutableArray array];
+    
+  // self.sectionItems = [NSMutableArray array];
     
 //    self.sectionNames = @[ @"Вопрос 1", @"Вопрос 2", @"Вопрос 3" ];
 //    self.sectionItems = @[ @[@"Это ответ 1"],
@@ -58,14 +62,23 @@ static int const kHeaderSectionTag = 6900;
     
     
     [[API apiManager]getFAQ:^(NSDictionary *responceObject) {
-       
+//
         NSLog(@"faq responce = %@", responceObject);
-        NSArray * answer = [responceObject valueForKey:@"question"];
-        self.sectionItems = answer;
-        NSArray * questions = [responceObject valueForKey:@"answer"];
+        NSArray * questions = [responceObject valueForKey:@"question"];
         self.sectionNames = questions;
         
-          self.sectionItems = @[ @[@"This will display the lines needed but will reposition the label so its centered horizontally (so that a 1 line and 3 line label are aligned in their horizontal position). To fix that add:"]];
+        NSArray * answers = [responceObject valueForKey:@"answer"];
+        
+   
+        for (int i= 0; i<answers.count; i++) {
+            
+            [self.sectionItems addObject:@[[answers objectAtIndex:i]]];
+        }
+        
+      //  self.sectionItems = @[questions];
+//
+//
+     //   self.sectionItems = @[@[@"This will d add:"],@[@"231312312"]];
         
         
         [self.tableView reloadData];
@@ -111,47 +124,88 @@ static int const kHeaderSectionTag = 6900;
     }
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if (self.sectionNames.count) {
-        return [self.sectionNames objectAtIndex:section];
-    }
-    
-    return @"";
-}
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+//    if (self.sectionNames.count) {
+//        return [self.sectionNames objectAtIndex:section];
+//    }
+//
+//    return @"";
+//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section; {
 
+    return [self heightForText:[self.sectionNames objectAtIndex:section]] + 20;
 
-    return 44.0;
 }
 
 
 
+-(CGFloat) heightForText:(NSString*) text {
+    
+    CGFloat offset = 1.0;
+    
+    UIFont* font = [UIFont systemFontOfSize:14.f];
+    
+    NSMutableParagraphStyle* paragraph = [[NSMutableParagraphStyle alloc] init];
+    [paragraph setLineBreakMode:NSLineBreakByWordWrapping];
+    
+    NSDictionary* attributes =
+    [NSDictionary dictionaryWithObjectsAndKeys:
+     font , NSFontAttributeName,
+     paragraph, NSParagraphStyleAttributeName, nil];
+    
+    CGRect rect = [text boundingRectWithSize:CGSizeMake(320 - 2 * offset, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attributes context:nil];
+    
+    return CGRectGetHeight(rect) + 2 * offset;
+    
+}
+
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 18)];
+    
+    view.backgroundColor = [UIColor clearColor];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, tableView.frame.size.width - 50, [self heightForText:[self.sectionNames objectAtIndex:section]] + 20)];
+    label.lineBreakMode = NSLineBreakByWordWrapping;
+    label.numberOfLines = 0;
+
+    label.backgroundColor = [UIColor clearColor];
+    
+    //[label setFont:[UIFont boldSystemFontOfSize:14]];
+    
+    [label setFont:[UIFont fontWithName:@"Avenir Next" size:14]];
+    
+     NSString *string =[self.sectionNames objectAtIndex:section];
+    /* Section header is in 0th index... */
+    [label setText:string];
+    [view addSubview:label];
+    return view;
+}
+
+
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
-    
+
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
+
+    header.backgroundColor = [UIColor whiteColor];
     
-    
-    header.contentView.backgroundColor =  [UIColor whiteColor];
-    header.textLabel.textColor = [UIColor blackColor];
-    header.textLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:14];
-    header.textLabel.numberOfLines = 0;
-    header.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    [header.textLabel sizeToFit];
-    
-    UIImageView *viewWithTag = [self.view viewWithTag:kHeaderSectionTag + section];
-    if (viewWithTag) {
-        [viewWithTag removeFromSuperview];
-    }
-    // add the arrow image
-    CGSize headerFrame = self.view.frame.size;
+//    header.contentView.backgroundColor =  [UIColor whiteColor];
+//    header.textLabel.textColor = [UIColor blackColor];
+//    header.textLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:14];
+//
+//
+//    UIImageView *viewWithTag = [self.view viewWithTag:kHeaderSectionTag + section];
+//    if (viewWithTag) {
+//        [viewWithTag removeFromSuperview];
+//    }
+//    // add the arrow image
     UIImageView *theImageView = [[UIImageView alloc] initWithFrame:CGRectMake(260, 17, 10 , 5)];
     theImageView.image = [UIImage imageNamed:@"support"];
     theImageView.tag = kHeaderSectionTag + section;
     [header addSubview:theImageView];
-    
-
-    NSLog(@" view controller");
+//
+//    NSLog(@" view controller");
 
     // make headers touchable
     header.tag = section;
@@ -163,12 +217,11 @@ static int const kHeaderSectionTag = 6900;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tableCell" forIndexPath:indexPath];
     NSArray *section = [self.sectionItems objectAtIndex:indexPath.section];
     
-    cell.textLabel.textColor = [UIColor blackColor];
-       cell.textLabel.backgroundColor =[UIColor colorWithRed:231.0f/255.0f
-       green:51.0f/255.0f
-        blue:54.0f/255.0f
-       alpha:0.2f];
-    
+    cell.contentView.backgroundColor =[UIColor colorWithRed:231.0f/255.0f
+           green:51.0f/255.0f
+            blue:54.0f/255.0f
+           alpha:0.2f];
+
     cell.textLabel.text = [section objectAtIndex:indexPath.row];
     
     return cell;
@@ -188,19 +241,27 @@ static int const kHeaderSectionTag = 6900;
 
 - (void)sectionHeaderWasTouched:(UITapGestureRecognizer *)sender {
     UITableViewHeaderFooterView *headerView = (UITableViewHeaderFooterView *)sender.view;
-    headerView.contentView.backgroundColor =  [UIColor colorWithRed:231.0f/255.0f
-                                                              green:51.0f/255.0f
-                                                               blue:54.0f/255.0f
-                                                              alpha:0.2f];
+
 
     NSInteger section = headerView.tag;
     UIImageView *eImageView = (UIImageView *)[headerView viewWithTag:kHeaderSectionTag + section];
     self.expandedSectionHeader = headerView;
     
     if (self.expandedSectionHeaderNumber == -1) {
+        
+        headerView.backgroundColor = [UIColor colorWithRed:231.0f/255.0f
+                                                     green:51.0f/255.0f
+                                                      blue:54.0f/255.0f
+                                                     alpha:0.2f];
+
         self.expandedSectionHeaderNumber = section;
         [self tableViewExpandSection:section withImage: eImageView];
     } else {
+        
+        headerView.backgroundColor = [UIColor whiteColor];
+        
+        
+        
         if (self.expandedSectionHeaderNumber == section) {
             [self tableViewCollapeSection:section withImage: eImageView];
             self.expandedSectionHeader = nil;
@@ -209,6 +270,7 @@ static int const kHeaderSectionTag = 6900;
             [self tableViewCollapeSection:self.expandedSectionHeaderNumber withImage: cImageView];
             [self tableViewExpandSection:section withImage: eImageView];
         }
+        
     }
 }
 

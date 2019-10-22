@@ -8,92 +8,148 @@
 
 #import "ViewController.h"
 #import "SAM-Swift.h"
+#import "BuyCoins.h"
+#import "Payment.h"
+#import "API.h"
 
 @interface ViewController ()
     @property (weak, nonatomic) IBOutlet UILabel *tokenLabel;
 @property (nonatomic, strong) PaymentController  *pVC;
+
+
     
 @end
 
-@implementation ViewController
+@implementation ViewController {
+        BOOL canReturnFrompaymentView;
+}
 
 - (void) dealloc
     {
         // If you don't remove yourself as an observer, the Notification Center
         // will continue to try and send notification objects to the deallocated
         // object.
-        [[NSNotificationCenter defaultCenter] removeObserver:self];
+        //self.navigationController?.popViewController(animated: false)
+         //  self.navigationController?.popToRootViewController(animated: true)
+
+
+         // 
+//        [[NSNotificationCenter defaultCenter] removeObserver:self];
     }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    CGRect frame = self.segment.frame;
-    [self.segment setFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 100)];
-
-
-    NSDictionary* userInfo = @{@"total": @"11123"};
-
-    NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
-    [nc postNotificationName:@"eRXReceived" object:self userInfo:userInfo];
+    self.backButtonOutl.alpha = 0.f;
+    self.LabelInfo.text = [NSString stringWithFormat:@"Сумма = %ld \nКоличество жетонов = %ld \nТокен пользователя = %@", [[Payment save]getMySum],[[Payment save]getMyCNtCoin],[[API apiManager]getToken]];
     
     
-    // Do any additional setup after loading the view.
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(receiveNotification:)
-                                                 name:@"tokenChanged"
-                                               object:nil];
+    NSLog(@"dis =%ld",[[Payment save]getMydiscount]);
+        // Do any additional setup after loading the view.
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(receiveNotification:)
+//                                                 name:@"paymentChanged"
+//                                               object:nil];
 
+    
 }
 
 - (IBAction)btnSelectClicked:(id)sender {
     
     
-//
-//    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    PaymentController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"paymentController"];
-//  //  [self presentViewController:pvc animated:YES completion:nil];
-//
-//
-//    [self addChildViewController: pvc];
-//    pvc.view.frame = self.view.frame;
-//    pvc.count = @"MAKS =";
-//
-//    [self.view addSubview:pvc.view];
-//    [pvc didMoveToParentViewController: self];
-    
-    [self performSegueWithIdentifier:@"next" sender:self];
+ //   [self performSegueWithIdentifier:@"showPaymentView" sender:self];
 
     
 }
 
-- (void) receiveNotification:(NSNotification *) notification
-    {
-        if ([[notification name] isEqualToString:@"tokenChanged"]) {
-            NSDictionary * dict = [notification userInfo];
-            NSString *token = [dict objectForKey:@"token"];
-            dispatch_async(dispatch_get_main_queue(), ^(void){
-                [self.tokenLabel setText:token];
+-(void)viewWillAppear:(BOOL)animated{
+    
+}
+
+
+- (IBAction)unwindFromPayment:(UIStoryboardSegue *)segue {
+    
+    canReturnFrompaymentView = NO;
+
+//
+        dispatch_async(dispatch_get_main_queue(), ^(void){
+            NSLog(@"%@",self.returnedString);
+            
+            if (self.returnedString == NULL) {
+                self.btnOutlet.alpha = 1.f;
+                self.btnOutlet.titleLabel.text = @"Оплатить";
+                self.backButtonOutl.alpha = 1.f;
+                self.LabelInfo.text = @"Наджали на кнопку назад";
+                
+                
+            }else if([self.returnedString isEqualToString:@"0"]) {
+                
+                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                            UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"payControlller"];
+                                            pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                                            [self presentViewController:pvc animated:YES completion:nil];
+                  
+//
+//                self.backButtonOutl.alpha = 1.f;
+//                self.LabelInfo.text =@"Оплата по банковской карте прошла успешно";
+//                self.btnOutlet.alpha = 0.f;
+                
+            }else if([self.returnedString isEqualToString:@"1"]){
+                
+            
+                self.LabelInfo.text =@"Оплата по apple pay прошла успешно";
+                self.btnOutlet.alpha = 0.f;
+                self.backButtonOutl.alpha = 1.f;
+                
+                
+                
+            }else if([self.returnedString isEqualToString:@"2"]){
+                
+                self.backButtonOutl.alpha = 1.f;
+                self.btnOutlet.titleLabel.text = @"Повторить";
+                self.LabelInfo.text =@"Произошла ошибка";
+                self.btnOutlet.alpha = 1.f;
+            }
+
             });
-        }
-    }
+
+}
+
+//- (void) receiveNotification:(NSNotification *) notification
+//{
+//    if ([[notification name] isEqualToString:@"paymentChanged"]) {
+//        NSDictionary * dict = [notification userInfo];
+//        NSString *code = [dict objectForKey:@"code"];
+//        dispatch_async(dispatch_get_main_queue(), ^(void){
+//            [self.tokenLabel setText:code];
+//        });
+//    }
+//}
 
 //
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    PaymentController * segueMyBuy;
-    if ([[segue identifier] isEqualToString:@"next"]){
+    if ([[segue identifier] isEqualToString:@"showPaymentView"]){
    
-        segueMyBuy = [segue destinationViewController];
-        segueMyBuy.modalPresentationStyle = UIModalPresentationFullScreen;
-
-        segueMyBuy.count = @"Maks chleb";
-
+       canReturnFrompaymentView = YES;
+        PaymentController *rvc = segue.destinationViewController;
+        rvc.rubles = [[Payment save]getMySum];
+        rvc.cntCoin = [[Payment save]getMyCNtCoin];
+        rvc.tokenUser = [[API apiManager]getToken];
         
     }
 }
 
 
 
+
+- (IBAction)actBackButton:(id)sender {
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                              UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"payControlller"];
+                              pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                              [self presentViewController:pvc animated:YES completion:nil];
+    
+}
 @end
 

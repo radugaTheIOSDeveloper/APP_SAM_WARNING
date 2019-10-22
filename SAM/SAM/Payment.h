@@ -13,8 +13,10 @@
 +(Payment*)save;
 
 @property (strong, nonatomic) NSString * article;
-@property (strong, nonatomic) NSString * sum;
+@property (assign, nonatomic) NSInteger  sum;
 @property (strong, nonatomic) NSString * phoneNumber;
+@property (assign, nonatomic) NSInteger  cntCoin;
+@property (assign, nonatomic) NSInteger  discount;
 
 
 //article
@@ -22,11 +24,22 @@
 -(NSString *)getMyArticle;
 
 //sum
--(void) setMySum:(NSString *) mySum;
--(NSString *)getMySum;
+-(void) setMySum:(NSInteger ) mySum;
+-(NSInteger )getMySum;
 
 //phoneNumber
 -(void)setPhoneNumber:(NSString *)phoneNumber;
 -(NSString *)getPhoneNumber;
+
+
+-(void)setMyCntCoin:(NSInteger )myCoin;
+-(NSInteger )getMyCNtCoin;
+
+//-(void)setMyDiscount:(NSString *)myDiscount;
+//-(NSString *)getMyDiscount;
+
+
+-(void)setMyDiscount:(NSInteger)myDiscount;
+-(NSInteger)getMydiscount;
 
 @end
