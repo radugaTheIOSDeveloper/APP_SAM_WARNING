@@ -119,4 +119,13 @@ onSuccess:(void(^)(NSDictionary * responseObject)) success
 onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
 
 
+-(void) getCarWash:(void(^)(NSDictionary * responceObject))success
+onFailure:(void(^)(NSError * error, NSInteger statusCode))failure;
+
+
+-(void) setQuestion:(NSString *)problem
+              carWashId:(NSString *)carWashID
+onSuccess:(void(^)(NSDictionary * responseObject)) success
+onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
+
 @end

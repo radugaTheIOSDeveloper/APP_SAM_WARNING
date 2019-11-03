@@ -127,6 +127,16 @@
 
 
 
+- (IBAction)unvindBalls:(UIStoryboardSegue *)unwindSegue
+{
+    
+    self.segmentCntr.selectedSegmentIndex = 0;
+    UIViewController *newViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ComponentActive"];
+           newViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
+           [self cycleFromViewController:self.currentViewController toViewController:newViewController];
+           self.currentViewController = newViewController;
+}
+
 
 - (IBAction)active:(id)sender {
     

@@ -665,4 +665,69 @@
     
 }
 
+
+
+-(void) getCarWash:(void(^)(NSDictionary * responceObject))success
+         onFailure:(void(^)(NSError * error, NSInteger statusCode))failure{
+    
+    [self.sessionManager.requestSerializer setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
+
+    [self.sessionManager GET:@"car-wash/"
+                       parameters:nil
+                         progress:nil
+                          success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
+                              
+                              if(success){
+                                  success(responseObject);
+                              }
+                          }
+          
+                          failure:^(NSURLSessionTask *operation, NSError *error) {
+                                NSLog(@"error%@",error);
+                              if(failure){
+                                  NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
+                                  failure(error, response.statusCode);
+                              }
+                          }];
+    
+    
+}
+
+
+-(void) setQuestion:(NSString *)problem
+              carWashId:(NSString *)carWashID
+          onSuccess:(void(^)(NSDictionary * responseObject)) success
+          onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure{
+    
+    
+        NSDictionary * params = [NSDictionary dictionaryWithObjectsAndKeys:
+                             problem, @"problem",
+                            carWashID,@"car_wash_id",nil];
+        [self.sessionManager.requestSerializer setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
+
+          [self.sessionManager.requestSerializer setValue:[self getToken] forHTTPHeaderField:@"Authorization"];
+          
+          [self.sessionManager POST:@"user-request/"
+                         parameters:params
+                           progress:nil
+                            success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
+                                
+                                if (success) {
+                                    success(responseObject);
+                                    
+                                }
+                            }
+                            failure: ^(NSURLSessionTask *operation, NSError *error) {
+                                
+                                if (failure) {
+                                    NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
+                                    failure(error, response.statusCode);
+                                }
+                            }];
+    
+    
+}
+
+
+
 @end

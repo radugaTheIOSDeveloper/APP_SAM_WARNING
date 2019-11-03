@@ -20,6 +20,17 @@
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
+    
+  //  [[UITabBar appearance] setTintColor:[UIColor redColor]];
+   // [[UITabBar appearance] setBarTintColor:[UIColor yellowColor]];
+
+    [[UITabBar appearance] setUnselectedItemTintColor:[UIColor colorWithRed:198.0 /255 green:198.0/255 blue:200.0/255 alpha:1.f]];
+
+    // set tabbar background image
+//    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tabbar_bg"]];
+    // remove shadow image of tabbar
+    [[UITabBar appearance] setShadowImage:[[UIImage alloc]init]];
+    
 }
 
 - (void)didReceiveMemoryWarning {

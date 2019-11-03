@@ -65,6 +65,8 @@
         self.borderLayer = [[CALayer alloc] init];
         
         self.textLabel = [[UILabel alloc] init];
+        [self.textLabel setFont:[UIFont boldSystemFontOfSize:12]];
+
         self.textLabel.textAlignment = NSTextAlignmentLeft;
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeOriginalColor:) name:@"cellBackgroundColorChanged" object:self];
@@ -92,9 +94,13 @@
         [self addSubview:self.imageView];
         
         self.textLabel.frame = CGRectMake(length+8, 0, CGRectGetWidth(rect)-length-8, length);
+        [self.textLabel setFont:[UIFont boldSystemFontOfSize:12]];
+        
         [self addSubview:self.textLabel];
     } else {
         self.textLabel.frame = CGRectMake(8, 0, CGRectGetWidth(rect)-16, length);
+        [self.textLabel setFont:[UIFont boldSystemFontOfSize:12]];
+
         [self addSubview:self.textLabel];
     }
 }

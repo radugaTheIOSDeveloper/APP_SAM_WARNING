@@ -83,37 +83,37 @@
     
     PinAnnotation * annotation = [[PinAnnotation alloc]init];
     annotation.coordinate = CLLocationCoordinate2DMake(54.007482, 38.252156);
-    annotation.title = @"г. Новомосковск, ул. Космонавтов (где автосалон КИА)";
+    annotation.title = @"Новомосковск, ул. Космонавтов, 35Б";
     [self.mapView addAnnotation:annotation];
     
     PinAnnotation * annotation1 = [[PinAnnotation alloc]init];
     annotation1.coordinate = CLLocationCoordinate2DMake(54.033654, 37.489695);
-    annotation1.title = @"г. Щекино, пос.Первомайский, ул.Пролетарская, д.19";
+    annotation1.title = @"пос. Первомайский";
     [self.mapView addAnnotation:annotation1];
     
     PinAnnotation * annotation2 = [[PinAnnotation alloc]init];
     annotation2.coordinate = CLLocationCoordinate2DMake(54.187362, 37.529558);
-    annotation2.title = @"г. Тула, Одоевское шоссе (напротив д. 85 - ОАО Балтика-Тула)";
+    annotation2.title = @"Одоевске ш.";
     [self.mapView addAnnotation:annotation2];
     
     PinAnnotation * annotation3 = [[PinAnnotation alloc]init];
     annotation3.coordinate = CLLocationCoordinate2DMake(54.207003, 37.623024);
-    annotation3.title = @"г. Тула, ул. Ряжская, дом 1 (около Ряжского вокзала)";
+    annotation3.title = @"Ряжская 1А";
     [self.mapView addAnnotation:annotation3];
     
     PinAnnotation * annotation4 = [[PinAnnotation alloc]init];
     annotation4.coordinate = CLLocationCoordinate2DMake(54.209238, 37.645939);
-    annotation4.title = @"г. Тула, Центральный район, пересечение ул. Каракозова";
+    annotation4.title = @"Веневское ш. 2Б";
     [self.mapView addAnnotation:annotation4];
     
     PinAnnotation * annotation5 = [[PinAnnotation alloc]init];
     annotation5.coordinate = CLLocationCoordinate2DMake(54.167056, 37.631806);
-    annotation5.title = @"г. Тула, Центральный район, ул. Рязанская, дом 46-а";
+    annotation5.title = @"Рязанская 46А";
     [self.mapView addAnnotation:annotation5];
     
     PinAnnotation * annotation6 = [[PinAnnotation alloc]init];
     annotation6.coordinate = CLLocationCoordinate2DMake(54.211388, 37.696394);
-    annotation6.title = @"г. Тула, Пролетарский район, ул. Вильямса (напротив д. 46)";
+    annotation6.title = @"Вильямса 46";
     [self.mapView addAnnotation:annotation6];
 
    

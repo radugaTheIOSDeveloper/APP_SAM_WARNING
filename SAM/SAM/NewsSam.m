@@ -249,7 +249,7 @@
         UILabel * nameSam = (UILabel *)[cellACtive.contentView viewWithTag:570];
         UILabel * date = (UILabel *)[cellACtive.contentView viewWithTag:572];
         UILabel * detailLabel = (UILabel *)[cellACtive.contentView viewWithTag:571];
-        detailLabel.text = [NSString stringWithFormat:@"Жетонов на 4 минуты: %@ Жетонов на 2 минуты: %@",[curCoinActive objectForKey:@"4minutes_str"],[curCoinActive objectForKey:@"2minutes_str"]];
+        detailLabel.text = [NSString stringWithFormat:@"Жетонов на 2 минуты: %@",[curCoinActive objectForKey:@"2minutes_str"]];
         imageClock.image = [UIImage imageNamed:@"iconClock"];
         imageCoin.image = [UIImage imageNamed:@"iconMyBy"];
         //nameSam.textColor = [UIColor colorWithRed:111/255.0f green:113/255.0f blue:121/255.0f alpha:1];

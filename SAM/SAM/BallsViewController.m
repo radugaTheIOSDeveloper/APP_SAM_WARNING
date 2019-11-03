@@ -26,7 +26,6 @@
     [super viewDidLoad];
     
    // self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    [self ballances];
     
 }
 
@@ -36,6 +35,10 @@
 }
 
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self ballances];
+
+}
 
 
 -(void)ballances{

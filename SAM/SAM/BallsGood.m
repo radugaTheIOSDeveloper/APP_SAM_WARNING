@@ -75,10 +75,10 @@
 
 - (IBAction)inMyBuyButton:(id)sender {
     
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"payControlller"];
-    pvc.modalPresentationStyle = UIModalPresentationFullScreen;
-    [self presentViewController:pvc animated:YES completion:nil];
+//    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"payControlller"];
+//    pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+//    [self presentViewController:pvc animated:YES completion:nil];
         
 //        [self addChildViewController: pvc];
 //        pvc.view.frame = self.view.frame;

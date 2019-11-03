@@ -110,9 +110,11 @@ static CGFloat const seperatorWidth = 1;
     self.titleLabel.frame = CGRectMake(8, 4, CGRectGetWidth(self.bounds)-length-8, length-8);
     self.titleLabel.textAlignment = NSTextAlignmentLeft;
     self.titleLabel.adjustsFontSizeToFitWidth = YES;
+    [self.titleLabel setFont:[UIFont boldSystemFontOfSize:12]];
+
     [self.titleView addSubview:self.titleLabel];
-    
-    self.indicatorView.frame = CGRectInset(CGRectMake(CGRectGetWidth(self.bounds)-length, 0, length, length), length*0.3, length*0.3);
+
+    self.indicatorView.frame = CGRectInset(CGRectMake(CGRectGetWidth(self.bounds)-length, 0, length, length), length*0.4, length*0.45);
     [self.titleView addSubview:self.indicatorView];
     
     CGRect frame = CGRectMake(CGRectGetWidth(self.bounds)-length-seperatorWidth, 0, seperatorWidth, length);
@@ -122,6 +124,9 @@ static CGFloat const seperatorWidth = 1;
     self.borderLayer.frame = CGRectMake(8, length-0.5, CGRectGetWidth(self.bounds)-16, 0.5);
     self.borderLayer.borderWidth = 0;
     [self.titleView.layer addSublayer:self.borderLayer];
+    
+    [self.listViews removeAllObjects];
+
     
     for (int i = 0; i < self.numberOfRows; i++) {
         CCDropDownMenuCell *cell = [[CCDropDownMenuCell alloc] initWithFrame:self.titleView.bounds];
@@ -137,6 +142,7 @@ static CGFloat const seperatorWidth = 1;
         [cell setNeedsDisplay];
         
         [self insertSubview:cell atIndex:0];
+        
         [self.listViews addObject:cell];
     }
 }
@@ -242,7 +248,7 @@ static CGFloat const seperatorWidth = 1;
 - (void)animateForClose {
     for (CCDropDownMenuCell *cell in self.listViews) {
         [cell removeAllSubviews];
-        
+            
         [UIView animateWithDuration:0.25 animations:^{
             cell.frame = self.titleView.bounds;
             
@@ -251,13 +257,17 @@ static CGFloat const seperatorWidth = 1;
                 self.borderLayer.borderWidth = 0.0;
             }
         }];
+        
+        
+
     }
     
     [UIView animateWithDuration:0.2 animations:^{
         self.indicatorView.transform = CGAffineTransformIdentity;
     } completion:^(BOOL finished) {
-       [self.superview insertSubview:self atIndex:originalIndex];
-        self.frame = CGRectSetHeight(self.frame, originalHeight);
+        [self.superview insertSubview:self atIndex:self->originalIndex];
+        self.frame = CGRectSetHeight(self.frame, self->originalHeight);
+
     }];
 }
 
