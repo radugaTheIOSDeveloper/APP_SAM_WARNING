@@ -16,7 +16,7 @@
 @property (assign, nonatomic) NSInteger  sum;
 @property (strong, nonatomic) NSString * phoneNumber;
 @property (assign, nonatomic) NSInteger  cntCoin;
-@property (assign, nonatomic) NSInteger  discount;
+@property (assign, nonatomic) NSString * discount;
 
 
 //article
@@ -39,7 +39,7 @@
 //-(NSString *)getMyDiscount;
 
 
--(void)setMyDiscount:(NSInteger)myDiscount;
--(NSInteger)getMydiscount;
+-(void)setMyDiscount:(NSString *)myDiscount;
+-(NSString *)getMydiscount;
 
 @end

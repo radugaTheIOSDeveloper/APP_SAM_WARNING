@@ -24,7 +24,8 @@ import YandexCheckoutPayments
     @objc var cntCoin: Int = 1
     @objc var tokenUser: String = String();
     @objc var discount: Int = 12;
-    
+    @objc var promocode: String = String();
+
     private var amount: Amount!
     var token: Tokens?
     var paymentMethodType: PaymentMethodType?
@@ -44,6 +45,7 @@ import YandexCheckoutPayments
         print("size minuts = ", cntCoin)
         print("my token = ", tokenUser);
         print("discount = ", discount);
+        print("promocode = ", promocode);
 
         
 //        let paymentTypes: PaymentMethodTypes = [.bankCard, .applePay]
@@ -102,7 +104,7 @@ import YandexCheckoutPayments
                                          let inputData: TokenizationFlow = .tokenization(TokenizationModuleInputData(
                                              clientApplicationKey: clientApplicationKey,
                                              shopName: "Автомойка САМ",
-                                             purchaseDescription: "\"Комета повышенной яркости, период обращения — 112 лет\"",
+                                             purchaseDescription: "",
                                              amount: amount,
                                              tokenizationSettings: tokenSettings,
                                              testModeSettings: nil,
@@ -242,7 +244,7 @@ extension PaymentController: TokenizationModuleOutput {
             print("rubles = ", self.rubles)
             
             UIApplication.shared.isNetworkActivityIndicatorVisible = true
-            let params: NSDictionary = ["app_token": token.paymentToken, "user_token": self.tokenUser, "coins_cnt": String(self.cntCoin), "summ": String(self.rubles)]
+            let params: NSDictionary = ["app_token": token.paymentToken, "user_token": self.tokenUser, "coins_cnt": String(self.cntCoin), "summ": String(self.rubles) ,"promo_code" : self.promocode]
             self.processExternalPayment(userParameters: params, completion: {(code, data, error) -> Void in
                 if (error != nil) {
                     DispatchQueue.main.async {

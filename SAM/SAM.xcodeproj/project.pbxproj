@@ -11,6 +11,8 @@
 		4C11E4362355B22800AD8C3A /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C11E4352355B22800AD8C3A /* KeychainItemWrapper.m */; };
 		4C2A1373235B20AE00DD425C /* StartScreenINstructionOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A1372235B20AE00DD425C /* StartScreenINstructionOne.m */; };
 		4C2A1376235B20C900DD425C /* StartScreenInstructionTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A1375235B20C900DD425C /* StartScreenInstructionTwo.m */; };
+		4C385DE123788E3E0042CA6B /* PaymentGood.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C385DE023788E3E0042CA6B /* PaymentGood.m */; };
+		4C385DE323789CCD0042CA6B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C385DE223789CCD0042CA6B /* GoogleService-Info.plist */; };
 		4C5986D422FEE88A00D59269 /* BallsCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5986D322FEE88A00D59269 /* BallsCount.m */; };
 		4C5986D722FF044B00D59269 /* BallsGood.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5986D622FF044B00D59269 /* BallsGood.m */; };
 		4C5986DB22FF05CA00D59269 /* NewsSam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5986DA22FF05CA00D59269 /* NewsSam.m */; };
@@ -122,6 +124,9 @@
 		4C2A1372235B20AE00DD425C /* StartScreenINstructionOne.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartScreenINstructionOne.m; sourceTree = "<group>"; };
 		4C2A1374235B20C900DD425C /* StartScreenInstructionTwo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartScreenInstructionTwo.h; sourceTree = "<group>"; };
 		4C2A1375235B20C900DD425C /* StartScreenInstructionTwo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartScreenInstructionTwo.m; sourceTree = "<group>"; };
+		4C385DDF23788E3E0042CA6B /* PaymentGood.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaymentGood.h; sourceTree = "<group>"; };
+		4C385DE023788E3E0042CA6B /* PaymentGood.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaymentGood.m; sourceTree = "<group>"; };
+		4C385DE223789CCD0042CA6B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4C5986D222FEE88A00D59269 /* BallsCount.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BallsCount.h; sourceTree = "<group>"; };
 		4C5986D322FEE88A00D59269 /* BallsCount.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BallsCount.m; sourceTree = "<group>"; };
 		4C5986D522FF044B00D59269 /* BallsGood.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BallsGood.h; sourceTree = "<group>"; };
@@ -382,6 +387,8 @@
 		CE032C611D7D880600851FF4 /* SAM */ = {
 			isa = PBXGroup;
 			children = (
+				4C385DDF23788E3E0042CA6B /* PaymentGood.h */,
+				4C385DE023788E3E0042CA6B /* PaymentGood.m */,
 				4C8483502300631000871616 /* Faq */,
 				4C5986D822FF05B300D59269 /* New Group */,
 				4C5986D122FEE6A100D59269 /* Balss */,
@@ -408,6 +415,7 @@
 				CE032C6E1D7D880600851FF4 /* Assets.xcassets */,
 				CE032C701D7D880600851FF4 /* LaunchScreen.storyboard */,
 				CE032C731D7D880600851FF4 /* Info.plist */,
+				4C385DE223789CCD0042CA6B /* GoogleService-Info.plist */,
 				CE032C621D7D880600851FF4 /* Supporting Files */,
 			);
 			path = SAM;
@@ -823,6 +831,7 @@
 				CE032CAF1D7D8F4400851FF4 /* Roboto-Regular.ttf in Resources */,
 				CE032C721D7D880600851FF4 /* LaunchScreen.storyboard in Resources */,
 				CE032CAD1D7D8F4400851FF4 /* Roboto-Medium.ttf in Resources */,
+				4C385DE323789CCD0042CA6B /* GoogleService-Info.plist in Resources */,
 				CE032CB11D7D8F4400851FF4 /* Roboto-ThinItalic.ttf in Resources */,
 				CE032CA61D7D8F4400851FF4 /* Roboto-Black.ttf in Resources */,
 				CE032C6F1D7D880600851FF4 /* Assets.xcassets in Resources */,
@@ -957,6 +966,7 @@
 				CED618DC1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m in Sources */,
 				CEE34DE41DEC36A700EBF5D2 /* ConfirmAuthorize.m in Sources */,
 				CE032CEA1D7DA9AA00851FF4 /* qrenc.c in Sources */,
+				4C385DE123788E3E0042CA6B /* PaymentGood.m in Sources */,
 				4C5986D722FF044B00D59269 /* BallsGood.m in Sources */,
 				4C8483532300632300871616 /* FAQViewController.m in Sources */,
 				4C5986DB22FF05CA00D59269 /* NewsSam.m in Sources */,

@@ -143,6 +143,8 @@
     return 0;
 }
 
+
+
 -(void) getNews{
     
     [[API apiManager]getNews:^(NSDictionary *responceObject) {

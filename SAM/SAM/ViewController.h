@@ -15,6 +15,8 @@
 @property (assign) NSInteger rubles;
 @property (assign) NSInteger cntCoin;
 @property (strong, nonatomic) NSString * tokenUser;
+@property (strong, nonatomic) NSString * promocde;
+
 @property (strong, nonatomic) NSString *returnedString;
 @property (weak, nonatomic) IBOutlet UILabel *LabelInfo;
 @property (weak, nonatomic) IBOutlet UIButton *btnOutlet;

@@ -44,6 +44,22 @@ void freeRawData(void *info, const void *data, size_t size);
     
 }
 
+
+
+- (IBAction)shareACT:(id)sender {
+    
+    NSString * message = @"Автомойка САМ";
+     
+    UIImage * image = [self quickResponseImageForString:self.stringQR withDimension:182];
+     
+    NSArray * shareItems = @[message, image];
+     
+    UIActivityViewController * avc = [[UIActivityViewController alloc] initWithActivityItems:shareItems applicationActivities:nil];
+     
+    [self presentViewController:avc animated:YES completion:nil];
+    
+}
+
 - (void)backTapped:(id)sender {
     //
     //    if ([self.titleStr isEqualToString:@"MyCoin"]) {
@@ -132,6 +148,7 @@ void freeRawData(void *info, const void *data, size_t size) {
     //    [imageView release];
     //    [super dealloc];
 }
+
 
 
 @end

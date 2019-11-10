@@ -96,13 +96,13 @@
     [self.imageMap setObject:@(betweenDistance5/1000) forKey:@"6"];
     [self.imageMap setObject:@(betweenDistance6/1000) forKey:@"7"];
     
-    [self.distance setObject:@(betweenDistance/1000) forKey:@"Новомосковск, ул. Космонавтов, 35Б"];
-    [self.distance setObject:@(betweenDistance1/1000) forKey: @"пос. Первомайский"];
-    [self.distance setObject:@(betweenDistance2/1000) forKey:@"Одоевске ш."];
-    [self.distance setObject:@(betweenDistance3/1000) forKey: @"Ряжская 1А"];
-    [self.distance setObject:@(betweenDistance4/1000) forKey: @"Веневское ш. 2Б"];
-    [self.distance setObject:@(betweenDistance5/1000) forKey: @"Рязанская 46А"];
-    [self.distance setObject:@(betweenDistance6/1000) forKey: @"Вильямса 46"];
+    [self.distance setObject:@(betweenDistance/1000) forKey:@"г.Новомосковск, ул.Космонавтов, 35Б"];
+    [self.distance setObject:@(betweenDistance1/1000) forKey: @"р.п. Первомайский, ул. Пролетарская дом 19(Рядом с газовой заправкой)"];
+    [self.distance setObject:@(betweenDistance2/1000) forKey:@"г. Тула, Одоевское ш.(напроти Пив.Завода Балтика)"];
+    [self.distance setObject:@(betweenDistance3/1000) forKey: @"г. Тула, Ряжская 1A"];
+    [self.distance setObject:@(betweenDistance4/1000) forKey: @"г. Тула, Веневское ш. 2Б"];
+    [self.distance setObject:@(betweenDistance5/1000) forKey: @"г. Тула, Рязанская 46А"];
+    [self.distance setObject:@(betweenDistance6/1000) forKey: @"г. Тула, Вильямса (напротив дома 46)"];
     
     [self sortDistance:self.distance sortLocation:self.locations sortImages:self.imageMap];
     

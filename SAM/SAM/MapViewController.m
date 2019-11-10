@@ -83,37 +83,37 @@
     
     PinAnnotation * annotation = [[PinAnnotation alloc]init];
     annotation.coordinate = CLLocationCoordinate2DMake(54.007482, 38.252156);
-    annotation.title = @"Новомосковск, ул. Космонавтов, 35Б";
+    annotation.title = @"г.Новомосковск, ул.Космонавтов, 35Б";
     [self.mapView addAnnotation:annotation];
     
     PinAnnotation * annotation1 = [[PinAnnotation alloc]init];
     annotation1.coordinate = CLLocationCoordinate2DMake(54.033654, 37.489695);
-    annotation1.title = @"пос. Первомайский";
+    annotation1.title = @"р.п. Первомайский, ул. Пролетарская дом 19(Рядом с газовой заправкой)";
     [self.mapView addAnnotation:annotation1];
     
     PinAnnotation * annotation2 = [[PinAnnotation alloc]init];
     annotation2.coordinate = CLLocationCoordinate2DMake(54.187362, 37.529558);
-    annotation2.title = @"Одоевске ш.";
+    annotation2.title = @"р.п. Первомайский, ул. Пролетарская дом 19(Рядом с газовой заправкой)";
     [self.mapView addAnnotation:annotation2];
     
     PinAnnotation * annotation3 = [[PinAnnotation alloc]init];
     annotation3.coordinate = CLLocationCoordinate2DMake(54.207003, 37.623024);
-    annotation3.title = @"Ряжская 1А";
+    annotation3.title = @"г. Тула, Ряжская 1А";
     [self.mapView addAnnotation:annotation3];
     
     PinAnnotation * annotation4 = [[PinAnnotation alloc]init];
     annotation4.coordinate = CLLocationCoordinate2DMake(54.209238, 37.645939);
-    annotation4.title = @"Веневское ш. 2Б";
+    annotation4.title = @"г. Тула, Веневское ш. 2Б";
     [self.mapView addAnnotation:annotation4];
     
     PinAnnotation * annotation5 = [[PinAnnotation alloc]init];
     annotation5.coordinate = CLLocationCoordinate2DMake(54.167056, 37.631806);
-    annotation5.title = @"Рязанская 46А";
+    annotation5.title = @"г. Тула, Рязанская 46А";
     [self.mapView addAnnotation:annotation5];
     
     PinAnnotation * annotation6 = [[PinAnnotation alloc]init];
     annotation6.coordinate = CLLocationCoordinate2DMake(54.211388, 37.696394);
-    annotation6.title = @"Вильямса 46";
+    annotation6.title = @"г. Тула, Вильямса (напротив дома 46)";
     [self.mapView addAnnotation:annotation6];
 
    

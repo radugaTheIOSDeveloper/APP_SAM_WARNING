@@ -33,6 +33,7 @@
     NSInteger * type;
     NSInteger  discount;
     NSInteger cahBack;
+    NSString * promocods;
 }
 
 
@@ -173,8 +174,8 @@
             self.summInfo.text = [NSString stringWithFormat:@"%ld рублей",cahs];
             self.ballsInfo.text = [NSString stringWithFormat:@"%ld %@",(totalPrice * cahBack)/100,[self getNumEnding:(totalPrice * cahBack)/100 obj:0]];
 
-                self.messageAlert = [NSString stringWithFormat:@"Вам доступна скидка %ld%%" , discount];
-                [self alerts];
+            self.messageAlert = [NSString stringWithFormat:@"Вам доступна скидка %ld%%" , discount];
+            [self alerts];
             
         }
         
@@ -386,7 +387,7 @@
 
     [[Payment save]setSum:totalPrice];
     [[Payment save]setCntCoin:two];
-    [[Payment save]setMyDiscount:totalPrice];
+    [[Payment save]setMyDiscount:promocode];
     
     //[[Payment save]setResultCoins:20];
     
@@ -427,10 +428,12 @@
         segueMyBuy = [segue destinationViewController];
         segueMyBuy.modalPresentationStyle = UIModalPresentationFullScreen;
 
+        NSLog(@"%@",promocode);
+        
         segueMyBuy.rubles = totalPrice;
         segueMyBuy.cntCoin = two;
         segueMyBuy.tokenUser = [[API apiManager]getToken];
-        //segueMyBuy.discount = 1;
+        segueMyBuy.promocde = promocode;
         
     }
 }

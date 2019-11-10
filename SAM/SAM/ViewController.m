@@ -44,7 +44,6 @@
     self.LabelInfo.text = [NSString stringWithFormat:@"Сумма = %ld \nКоличество жетонов = %ld \nТокен пользователя = %@", [[Payment save]getMySum],[[Payment save]getMyCNtCoin],[[API apiManager]getToken]];
     
     
-    NSLog(@"dis =%ld",[[Payment save]getMydiscount]);
         // Do any additional setup after loading the view.
 //    [[NSNotificationCenter defaultCenter] addObserver:self
 //                                             selector:@selector(receiveNotification:)
@@ -136,6 +135,7 @@
         rvc.rubles = [[Payment save]getMySum];
         rvc.cntCoin = [[Payment save]getMyCNtCoin];
         rvc.tokenUser = [[API apiManager]getToken];
+        rvc.promocode = [[Payment save]getMydiscount];
         
     }
 }

@@ -128,4 +128,9 @@ onFailure:(void(^)(NSError * error, NSInteger statusCode))failure;
 onSuccess:(void(^)(NSDictionary * responseObject)) success
 onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
 
+
+-(void) pushToken:(NSString *)userToken
+onSuccess:(void(^)(NSDictionary * responseObject)) success
+onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
+
 @end

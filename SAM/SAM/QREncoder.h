@@ -20,5 +20,6 @@
 - (UIImage *)quickResponseImageForString:(NSString *)dataString withDimension:(int)imageWidth;
 @property (weak, nonatomic) IBOutlet UILabel *nonActive;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+- (IBAction)shareACT:(id)sender;
 
 @end

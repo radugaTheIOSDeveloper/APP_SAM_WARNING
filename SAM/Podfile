@@ -6,6 +6,8 @@ target 'SAM' do
 pod 'AFNetworking', '~> 3.0'
 pod 'Reachability', '~> 3.2’
 pod 'CCDropDownMenus'
+pod 'Firebase/Analytics'
+pod 'Firebase/Analytics'
 
   pod 'YandexCheckoutPayments',
     :git => 'https://github.com/yandex-money/yandex-checkout-payments-swift.git',

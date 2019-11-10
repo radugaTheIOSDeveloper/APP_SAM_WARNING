@@ -57,10 +57,20 @@ NSArray * arrs;
     self.activityIndicator.alpha = 1.f;
     [self.activityIndicator startAnimating];
     
+//    
+//    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
+//    [self.view addGestureRecognizer:tap];
+    
     
     [self getCarWash];
 
 }
+
+
+-(void) dismissKeyboard{
+    [self.textView resignFirstResponder];
+}
+
 
 
 -(void)getCarWash{

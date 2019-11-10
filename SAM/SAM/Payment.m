@@ -73,10 +73,10 @@
 
 
 
--(void)setMyDiscount:(NSInteger)myDiscount{
+-(void)setMyDiscount:(NSString *)myDiscount{
     self.discount = myDiscount;
 }
--(NSInteger)getMydiscount{
+-(NSString *)getMydiscount{
     return self.discount;
 }
 
