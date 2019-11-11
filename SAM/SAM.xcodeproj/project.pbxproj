@@ -63,7 +63,6 @@
 		CE032CF41D7DA9BB00851FF4 /* split.c in Sources */ = {isa = PBXBuildFile; fileRef = CE032CF01D7DA9BB00851FF4 /* split.c */; };
 		CE032CF81D7DAB7F00851FF4 /* MyCoin.m in Sources */ = {isa = PBXBuildFile; fileRef = CE032CF71D7DAB7F00851FF4 /* MyCoin.m */; };
 		CE122AE41DE83138008289AA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE122AE31DE83138008289AA /* Social.framework */; };
-		CE128D331DA7CF1C00050099 /* PaymentWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE128D321DA7CF1C00050099 /* PaymentWebView.m */; };
 		CE238C791E26345B006AF131 /* CalloutAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE238C721E26345B006AF131 /* CalloutAnnotation.m */; };
 		CE238C7A1E26345C006AF131 /* CalloutAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE238C741E26345B006AF131 /* CalloutAnnotationView.m */; };
 		CE238C7B1E26345C006AF131 /* PinAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE238C761E26345B006AF131 /* PinAnnotation.m */; };
@@ -77,10 +76,8 @@
 		CE2DFA6B22FDBE3900669C69 /* MyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2DFA6A22FDBE3900669C69 /* MyTabBarController.m */; };
 		CE370DF51DA2B0660027D66B /* ConfirmRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = CE370DF41DA2B0660027D66B /* ConfirmRegister.m */; };
 		CE376D931E35F58B00B0FCFD /* SwitchMap.m in Sources */ = {isa = PBXBuildFile; fileRef = CE376D921E35F58B00B0FCFD /* SwitchMap.m */; };
-		CE376D961E36263100B0FCFD /* SelectCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE376D951E36263100B0FCFD /* SelectCardView.m */; };
 		CE39BA3F1D9406EA00C5256A /* RegistrClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CE39BA3E1D9406EA00C5256A /* RegistrClass.m */; };
 		CE39BA421D94239E00C5256A /* Enter.m in Sources */ = {isa = PBXBuildFile; fileRef = CE39BA411D94239E00C5256A /* Enter.m */; };
-		CE4F32E41DFEB28B0023F0AA /* FailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4F32E31DFEB28B0023F0AA /* FailViewController.m */; };
 		CE53C9721DAE7969004BDB27 /* Payments.m in Sources */ = {isa = PBXBuildFile; fileRef = CE53C9711DAE7969004BDB27 /* Payments.m */; };
 		CE53C9751DAE798F004BDB27 /* Payment.m in Sources */ = {isa = PBXBuildFile; fileRef = CE53C9741DAE798F004BDB27 /* Payment.m */; };
 		CE6BE0AA1D8815D4000F5CE4 /* StartScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6BE0A91D8815D4000F5CE4 /* StartScreenView.m */; };
@@ -92,7 +89,6 @@
 		CEA421F01DDC49BE00917653 /* NewPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA421EF1DDC49BE00917653 /* NewPassword.m */; };
 		CECB7AD31DC75DA2008CA095 /* AppleMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECB7AD21DC75DA2008CA095 /* AppleMapViewController.m */; };
 		CECB7AD51DC75E31008CA095 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECB7AD41DC75E31008CA095 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		CED618DC1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = CED618DB1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m */; };
 		CEE34DE41DEC36A700EBF5D2 /* ConfirmAuthorize.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE34DE31DEC36A700EBF5D2 /* ConfirmAuthorize.m */; };
 		CEE35A911DA2724E008D916C /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE35A901DA2724E008D916C /* API.m */; };
 		CEEA754E1E02BCCC000D73D3 /* TermOfUse.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEA754D1E02BCCC000D73D3 /* TermOfUse.m */; };
@@ -216,8 +212,6 @@
 		CE032CF61D7DAB7F00851FF4 /* MyCoin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCoin.h; sourceTree = "<group>"; };
 		CE032CF71D7DAB7F00851FF4 /* MyCoin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCoin.m; sourceTree = "<group>"; };
 		CE122AE31DE83138008289AA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		CE128D311DA7CF1C00050099 /* PaymentWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentWebView.h; sourceTree = "<group>"; };
-		CE128D321DA7CF1C00050099 /* PaymentWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentWebView.m; sourceTree = "<group>"; };
 		CE238C711E26345B006AF131 /* CalloutAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalloutAnnotation.h; sourceTree = "<group>"; };
 		CE238C721E26345B006AF131 /* CalloutAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalloutAnnotation.m; sourceTree = "<group>"; };
 		CE238C731E26345B006AF131 /* CalloutAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalloutAnnotationView.h; sourceTree = "<group>"; };
@@ -244,14 +238,10 @@
 		CE370DF41DA2B0660027D66B /* ConfirmRegister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmRegister.m; sourceTree = "<group>"; };
 		CE376D911E35F58B00B0FCFD /* SwitchMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchMap.h; sourceTree = "<group>"; };
 		CE376D921E35F58B00B0FCFD /* SwitchMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchMap.m; sourceTree = "<group>"; };
-		CE376D941E36263100B0FCFD /* SelectCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCardView.h; sourceTree = "<group>"; };
-		CE376D951E36263100B0FCFD /* SelectCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCardView.m; sourceTree = "<group>"; };
 		CE39BA3D1D9406EA00C5256A /* RegistrClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrClass.h; sourceTree = "<group>"; };
 		CE39BA3E1D9406EA00C5256A /* RegistrClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrClass.m; sourceTree = "<group>"; };
 		CE39BA401D94239E00C5256A /* Enter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enter.h; sourceTree = "<group>"; };
 		CE39BA411D94239E00C5256A /* Enter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enter.m; sourceTree = "<group>"; };
-		CE4F32E21DFEB28B0023F0AA /* FailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FailViewController.h; sourceTree = "<group>"; };
-		CE4F32E31DFEB28B0023F0AA /* FailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FailViewController.m; sourceTree = "<group>"; };
 		CE53C9701DAE7969004BDB27 /* Payments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Payments.h; sourceTree = "<group>"; };
 		CE53C9711DAE7969004BDB27 /* Payments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Payments.m; sourceTree = "<group>"; };
 		CE53C9731DAE798F004BDB27 /* Payment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Payment.h; sourceTree = "<group>"; };
@@ -271,8 +261,6 @@
 		CECB7AD11DC75DA2008CA095 /* AppleMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleMapViewController.h; sourceTree = "<group>"; };
 		CECB7AD21DC75DA2008CA095 /* AppleMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleMapViewController.m; sourceTree = "<group>"; };
 		CECB7AD41DC75E31008CA095 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		CED618DA1DA3D1EA00B0FED3 /* ChoosePaymentMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoosePaymentMethod.h; sourceTree = "<group>"; };
-		CED618DB1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoosePaymentMethod.m; sourceTree = "<group>"; };
 		CEE34DE21DEC36A700EBF5D2 /* ConfirmAuthorize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmAuthorize.h; sourceTree = "<group>"; };
 		CEE34DE31DEC36A700EBF5D2 /* ConfirmAuthorize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmAuthorize.m; sourceTree = "<group>"; };
 		CEE35A8F1DA2724E008D916C /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
@@ -396,7 +384,6 @@
 				CE2DFA5B22FD829700669C69 /* MyTabControllers */,
 				CECB7AD61DC78218008CA095 /* News */,
 				CECB7AD01DC75D72008CA095 /* MAP */,
-				CED618D91DA3CB7900B0FED3 /* Yandex */,
 				CEE35A8E1DA27207008D916C /* singletone */,
 				CE39BA3C1D9406A200C5256A /* Registr */,
 				CE6BE0AB1D8815D9000F5CE4 /* StartScreen */,
@@ -648,21 +635,6 @@
 				4C5986DD22FF0C4F00D59269 /* PageContentViewControllerNews.m */,
 			);
 			name = News;
-			sourceTree = "<group>";
-		};
-		CED618D91DA3CB7900B0FED3 /* Yandex */ = {
-			isa = PBXGroup;
-			children = (
-				CED618DA1DA3D1EA00B0FED3 /* ChoosePaymentMethod.h */,
-				CED618DB1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m */,
-				CE128D311DA7CF1C00050099 /* PaymentWebView.h */,
-				CE128D321DA7CF1C00050099 /* PaymentWebView.m */,
-				CE4F32E21DFEB28B0023F0AA /* FailViewController.h */,
-				CE4F32E31DFEB28B0023F0AA /* FailViewController.m */,
-				CE376D941E36263100B0FCFD /* SelectCardView.h */,
-				CE376D951E36263100B0FCFD /* SelectCardView.m */,
-			);
-			name = Yandex;
 			sourceTree = "<group>";
 		};
 		CEE35A8E1DA27207008D916C /* singletone */ = {
@@ -931,7 +903,6 @@
 			files = (
 				4C2A1376235B20C900DD425C /* StartScreenInstructionTwo.m in Sources */,
 				CE032CF21D7DA9BB00851FF4 /* qrencode.c in Sources */,
-				CE128D331DA7CF1C00050099 /* PaymentWebView.m in Sources */,
 				CE370DF51DA2B0660027D66B /* ConfirmRegister.m in Sources */,
 				CE2DFA5E22FD82C400669C69 /* ActiveViewController.m in Sources */,
 				CE2DFA6422FD82FE00669C69 /* BallsViewController.m in Sources */,
@@ -950,13 +921,11 @@
 				CE032C641D7D880600851FF4 /* main.m in Sources */,
 				4CBCC4B9232FE0D800D478CE /* FAQCoolViewController.m in Sources */,
 				CE032CBA1D7D905500851FF4 /* MyNavigationControll.m in Sources */,
-				CE376D961E36263100B0FCFD /* SelectCardView.m in Sources */,
 				CE39BA421D94239E00C5256A /* Enter.m in Sources */,
 				CE238C7C1E26345C006AF131 /* UIView+MKAnnotationView.m in Sources */,
 				4C84835623006A5700871616 /* UIColor+AppColors.m in Sources */,
 				CE2DFA6722FD88D000669C69 /* MyBySwitchController.m in Sources */,
 				4CEF54DA2355F469006F0BF1 /* PageContentViewController.m in Sources */,
-				CE4F32E41DFEB28B0023F0AA /* FailViewController.m in Sources */,
 				CE032CF41D7DA9BB00851FF4 /* split.c in Sources */,
 				CE53C9751DAE798F004BDB27 /* Payment.m in Sources */,
 				CE2DFA6B22FDBE3900669C69 /* MyTabBarController.m in Sources */,
@@ -969,7 +938,6 @@
 				CE032CD81D7D99A700851FF4 /* BuyCoins.m in Sources */,
 				4C5986D422FEE88A00D59269 /* BallsCount.m in Sources */,
 				CE032CB91D7D905500851FF4 /* MyNavigationBar.m in Sources */,
-				CED618DC1DA3D1EA00B0FED3 /* ChoosePaymentMethod.m in Sources */,
 				CEE34DE41DEC36A700EBF5D2 /* ConfirmAuthorize.m in Sources */,
 				CE032CEA1D7DA9AA00851FF4 /* qrenc.c in Sources */,
 				4C385DE123788E3E0042CA6B /* PaymentGood.m in Sources */,
@@ -1085,7 +1053,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1126,7 +1094,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1140,8 +1108,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SAM/SAM.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = UBFH48Y835;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1149,7 +1119,7 @@
 					"$(PROJECT_DIR)/Pods",
 				);
 				INFOPLIST_FILE = SAM/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1158,6 +1128,7 @@
 				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = itstack.SAM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/georgiizuev/Desktop/APP_SAM_WARNING/Font/SAM-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1172,8 +1143,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SAM/SAM.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = UBFH48Y835;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1181,7 +1154,7 @@
 					"$(PROJECT_DIR)/Pods",
 				);
 				INFOPLIST_FILE = SAM/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1190,6 +1163,7 @@
 				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = itstack.SAM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/georgiizuev/Desktop/APP_SAM_WARNING/Font/SAM-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -7,12 +7,14 @@
 //
 
 #import "StartScreenInstructionTwo.h"
-
+#import "API.h"
 @interface StartScreenInstructionTwo ()
 
 @end
 
 @implementation StartScreenInstructionTwo
+
+NSUserDefaults * userDefaultsTwo;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,16 +32,66 @@
 */
 
 - (IBAction)claenAct:(id)sender {
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                          UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"registrController"];
-                          pvc.modalPresentationStyle = UIModalPresentationFullScreen;
-                          [self presentViewController:pvc animated:YES completion:nil];
+     if ([userDefaultsTwo objectForKey:@"token"]) {
+                                         
+                                 
+                                 
+                                     if ([[API apiManager]getToken ]== NULL|| [[[API apiManager]getToken] isEqualToString:@""]) {
+                                                                    
+                                         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                         UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"enterController"];
+                                         pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                                         [self presentViewController:pvc animated:YES completion:nil];
+                                                                    
+                                                                    
+                                     }else{
+                                                                    
+                                     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                     UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"payControlller"];
+                                     pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                                     [self presentViewController:pvc animated:YES completion:nil];
+                                         
+                                     }
+         }else{
+             
+         
+         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                               UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"enterController"];
+                               pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                               [self presentViewController:pvc animated:YES completion:nil];
+         }
 }
 
 - (IBAction)nextAct:(id)sender {
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                          UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"registrController"];
-                          pvc.modalPresentationStyle = UIModalPresentationFullScreen;
-                          [self presentViewController:pvc animated:YES completion:nil];
+    
+     if ([userDefaultsTwo objectForKey:@"token"]) {
+                                         
+                        
+                                 if ([[API apiManager]getToken ]== NULL|| [[[API apiManager]getToken] isEqualToString:@""]) {
+                                                                
+                                     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                     UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"enterController"];
+                                     pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                                     [self presentViewController:pvc animated:YES completion:nil];
+                                                                
+                                                                
+                                 }else{
+                                                                
+                                 UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                 UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"payControlller"];
+                                 pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                                 [self presentViewController:pvc animated:YES completion:nil];
+                                     
+                                 }
+         }else{
+             
+         
+         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                               UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"enterController"];
+                               pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                               [self presentViewController:pvc animated:YES completion:nil];
+         }
 }
+
 @end
+

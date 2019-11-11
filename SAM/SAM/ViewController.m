@@ -42,6 +42,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    self.btnOutlet.titleLabel.text = @"Повторить";
     self.backButtonOutl.alpha = 0.f;
 
     
@@ -66,6 +68,9 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    
+    self.btnOutlet.titleLabel.text = @"Оплатить";
+
     
 }
 
@@ -130,6 +135,14 @@
                 self.backButtonOutl.alpha = 1.f;
                 self.btnOutlet.titleLabel.text = @"Повторить";
              //   self.LabelInfo.text =@"Произошла ошибка";
+                self.btnOutlet.alpha = 1.f;
+                
+            }else if([self.returnedString isEqualToString:@"8"]){
+                
+                self.summ.alpha = 1.f;
+                self.sumLabel.alpha = 1.f;
+                self.tilteSucces.text = @"Во время операции оплаты произошла ошибка, Попробуйте повторить операцию позднее";
+                self.backButtonOutl.alpha = 1.f;
                 self.btnOutlet.alpha = 1.f;
             }
 

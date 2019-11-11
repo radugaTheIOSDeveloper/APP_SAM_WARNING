@@ -70,7 +70,7 @@
 
   //  [self backButton];
     
-    
+
     
     
     [self getPercent];

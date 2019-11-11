@@ -7,6 +7,7 @@
 //
 
 #import "StartScreenView.h"
+#import "API.h"
 
 @interface StartScreenView ()
 
@@ -37,11 +38,23 @@
                         
                         if ([userDefaults objectForKey:@"token"]) {
                                     
-                            
+                            if ([[API apiManager]getToken ]== NULL|| [[[API apiManager]getToken] isEqualToString:@""]) {
+                                
+                                
+                                                               UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                                               UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"enterController"];
+                                                               pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                                                               [self presentViewController:pvc animated:YES completion:nil];
+                                
+                                
+                            }else{
+                                
                                 UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                                UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"payControlller"];
-                                pvc.modalPresentationStyle = UIModalPresentationFullScreen;
-                                [self presentViewController:pvc animated:YES completion:nil];
+                                                              UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"payControlller"];
+                                                              pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                                                              [self presentViewController:pvc animated:YES completion:nil];
+                            }
+                              
 
                             
                         } else {

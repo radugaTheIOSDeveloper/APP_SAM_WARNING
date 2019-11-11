@@ -7,6 +7,7 @@
 //
 
 #import "StartScreenINstructionOne.h"
+#import "API.h"
 
 @interface StartScreenINstructionOne ()
 
@@ -14,10 +15,13 @@
 
 @implementation StartScreenINstructionOne
 
+NSUserDefaults * userDefaults;
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+        userDefaults = [NSUserDefaults standardUserDefaults];
       [userDefaults setInteger:1 forKey:@"show_animated"];
     
     
@@ -35,6 +39,8 @@
 
 - (IBAction)nectAct:(id)sender {
     
+    
+    
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                           UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"instructionTwo"];
                           pvc.modalPresentationStyle = UIModalPresentationFullScreen;
@@ -43,9 +49,41 @@
 
 - (IBAction)cleanAct:(id)sender {
     
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                          UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"registrController"];
-                          pvc.modalPresentationStyle = UIModalPresentationFullScreen;
-                          [self presentViewController:pvc animated:YES completion:nil];
+    
+    
+    
+    
+    
+    
+    
+    if ([userDefaults objectForKey:@"token"]) {
+                                       
+        
+        if ([[API apiManager]getToken ]== NULL|| [[[API apiManager]getToken] isEqualToString:@""]) {
+                                       
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"enterController"];
+            pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+            [self presentViewController:pvc animated:YES completion:nil];
+                                       
+                                       
+        }else{
+                                       
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"payControlller"];
+        pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:pvc animated:YES completion:nil];
+            
+        }
+        
+                               
+       }else{
+           
+       
+       UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                             UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"instructionTwo"];
+                             pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                             [self presentViewController:pvc animated:YES completion:nil];
+       }
 }
 @end

@@ -192,7 +192,21 @@ extension PaymentController: TokenizationModuleOutput {
                         
                     }
                     
-                }else{
+                }else if result == "error"{
+                    
+                    DispatchQueue.main.async { [weak self] in
+                                           guard let strongSelf = self else { return }
+                                           strongSelf.tokenizationViewController.dismiss(animated: false)
+                                           strongSelf.sendMessage("8")
+                            
+                             
+                            
+                            
+                        }
+
+                    
+                    
+                } else{
                     
                     (self.tokenizationViewController as! TokenizationModuleInput).start3dsProcess(requestUrl: urlString)
 
