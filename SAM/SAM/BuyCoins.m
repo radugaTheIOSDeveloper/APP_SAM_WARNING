@@ -25,14 +25,14 @@
 @implementation BuyCoins{
     
     NSInteger two;
-    NSInteger buy50;
+    float buy50;
     NSInteger twoMinuts;
-    NSInteger totalPrice;
+    float totalPrice;
     NSInteger totalMinuts;
     NSString * promocode;
     NSInteger * type;
-    NSInteger  discount;
-    NSInteger cahBack;
+    float  discount;
+    float cahBack;
     NSString * promocods;
 }
 
@@ -52,16 +52,16 @@
        [self.view addGestureRecognizer:tap];
 
     two = 0;
-    buy50 = 0;
+    buy50 = 0.f;
 
-    totalPrice = 0;
+    totalPrice = 0.f;
     totalMinuts = 0;
     
-    discount = 0;
+    discount = 0.f;
     
-    self.summInfo.text = [NSString stringWithFormat:@"0 рублей"];
+    self.summInfo.text = [NSString stringWithFormat:@"0.0 рублей"];
     self.minutsInfo.text = [NSString stringWithFormat:@"0 минут"];
-    self.ballsInfo.text = [NSString stringWithFormat:@"0 баллов"];
+    self.ballsInfo.text = [NSString stringWithFormat:@"0.0 баллов"];
     
     self.buyCoinsOtl.enabled = NO;
     
@@ -169,12 +169,12 @@
             NSNumber * disNum = [responseObject objectForKey:@"discount_percent"];
             discount = [disNum integerValue];
             
-            NSInteger cahs = totalPrice - ((totalPrice * discount)/100);
+            totalPrice = totalPrice - ((totalPrice * discount)/100);
             
-            self.summInfo.text = [NSString stringWithFormat:@"%ld рублей",cahs];
-            self.ballsInfo.text = [NSString stringWithFormat:@"%ld %@",(totalPrice * cahBack)/100,[self getNumEnding:(totalPrice * cahBack)/100 obj:0]];
+            self.summInfo.text = [NSString stringWithFormat:@"%.1f рублей",totalPrice];
+            self.ballsInfo.text = [NSString stringWithFormat:@"%.1f %@",(totalPrice * cahBack)/100,[self getNumEnding:(totalPrice * cahBack)/100 obj:0]];
 
-            self.messageAlert = [NSString stringWithFormat:@"Вам доступна скидка %ld%%" , discount];
+            self.messageAlert = [NSString stringWithFormat:@"Вам доступна скидка %.1f%%" , discount];
             [self alerts];
             
         }
@@ -272,26 +272,26 @@
         _quantityTokenTwo.text = [NSString stringWithFormat:@"%ld",(long)two];
         
     }else{
-        buy50 =buy50 - 50;
+        buy50 =buy50 - 50.0;
         totalPrice =  buy50;
         twoMinuts =twoMinuts - 2;
         two--;
         totalMinuts =  twoMinuts;
         
-        totalPrice =(totalPrice - ((totalPrice * discount)/100));
+        totalPrice =(totalPrice - ((totalPrice * discount)/100.0));
         
-        self.summInfo.text = [NSString stringWithFormat:@"%ld рублей",totalPrice];
+        self.summInfo.text = [NSString stringWithFormat:@"%.1f рублей",totalPrice];
         _quantityTokenTwo.text = [NSString stringWithFormat:@"%ld",(long)two];
 
-        self.ballsInfo.text = [NSString stringWithFormat:@"%ld %@",(totalPrice * cahBack)/100,[self getNumEnding:(totalPrice * cahBack)/100 obj:0]];
+        self.ballsInfo.text = [NSString stringWithFormat:@"%.1f %@",(totalPrice * cahBack)/100,[self getNumEnding:(totalPrice * cahBack)/100 obj:0]];
 
         [self titleButton:totalPrice];
         
     }
     self.minutsInfo.text = [NSString stringWithFormat:@"%ld %@",totalMinuts, [self getNumEnding:totalMinuts obj:1]];
-    self.ballsInfo.text = [NSString stringWithFormat:@"%ld %@",(totalPrice * cahBack)/100,[self getNumEnding:(totalPrice * cahBack)/100 obj:0]];
+    self.ballsInfo.text = [NSString stringWithFormat:@"%.1f %@",(totalPrice * cahBack)/100,[self getNumEnding:(totalPrice * cahBack)/100 obj:0]];
 
-    self.summInfo.text = [NSString stringWithFormat:@"%ld рублей",totalPrice];
+    self.summInfo.text = [NSString stringWithFormat:@"%.1f рублей",totalPrice];
 
 }
 
@@ -304,7 +304,7 @@
 }
 
 - (IBAction)plusTwo:(id)sender {
-    buy50 = buy50 + 50;
+    buy50 = buy50 + 50.0;
     totalPrice =  buy50;
     two++;
     twoMinuts = twoMinuts +2;
@@ -314,11 +314,11 @@
     _quantityTokenTwo.text = [NSString stringWithFormat:@"%ld",(long)two];
     
     [self titleButton:totalPrice];
-    self.summInfo.text = [NSString stringWithFormat:@"%ld рублей",totalPrice];
+    self.summInfo.text = [NSString stringWithFormat:@"%.1f рублей",totalPrice];
 
     self.minutsInfo.text = [NSString stringWithFormat:@"%ld %@",totalMinuts,[self getNumEnding:totalMinuts obj:1]];
     
-    self.ballsInfo.text = [NSString stringWithFormat:@"%ld %@",(totalPrice * cahBack)/100,[self getNumEnding:(totalPrice * cahBack)/100 obj:0]];
+    self.ballsInfo.text = [NSString stringWithFormat:@"%.1f %@",(totalPrice * cahBack)/100,[self getNumEnding:(totalPrice * cahBack)/100 obj:0]];
 
 }
 

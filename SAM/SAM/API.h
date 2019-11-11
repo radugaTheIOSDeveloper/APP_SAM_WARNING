@@ -20,6 +20,10 @@
 -(void) setToken:(NSString *)token;
 -(NSString *) getToken;
 
+
+-(void) setPushToken:(NSString *)pushToken;
+-(NSString *) getPushToken;
+
 //registr
 
 -(void) prepareForRegister:(NSString *)numPhone
@@ -129,8 +133,7 @@ onSuccess:(void(^)(NSDictionary * responseObject)) success
 onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
 
 
--(void) pushToken:(NSString *)userToken
-onSuccess:(void(^)(NSDictionary * responseObject)) success
+-(void) pushToken:(void(^)(NSDictionary * responseObject)) success
 onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
 
 @end

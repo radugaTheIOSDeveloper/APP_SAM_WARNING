@@ -20,6 +20,7 @@ import YandexCheckoutPayments
     @IBOutlet weak var resultTokenLabel: UILabel!
     let clientApplicationKey = "live_NjI5ODE47cquPSD7939_gasmXhbT0ccjlnABYEq9rHg"
     
+    @IBOutlet weak var btnPay: UIButton!
     @objc var rubles: Int = 1
     @objc var cntCoin: Int = 1
     @objc var tokenUser: String = String();
@@ -38,7 +39,7 @@ import YandexCheckoutPayments
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        amount = Amount(value: Decimal(rubles)/50, currency: .rub)
+        amount = Amount(value: Decimal(rubles), currency: .rub)
 
         //amount = amount / 50 ;
         print("rub = ", rubles)
@@ -47,26 +48,28 @@ import YandexCheckoutPayments
         print("discount = ", discount);
         print("promocode = ", promocode);
 
+        btnPay.setTitle("Выбрать способ оплаты", for: .normal);
         
-//        let paymentTypes: PaymentMethodTypes = [.bankCard, .applePay]
-//                                              let tokenSettings = TokenizationSettings(paymentMethodTypes: paymentTypes,
-//                                                                   showYandexCheckoutLogo: true)
-//                                              let inputData: TokenizationFlow = .tokenization(TokenizationModuleInputData(
-//                                                  clientApplicationKey: clientApplicationKey,
-//                                                  shopName: "Автомойка САМ",
-//                                                  purchaseDescription: "\"Комета повышенной яркости, период обращения — 112 лет\"",
-//                                                  amount: amount,
-//                                                  tokenizationSettings: tokenSettings,
-//                                                  testModeSettings: nil,
-//                                                  cardScanning: nil,
-//                                                  applePayMerchantIdentifier: "merchant.sam",
-//                                                  isLoggingEnabled: true,
-//                                                  userPhoneNumber: "+7",
-//                                                  customizationSettings: CustomizationSettings(mainScheme:UIColor(red: 228/255, green: 0, blue: 11/255, alpha: 1))
-//                                              ))
-//                                              self.tokenizationViewController = TokenizationAssembly.makeModule(inputData: inputData,
-//                                                                                                   moduleOutput: self)
-//                                              present(self.tokenizationViewController, animated: true, completion: nil)
+//
+        let paymentTypes: PaymentMethodTypes = [.bankCard, .applePay]
+                                              let tokenSettings = TokenizationSettings(paymentMethodTypes: paymentTypes,
+                                                                   showYandexCheckoutLogo: true)
+                                              let inputData: TokenizationFlow = .tokenization(TokenizationModuleInputData(
+                                                  clientApplicationKey: clientApplicationKey,
+                                                  shopName: "Автомойка САМ",
+                                                  purchaseDescription:"",
+                                                  amount: amount,
+                                                  tokenizationSettings: tokenSettings,
+                                                  testModeSettings: nil,
+                                                  cardScanning: nil,
+                                                  applePayMerchantIdentifier: "merchant.sam",
+                                                  isLoggingEnabled: true,
+                                                  userPhoneNumber: "+7",
+                                                  customizationSettings: CustomizationSettings(mainScheme:UIColor(red: 228/255, green: 0, blue: 11/255, alpha: 1))
+                                              ))
+                                              self.tokenizationViewController = TokenizationAssembly.makeModule(inputData: inputData,
+                                                                                                   moduleOutput: self)
+                                              present(self.tokenizationViewController, animated: true, completion: nil)
 ////
 //
 //
@@ -96,8 +99,8 @@ import YandexCheckoutPayments
 //
     @IBAction func buyButtonPressed(_ sender: UIButton) {
 
-        
-        
+
+
         let paymentTypes: PaymentMethodTypes = [.bankCard, .applePay]
                                          let tokenSettings = TokenizationSettings(paymentMethodTypes: paymentTypes,
                                                               showYandexCheckoutLogo: true)
@@ -120,7 +123,7 @@ import YandexCheckoutPayments
 
 
 
-        
+
     }
 }
 
@@ -175,12 +178,18 @@ extension PaymentController: TokenizationModuleOutput {
         self.sendRequest(token, completion: { (success, result) -> Void in
             if success, let urlString = result {
                 
+
                 if result == ""{
                     
+               
                     DispatchQueue.main.async { [weak self] in
                                        guard let strongSelf = self else { return }
                                        strongSelf.tokenizationViewController.dismiss(animated: false)
                                        strongSelf.sendMessage("1")
+                        
+                         
+                        
+                        
                     }
                     
                 }else{
@@ -275,8 +284,11 @@ extension PaymentController: TokenizationModuleOutput {
           2 - ошибка, не удалось связаться с сервером и получит url
           3 - ошибка, не удалось провести 3D-secure
           */
-         self.stringToReturn = code
-         self.performSegue(withIdentifier: "unwindToParent", sender: self)
+
+            self.stringToReturn = code
+            self.performSegue(withIdentifier: "unwindToParent", sender: self)
+
+       
     }
 }
 

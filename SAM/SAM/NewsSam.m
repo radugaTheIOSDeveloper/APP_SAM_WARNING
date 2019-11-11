@@ -59,6 +59,8 @@
 //    self.navigationItem.title = @"Новости";
 
 
+    [self tokenPush];
+    
 #pragma mark PageViewControllelr
     
 
@@ -144,6 +146,18 @@
 }
 
 
+-(void)tokenPush {
+    
+    [[API apiManager]pushToken:^(NSDictionary *responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        
+    } onFailure:^(NSError *error, NSInteger statusCode) {
+       
+        NSLog(@"%@",error);
+    }];
+    
+}
 
 -(void) getNews{
     

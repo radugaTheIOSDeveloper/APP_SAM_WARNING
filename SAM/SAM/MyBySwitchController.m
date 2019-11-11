@@ -32,11 +32,15 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     
-//    CGRect frame = self.segmentCntr.frame;
-//    [self.segmentCntr setFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 120)];
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                [UIFont boldSystemFontOfSize:12], NSFontAttributeName,
+                                [UIColor lightGrayColor], NSForegroundColorAttributeName,
+                                nil];
+    [self.segmentCntr setTitleTextAttributes:attributes forState:UIControlStateNormal];
+    NSDictionary *highlightedAttributes = [NSDictionary dictionaryWithObject:[UIColor blackColor] forKey:NSForegroundColorAttributeName];
+    [self.segmentCntr setTitleTextAttributes:highlightedAttributes forState:UIControlStateSelected];
     
-    
-    
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -123,6 +127,17 @@
     
 
     
+}
+
+
+- (IBAction)unvindPaymentToPayment:(UIStoryboardSegue *)unwindSegue
+{
+    
+    self.segmentCntr.selectedSegmentIndex = 0;
+    UIViewController *newViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ComponentActive"];
+           newViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
+           [self cycleFromViewController:self.currentViewController toViewController:newViewController];
+           self.currentViewController = newViewController;
 }
 
 

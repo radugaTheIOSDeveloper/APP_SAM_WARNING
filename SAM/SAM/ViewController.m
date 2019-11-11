@@ -11,6 +11,8 @@
 #import "BuyCoins.h"
 #import "Payment.h"
 #import "API.h"
+#import "MyTabBarController.h"
+
 
 @interface ViewController ()
     @property (weak, nonatomic) IBOutlet UILabel *tokenLabel;
@@ -41,15 +43,17 @@
     [super viewDidLoad];
     
     self.backButtonOutl.alpha = 0.f;
-    self.LabelInfo.text = [NSString stringWithFormat:@"Сумма = %ld \nКоличество жетонов = %ld \nТокен пользователя = %@", [[Payment save]getMySum],[[Payment save]getMyCNtCoin],[[API apiManager]getToken]];
-    
-    
-        // Do any additional setup after loading the view.
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(receiveNotification:)
-//                                                 name:@"paymentChanged"
-//                                               object:nil];
 
+    
+    [self succesPay];
+    
+    float sum = [[Payment save]getMySum];
+    
+    self.tilteSucces.text = @"Спасибо, что используете приложение автомойка САМ, для продолжения операции нажмите кнопку оплатить.";
+    self.summ.text = [NSString stringWithFormat:@" %.1f рублей",sum];
+    self.SiceCoins.text = [NSString stringWithFormat:@"%ld",[[Payment save]getMyCNtCoin]];
+    
+    
     
 }
 
@@ -78,15 +82,27 @@
                 self.btnOutlet.alpha = 1.f;
                 self.btnOutlet.titleLabel.text = @"Оплатить";
                 self.backButtonOutl.alpha = 1.f;
-                self.LabelInfo.text = @"Наджали на кнопку назад";
+                
+                self.summ.alpha = 1.f;
+                                     self.sumLabel.alpha = 1.f;
+                
+                self.tilteSucces.text = @"Операция покупки была отменена, для повтора операции нажмите на кнопку оплатить";
+              //  self.LabelInfo.text = @"Наджали на кнопку назад";
                 
                 
             }else if([self.returnedString isEqualToString:@"0"]) {
                 
-                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                                            UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"payControlller"];
-                                            pvc.modalPresentationStyle = UIModalPresentationFullScreen;
-                                            [self presentViewController:pvc animated:YES completion:nil];
+                
+                [self succesPay];
+                self.btnOutlet.alpha = 0.f;
+                self.backButtonOutl.alpha = 1.f;
+              self.summ.alpha = 0.f;
+                            self.sumLabel.alpha = 0.f;
+                
+//                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//                                            UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"payControlller"];
+//                                            pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+//                                            [self presentViewController:pvc animated:YES completion:nil];
                   
 //
 //                self.backButtonOutl.alpha = 1.f;
@@ -96,7 +112,11 @@
             }else if([self.returnedString isEqualToString:@"1"]){
                 
             
-                self.LabelInfo.text =@"Оплата по apple pay прошла успешно";
+               // self.LabelInfo.text =@"Оплата по apple pay прошла успешно";
+                
+                self.summ.alpha = 0.f;
+                self.sumLabel.alpha = 0.f;
+                
                 self.btnOutlet.alpha = 0.f;
                 self.backButtonOutl.alpha = 1.f;
                 
@@ -104,15 +124,33 @@
                 
             }else if([self.returnedString isEqualToString:@"2"]){
                 
+                self.summ.alpha = 1.f;
+                self.sumLabel.alpha = 1.f;
+                self.tilteSucces.text = @"Во время операции оплаты произошла ошибка, Попробуйте повторить операцию позднее";
                 self.backButtonOutl.alpha = 1.f;
                 self.btnOutlet.titleLabel.text = @"Повторить";
-                self.LabelInfo.text =@"Произошла ошибка";
+             //   self.LabelInfo.text =@"Произошла ошибка";
                 self.btnOutlet.alpha = 1.f;
             }
 
             });
 
 }
+
+
+-(void)succesPay{
+    
+    self.logoSucces.alpha = 1.f;
+    self.bacgroundSucces.alpha = 1.f;
+    self.tilteSucces.alpha = 1.f;
+    
+    self.tilteSucces.text = @"Вы уcпешно оплатили покупку жетонов. Ваша покупка может быть использована на любой мойке САМ";
+    
+    
+}
+
+
+
 
 //- (void) receiveNotification:(NSNotification *) notification
 //{
@@ -144,9 +182,12 @@
 
 
 - (IBAction)actBackButton:(id)sender {
+
+    [[Payment save]setBackIndex:@"indexTwo"];
     
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                              UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"payControlller"];
+    
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                              PaymentController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"payControlller"];
                               pvc.modalPresentationStyle = UIModalPresentationFullScreen;
                               [self presentViewController:pvc animated:YES completion:nil];
     

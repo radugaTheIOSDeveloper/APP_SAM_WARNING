@@ -34,6 +34,9 @@ static int const kHeaderSectionTag = 6900;
     
     self.sectionItems = [NSMutableArray array];
     
+    
+    self.textLabel.text = @"Вы можете отправить нам любой вопрос, описание возникшей проблемы или предложение на почту:";
+    
   // self.sectionItems = [NSMutableArray array];
     
 //    self.sectionNames = @[ @"Вопрос 1", @"Вопрос 2", @"Вопрос 3" ];
@@ -325,4 +328,10 @@ static int const kHeaderSectionTag = 6900;
     
 }
 
+- (IBAction)linkMail:(id)sender {
+    
+    NSString *url = [@"mailto:support@pomoysam.ru" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding ];
+    [[UIApplication sharedApplication]  openURL: [NSURL URLWithString: url]];
+
+}
 @end

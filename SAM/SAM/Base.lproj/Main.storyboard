@@ -26,7 +26,7 @@
                                 <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите до какой мойки САМ Вам нужно добраться " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="joX-sE-aK6">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="16"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                     <color key="textColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -54,7 +54,7 @@
                                                         <constraint firstAttribute="width" constant="238" id="aMf-Vq-8vS"/>
                                                         <constraint firstAttribute="height" constant="24" id="g7h-AC-yw9"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                                     <color key="textColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -64,7 +64,7 @@
                                                         <constraint firstAttribute="height" constant="40" id="reK-L4-m9C"/>
                                                         <constraint firstAttribute="width" constant="231" id="xFh-uN-L9b"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                                     <color key="textColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -146,7 +146,7 @@
                                     <constraint firstAttribute="width" constant="162" id="NLC-G2-NiS"/>
                                     <constraint firstAttribute="height" constant="11" id="PU5-XS-jtw"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -172,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cye-NV-Nyt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1389" y="-1094"/>
+            <point key="canvasLocation" x="-1391" y="-1079"/>
         </scene>
         <!--Buy Coins-->
         <scene sceneID="VWc-pq-n7x">
@@ -409,7 +409,7 @@
                                     <constraint firstAttribute="width" constant="268" id="9hi-nc-fFZ"/>
                                     <constraint firstAttribute="height" constant="49" id="qgM-zD-SOQ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -419,7 +419,7 @@
                                     <constraint firstAttribute="width" constant="296" id="haw-3h-mY3"/>
                                     <constraint firstAttribute="height" constant="52" id="zo7-cB-PPC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="11"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -442,11 +442,11 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nG-fT-AbO">
-                                <rect key="frame" x="95" y="260" width="184" height="17"/>
+                                <rect key="frame" x="95" y="257.66666666666669" width="184" height="19.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="184" id="WSF-ng-s7N"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -522,17 +522,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пользовательское соглашение" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zN-AE-fVc">
-                                <rect key="frame" x="10" y="96" width="183" height="51"/>
+                                <rect key="frame" x="10" y="96" width="187" height="58"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="183" id="DRC-8s-sTT"/>
-                                    <constraint firstAttribute="height" constant="51" id="JIk-PX-M1h"/>
+                                    <constraint firstAttribute="height" constant="58" id="N8R-F6-0YA"/>
+                                    <constraint firstAttribute="width" constant="187" id="Tli-3f-NP5"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfy-an-2QA">
-                                <rect key="frame" x="10" y="148" width="349" height="610"/>
+                                <rect key="frame" x="10" y="155" width="349" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">1. ОБЩИЕ ПОЛОЖЕНИЯ
 1.1. Настоящее Пользовательское соглашение (далее – «Соглашение») регламентирует отношения между Обществом с ограниченной ответственностью Автомойка самообслуживания «Есенинская», зарегистрированное под основным государственным регистрационным номером 1127154025118 (далее – «Компания»), и дееспособным физическим лицом, надлежащим образом присоединившимся к настоящему Соглашению для использования Сайта, расположенный на домене https://pomoysam.ru (далее – «Сайт») и/или мобильного приложения «Мойка САМ» (далее - «Пользователь»).
@@ -633,7 +633,7 @@
 
 </string>
                                 <color key="textColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="13"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -654,7 +654,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CK6-Vh-bXg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7254" y="-464"/>
+            <point key="canvasLocation" x="-7255.1999999999998" y="-464.03940886699507"/>
         </scene>
         <!--Registr Class-->
         <scene sceneID="dhN-aD-0dY">
@@ -687,7 +687,7 @@
                                             <constraint firstAttribute="height" constant="21" id="RH1-mo-Vjo"/>
                                             <constraint firstAttribute="width" constant="157" id="sPd-nq-wN7"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="24"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -706,7 +706,7 @@
                                             <constraint firstAttribute="width" constant="250" id="JgW-Cp-CoQ"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
                                         <connections>
                                             <action selector="actTextField:" destination="QgF-dx-8gr" eventType="touchDown" id="EhN-A4-pdc"/>
@@ -719,7 +719,7 @@
                                             <constraint firstAttribute="width" constant="221" id="hTl-IO-0FH"/>
                                             <constraint firstAttribute="height" constant="12" id="ptm-IR-Fpb"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="10"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="10"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -729,7 +729,7 @@
                                             <constraint firstAttribute="width" constant="207" id="7hn-U7-5f7"/>
                                             <constraint firstAttribute="height" constant="17" id="pCu-Yn-Xs3"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
                                         <state key="normal" title="Войти">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -743,7 +743,7 @@
                                             <constraint firstAttribute="height" constant="50" id="J0t-BR-Y3h"/>
                                             <constraint firstAttribute="width" constant="240" id="qca-xr-v7S"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
                                         <state key="normal" title="Зарегистрироваться" backgroundImage="registrBtn">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -757,7 +757,7 @@
                                             <constraint firstAttribute="width" constant="175" id="1kr-mN-bqW"/>
                                             <constraint firstAttribute="height" constant="21" id="RkQ-LB-F7f"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="13"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -767,7 +767,7 @@
                                             <constraint firstAttribute="width" constant="212" id="ZWb-yW-Wt6"/>
                                             <constraint firstAttribute="height" constant="36" id="aKJ-0v-YB3"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="10"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="8"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -849,23 +849,13 @@
                                             <constraint firstAttribute="width" constant="250" id="pTc-D2-ysO"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подтверждение регистрации" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTz-VH-CTb">
-                                        <rect key="frame" x="94.666666666666686" y="80" width="186" height="62"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="186" id="ZdV-I2-VNz"/>
-                                            <constraint firstAttribute="height" constant="62" id="w6B-rF-JDz"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="24"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="На ваш номер отправлено  SMS сообщение с кодом подтверждения" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vI2-ba-a68">
-                                        <rect key="frame" x="67" y="150" width="241" height="53"/>
+                                        <rect key="frame" x="67" y="180" width="241" height="53"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="241" id="Wg0-XA-rof"/>
                                             <constraint firstAttribute="height" constant="53" id="ftK-OL-vHr"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -876,7 +866,7 @@
                                             <constraint firstAttribute="height" constant="30" id="txk-fj-0qs"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="go"/>
                                         <connections>
                                             <action selector="actConfirm:" destination="QIC-Nc-x0f" eventType="editingDidEnd" id="QAv-Be-Pae"/>
@@ -889,12 +879,22 @@
                                             <constraint firstAttribute="width" constant="240" id="CuW-Ef-5NS"/>
                                             <constraint firstAttribute="height" constant="50" id="RCb-Kz-yW4"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
                                         <state key="normal" title="Подтвердить " backgroundImage="registrBtn"/>
                                         <connections>
                                             <action selector="buttonConfirm:" destination="QIC-Nc-x0f" eventType="touchUpInside" id="2ma-Hg-XIN"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подтверждение регистрации" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTz-VH-CTb">
+                                        <rect key="frame" x="72" y="80" width="231" height="92"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="231" id="RZD-Jv-v6t"/>
+                                            <constraint firstAttribute="height" constant="92" id="kA2-25-TFC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="rCc-k1-KTu" firstAttribute="top" secondItem="cup-Ls-kv4" secondAttribute="bottom" constant="13" id="6kj-B0-HRn"/>
@@ -961,23 +961,13 @@
                                             <constraint firstAttribute="height" constant="1" id="mNK-Tt-wVi"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Завершение регистрации" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swE-jr-W22">
-                                        <rect key="frame" x="97" y="80" width="181" height="65"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="65" id="75E-DE-3VA"/>
-                                            <constraint firstAttribute="width" constant="181" id="L7y-Wc-W49"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="24"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Придумайте пароль для входа в свою учетную запись " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSA-D9-sXT">
-                                        <rect key="frame" x="64.666666666666686" y="153" width="246" height="50"/>
+                                        <rect key="frame" x="64.666666666666686" y="163" width="246" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Gii-9d-9o8"/>
                                             <constraint firstAttribute="width" constant="246" id="bAy-r9-xsf"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -988,7 +978,7 @@
                                             <constraint firstAttribute="width" constant="250" id="Qjv-SS-QAD"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <connections>
                                             <action selector="actTextField:" destination="leg-Ch-6Ho" eventType="editingDidEnd" id="JR8-l3-YhI"/>
@@ -1001,12 +991,22 @@
                                             <constraint firstAttribute="height" constant="50" id="8P1-oz-5ex"/>
                                             <constraint firstAttribute="width" constant="240" id="PbM-qf-qvN"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
                                         <state key="normal" title="Зарегистрироваться" backgroundImage="registrBtn"/>
                                         <connections>
                                             <action selector="registrBtn:" destination="leg-Ch-6Ho" eventType="touchUpInside" id="xFL-L3-nQe"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Завершение регистрации" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swE-jr-W22">
+                                        <rect key="frame" x="82" y="80" width="211" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="IXh-Mj-e07"/>
+                                            <constraint firstAttribute="width" constant="211" id="Zeu-8w-C8F"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="hN5-Dk-SBx" secondAttribute="bottom" constant="319" id="04h-Nb-Y2t"/>
@@ -1098,7 +1098,7 @@
                                             <constraint firstAttribute="width" constant="240" id="HdJ-1J-gDX"/>
                                             <constraint firstAttribute="height" constant="50" id="aIc-CI-qw5"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
                                         <state key="normal" title="Восcтановить" backgroundImage="registrBtn">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -1127,29 +1127,29 @@
                                             <constraint firstAttribute="height" constant="30" id="o6Y-jn-lMa"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="go"/>
                                         <connections>
                                             <outlet property="delegate" destination="Me1-MY-Egj" id="oWB-dE-RyI"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Восстановление пароля" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZd-3z-9y3">
-                                        <rect key="frame" x="74" y="80" width="227" height="59"/>
+                                        <rect key="frame" x="74" y="80" width="227" height="68"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="68" id="Eht-WQ-4Uz"/>
                                             <constraint firstAttribute="width" constant="227" id="YPU-QB-2sX"/>
-                                            <constraint firstAttribute="height" constant="59" id="rue-gp-pXf"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="24"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите Ваш номер телефона" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9E-de-2fc">
-                                        <rect key="frame" x="74" y="150" width="227" height="55"/>
+                                        <rect key="frame" x="74" y="159" width="227" height="55"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="227" id="CvI-Za-Wcn"/>
                                             <constraint firstAttribute="height" constant="55" id="hPN-J7-bAj"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1219,7 +1219,7 @@
                                     <constraint firstAttribute="width" constant="188" id="Vob-lW-XwX"/>
                                     <constraint firstAttribute="height" constant="60" id="xTM-dl-fnb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1229,7 +1229,7 @@
                                     <constraint firstAttribute="height" constant="50" id="PwB-AB-nzP"/>
                                     <constraint firstAttribute="width" constant="240" id="ZhF-TI-mUA"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
                                 <state key="normal" title="Авторизуйтесь" backgroundImage="registrBtn">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -1285,12 +1285,6 @@
                                     <segment title=""/>
                                 </segments>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFX-nG-euq">
-                                <rect key="frame" x="16" y="122.00000000000001" width="343" height="16.666666666666671"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHB-5b-sZB">
                                 <rect key="frame" x="67.666666666666686" y="623" width="240" height="50"/>
                                 <constraints>
@@ -1298,7 +1292,7 @@
                                     <constraint firstAttribute="height" constant="50" id="Kbc-RO-a6O"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
-                                <state key="normal" title="Вернуться " backgroundImage="buttonMyby">
+                                <state key="normal" title="В мои покупки" backgroundImage="buttonMyby">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -1320,16 +1314,75 @@
                                     <segue destination="y1R-k5-bLm" kind="show" identifier="showPaymentView" id="qh3-cs-m1w"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Imagerec" translatesAutoresizingMaskIntoConstraints="NO" id="s3F-u8-EiC">
+                                <rect key="frame" x="16" y="111" width="343" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="FgF-Eo-tRj"/>
+                                    <constraint firstAttribute="height" constant="375" id="GZC-p3-DKg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы уcпешно оплатили покупку жетонов. Ваша покупка может быть использована на любой мойке САМ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhb-v0-nLL">
+                                <rect key="frame" x="61" y="117" width="253" height="103"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="103" id="aVP-CC-Ehc"/>
+                                    <constraint firstAttribute="width" constant="253" id="plA-QR-VPk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сумма к оплате:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qja-AV-enp">
+                                <rect key="frame" x="94.666666666666686" y="406" width="108" height="20"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redLogotipe" translatesAutoresizingMaskIntoConstraints="NO" id="62G-Ja-NdW">
+                                <rect key="frame" x="94.666666666666686" y="227.66666666666663" width="186" height="142"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="186" id="lM4-Hr-FSX"/>
+                                    <constraint firstAttribute="height" constant="142" id="oWr-O7-J4q"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIu-no-h3H">
+                                <rect key="frame" x="202.66666666666666" y="406" width="36" height="20"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Жетонов на 2 минуты:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRZ-pc-5k1">
+                                <rect key="frame" x="94.666666666666671" y="381" width="147.33333333333331" height="20"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3G-Uh-8kd">
+                                <rect key="frame" x="244" y="381" width="36" height="20"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="UFX-nG-euq" firstAttribute="leading" secondItem="15N-k0-dF1" secondAttribute="leading" constant="16" id="8Yx-AJ-QXw"/>
+                            <constraint firstItem="qja-AV-enp" firstAttribute="top" secondItem="QRZ-pc-5k1" secondAttribute="bottom" constant="5" id="27y-Ll-l9X"/>
+                            <constraint firstItem="QRZ-pc-5k1" firstAttribute="top" secondItem="62G-Ja-NdW" secondAttribute="bottom" constant="11.333333333333371" id="35v-XX-u6f"/>
+                            <constraint firstItem="QRZ-pc-5k1" firstAttribute="leading" secondItem="62G-Ja-NdW" secondAttribute="leading" id="6dY-ne-Z21"/>
                             <constraint firstItem="Vay-fd-q6i" firstAttribute="centerX" secondItem="15N-k0-dF1" secondAttribute="centerX" id="BMb-bw-eUn"/>
-                            <constraint firstAttribute="trailing" secondItem="UFX-nG-euq" secondAttribute="trailing" constant="16" id="D6S-RS-16Z"/>
-                            <constraint firstItem="UFX-nG-euq" firstAttribute="top" secondItem="Yfs-Ui-vl5" secondAttribute="bottom" constant="34" id="DBY-en-3gd"/>
-                            <constraint firstItem="UFX-nG-euq" firstAttribute="centerX" secondItem="15N-k0-dF1" secondAttribute="centerX" id="Wyz-9M-kPQ"/>
+                            <constraint firstItem="dhb-v0-nLL" firstAttribute="centerX" secondItem="s3F-u8-EiC" secondAttribute="centerX" id="D6u-FF-aOP"/>
+                            <constraint firstItem="62G-Ja-NdW" firstAttribute="centerY" secondItem="s3F-u8-EiC" secondAttribute="centerY" id="JR4-1j-oNF"/>
+                            <constraint firstItem="c3G-Uh-8kd" firstAttribute="top" secondItem="62G-Ja-NdW" secondAttribute="bottom" constant="11.333333333333371" id="NzP-RY-3Hk"/>
+                            <constraint firstItem="oIu-no-h3H" firstAttribute="top" secondItem="qja-AV-enp" secondAttribute="top" id="PaL-ba-1I7"/>
+                            <constraint firstItem="s3F-u8-EiC" firstAttribute="top" secondItem="dhb-v0-nLL" secondAttribute="bottom" constant="-109" id="QB2-uE-6pw"/>
+                            <constraint firstItem="oIu-no-h3H" firstAttribute="leading" secondItem="qja-AV-enp" secondAttribute="trailing" id="Xek-3C-fXi"/>
+                            <constraint firstItem="62G-Ja-NdW" firstAttribute="centerX" secondItem="s3F-u8-EiC" secondAttribute="centerX" id="Xqm-1b-1g1"/>
+                            <constraint firstItem="s3F-u8-EiC" firstAttribute="top" secondItem="Yfs-Ui-vl5" secondAttribute="bottom" constant="23" id="crw-hB-Rou"/>
                             <constraint firstItem="Vay-fd-q6i" firstAttribute="top" secondItem="aHB-5b-sZB" secondAttribute="bottom" constant="8" id="gYF-QD-aDw"/>
+                            <constraint firstItem="oIu-no-h3H" firstAttribute="centerY" secondItem="qja-AV-enp" secondAttribute="centerY" id="leS-IA-cHP"/>
+                            <constraint firstItem="qja-AV-enp" firstAttribute="leading" secondItem="62G-Ja-NdW" secondAttribute="leading" id="n48-hk-NVA"/>
+                            <constraint firstItem="s3F-u8-EiC" firstAttribute="centerX" secondItem="15N-k0-dF1" secondAttribute="centerX" id="nyc-Uc-8Ow"/>
                             <constraint firstItem="aHB-5b-sZB" firstAttribute="centerX" secondItem="15N-k0-dF1" secondAttribute="centerX" id="thU-i7-dKh"/>
+                            <constraint firstItem="c3G-Uh-8kd" firstAttribute="leading" secondItem="QRZ-pc-5k1" secondAttribute="trailing" constant="2" id="wIC-Yd-HN9"/>
                             <constraint firstItem="ehs-K5-a80" firstAttribute="top" secondItem="Vay-fd-q6i" secondAttribute="bottom" constant="47" id="xaK-LX-YOY"/>
                         </constraints>
                     </view>
@@ -1342,10 +1395,15 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="LabelInfo" destination="UFX-nG-euq" id="7Nj-PL-NWv"/>
+                        <outlet property="SiceCoins" destination="c3G-Uh-8kd" id="q2V-2E-VkE"/>
+                        <outlet property="bacgroundSucces" destination="s3F-u8-EiC" id="3jW-bi-PyY"/>
                         <outlet property="backButtonOutl" destination="aHB-5b-sZB" id="2EY-OZ-wmh"/>
                         <outlet property="btnOutlet" destination="Vay-fd-q6i" id="Hhm-3L-XX7"/>
+                        <outlet property="logoSucces" destination="62G-Ja-NdW" id="7jv-oY-MXm"/>
                         <outlet property="segment" destination="b61-rJ-zWQ" id="A6x-PZ-sxV"/>
+                        <outlet property="sumLabel" destination="qja-AV-enp" id="slZ-4i-BmH"/>
+                        <outlet property="summ" destination="oIu-no-h3H" id="4Ut-NM-jIw"/>
+                        <outlet property="tilteSucces" destination="dhb-v0-nLL" id="f6y-mG-cPe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6f1-iU-WDr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1373,7 +1431,7 @@
                                     <constraint firstAttribute="width" constant="240" id="X8Y-2j-I2E"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
-                                <state key="normal" title="Повторить" backgroundImage="buttonMyby">
+                                <state key="normal" title="Выбор способа оплаты" backgroundImage="buttonMyby">
                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 </state>
                                 <connections>
@@ -1406,83 +1464,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnPay" destination="4JO-rW-98Y" id="9zt-1X-5gL"/>
                         <segue destination="8Yu-N6-dGG" kind="unwind" identifier="unwindToParent" unwindAction="unwindFromPayment:" id="WvN-ty-Lm2"/>
-                        <segue destination="7T6-7m-bX2" kind="show" identifier="goodPayment" id="e8x-j4-0pj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SSu-aP-DsF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="8Yu-N6-dGG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="142" y="-2414"/>
-        </scene>
-        <!--Payment Good-->
-        <scene sceneID="Xdx-xA-c9v">
-            <objects>
-                <viewController id="7T6-7m-bX2" customClass="PaymentGood" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3Lz-Lq-hHX"/>
-                        <viewControllerLayoutGuide type="bottom" id="PXy-5P-WHN"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="enS-D6-o6a">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Imagerec" translatesAutoresizingMaskIntoConstraints="NO" id="8Jm-zm-X4J">
-                                <rect key="frame" x="16" y="143" width="343" height="526"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="526" id="nyH-hc-1X3"/>
-                                    <constraint firstAttribute="width" constant="343" id="yXd-hR-ZfH"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cad-a7-pNf">
-                                <rect key="frame" x="67.666666666666686" y="708" width="240" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="FBg-5b-XUU"/>
-                                    <constraint firstAttribute="height" constant="50" id="zNF-t3-JY3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
-                                <state key="normal" title="В мои покупки" backgroundImage="buttonMyby">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="inMyBuyButton:" destination="4mq-19-wcS" eventType="touchUpInside" id="lim-AW-WdR"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы уcпешно оплатили покупку жетонов. Ваша покупка может быть использована на любой мойке САМ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUd-6G-9fK">
-                                <rect key="frame" x="43.666666666666657" y="198" width="288" height="66"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="66" id="CgM-Tb-3bu"/>
-                                    <constraint firstAttribute="width" constant="288" id="kEt-nz-4ma"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redLogotipe" translatesAutoresizingMaskIntoConstraints="NO" id="3sV-wi-RNO">
-                                <rect key="frame" x="67.666666666666686" y="327" width="240" height="158"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="eTx-82-kWo"/>
-                                    <constraint firstAttribute="height" constant="158" id="poW-bx-Dzp"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="PXy-5P-WHN" firstAttribute="top" secondItem="cad-a7-pNf" secondAttribute="bottom" constant="20" id="B5T-24-uve"/>
-                            <constraint firstItem="3sV-wi-RNO" firstAttribute="centerY" secondItem="8Jm-zm-X4J" secondAttribute="centerY" id="Hhl-54-JKr"/>
-                            <constraint firstItem="dUd-6G-9fK" firstAttribute="centerX" secondItem="enS-D6-o6a" secondAttribute="centerX" id="Rgh-uq-oAx"/>
-                            <constraint firstItem="3sV-wi-RNO" firstAttribute="centerX" secondItem="8Jm-zm-X4J" secondAttribute="centerX" id="SqL-Hp-KJD"/>
-                            <constraint firstItem="3sV-wi-RNO" firstAttribute="top" secondItem="dUd-6G-9fK" secondAttribute="bottom" constant="63" id="Y4H-Ol-3PF"/>
-                            <constraint firstItem="cad-a7-pNf" firstAttribute="centerX" secondItem="8Jm-zm-X4J" secondAttribute="centerX" id="a3U-9n-WAa"/>
-                            <constraint firstItem="8Jm-zm-X4J" firstAttribute="centerY" secondItem="enS-D6-o6a" secondAttribute="centerY" id="fip-SB-UcV"/>
-                            <constraint firstItem="8Jm-zm-X4J" firstAttribute="centerX" secondItem="enS-D6-o6a" secondAttribute="centerX" id="mhU-sc-7Ew"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="XeO-Hi-vtm"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jpp-lq-XgP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="873" y="-2412"/>
         </scene>
         <!--Start Screen View-->
         <scene sceneID="rwZ-Hp-4Ii">
@@ -1534,17 +1523,17 @@
                         <viewControllerLayoutGuide type="bottom" id="i1v-MA-4fR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DWg-zH-ZmV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Imagerec" translatesAutoresizingMaskIntoConstraints="NO" id="rSJ-2V-5sZ">
-                                <rect key="frame" x="20" y="108" width="335" height="409"/>
+                                <rect key="frame" x="20" y="20" width="335" height="409"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="409" id="9q2-Ye-22s"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6UM-Xl-AH5">
-                                <rect key="frame" x="67.666666666666686" y="693" width="240" height="50"/>
+                                <rect key="frame" x="67.666666666666686" y="639" width="240" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="be4-4s-g49"/>
                                     <constraint firstAttribute="width" constant="240" id="tdR-fz-GZu"/>
@@ -1556,16 +1545,16 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redLogotipe" translatesAutoresizingMaskIntoConstraints="NO" id="pSb-DF-QdO">
-                                <rect key="frame" x="99" y="208.66666666666663" width="177" height="208"/>
+                                <rect key="frame" x="143.33333333333334" y="172.66666666666666" width="88.666666666666657" height="103.99999999999997"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы успешно отправили свой запрос. Спасибо за использование приложения автомойки самообслуживания САМ." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtC-Mc-o1R">
-                                <rect key="frame" x="34" y="129" width="307" height="78"/>
+                                <rect key="frame" x="34" y="41" width="307" height="78"/>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мы свяжемся с вами , как только запрос поступит в обработку" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmi-K6-RFV">
-                                <rect key="frame" x="46" y="425" width="283" height="67"/>
+                                <rect key="frame" x="46" y="285" width="283" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="283" id="GsH-WG-H1j"/>
                                     <constraint firstAttribute="height" constant="67" id="XOC-DI-o5k"/>
@@ -1612,7 +1601,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы можете отправить нам любой вопрос, описание возникшей проблемы или предложение." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xsz-wg-lhR">
-                                <rect key="frame" x="43.666666666666657" y="96" width="288" height="68"/>
+                                <rect key="frame" x="43.666666666666657" y="52" width="288" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="288" id="2eT-lw-0xR"/>
                                     <constraint firstAttribute="height" constant="68" id="dTL-X2-cyg"/>
@@ -1622,7 +1611,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Imagerec" translatesAutoresizingMaskIntoConstraints="NO" id="RPf-6U-o3M">
-                                <rect key="frame" x="20" y="172" width="335" height="295"/>
+                                <rect key="frame" x="20" y="128" width="335" height="295"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="295" id="d3j-Bt-iHO"/>
                                 </constraints>
@@ -1640,14 +1629,14 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Imagerec" translatesAutoresizingMaskIntoConstraints="NO" id="FU4-Zk-Fua">
-                                <rect key="frame" x="37.666666666666657" y="267" width="300" height="179"/>
+                                <rect key="frame" x="37.666666666666657" y="223" width="300" height="179"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="83t-HU-DKf"/>
                                     <constraint firstAttribute="height" constant="179" id="EEj-Sf-DW8"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HK7-XH-KQ8">
-                                <rect key="frame" x="53" y="286" width="269" height="160"/>
+                                <rect key="frame" x="53" y="242" width="269" height="204"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="tintColor" red="0.89411764709999997" green="0.0" blue="0.043137254899999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1700,7 +1689,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы можете отправить нам любой вопрос, описание возникшей проблемы или предложение," textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SzA-uL-7fB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы можете отправить нам любой вопрос, описание возникшей проблемы или предложение на почту:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SzA-uL-7fB">
                                 <rect key="frame" x="43.666666666666657" y="96" width="288" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="288" id="1hz-Hf-I0h"/>
@@ -1750,17 +1739,16 @@
                                     <outlet property="delegate" destination="yF6-cQ-Xxv" id="nFQ-Gq-JL4"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FuH-4a-7TC">
-                                <rect key="frame" x="143" y="140" width="109" height="18"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vxe-Zx-14w">
+                                <rect key="frame" x="199" y="141" width="150" height="16"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="nah-UT-zbK"/>
+                                    <constraint firstAttribute="width" constant="150" id="Tw4-le-WFG"/>
+                                    <constraint firstAttribute="height" constant="16" id="prq-V0-7pq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                <state key="normal" title="заполнив форму">
-                                    <color key="titleColor" red="0.85591071844100952" green="0.22248592972755432" blue="0.22708749771118164" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <state key="normal" title="support@pomoysam.ru"/>
                                 <connections>
-                                    <segue destination="CAn-L2-Rw5" kind="show" id="Toc-Wu-Chp"/>
+                                    <action selector="linkMail:" destination="yF6-cQ-Xxv" eventType="touchUpInside" id="Ua3-wC-dbO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1768,24 +1756,25 @@
                         <constraints>
                             <constraint firstItem="SzA-uL-7fB" firstAttribute="top" secondItem="ca2-Yb-Xwv" secondAttribute="bottom" constant="8" id="07V-EZ-k3r"/>
                             <constraint firstItem="a8m-Kv-faS" firstAttribute="centerX" secondItem="4gb-Ha-2oK" secondAttribute="centerX" id="CFS-dm-Pec"/>
-                            <constraint firstItem="FuH-4a-7TC" firstAttribute="leading" secondItem="SzA-uL-7fB" secondAttribute="trailing" constant="-188.5" id="DIa-wP-h8j"/>
                             <constraint firstItem="a8m-Kv-faS" firstAttribute="top" secondItem="SzA-uL-7fB" secondAttribute="bottom" constant="8" id="HKh-NW-mn6"/>
+                            <constraint firstItem="Vxe-Zx-14w" firstAttribute="top" secondItem="SzA-uL-7fB" secondAttribute="bottom" constant="-23" id="MXv-gO-kTr"/>
                             <constraint firstItem="LzQ-sH-604" firstAttribute="centerX" secondItem="4gb-Ha-2oK" secondAttribute="centerX" id="b7c-wf-ABA"/>
                             <constraint firstItem="tkp-kF-LBb" firstAttribute="top" secondItem="LzQ-sH-604" secondAttribute="bottom" constant="25" id="dRg-ad-Ih9"/>
-                            <constraint firstItem="FuH-4a-7TC" firstAttribute="top" secondItem="SzA-uL-7fB" secondAttribute="bottom" constant="-24" id="ggo-Z8-yhp"/>
                             <constraint firstItem="SzA-uL-7fB" firstAttribute="centerX" secondItem="4gb-Ha-2oK" secondAttribute="centerX" id="jsQ-eC-jIo"/>
                             <constraint firstItem="LzQ-sH-604" firstAttribute="leading" secondItem="a8m-Kv-faS" secondAttribute="leading" id="t8Y-CH-3f2"/>
                             <constraint firstItem="LzQ-sH-604" firstAttribute="top" secondItem="a8m-Kv-faS" secondAttribute="bottom" constant="7.5" id="waf-3h-bs8"/>
+                            <constraint firstItem="Vxe-Zx-14w" firstAttribute="leading" secondItem="SzA-uL-7fB" secondAttribute="trailing" constant="-132.66666666666663" id="yn4-XE-qHD"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Задать вопрос" image="faq" id="MRw-M3-bH7"/>
                     <connections>
                         <outlet property="tableView" destination="LzQ-sH-604" id="Nt7-rc-FmP"/>
+                        <outlet property="textLabel" destination="SzA-uL-7fB" id="PxE-Gp-UAx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mzT-Tw-pap" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2898" y="-2469"/>
+            <point key="canvasLocation" x="-2879.1999999999998" y="-2469.4581280788179"/>
         </scene>
         <!--Новости-->
         <scene sceneID="70z-IM-jlx">
@@ -1851,11 +1840,11 @@
                                                     <rect key="frame" x="10" y="11" width="20" height="20"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="570" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0i-59-6Q2">
-                                                    <rect key="frame" x="38" y="11" width="156" height="17"/>
+                                                    <rect key="frame" x="38" y="10.999999999999998" width="156" height="19.333333333333329"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="156" id="eSc-ZY-8ex"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1865,7 +1854,7 @@
                                                         <constraint firstAttribute="width" constant="156" id="MaI-xX-9bP"/>
                                                         <constraint firstAttribute="height" constant="34" id="Puz-8b-MSG"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1913,7 +1902,7 @@
                                                         <constraint firstAttribute="width" constant="269" id="1cg-pV-H3h"/>
                                                         <constraint firstAttribute="height" constant="63" id="cz2-YS-IZJ"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1932,12 +1921,12 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="404" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Нет доступа к сети.Нет доступа к сети.Нет доступа к сети." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qao-FL-p2y">
-                                                    <rect key="frame" x="23.5" y="2" width="241" height="35"/>
+                                                    <rect key="frame" x="23.666666666666629" y="2" width="241" height="42"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" constant="42" id="DmA-et-zIf"/>
                                                         <constraint firstAttribute="width" constant="241" id="Poa-Du-Uwh"/>
-                                                        <constraint firstAttribute="height" constant="35" id="TQz-Ic-muD"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                                     <color key="textColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1986,7 +1975,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2JK-Dg-Ram" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5434" y="-396"/>
+            <point key="canvasLocation" x="-5434.3999999999996" y="-396.05911330049264"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="Vz1-qs-7Md">
@@ -2047,8 +2036,9 @@
                                     <segue destination="m8Y-mE-MeM" kind="embed" id="LTf-tF-lWd"/>
                                 </connections>
                             </containerView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JOB-R5-9Gj">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JOB-R5-9Gj">
                                 <rect key="frame" x="0.0" y="88" width="375" height="51"/>
+                                <color key="backgroundColor" white="0.9512788955479452" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Z6v-Rc-PsD"/>
                                 </constraints>
@@ -2057,8 +2047,8 @@
                                     <segment title="Использованные"/>
                                     <segment title="Баллы"/>
                                 </segments>
-                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="selectedSegmentTintColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="actSegment:" destination="i0o-Xg-3v3" eventType="valueChanged" id="2VN-eH-tnV"/>
                                 </connections>
@@ -2106,7 +2096,7 @@
                                     <constraint firstAttribute="height" constant="40" id="1Mm-24-8Rj"/>
                                     <constraint firstAttribute="width" constant="280" id="s5e-th-hat"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -2128,11 +2118,11 @@
                                                     <rect key="frame" x="10" y="11" width="20" height="20"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="550" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpP-OM-YO2">
-                                                    <rect key="frame" x="38" y="11" width="156" height="17"/>
+                                                    <rect key="frame" x="38" y="10.999999999999998" width="156" height="19.333333333333329"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="156" id="1ZX-ea-Zhb"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -2142,7 +2132,7 @@
                                                         <constraint firstAttribute="height" constant="34" id="7uy-D1-vJw"/>
                                                         <constraint firstAttribute="width" constant="156" id="xuT-YX-36n"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -2150,11 +2140,11 @@
                                                     <rect key="frame" x="289" y="11" width="44" height="44"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="552" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTt-bJ-rwf">
-                                                    <rect key="frame" x="235" y="59" width="93" height="15"/>
+                                                    <rect key="frame" x="235" y="58.999999999999993" width="93" height="16.666666666666664"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="93" id="2cU-uh-Nt4"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -2190,7 +2180,7 @@
                                                         <constraint firstAttribute="height" constant="63" id="Irm-IN-HlY"/>
                                                         <constraint firstAttribute="width" constant="269" id="kTn-hG-0OV"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
                                                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -2214,7 +2204,7 @@
                                                         <constraint firstAttribute="width" constant="241" id="9nR-cp-wYh"/>
                                                         <constraint firstAttribute="height" constant="35" id="NJJ-mj-5xS"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                                     <color key="textColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -2315,11 +2305,11 @@
                                                     <rect key="frame" x="10" y="11" width="20" height="20"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="560" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Yx-uL-9Ay">
-                                                    <rect key="frame" x="38" y="11" width="156" height="17"/>
+                                                    <rect key="frame" x="38" y="10.999999999999998" width="156" height="19.333333333333329"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="156" id="cLX-7y-KY8"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -2329,7 +2319,7 @@
                                                         <constraint firstAttribute="height" constant="34" id="8EX-wH-AYo"/>
                                                         <constraint firstAttribute="width" constant="156" id="xSe-2E-IMX"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -2337,11 +2327,11 @@
                                                     <rect key="frame" x="289" y="11" width="44" height="44"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="562" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZA-gm-TaL">
-                                                    <rect key="frame" x="235" y="59" width="93" height="15"/>
+                                                    <rect key="frame" x="235" y="58.999999999999993" width="93" height="16.666666666666664"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="93" id="EsX-mE-710"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -2377,7 +2367,7 @@
                                                         <constraint firstAttribute="height" constant="63" id="D8p-Xs-pP9"/>
                                                         <constraint firstAttribute="width" constant="269" id="QlN-7T-KSW"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -2401,7 +2391,7 @@
                                                         <constraint firstAttribute="width" constant="241" id="Ul2-IC-CTw"/>
                                                         <constraint firstAttribute="height" constant="35" id="mag-iU-flN"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                                     <color key="textColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -2592,7 +2582,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTe-w6-oeI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-609" y="-1726"/>
+            <point key="canvasLocation" x="-660" y="-1728"/>
         </scene>
         <!--Balls Good-->
         <scene sceneID="W1O-gz-tRO">
@@ -2677,7 +2667,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xxu-Cz-za2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="dwD-8b-5Lz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="141.59999999999999" y="-1728.3251231527095"/>
+            <point key="canvasLocation" x="36" y="-1728"/>
         </scene>
         <!--Balls-->
         <scene sceneID="2Co-Ec-ZCz">
@@ -2841,7 +2831,7 @@
         <!--My Tab Bar Controller-->
         <scene sceneID="Zg0-hx-QN6">
             <objects>
-                <tabBarController id="ItP-NK-CZr" customClass="MyTabBarController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabController" id="ItP-NK-CZr" customClass="MyTabBarController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="iBF-3E-tRe"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DOq-ac-YbN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -2955,7 +2945,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="uud-K4-Zaq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
                                 <state key="normal" title="Список">
                                     <color key="titleColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -2984,7 +2974,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="M9S-Qg-Nfm"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
                                 <state key="normal" title="Карта">
                                     <color key="titleColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -3059,7 +3049,7 @@
                                             <constraint firstAttribute="height" constant="60" id="Izv-0Y-leL"/>
                                             <constraint firstAttribute="width" constant="188" id="ORG-f8-ISv"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="21"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="21"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -3070,7 +3060,7 @@
                                             <constraint firstAttribute="height" constant="30" id="h1a-0m-ZWc"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="xeS-jP-6QO" id="EzR-Hz-YZs"/>
@@ -3085,7 +3075,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="qI0-t7-zdR"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
                                         <state key="normal" title="Подтвердить " backgroundImage="registrBtn">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -3209,7 +3199,7 @@
                                             <constraint firstAttribute="height" constant="30" id="aAu-Fy-kfv"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
                                         <connections>
                                             <action selector="actNumTel:" destination="iyP-uI-wnb" eventType="touchDown" id="dig-hz-7dW"/>
@@ -3233,21 +3223,21 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сеть автомоек самообслуживания &quot;САМ&quot;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFn-wQ-Wkn">
-                                        <rect key="frame" x="77" y="758" width="221" height="12"/>
+                                        <rect key="frame" x="77" y="756.33333333333337" width="221" height="13.666666666666629"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="221" id="9v9-c1-O8P"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="10"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="10"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KcY-9f-gV6">
-                                        <rect key="frame" x="84" y="725" width="207" height="17"/>
+                                        <rect key="frame" x="84" y="723.33333333333337" width="207" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="207" id="Nai-Yo-4nG"/>
                                             <constraint firstAttribute="height" constant="17" id="Oeq-g3-o95"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
                                         <state key="normal" title="Регистрация ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -3262,7 +3252,7 @@
                                             <constraint firstAttribute="height" constant="30" id="W7h-wS-4a8"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
                                         <connections>
                                             <action selector="actPass:" destination="iyP-uI-wnb" eventType="touchDown" id="6Ob-t3-FGl"/>
@@ -3275,7 +3265,7 @@
                                             <constraint firstAttribute="width" constant="240" id="A30-qs-FYm"/>
                                             <constraint firstAttribute="height" constant="50" id="nyj-JT-Ydf"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
                                         <state key="normal" title="Войти" backgroundImage="registrBtn">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -3289,7 +3279,7 @@
                                             <constraint firstAttribute="height" constant="21" id="6fs-Th-cjW"/>
                                             <constraint firstAttribute="width" constant="157" id="Hjg-ca-yzS"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="24"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -3308,12 +3298,12 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="У вас еще нет аккаунта?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="viG-0t-TKU">
-                                        <rect key="frame" x="100" y="696" width="175" height="21"/>
+                                        <rect key="frame" x="100" y="694.33333333333337" width="175" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="175" id="3xw-EN-8eI"/>
                                             <constraint firstAttribute="height" constant="21" id="NHJ-Qs-uCB"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="13"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -3393,6 +3383,7 @@
                                     <constraint firstAttribute="width" constant="180" id="ROo-M8-ESu"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="Wi9-6I-MKz"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
                                 <state key="normal" title="Пропустить">
                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 </state>
@@ -3402,6 +3393,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTa-BP-vo0">
                                 <rect key="frame" x="36" y="639" width="303" height="59"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
                                 <state key="normal" backgroundImage="nextInstr">
                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 </state>
@@ -3448,6 +3440,7 @@
                                     <constraint firstAttribute="height" constant="40" id="I51-6J-iht"/>
                                     <constraint firstAttribute="width" constant="180" id="aj1-nt-WYJ"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
                                 <state key="normal" title="Пропустить">
                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 </state>
@@ -3456,7 +3449,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0i-d6-Ver">
-                                <rect key="frame" x="-115.66666666666669" y="580" width="606.33333333333337" height="118"/>
+                                <rect key="frame" x="36" y="639" width="303" height="59"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
                                 <state key="normal" backgroundImage="nextInstr">
                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 </state>
@@ -3498,7 +3492,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YyF-MF-900" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-609" y="-1009"/>
+            <point key="canvasLocation" x="-658" y="-1164"/>
         </scene>
     </scenes>
     <resources>
@@ -3534,6 +3528,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="Ymw-DO-hpA"/>
         <segue reference="6Qf-dE-uxf"/>
-        <segue reference="BcY-Ll-Ar8"/>
+        <segue reference="fZm-pg-cP8"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -38,10 +38,10 @@
 }
 
 //sum
--(void) setMySum:(NSInteger) mySum{
+-(void) setMySum:(float) mySum{
     self.sum = mySum;
 }
--(NSInteger)getMySum{
+-(float)getMySum{
     return  self.sum;
 }
 
@@ -78,6 +78,15 @@
 }
 -(NSString *)getMydiscount{
     return self.discount;
+}
+
+
+
+-(void)setMyBack:(NSString *)myBackIndex{
+    self.backIndex = myBackIndex;
+}
+-(NSString *)getMyBack{
+    return self.backIndex;
 }
 
 @end

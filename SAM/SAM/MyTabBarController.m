@@ -7,6 +7,9 @@
 //
 
 #import "MyTabBarController.h"
+#import "ViewController.h"
+#import "Payment.h"
+
 
 @interface MyTabBarController ()
 
@@ -37,6 +40,20 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+- (void)viewDidAppear:(BOOL)animated {
+    // Other code...
+    
+    
+    if ([[[Payment save]getMyBack] isEqualToString:@"indexTwo"]) {
+        self.selectedIndex = 2;
+
+    }
+
+
+}
+
 
 /*
 #pragma mark - Navigation

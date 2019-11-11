@@ -48,6 +48,20 @@
     return [wraper objectForKey:(id)kSecValueData];
 }
 
+
+-(void) setPushToken:(NSString *)pushToken{
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:pushToken forKey:@"token_push"];
+    
+    
+}
+-(NSString *) getPushToken{
+    
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    return  [userDefaults stringForKey:@"token_push"];
+}
+
+
 //#pragma mark Register and Auth
 
 -(void) prepareForRegister:(NSString *)numPhone
@@ -729,14 +743,13 @@
 }
 
 
--(void) pushToken:(NSString *)userToken
-onSuccess:(void(^)(NSDictionary * responseObject)) success
+-(void) pushToken:(void(^)(NSDictionary * responseObject)) success
         onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure{
     
     
     
     NSDictionary * params = [NSDictionary dictionaryWithObjectsAndKeys:
-                             userToken,@"fcm_token",nil];
+                             [self getPushToken],@"fcm_token",nil];
          [self.sessionManager.requestSerializer setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
 
            [self.sessionManager.requestSerializer setValue:[self getToken] forHTTPHeaderField:@"Authorization"];

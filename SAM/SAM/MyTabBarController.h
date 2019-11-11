@@ -10,4 +10,6 @@
 
 @interface MyTabBarController : UITabBarController
 
+@property(strong,nonatomic) NSString * indexSelctedTab;
+
 @end
