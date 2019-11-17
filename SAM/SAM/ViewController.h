@@ -30,5 +30,9 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *sumLabel;
 
+@property (weak, nonatomic) IBOutlet UISwitch *switChChecked;
+- (IBAction)switchAct:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *switchLabel;
+
 @end
 

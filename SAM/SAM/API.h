@@ -136,4 +136,9 @@ onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
 -(void) pushToken:(void(^)(NSDictionary * responseObject)) success
 onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
 
+
+
+-(void) checkSavadCard:(void(^)(NSDictionary * responseObject)) success
+onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
+
 @end

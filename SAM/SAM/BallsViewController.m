@@ -15,9 +15,12 @@
 @property (assign, nonatomic) NSInteger indexBtn;
 @property (retain) NSNumber * mBalls;
 
+
 @end
 
 @implementation BallsViewController
+    
+
 
 
 
@@ -51,6 +54,13 @@
         
         _mBalls = [responceObject objectForKey:@"balance"];
     
+        int s = [_mBalls intValue]/50;
+        int m = s*2;
+        
+        
+        self.sizeMinutsBalls.text = [NSString stringWithFormat:@"%d %@", m , [self getNumEnding:m obj:1]];
+        _sizeCoinsBalls.text = [NSString stringWithFormat:@"%d %@",s, [self getNumEnding:s obj:0]];
+
         
 
     } onFailure:^(NSError *error, NSInteger statusCode) {
@@ -74,6 +84,48 @@
         
     }
 }
+
+
+-(NSString *) getNumEnding:(NSInteger) num obj:(NSInteger)index {
+    
+    NSArray * endings;
+    
+    if (index == 1) {
+       endings = @[@"минута",@"минуты",@"минут"];
+
+    }else if(index == 0){
+        endings = @[@"жетон",@"жетона",@"жетонов"];
+
+    }
+    
+    num = num%100;
+    NSString * result;
+    
+    if (num >= 11 && num <=19) {
+        
+        result = endings[2];
+        
+    }else{
+    
+        int i = num % 10;
+        
+            if (i == 1) {
+                
+                result = endings[0];
+                
+            }else if( i== 4 || i == 2 || i == 3){
+                    
+                result = endings[1];
+                    
+            }else {
+                result = endings[2];
+            }
+        
+    }
+    
+    return result;
+}
+
 
 
 

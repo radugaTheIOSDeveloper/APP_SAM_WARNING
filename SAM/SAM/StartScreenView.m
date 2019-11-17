@@ -38,7 +38,7 @@
                         
                         if ([userDefaults objectForKey:@"token"]) {
                                     
-                            if ([[API apiManager]getToken ]== NULL|| [[[API apiManager]getToken] isEqualToString:@""]) {
+                            if ([[API apiManager]getToken]== NULL || [[[API apiManager]getToken] isEqualToString:@""]) {
                                 
                                 
                                                                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

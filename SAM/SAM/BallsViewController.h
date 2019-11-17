@@ -12,5 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLable;
 @property (weak, nonatomic) IBOutlet UILabel *ballance;
 - (IBAction)balls:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *sizeCoinsBalls;
+@property (weak, nonatomic) IBOutlet UILabel *sizeMinutsBalls;
 
 @end

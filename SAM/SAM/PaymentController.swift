@@ -26,6 +26,8 @@ import YandexCheckoutPayments
     @objc var tokenUser: String = String();
     @objc var discount: Int = 12;
     @objc var promocode: String = String();
+    @objc var payment_id: String = String();
+    @objc var save_card: String = String();
 
     private var amount: Amount!
     var token: Tokens?
@@ -47,81 +49,117 @@ import YandexCheckoutPayments
         print("my token = ", tokenUser);
         print("discount = ", discount);
         print("promocode = ", promocode);
+        print("payment id = ", payment_id);
+        print("sace card  = ", save_card);
+
 
         btnPay.setTitle("Выбрать способ оплаты", for: .normal);
         
 //
-        let paymentTypes: PaymentMethodTypes = [.bankCard, .applePay]
-                                              let tokenSettings = TokenizationSettings(paymentMethodTypes: paymentTypes,
-                                                                   showYandexCheckoutLogo: true)
-                                              let inputData: TokenizationFlow = .tokenization(TokenizationModuleInputData(
-                                                  clientApplicationKey: clientApplicationKey,
-                                                  shopName: "Автомойка САМ",
-                                                  purchaseDescription:"",
-                                                  amount: amount,
-                                                  tokenizationSettings: tokenSettings,
-                                                  testModeSettings: nil,
-                                                  cardScanning: nil,
-                                                  applePayMerchantIdentifier: "merchant.sam",
-                                                  isLoggingEnabled: true,
-                                                  userPhoneNumber: "+7",
-                                                  customizationSettings: CustomizationSettings(mainScheme:UIColor(red: 228/255, green: 0, blue: 11/255, alpha: 1))
-                                              ))
-                                              self.tokenizationViewController = TokenizationAssembly.makeModule(inputData: inputData,
-                                                                                                   moduleOutput: self)
-                                              present(self.tokenizationViewController, animated: true, completion: nil)
-////
-//
-//
 
+        tokenizationFlowFunc()
+     
+      
         
     }
     
     
 
-    @IBAction func buttonBackClicked(_ sender: Any) {
-        sendMessage("-1")
-    }
-    
+//    @IBAction func buttonBackClicked(_ sender: Any) {
+//
+//        sendMessage("-1")
+//
+//    }
+//
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "unwindToParent" {
+        if segue.identifier == "unwindToParents" {
             if let vc = segue.destination as? ViewController {
 
                 
                 vc.returnedString = stringToReturn
-                self.dismiss(animated: true, completion: nil)
+
+                self.dismiss(animated: false, completion: nil)
             }
         }
     }
     
     
 //
+    func tokenizationFlowFunc() {
+        
+        let paymentTypes: PaymentMethodTypes = [.bankCard, .applePay]
+        let tokenSettings = TokenizationSettings(paymentMethodTypes: paymentTypes,
+                               showYandexCheckoutLogo: true)
+        
+        let inputData:TokenizationFlow
+
+              
+              if payment_id != "" {
+
+                  inputData = .bankCardRepeat(BankCardRepeatModuleInputData(
+                          clientApplicationKey: clientApplicationKey,
+                          shopName: "Автомойка САМ",
+                          purchaseDescription:"",
+                          paymentMethodId:payment_id,
+                          amount: amount
+
+                  ))
+                 
+                  
+              }else{
+                  
+                  inputData = .tokenization(TokenizationModuleInputData(
+                              clientApplicationKey: clientApplicationKey,
+                              shopName: "Автомойка САМ",
+                              purchaseDescription:"",
+                              amount: amount,
+                              tokenizationSettings: tokenSettings,
+                              testModeSettings: nil,
+                              cardScanning: nil,
+                              applePayMerchantIdentifier: "merchant.sam",
+                              isLoggingEnabled: true,
+                              userPhoneNumber: "+7",
+                              customizationSettings: CustomizationSettings(mainScheme:UIColor(red: 228/255, green: 0, blue: 11/255, alpha: 1))
+                    ))
+              }
+              
+              
+               
+                 self.tokenizationViewController = TokenizationAssembly.makeModule(inputData: inputData,
+                                                                           moduleOutput: self)
+                  present(self.tokenizationViewController, animated: true, completion: nil)
+              
+        
+    }
+    
+    
     @IBAction func buyButtonPressed(_ sender: UIButton) {
 
+        tokenizationFlowFunc()
 
 
-        let paymentTypes: PaymentMethodTypes = [.bankCard, .applePay]
-                                         let tokenSettings = TokenizationSettings(paymentMethodTypes: paymentTypes,
-                                                              showYandexCheckoutLogo: true)
-                                         let inputData: TokenizationFlow = .tokenization(TokenizationModuleInputData(
-                                             clientApplicationKey: clientApplicationKey,
-                                             shopName: "Автомойка САМ",
-                                             purchaseDescription: "",
-                                             amount: amount,
-                                             tokenizationSettings: tokenSettings,
-                                             testModeSettings: nil,
-                                             cardScanning: nil,
-                                             applePayMerchantIdentifier: "merchant.sam",
-                                             isLoggingEnabled: true,
-                                             userPhoneNumber: "+7",
-                                             customizationSettings: CustomizationSettings(mainScheme:UIColor(red: 228/255, green: 0, blue: 11/255, alpha: 1))
-                                         ))
-                                         self.tokenizationViewController = TokenizationAssembly.makeModule(inputData: inputData,
-                                                                                              moduleOutput: self)
-                                         present(self.tokenizationViewController, animated: true, completion: nil)
-
-
+//        let paymentTypes: PaymentMethodTypes = [.bankCard, .applePay]
+//                                         let tokenSettings = TokenizationSettings(paymentMethodTypes: paymentTypes,
+//                                                              showYandexCheckoutLogo: true)
+//                                         let inputData: TokenizationFlow = .tokenization(TokenizationModuleInputData(
+//                                             clientApplicationKey: clientApplicationKey,
+//                                             shopName: "Автомойка САМ",
+//                                             purchaseDescription: "",
+//                                             amount: amount,
+//                                             tokenizationSettings: tokenSettings,
+//                                             testModeSettings: nil,
+//                                             cardScanning: nil,
+//                                             applePayMerchantIdentifier: "merchant.sam",
+//                                             isLoggingEnabled: true,
+//                                             userPhoneNumber: "+7",
+//                                             customizationSettings: CustomizationSettings(mainScheme:UIColor(red: 228/255, green: 0, blue: 11/255, alpha: 1))
+//                                         ))
+//                                         self.tokenizationViewController = TokenizationAssembly.makeModule(inputData: inputData,
+//                                                                                              moduleOutput: self)
+//                                         present(self.tokenizationViewController, animated: true, completion: nil)
+//
+//
 
 
     }
@@ -181,17 +219,14 @@ extension PaymentController: TokenizationModuleOutput {
 
                 if result == ""{
                     
-               
+                    
                     DispatchQueue.main.async { [weak self] in
                                        guard let strongSelf = self else { return }
                                        strongSelf.tokenizationViewController.dismiss(animated: false)
                                        strongSelf.sendMessage("1")
-                        
-                         
-                        
-                        
+
                     }
-                    
+//
                 }else if result == "error"{
                     
                     DispatchQueue.main.async { [weak self] in
@@ -266,8 +301,19 @@ extension PaymentController: TokenizationModuleOutput {
             print("coincnt = " , self.cntCoin)
             print("rubles = ", self.rubles)
             
+//            let save_card_param = false
+//            if(postavlena_galochka)
+//                save_card_param= true
+         //      "save_card": save_card_param
+            
             UIApplication.shared.isNetworkActivityIndicatorVisible = true
-            let params: NSDictionary = ["app_token": token.paymentToken, "user_token": self.tokenUser, "coins_cnt": String(self.cntCoin), "summ": String(self.rubles) ,"promo_code" : self.promocode]
+            let params: NSDictionary = ["app_token": token.paymentToken,
+                                        "user_token": self.tokenUser,
+                                        "coins_cnt": String(self.cntCoin),
+                                        "summ": String(self.rubles),
+                                        "promo_code" : self.promocode,
+                                        "save_card" : self.save_card]
+            
             self.processExternalPayment(userParameters: params, completion: {(code, data, error) -> Void in
                 if (error != nil) {
                     DispatchQueue.main.async {
@@ -299,8 +345,11 @@ extension PaymentController: TokenizationModuleOutput {
           3 - ошибка, не удалось провести 3D-secure
           */
 
-            self.stringToReturn = code
-            self.performSegue(withIdentifier: "unwindToParent", sender: self)
+        self.stringToReturn = code
+        self.performSegue(withIdentifier: "unwindToParents", sender: self)
+
+ 
+        
 
        
     }

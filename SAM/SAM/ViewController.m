@@ -23,20 +23,15 @@
 @end
 
 @implementation ViewController {
-        BOOL canReturnFrompaymentView;
+    BOOL canReturnFrompaymentView;
+    NSString * paymntID;
+    
+    
 }
 
 - (void) dealloc
     {
-        // If you don't remove yourself as an observer, the Notification Center
-        // will continue to try and send notification objects to the deallocated
-        // object.
-        //self.navigationController?.popViewController(animated: false)
-         //  self.navigationController?.popToRootViewController(animated: true)
-
-
-         // 
-//        [[NSNotificationCenter defaultCenter] removeObserver:self];
+     
     }
 
 - (void)viewDidLoad {
@@ -47,7 +42,7 @@
     self.backButtonOutl.alpha = 0.f;
 
     
-    [self succesPay];
+ //   [self succesPay];
     
     float sum = [[Payment save]getMySum];
     
@@ -56,26 +51,58 @@
     self.SiceCoins.text = [NSString stringWithFormat:@"%ld",[[Payment save]getMyCNtCoin]];
     
     
-    
+    [self savedCard];
 }
 
 - (IBAction)btnSelectClicked:(id)sender {
-    
-    
+        
  //   [self performSegueWithIdentifier:@"showPaymentView" sender:self];
 
+}
+
+
+
+-(void) savedCard {
+    
+    [[API apiManager]checkSavadCard:^(NSDictionary *responseObject) {
+
+        
+        self.switchLabel.text = [NSString stringWithFormat:@"Использовать для оплаты: \n%@",[responseObject objectForKey:@"card_text"]];
+            [self.switChChecked setOn:true];
+        paymntID = [responseObject objectForKey:@"payment_id"];
+        
+    } onFailure:^(NSError *error, NSInteger statusCode) {
+        NSLog(@"status code - %ld",statusCode);
+        
+        if (statusCode == 400) {
+            
+            self.switchLabel.text = @"Сохранить платежные данные для последующих покупок";
+            [self.switChChecked setOn:false];
+        }else{
+            
+            //dgnfug
+            
+        }
+
+        
+    }];
+    
     
 }
+
+
 
 -(void)viewWillAppear:(BOOL)animated{
     
     self.btnOutlet.titleLabel.text = @"Оплатить";
 
+   
+    
     
 }
 
 
-- (IBAction)unwindFromPayment:(UIStoryboardSegue *)segue {
+- (IBAction)unwindFromPaymentTwo:(UIStoryboardSegue *)segue {
     
     canReturnFrompaymentView = NO;
 
@@ -95,35 +122,31 @@
               //  self.LabelInfo.text = @"Наджали на кнопку назад";
                 
                 
+            
             }else if([self.returnedString isEqualToString:@"0"]) {
                 
                 
-                [self succesPay];
-                self.btnOutlet.alpha = 0.f;
-                self.backButtonOutl.alpha = 1.f;
-              self.summ.alpha = 0.f;
-                            self.sumLabel.alpha = 0.f;
                 
-//                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//                                            UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"payControlller"];
-//                                            pvc.modalPresentationStyle = UIModalPresentationFullScreen;
-//                                            [self presentViewController:pvc animated:YES completion:nil];
-                  
-//
-//                self.backButtonOutl.alpha = 1.f;
-//                self.LabelInfo.text =@"Оплата по банковской карте прошла успешно";
-//                self.btnOutlet.alpha = 0.f;
+            [self succesPay];
+            self.tilteSucces.text = @"Вы уcпешно оплатили покупку жетонов. Ваша покупка может быть использована на любой мойке САМ";
+            self.btnOutlet.alpha = 0.f;
+            self.backButtonOutl.alpha = 1.f;
+            self.summ.alpha = 0.f;
+            self.sumLabel.alpha = 0.f;
+                
+
                 
             }else if([self.returnedString isEqualToString:@"1"]){
                 
             
                // self.LabelInfo.text =@"Оплата по apple pay прошла успешно";
                 
-                self.summ.alpha = 0.f;
-                self.sumLabel.alpha = 0.f;
-                
-                self.btnOutlet.alpha = 0.f;
-                self.backButtonOutl.alpha = 1.f;
+                    [self succesPay];
+                     self.tilteSucces.text = @"Вы уcпешно оплатили покупку жетонов. Ваша покупка может быть использована на любой мойке САМ";
+                     self.btnOutlet.alpha = 0.f;
+                     self.backButtonOutl.alpha = 1.f;
+                     self.summ.alpha = 0.f;
+                     self.sumLabel.alpha = 0.f;
                 
                 
                 
@@ -187,7 +210,14 @@
         rvc.cntCoin = [[Payment save]getMyCNtCoin];
         rvc.tokenUser = [[API apiManager]getToken];
         rvc.promocode = [[Payment save]getMydiscount];
+        if (self.switChChecked.on) {
+            rvc.payment_id = paymntID;
+            if ([paymntID isEqualToString:@""]) {
+                rvc.save_card = @"1";
+            }
+        }
         
+        rvc.save_card = @"0";
     }
 }
 
@@ -205,5 +235,20 @@
                               [self presentViewController:pvc animated:YES completion:nil];
     
 }
+
+- (IBAction)switchAct:(id)sender {
+    
+    if(self.switChChecked.on){
+        
+        NSLog(@"checked card");
+
+        
+    }else{
+        NSLog(@"no checed card");
+
+    }
+    
+}
+
 @end
 

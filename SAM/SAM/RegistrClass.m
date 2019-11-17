@@ -32,7 +32,7 @@
     self.textField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Номер телефона" attributes:@{NSForegroundColorAttributeName: color}];
     
     // new version load 11.2
-    self.termOfUse.alpha = 0.f;
+   // self.termOfUse.alpha = 0.f;
     
    // self.textField.placeholder = @"Номер телефона";
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];

@@ -128,8 +128,8 @@
             filePath = "SAM/FAQViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "-numberOfSectionsInTableView:"
             landmarkType = "7">
          </BreakpointContent>
@@ -192,9 +192,9 @@
             filePath = "SAM/FAQViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "277"
-            endingLineNumber = "277"
-            landmarkName = "-sectionHeaderWasTouched:"
+            startingLineNumber = "275"
+            endingLineNumber = "275"
+            landmarkName = "-tableViewCollapeSection:withImage:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -256,8 +256,8 @@
             filePath = "SAM/FAQFormViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "-getCarWash"
             landmarkType = "7">
          </BreakpointContent>
@@ -274,22 +274,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
             endingLineNumber = "37"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6B555681-A10F-4B11-A05D-0997523F23A4"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SAM/ViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -377,70 +361,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "77EB23A6-E069-437F-83E5-0C27F37F0566"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SAM/PaymentController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
-            landmarkName = "tokenizationModule(_:didTokenize:paymentMethodType:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "77EB23A6-E069-437F-83E5-0C27F37F0566 - 1c3e9bcddf810c75"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool, Swift.Optional&lt;Swift.String&gt;) -&gt; () in SAM.PaymentController.tokenizationModule(_: YandexCheckoutPayments.TokenizationModuleInput, didTokenize: YandexCheckoutPaymentsApi.Tokens, paymentMethodType: YandexCheckoutPaymentsApi.PaymentMethodType) -&gt; ()"
-                  moduleName = "SAM"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/georgiizuev/Desktop/new/APP_SAM_WARNING/SAM/SAM/PaymentController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "201"
-                  endingLineNumber = "201"
-                  offsetFromSymbolStart = "1368">
-               </Location>
-               <Location
-                  uuid = "77EB23A6-E069-437F-83E5-0C27F37F0566 - 78934a82750571af"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 () -&gt; () in closure #1 (Swift.Bool, Swift.Optional&lt;Swift.String&gt;) -&gt; () in SAM.PaymentController.tokenizationModule(_: YandexCheckoutPayments.TokenizationModuleInput, didTokenize: YandexCheckoutPaymentsApi.Tokens, paymentMethodType: YandexCheckoutPaymentsApi.PaymentMethodType) -&gt; ()"
-                  moduleName = "SAM"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/georgiizuev/Desktop/new/APP_SAM_WARNING/SAM/SAM/PaymentController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "201"
-                  endingLineNumber = "201"
-                  offsetFromSymbolStart = "84">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "670EE980-65FD-4C5E-A6D3-83BEB5156423"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SAM/PaymentController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
-            landmarkName = "tokenizationModule(_:didTokenize:paymentMethodType:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "2FC6EB6C-B9B8-4F8D-A1C7-1F78C0E63FE3"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -448,10 +368,10 @@
             filePath = "SAM/PaymentController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
-            landmarkName = "tokenizationModule(_:didTokenize:paymentMethodType:)"
-            landmarkType = "7">
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -464,10 +384,10 @@
             filePath = "SAM/PaymentController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
-            landmarkName = "tokenizationModule(_:didTokenize:paymentMethodType:)"
-            landmarkType = "7">
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   uuid = "249B0E63-E4B3-4777-9971-D35FDE6DF34D - 1c3e9bcddf810c75"
@@ -512,10 +432,10 @@
             filePath = "SAM/PaymentController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
-            landmarkName = "tokenizationModule(_:didTokenize:paymentMethodType:)"
-            landmarkType = "7">
+            startingLineNumber = "186"
+            endingLineNumber = "186"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -528,9 +448,25 @@
             filePath = "SAM/PaymentController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
-            landmarkName = "tokenizationModule(_:didTokenize:paymentMethodType:)"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "724F8FCA-DE81-4BB8-AD1A-9C1B375F0D19"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SAM/PaymentController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
+            landmarkName = "didSuccessfullyPassedCardSec(on:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

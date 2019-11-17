@@ -10,7 +10,7 @@
 #import <CCDropDownMenus/CCDropDownMenus.h>
 #import "API.h"
 
-@interface FAQFormViewController () <CCDropDownMenuDelegate>
+@interface FAQFormViewController () <CCDropDownMenuDelegate , UITextViewDelegate>
 @property (strong, nonatomic) NSMutableArray * textArrs;
 @property (strong, nonatomic) NSMutableArray * idArrs;
 @property (strong, nonatomic) NSString * idWash;
@@ -66,6 +66,16 @@ NSArray * arrs;
 
 }
 
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+
+    if([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+
+    return YES;
+}
 
 -(void) dismissKeyboard{
     [self.textView resignFirstResponder];
