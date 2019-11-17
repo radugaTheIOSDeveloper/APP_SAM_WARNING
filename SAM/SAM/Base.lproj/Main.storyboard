@@ -403,7 +403,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отсканируйте QR код разменном аппарате и получите жетоны на мойку" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Do7-Oe-MZP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отсканируйте QR код в разменном аппарате и получите жетоны на мойку" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Do7-Oe-MZP">
                                 <rect key="frame" x="53.666666666666657" y="8" width="268" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="268" id="9hi-nc-fFZ"/>
@@ -537,48 +537,50 @@
                                 <string key="text">1. ОБЩИЕ ПОЛОЖЕНИЯ
 1.1. Настоящее Пользовательское соглашение (далее – «Соглашение») регламентирует отношения между Обществом с ограниченной ответственностью Автомойка самообслуживания «Есенинская», зарегистрированное под основным государственным регистрационным номером 1127154025118 (далее – «Компания»), и дееспособным физическим лицом, надлежащим образом присоединившимся к настоящему Соглашению для использования Сайта, расположенный на домене https://pomoysam.ru (далее – «Сайт») и/или мобильного приложения «Мойка САМ» (далее - «Пользователь»).
 1.2. Мобильное приложение «Мойка САМ» (далее – «Приложение») является программным обеспечением, разработанное для мобильных устройств, работающих под управлением операционных систем Apple iOS и Android, доступным Пользователю через Магазин приложений на условиях полного соблюдения Соглашения.
-1.3. Установка Приложения в мобильное устройство Пользователя и/или регистрация на Сайте, являются акцептами настоящего Соглашения. 
+1.3. Установка Приложения в мобильное устройство Пользователя и/или регистрация на Сайте, являются акцептами настоящего Соглашения.
 1.4. Условия настоящего Соглашения в соответствии с частью 2 статьи 437 Гражданского кодекса Российской Федерации являются публичной офертой – предложением заключить с Компанией договор присоединения в соответствии со статьей 428 Гражданского кодекса Российской Федерации, согласно которым Компания предоставляет Пользователю безвозмездный доступ к Сайту и/или Приложению на условиях настоящего Соглашения.
 1.5. Пользование Услугами и/или приобретение Товаров после вступления публикации на Сайте и/или в Приложении изменений означает согласие Пользователя со всеми изменениями.
-1.6. Обращения, предложения и претензии физических и юридических лиц к Компании, связанные с содержанием и функционированием Сайта и/или Приложения, нарушениями прав и интересов третьих лиц, требований законодательства Российской Федерации, а также для запросов уполномоченных законодательством Российской Федерации лиц могут быть направлены на адрес электронной почты: support@pomoysam.ru. 
+1.6. Обращения, предложения и претензии физических и юридических лиц к Компании, связанные с содержанием и функционированием Сайта и/или Приложения, нарушениями прав и интересов третьих лиц, требований законодательства Российской Федерации, а также для запросов уполномоченных законодательством Российской Федерации лиц могут быть направлены на адрес электронной почты: support@pomoysam.ru.
 1.7. Настоящее Соглашение составлено в соответствии с законодательством Российской Федерации. Вопросы, не урегулированные Соглашением, подлежат разрешению в соответствии с законодательством Российской Федерации.
 1.8. Соглашаясь с условиями настоящего Соглашения, Пользователь подтверждает свою правоспособность и свою дееспособность, подтверждает достоверность своих данных и принимает на себя всю ответственность за их точность, полноту и достоверность. Пользователь несет персональную ответственность за проверку настоящего Соглашения на наличие изменений в нем.
 1.9. Компания оставляет за собой право в любое время изменять, добавлять или удалять пункты настоящего Соглашения без уведомления Пользователя.
-
 2. ОПРЕДЕЛЕНИЯ ТЕРМИНОВ
 2.1. Перечисленные ниже термины имеют для целей настоящего Соглашения следующее значение:
 2.1.1. Приложение – Мобильное приложение «Мойка САМ» для платформы Apple iOS и Android;
-2.1.2. Сайт – информационный ресурс в сети Интернет, расположенный на домене -  https://pomoysam.ru;
+2.1.2. Сайт – информационный ресурс в сети Интернет, расположенный на домене - https://pomoysam.ru;
 2.1.3. Пользователь – физическое лицо, достигшее возраста 18 лет, принявший условия настоящего Соглашения, осуществивший регистрацию на Сайте и/или в Приложении;
 2.1.4. Компания – Общество с ограниченной ответственностью Автомойка самообслуживания «Есенинская»;
 2.1.5. Администрация – уполномоченные сотрудники, действующие от имени Общества с ограниченной ответственностью Автомойка самообслуживания «Есенинская»;
 2.1.6. Идентификационные данные – логин и пароль, а также иные данные (коды доступа и пр.), введение которых Пользователем позволяет аутентифицировать Пользователя;
 2.1.7. Регистрация на Сайте и/или в Приложении – совокупность мероприятий, выполняемых Пользователем, по введению необходимых данных в соответствующие поля Сайта и/или Приложения (регистрация Пользователем на Сайте и/или в Приложении означает подтверждение Пользователя соответствия требованиям, предъявляемым к нему, изложенным в настоящем Соглашении);
-2.1.8. Соглашение – настоящее Пользовательское Соглашение, регулирующее отношения Общества с ограниченной ответственностью Автомойка самообслуживания «Есенинская» и Пользователя на протяжении всего периода предоставления Товаров и/или Услуг и доступа Пользователя к персонализированным сервисам Сайта и/или Приложения;
+2.1.8. Соглашение – настоящее Пользовательское Соглашение, регулирующее отношения Общества с ограниченной ответственностью Автомойка самообслуживания «Есенинская» и Пользователя на протяжении всего периода предоставления Товаров и/или Услуг и доступа Пользователя к персонализированным сервисам Сайта и/или Приложения; 
 2.1.9. Товар – любое имущество, реализуемое либо предназначенное для реализации;
 2.1.10. Услуга – деятельность, результаты которой не имеют материального выражения, реализуются и потребляются в процессе осуществления этой деятельности;
 2.1.11. Содержание Сайта и/или Приложения - охраняемые результаты интеллектуальной деятельности, такие как аннотации, статьи, иллюстрации, обложки, музыкальные произведения с текстом или без текста, графические, текстовые, фотографические, производные, составные и иные произведения, пользовательские интерфейсы, визуальные интерфейсы, названия товарных знаков, логотипы, программы для ЭВМ, базы данных, а также дизайн, структура, выбор, координация, внешний вид, общий стиль и расположение данного Содержания, входящего в состав Сайта и другие объекты интеллектуальной собственности все вместе и/или по отдельности, содержащиеся на Сайте и/или в Приложении.
 2.1.12. Рекуррентные платежи – возможность выполнять списания денег с банковской карты Пользователя без повторного ввода реквизитов карты.
-
+2.1.13 Кешбэк (Баллы) — термин, который используется в сферах интернет-торговли  в качестве обозначения разновидности бонусной программы для привлечения клиентов и повышения их лояльности.
+2.1.14 Персональные данные— любые сведения, относящиеся к прямо или косвенно определённому или определяемому физическому лицу (субъекту персональных данных), которые предоставляются другому физическому или юридическому лицу либо лицам. Компания хранит номер телефона зарегистрированного пользователя, но не при каких условиях не разглашаем данные.
+2.1.15 Apple Pay — система мобильных платежей от корпорации Apple. С помощью программ Apple Pay пользователи iPhone 6/6+, 6s/6s+, SE, 7/7+, 8/8+, X, XS/XS Max/XR, Apple Watch могут оплачивать покупки по технологии NFС («ближняя бесконтактная связь»). Подтверждения платежа используется Touch ID или Face ID. Также возможно использование системы для платежей в интернете.
+2.1.16 Google Pay— разработанная компанией Google система электронных платежей с мобильных устройств (смартфонов, планшетов и умных часов), работающих под операционной системой Android. Также возможно использование системы для платежей в интернете.
 3. ПРЕДМЕТ СОГЛАШЕНИЯ
 3.1. Предметом настоящего Соглашения является предоставление Пользователю доступа к содержащимся на Сайте и/или в Приложении Товарам и оказываемым Услугам:
 3.1.1. Приложение предоставляет Пользователю следующие виды Товаров и Услуг:
-•	Возможность приобретения жетонов, для мойки автомобиля  на всех автомойках, принадлежащих на праве собственности Компании и указанных на Сайте и/или в Приложении;
-•	Предоставление информации об адресах и проложение маршрута до автомоек, принадлежащих на праве собственности Компании, с помощью Сайта и/или Приложения;
-•	Описание Товаров и Услуг предаствляемых Компанией;
-•	Просмотр новостей Компании, редактируемых Админитсрацией;
-•	Просмотр и распоряжение своими покупками (активные и использованные);
+• Возможность приобретения жетонов, для мойки автомобиля на всех автомойках, принадлежащих на праве собственности Компании и указанных на Сайте и/или в Приложении;
+• Предоставление информации об адресах и проложение маршрута до автомоек, принадлежащих на праве собственности Компании, с помощью Сайта и/или Приложения;
+• Описание Товаров и Услуг предаствляемых Компанией;
+• Просмотр новостей Компании, редактируемых Админитсрацией;
+• Просмотр и распоряжение своими покупками (активные и использованные);
 3.1.2. Под действие настоящего Соглашения подпадают все существующие (реально функционирующие) на данный момент Товары и Услуги, которые размещены на Сайте и/или в Приложении, а также любые их последующие модификации и появляющиеся в дальнейшем дополнительные Товары и/или Услуги.
-3.2. Настоящее Соглашение является публичной офертой. Получая доступ к Сайту и/или Приложению Пользователь считается присоединившимся к настоящему Соглашению. 
+3.2. Настоящее Соглашение является публичной офертой. Получая доступ к Сайту и/или Приложению Пользователь считается присоединившимся к настоящему Соглашению.
 3.3. Использование Содержания Сайта и/или Приложения регулируется нормами действующего законодательства Российской Федерации.
 3.4. Доступ к Сайту и Приложению предоставляется на бесплатной основе.
-
+3.5 Пользователь после того, как сформирует Заказ может оплатить его с помощью: банковской карты, Apple Pay, Google Pay. После успешной оплаты Пользователь получит СМС-сообщение с ссылкой на онлайн-чек. (В соответствии с ФЗ-54).
 4. ПРАВА И ОБЯЗАННОСТИ СТОРОН
 4.1. Администрация Сайта и Приложения вправе:
 4.1.1. Изменять правила пользования Сайта и/или Приложения. Изменения вступают в силу с момента публикации новой редакции Соглашения на Сайте и/или в Приложении;
 4.1.2. Ограничить доступ к Сайту и/или Приложению в случае нарушения Пользователем условий настоящего Соглашения;
 4.1.3. Изменять размер оплаты, взимаемый за покупку предоставляемых Товаров и Услуг.
-4.2. Пользователь вправе: 
+4.2. Пользователь вправе:
 4.2.1. Получить доступ к использованию Сайта и/или Приложения после соблюдения требований о регистрации;
 4.2.2. Пользоваться всеми имеющимися на Сайте и/или в Приложении Услугами, а также приобретать любые Товары, предлагаемые на Сайте и/или в Приложении;
 4.2.3. Задавать любые вопросы, относящиеся к услугам Компании по реквизитам, которые находятся в разделе Сайта «Контакты» и в разделе мобильного приложения «Помощь»;
@@ -596,42 +598,34 @@
 4.4.3. Несанкционированный доступ к функциям Сайта и/или Приложения, любым другим системам или сетям, относящимся к данному Сайту и/или Приложению, а также к любым Товарам и Услугам, предлагаемым на Сайте и/или в Приложение;
 4.4.4. Нарушать систему безопасности или аутентификации на Сайте и/или Приложение или в любой сети, относящейся к Сайту и/или Приложению;
 4.4.5. Использовать Сайт и/или Приложение и их содержание в любых целях, запрещенных законодательством Российской Федерации, а также подстрекать к любой незаконной деятельности или другой деятельности, нарушающей права Компании или других лиц;
-4.4.6. Использовать сервисы Сайта и/или Приложения с целью некорректного сравнения Товара и/или Услуг, а также формирования негативного отношения к лицам, (не) пользующимся определенными Товарами и/или Услугами, или осуждения таких лиц.
-
+4.4.6. Использовать сервисы Сайта и/или Приложения с целью некорректного сравнения Товара и/или Услуг, а также формирования негативного отношения к лицам, (не) пользующимся определенными Товарами и/или Услугами, или осуждения таких лиц. 
 5. ИСПОЛЬЗОВАНИЕ САЙТА И ПРИЛОЖЕНИЯ ИНФОРМАЦИОННОЙ СИСТЕМЫ
-5.1. Сайт и Приложение, а также их Содержание, принадлежит Компании и управляется Администрацией. 
+5.1. Сайт и Приложение, а также их Содержание, принадлежит Компании и управляется Администрацией.
 5.2. Содержание Сайта и Приложения не может быть скопировано, опубликовано, воспроизведено, передано или распространено любым способом, а также размещено в глобальной сети «Интернет» без предварительного письменного согласия Администрации сайта.
 5.3. Содержание Сайта и Приложения защищено авторским правом, законодательством о товарных знаках, а также другими правами, связанными с интеллектуальной собственностью, и законодательством о недобросовестной конкуренции.
-5.4. Доступ к использованию Услуг и приобретению Товара, предлагаемого на Сайте и/или в Приложении, может потребовать регистрации Пользователя.
-5.5. Пользователь несет персональную ответственность за сохранение конфиденциальности информации (идентификационных данных), включая пароль, а также за всю без исключения деятельность, которая ведётся от имени Пользователя. 
-5.6. Пользователь должен незамедлительно уведомить Администрацию Сайта и/или Приложения о несанкционированном использовании его идентификационных денных или любом другом нарушении системы безопасности. 
-5.7. Настоящее Соглашение распространяет свое действия на все дополнительные положения и условия о покупке Товара и оказанию Услуг, предоставляемых на Сайте и/или в Приложении. 
+5.4. Доступ к использованию Услуг и приобретению Товара, предлагаемого на Сайте и/или в Приложении, обязательно требует регистрации Пользователя.
+5.5. Пользователь несет персональную ответственность за сохранение конфиденциальности информации (идентификационных данных), включая пароль, а также за всю без исключения деятельность, которая ведётся от имени Пользователя.
+5.6. Пользователь должен незамедлительно уведомить Администрацию Сайта и/или Приложения о несанкционированном использовании его идентификационных данных или любом другом нарушении системы безопасности.
+5.7. Настоящее Соглашение распространяет свое действия на все дополнительные положения и условия о покупке Товара и оказанию Услуг, предоставляемых на Сайте и/или в Приложении.
 5.8. Администрация Сайта и/или Приложения имеет право в любое время без уведомления Пользователя вносить изменения в перечень Товаров и Услуг, предлагаемых на Сайте и/или в Приложении, и/или в цены, применимые к таким Товарам по их реализации и/или оказываемым Услугам на Сайте и/или в Приложении.
-
 6. ОТВЕТСТВЕННОСТЬ
 6.1. Любые убытки, которые Пользователь может понести в случае умышленного или неосторожного нарушения любого положения настоящего Соглашения, а также вследствие несанкционированного доступа к идентификационным данным другого Пользователя, Администрацией Сайта и/или Приложения не возмещаются.
 6.2. Администрация Сайта и/или Приложения не несет ответственности за:
 6.2.1. Задержки или сбои в процессе совершения операции, возникшие вследствие непреодолимой силы, а также любого случая неполадок в телекоммуникационных, компьютерных, электрических и иных смежных системах;
 6.2.2. Действия систем переводов, банков, платежных систем и за задержки связанные с их работой;
-6.2.3. Надлежащее функционирование Сайта и/или Приложения, в случае, если Пользователь не имеет необходимых технических средств для его использования, а также не несет никаких обязательств по обеспечению пользователей такими средствами. 
-
+6.2.3. Надлежащее функционирование Сайта и/или Приложения, в случае, если Пользователь не имеет необходимых технических средств для его использования, а также не несет никаких обязательств по обеспечению пользователей такими средствами.
 7. НАРУШЕНИЕ УСЛОВИЙ ПОЛЬЗОВАТЕЛЬСКОГО СОГЛАШЕНИЯ
 7.1. Администрация Сайта и/или Приложения вправе раскрыть любую собранную о Пользователе данной Сайту и/или Приложению информацию, если раскрытие необходимо в связи с расследованием или жалобой в отношении неправомерного использования Сайта и/или Приложения, либо для идентификации Пользователя, который может нарушать или вмешиваться в права Компании, Администрации, других Пользователей Сайта и/или Приложения, либо для выполнения условий настоящего Соглашения, защиты прав или безопасности Пользователей или Компании.
 7.2. Администрация Сайта и/или Приложения вправе без предварительного уведомления Пользователя прекратить и/или заблокировать доступ к Сайту и/или Приложению, если Пользователь нарушил настоящее Соглашение или содержащиеся в иных документах условия пользования Сайта и/или Приложения, а также в случае прекращения действия Сайта и/или Приложения либо по причине технической неполадки или проблемы.
 7.3. Администрация сайта не несет ответственности перед Пользователем или третьими лицами за прекращение доступа к Сайта и/или Приложению в случае нарушения Пользователем любого положения настоящего Соглашения или иного документа, содержащего условия пользования Сайтом и/или Приложением.
-
 8. РАЗРЕШЕНИЕ СПОРОВ
 8.1. В случае возникновения любых разногласий или споров между Компанией и Пользователем настоящего Соглашения обязательным условием до обращения в суд является предъявление претензии (письменного предложения о добровольном урегулировании спора).
 8.2. Получатель претензии в течение 30 календарных дней со дня ее получения, письменно уведомляет заявителя претензии о результатах рассмотрения претензии.
 8.3. При невозможности разрешить спор в добровольном порядке любая Компания и/или Пользователь могут обратиться в суд за защитой своих прав, которые предоставлены им действующим законодательством Российской Федерации.
 8.4. Любой иск в отношении условий использования Сайта и/или Приложения должен быть предъявлен в течение месяца после возникновения оснований для иска, за исключением защиты авторских прав на охраняемые в соответствии с законодательством материалы Сайта. При нарушении условий данного пункта любой иск или основания для иска погашаются исковой давностью.
-
 9. ДОПОЛНИТЕЛЬНЫЕ УСЛОВИЯ
-9.1. Администрация Сайта и/или Приложения не принимает встречные предложения от Пользователя относительно изменений настоящего Пользовательского соглашения. 
-9.2. Отзывы Пользователя, не являются конфиденциальной информацией и могут быть использованы Администрацией сайта без ограничений.
-
-
-</string>
+9.1. Администрация Сайта и/или Приложения не принимает встречные предложения от Пользователя относительно изменений настоящего Пользовательского соглашения.
+9.2. Отзывы Пользователя, не являются конфиденциальной информацией и могут быть использованы Администрацией сайта без ограничений.</string>
                                 <color key="textColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -669,7 +663,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screenStart" translatesAutoresizingMaskIntoConstraints="NO" id="mGB-oo-svw">
-                                <rect key="frame" x="0.0" y="0.0" width="375.00000000000011" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jO-0A-EA2">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
@@ -836,7 +830,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screenStart" translatesAutoresizingMaskIntoConstraints="NO" id="1IL-nC-lL1">
-                                <rect key="frame" x="0.0" y="0.0" width="375.00000000000011" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQS-fx-rfA">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
@@ -948,7 +942,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screenStart" highlightedImage="screenStart" translatesAutoresizingMaskIntoConstraints="NO" id="pjr-Lz-E7s">
-                                <rect key="frame" x="0.0" y="0.0" width="375.00000000000011" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jp9-J9-dK7">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
@@ -1079,7 +1073,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screenStart" translatesAutoresizingMaskIntoConstraints="NO" id="aff-Pn-kdQ">
-                                <rect key="frame" x="0.0" y="0.0" width="375.00000000000011" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3m-9v-8bs">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
@@ -1211,7 +1205,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screenStart" translatesAutoresizingMaskIntoConstraints="NO" id="R9h-a1-Mue">
-                                <rect key="frame" x="0.0" y="0.0" width="375.00000000000011" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пароль успешно восcтановлен " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xY-lj-ay5">
                                 <rect key="frame" x="93.666666666666686" y="168" width="188" height="60"/>
@@ -1363,7 +1357,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CqI-lH-fRT">
-                                <rect key="frame" x="61" y="443" width="51" height="31"/>
+                                <rect key="frame" x="53" y="494" width="51" height="31"/>
                                 <color key="onTintColor" red="0.85591071839999999" green="0.2224859297" blue="0.2270874977" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="thumbTintColor" white="0.86887307359999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -1371,7 +1365,7 @@
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAH-qh-YX0">
-                                <rect key="frame" x="118" y="435" width="220" height="46"/>
+                                <rect key="frame" x="110" y="486" width="220" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="04q-vk-mvW"/>
                                     <constraint firstAttribute="width" constant="220" id="Wfc-f8-RmF"/>
@@ -1380,26 +1374,38 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UsU-o1-wks">
+                                <rect key="frame" x="139" y="540" width="97" height="30"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                                <state key="normal" title="Отвязать карту ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelCardAct:" destination="uFW-uC-LDl" eventType="touchUpInside" id="waf-Vj-yb2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="qja-AV-enp" firstAttribute="top" secondItem="QRZ-pc-5k1" secondAttribute="bottom" constant="5" id="27y-Ll-l9X"/>
                             <constraint firstItem="QRZ-pc-5k1" firstAttribute="top" secondItem="62G-Ja-NdW" secondAttribute="bottom" constant="11.333333333333371" id="35v-XX-u6f"/>
                             <constraint firstItem="xAH-qh-YX0" firstAttribute="leading" secondItem="CqI-lH-fRT" secondAttribute="trailing" constant="8" id="3Nh-En-ewf"/>
+                            <constraint firstItem="xAH-qh-YX0" firstAttribute="top" secondItem="s3F-u8-EiC" secondAttribute="bottom" id="3a2-Od-Yiy"/>
                             <constraint firstItem="QRZ-pc-5k1" firstAttribute="leading" secondItem="62G-Ja-NdW" secondAttribute="leading" id="6dY-ne-Z21"/>
+                            <constraint firstItem="s3F-u8-EiC" firstAttribute="leading" secondItem="CqI-lH-fRT" secondAttribute="trailing" constant="-86" id="AY7-nN-FRc"/>
                             <constraint firstItem="Vay-fd-q6i" firstAttribute="centerX" secondItem="15N-k0-dF1" secondAttribute="centerX" id="BMb-bw-eUn"/>
                             <constraint firstItem="dhb-v0-nLL" firstAttribute="centerX" secondItem="s3F-u8-EiC" secondAttribute="centerX" id="D6u-FF-aOP"/>
-                            <constraint firstItem="CqI-lH-fRT" firstAttribute="top" secondItem="s3F-u8-EiC" secondAttribute="bottom" constant="-43" id="Ilw-wF-ujF"/>
                             <constraint firstItem="62G-Ja-NdW" firstAttribute="centerY" secondItem="s3F-u8-EiC" secondAttribute="centerY" id="JR4-1j-oNF"/>
-                            <constraint firstItem="s3F-u8-EiC" firstAttribute="leading" secondItem="CqI-lH-fRT" secondAttribute="trailing" constant="-94" id="Jwe-8A-Ow6"/>
                             <constraint firstItem="c3G-Uh-8kd" firstAttribute="top" secondItem="62G-Ja-NdW" secondAttribute="bottom" constant="11.333333333333371" id="NzP-RY-3Hk"/>
                             <constraint firstItem="oIu-no-h3H" firstAttribute="top" secondItem="qja-AV-enp" secondAttribute="top" id="PaL-ba-1I7"/>
                             <constraint firstItem="s3F-u8-EiC" firstAttribute="top" secondItem="dhb-v0-nLL" secondAttribute="bottom" constant="-109" id="QB2-uE-6pw"/>
-                            <constraint firstItem="xAH-qh-YX0" firstAttribute="top" secondItem="s3F-u8-EiC" secondAttribute="bottom" constant="-51" id="UzK-Dy-aFI"/>
                             <constraint firstItem="oIu-no-h3H" firstAttribute="leading" secondItem="qja-AV-enp" secondAttribute="trailing" id="Xek-3C-fXi"/>
                             <constraint firstItem="62G-Ja-NdW" firstAttribute="centerX" secondItem="s3F-u8-EiC" secondAttribute="centerX" id="Xqm-1b-1g1"/>
+                            <constraint firstItem="UsU-o1-wks" firstAttribute="centerX" secondItem="15N-k0-dF1" secondAttribute="centerX" id="aAn-Zp-bU2"/>
+                            <constraint firstItem="CqI-lH-fRT" firstAttribute="top" secondItem="s3F-u8-EiC" secondAttribute="bottom" constant="8" id="bvh-EA-lza"/>
                             <constraint firstItem="s3F-u8-EiC" firstAttribute="top" secondItem="Yfs-Ui-vl5" secondAttribute="bottom" constant="23" id="crw-hB-Rou"/>
                             <constraint firstItem="Vay-fd-q6i" firstAttribute="top" secondItem="aHB-5b-sZB" secondAttribute="bottom" constant="8" id="gYF-QD-aDw"/>
+                            <constraint firstItem="UsU-o1-wks" firstAttribute="top" secondItem="xAH-qh-YX0" secondAttribute="bottom" constant="8" id="ihx-KV-sE5"/>
                             <constraint firstItem="oIu-no-h3H" firstAttribute="centerY" secondItem="qja-AV-enp" secondAttribute="centerY" id="leS-IA-cHP"/>
                             <constraint firstItem="qja-AV-enp" firstAttribute="leading" secondItem="62G-Ja-NdW" secondAttribute="leading" id="n48-hk-NVA"/>
                             <constraint firstItem="s3F-u8-EiC" firstAttribute="centerX" secondItem="15N-k0-dF1" secondAttribute="centerX" id="nyc-Uc-8Ow"/>
@@ -1421,6 +1427,7 @@
                         <outlet property="bacgroundSucces" destination="s3F-u8-EiC" id="3jW-bi-PyY"/>
                         <outlet property="backButtonOutl" destination="aHB-5b-sZB" id="2EY-OZ-wmh"/>
                         <outlet property="btnOutlet" destination="Vay-fd-q6i" id="Hhm-3L-XX7"/>
+                        <outlet property="cancelCardOutlet" destination="UsU-o1-wks" id="6Ym-KU-6HO"/>
                         <outlet property="logoSucces" destination="62G-Ja-NdW" id="7jv-oY-MXm"/>
                         <outlet property="segment" destination="b61-rJ-zWQ" id="A6x-PZ-sxV"/>
                         <outlet property="sumLabel" destination="qja-AV-enp" id="slZ-4i-BmH"/>
@@ -1490,6 +1497,7 @@
                     <connections>
                         <outlet property="btnPay" destination="4JO-rW-98Y" id="9zt-1X-5gL"/>
                         <segue destination="8Yu-N6-dGG" kind="unwind" identifier="unwindToParents" unwindAction="unwindFromPaymentTwo:" id="baT-DX-fOm"/>
+                        <segue destination="8Yu-N6-dGG" kind="unwind" identifier="double" unwindAction="unwindFromPaymentDouble:" id="eEv-Rh-kEl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SSu-aP-DsF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1510,7 +1518,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screenStart" translatesAutoresizingMaskIntoConstraints="NO" id="Z5O-Ue-vEq">
-                                <rect key="frame" x="0.0" y="0.0" width="375.00000000000011" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Ws1-xg-Awu">
                                 <rect key="frame" x="142.66666666666666" y="356" width="90" height="100"/>
@@ -1563,7 +1571,7 @@
                                     <constraint firstAttribute="width" constant="240" id="tdR-fz-GZu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="18"/>
-                                <state key="normal" title="Принять" backgroundImage="buttonMyby"/>
+                                <state key="normal" title="Хорошо" backgroundImage="buttonMyby"/>
                                 <connections>
                                     <segue destination="zfK-d3-5ht" kind="unwind" unwindAction="unwindToThisViewController:" id="f1g-xi-fNg"/>
                                 </connections>
@@ -1647,7 +1655,7 @@
                                     <constraint firstAttribute="height" constant="50" id="Hk6-0S-KBg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="18"/>
-                                <state key="normal" title="Хорошо" backgroundImage="buttonMyby"/>
+                                <state key="normal" title=" Отправить" backgroundImage="buttonMyby"/>
                                 <connections>
                                     <action selector="goodBtn:" destination="CAn-L2-Rw5" eventType="touchUpInside" id="yWE-zW-zQo"/>
                                 </connections>
@@ -2614,6 +2622,8 @@
         <!--Balls Good-->
         <scene sceneID="W1O-gz-tRO">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xxu-Cz-za2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="dwD-8b-5Lz" userLabel="Exit" sceneMemberID="exit"/>
                 <viewController id="4mq-19-wcS" customClass="BallsGood" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TLs-Y9-WNu"/>
@@ -2654,7 +2664,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconClock" translatesAutoresizingMaskIntoConstraints="NO" id="cRX-Pc-p5X">
-                                <rect key="frame" x="132" y="504.66666666666674" width="20" height="20"/>
+                                <rect key="frame" x="112" y="504.66666666666674" width="40" height="40"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы уcпешно восрользовались баллами. Приобретенные жетоны можно найти на странице мои покупки" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1S-em-4PW">
                                 <rect key="frame" x="43.666666666666657" y="197.66666666666666" width="288" height="65.999999999999972"/>
@@ -2691,8 +2701,6 @@
                         <outlet property="sizeMinuts" destination="rN0-L9-OGF" id="Fzy-6G-S5L"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xxu-Cz-za2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="dwD-8b-5Lz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="36" y="-1728"/>
         </scene>
@@ -2762,14 +2770,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 жетона" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdt-YX-BW6">
-                                <rect key="frame" x="97.666666666666657" y="440.66666666666669" width="84.666666666666657" height="24.666666666666686"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
+                                <rect key="frame" x="97.666666666666686" y="440.66666666666669" width="75.333333333333314" height="22"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
                                 <color key="textColor" red="0.89411764709999997" green="0.0" blue="0.043137254899999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 минут" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UuM-sh-xCZ">
-                                <rect key="frame" x="200" y="440.66666666666669" width="72" height="24.666666666666686"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
+                                <rect key="frame" x="200" y="440.66666666666669" width="64" height="22"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
                                 <color key="textColor" red="0.89411764709999997" green="0.0" blue="0.043137254899999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -3060,7 +3068,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screenStart" translatesAutoresizingMaskIntoConstraints="NO" id="J8t-a5-jiR">
-                                <rect key="frame" x="0.0" y="0.0" width="375.00000000000011" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TN0-Xf-zHc">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
@@ -3209,7 +3217,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screenStart" translatesAutoresizingMaskIntoConstraints="NO" id="UTD-va-Dtt">
-                                <rect key="frame" x="0.0" y="0.0" width="375.00000000000011" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWK-Pz-ME8">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>

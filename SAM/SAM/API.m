@@ -807,4 +807,33 @@
 }
 
 
+-(void) cancelSavedCard:(void(^)(NSDictionary * responseObject)) success
+              onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure{
+    
+    
+    [self.sessionManager.requestSerializer setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
+
+              [self.sessionManager.requestSerializer setValue:[self getToken] forHTTPHeaderField:@"Authorization"];
+              
+             [self.sessionManager POST:@"cancelSavedCard/"
+                                   parameters:nil
+                                     progress:nil
+                                      success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
+                                          
+                                          if(success){
+                                              success(responseObject);
+                                          }
+                                      }
+                      
+                                      failure:^(NSURLSessionTask *operation, NSError *error) {
+                                            NSLog(@"error%@",error);
+                                          if(failure){
+                                              NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
+                                              failure(error, response.statusCode);
+                                          }
+                                      }];
+    
+}
+
+
 @end

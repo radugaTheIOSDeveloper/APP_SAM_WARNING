@@ -33,6 +33,10 @@
 @property (weak, nonatomic) IBOutlet UISwitch *switChChecked;
 - (IBAction)switchAct:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *switchLabel;
+@property (weak, nonatomic) IBOutlet UIButton *cancelCardOutlet;
+
+- (IBAction)cancelCardAct:(id)sender;
+
 
 @end
 

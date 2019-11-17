@@ -34,9 +34,45 @@
     float  discount;
     float cahBack;
     NSString * promocods;
+    
+    NSString * statusScreen;
 }
 
 
+
+-(void)viewWillAppear:(BOOL)animated{
+    
+        two = 0;
+       buy50 = 0.f;
+
+       totalPrice = 0.f;
+       totalMinuts = 0;
+       
+       discount = 0.f;
+       
+       self.summInfo.text = [NSString stringWithFormat:@"0.0 рублей"];
+       self.minutsInfo.text = [NSString stringWithFormat:@"0 минут"];
+       self.ballsInfo.text = [NSString stringWithFormat:@"0.0 баллов"];
+       
+       self.buyCoinsOtl.enabled = NO;
+       
+       self.activityIndicator.alpha = 0.f;
+       [self.activityIndicator stopAnimating];
+        _quantityTokenTwo.text = [NSString stringWithFormat:@"%ld",(long)two];
+        self.promoText.text = @"";
+    
+      // [self getPercent];
+    
+    if ([statusScreen isEqualToString:@"true"]) {
+        [self segueLsot];
+    }
+    
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    
+}
 
 
 - (void)viewDidLoad {
@@ -59,11 +95,15 @@
     
     discount = 0.f;
     
+    statusScreen  = @"false";
+    
     self.summInfo.text = [NSString stringWithFormat:@"0.0 рублей"];
     self.minutsInfo.text = [NSString stringWithFormat:@"0 минут"];
     self.ballsInfo.text = [NSString stringWithFormat:@"0.0 баллов"];
     
     self.buyCoinsOtl.enabled = NO;
+    
+ 
     
     self.activityIndicator.alpha = 0.f;
     [self.activityIndicator stopAnimating];
@@ -201,31 +241,7 @@
 }
 
 
-//-(void)tryPromo {
-//
-//    [[API apiManager]tryPromo:promocode
-//    onSuccess:^(NSDictionary *responseObject) {
-//
-//        NSLog(@"responce promo = %@", responseObject);
-//        s
-//
-//
 
-////
-////        self.promoText.text = @"";
-//        NSLog(@"%@",[responseObject objectForKey:@"type"]);
-//
-//
-//
-//    } onFailure:^(NSError *error, NSInteger statusCode) {
-//
-//        self.activityIndicator.alpha = 0.f;
-//              [self.activityIndicator stopAnimating];
-//                NSLog(@"responce promo error = %@", error);
-//
-//    }];
-//
-//}
 
 -(void) alerts{
     
@@ -302,6 +318,32 @@
 //            });
 
 }
+
+
+- (IBAction)unwindFromPaymentDouble:(UIStoryboardSegue *)segue {
+    
+         dispatch_async(dispatch_get_main_queue(), ^(void){
+                statusScreen  = @"true";
+
+                
+             
+             });
+}
+
+
+-(void) segueLsot{
+    
+    
+    [[Payment save]setBackIndex:@"indexTwo"];
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                      PaymentController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"payControlller"];
+                      pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                      [self presentViewController:pvc animated:YES completion:nil];
+    
+    
+}
+
+
 
 - (IBAction)plusTwo:(id)sender {
     buy50 = buy50 + 50.0;

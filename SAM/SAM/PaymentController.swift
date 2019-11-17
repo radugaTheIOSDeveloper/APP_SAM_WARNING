@@ -79,7 +79,7 @@ import YandexCheckoutPayments
                 
                 vc.returnedString = stringToReturn
 
-                self.dismiss(animated: false, completion: nil)
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }
@@ -88,9 +88,7 @@ import YandexCheckoutPayments
 //
     func tokenizationFlowFunc() {
         
-        let paymentTypes: PaymentMethodTypes = [.bankCard, .applePay]
-        let tokenSettings = TokenizationSettings(paymentMethodTypes: paymentTypes,
-                               showYandexCheckoutLogo: true)
+
         
         let inputData:TokenizationFlow
 
@@ -108,6 +106,20 @@ import YandexCheckoutPayments
                  
                   
               }else{
+                
+                let paymentTypes: PaymentMethodTypes
+                
+                if save_card == "1"{
+                    paymentTypes  = [.bankCard]
+
+                }else{
+                    paymentTypes  = [.bankCard, .applePay]
+
+
+                }
+                
+                let tokenSettings = TokenizationSettings(paymentMethodTypes: paymentTypes,
+                                       showYandexCheckoutLogo: true)
                   
                   inputData = .tokenization(TokenizationModuleInputData(
                               clientApplicationKey: clientApplicationKey,
@@ -128,7 +140,7 @@ import YandexCheckoutPayments
                
                  self.tokenizationViewController = TokenizationAssembly.makeModule(inputData: inputData,
                                                                            moduleOutput: self)
-                  present(self.tokenizationViewController, animated: true, completion: nil)
+                present(self.tokenizationViewController, animated: false, completion: nil)
               
         
     }
@@ -226,15 +238,13 @@ extension PaymentController: TokenizationModuleOutput {
                                        strongSelf.sendMessage("1")
 
                     }
-//
+
                 }else if result == "error"{
                     
                     DispatchQueue.main.async { [weak self] in
                                            guard let strongSelf = self else { return }
                                            strongSelf.tokenizationViewController.dismiss(animated: false)
                                            strongSelf.sendMessage("8")
-                            
-                             
                             
                             
                         }
@@ -344,14 +354,19 @@ extension PaymentController: TokenizationModuleOutput {
           2 - ошибка, не удалось связаться с сервером и получит url
           3 - ошибка, не удалось провести 3D-secure
           */
+        
+        if code == "1" || code == "8" {
+            self.stringToReturn = code
+            self.performSegue(withIdentifier: "double", sender: self)
 
-        self.stringToReturn = code
-        self.performSegue(withIdentifier: "unwindToParents", sender: self)
+        }else{
+            self.stringToReturn = code
+            self.performSegue(withIdentifier: "unwindToParents", sender: self)
 
- 
+        }
         
 
-       
+ 
     }
 }
 

@@ -51,6 +51,9 @@
     self.SiceCoins.text = [NSString stringWithFormat:@"%ld",[[Payment save]getMyCNtCoin]];
     
     
+//    self.switChChecked.alpha = 0.f;
+//    self.switchLabel.alpha = 0.f;
+    
     [self savedCard];
 }
 
@@ -62,6 +65,21 @@
 
 
 
+
+-(void) cancelCard {
+    
+    [[API apiManager]cancelSavedCard:^(NSDictionary *responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        [self savedCard];
+        
+    } onFailure:^(NSError *error, NSInteger statusCode) {
+        NSLog(@"%@",error);
+    }];
+    
+}
+
+
 -(void) savedCard {
     
     [[API apiManager]checkSavadCard:^(NSDictionary *responseObject) {
@@ -70,7 +88,8 @@
         self.switchLabel.text = [NSString stringWithFormat:@"Использовать для оплаты: \n%@",[responseObject objectForKey:@"card_text"]];
             [self.switChChecked setOn:true];
         paymntID = [responseObject objectForKey:@"payment_id"];
-        
+        self.cancelCardOutlet.alpha = 1.f;
+
     } onFailure:^(NSError *error, NSInteger statusCode) {
         NSLog(@"status code - %ld",statusCode);
         
@@ -78,6 +97,9 @@
             
             self.switchLabel.text = @"Сохранить платежные данные для последующих покупок";
             [self.switChChecked setOn:false];
+        
+            self.cancelCardOutlet.alpha = 0.f;
+            
         }else{
             
             //dgnfug
@@ -105,11 +127,21 @@
 - (IBAction)unwindFromPaymentTwo:(UIStoryboardSegue *)segue {
     
     canReturnFrompaymentView = NO;
+    
+    self.switChChecked.alpha = 0.f;
+    self.switchLabel.alpha = 0.f;
+    self.cancelCardOutlet.alpha = 0.f;
+    self.cancelCardOutlet.enabled = false;
 
-//
+            self.navigationItem.leftBarButtonItem=nil;
+            self.navigationItem.hidesBackButton=YES;
+    
         dispatch_async(dispatch_get_main_queue(), ^(void){
             NSLog(@"%@",self.returnedString);
-            
+                
+            self.navigationItem.hidesBackButton = YES;
+
+
             if (self.returnedString == NULL) {
                 self.btnOutlet.alpha = 1.f;
                 self.btnOutlet.titleLabel.text = @"Оплатить";
@@ -212,12 +244,12 @@
         rvc.promocode = [[Payment save]getMydiscount];
         if (self.switChChecked.on) {
             rvc.payment_id = paymntID;
-            if ([paymntID isEqualToString:@""]) {
-                rvc.save_card = @"1";
-            }
+            rvc.save_card = @"1";
+
+        }else{
+            rvc.save_card = @"0";
         }
         
-        rvc.save_card = @"0";
     }
 }
 
@@ -250,5 +282,10 @@
     
 }
 
+- (IBAction)cancelCardAct:(id)sender {
+    
+    [self cancelCard];
+    
+}
 @end
 
