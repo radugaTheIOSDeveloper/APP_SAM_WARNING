@@ -30,9 +30,9 @@
 		<true/>
 	</dict>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string></string>
+	<string>Согласившись на использование геолокации, Вы сможете подобрать мойку по расстоянию от Вас и проложить к ней маршрут  </string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>Согласившись на использование геолокации, Вы сможете подобрать мойку по расстоянию от Вас и проложить к ней маршрут  </string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Roboto-Black.ttf</string>

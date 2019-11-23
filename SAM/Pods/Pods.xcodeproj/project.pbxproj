@@ -391,7 +391,7 @@
 		4AD10016CF9F2B247666D27D4C988C6D /* WebLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A91387FE7F4A5944278AEB74E4DE27 /* WebLogger.swift */; };
 		4B53AD388180A45F0858E7764B3FDCBF /* FIRMessagingDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = F44F9BBB97EECE0541C0BC148F912673 /* FIRMessagingDefines.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		4C30DA865C6ED23DCAACE541BB83FBCB /* GPBCodedOutputStream_PackagePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EBC18D55A594FB82BB4E078E0E4A7E4 /* GPBCodedOutputStream_PackagePrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4C385DE52378A0420042CA6B /* TrustDefender.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C385DE42378A0420042CA6B /* TrustDefender.framework */; };
+		4C329CEF23895CE6005B77D8 /* TrustDefender.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C329CEE23895CE6005B77D8 /* TrustDefender.framework */; };
 		4C3D9F0C36987153B53C5A38C7D3B8CA /* NSDictionary+FIRMessaging.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4224853BBE921F7FF39ED4D9694D30 /* NSDictionary+FIRMessaging.m */; };
 		4C3DEB686C216D69FEC2774C74A2C9BC /* YandexMoneyCoreApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D9DCB1D689313A70B32BF77383B507 /* YandexMoneyCoreApi.framework */; };
 		4C6AE8BDEF915CFEC634E467AC139127 /* ActivityIndicatorView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE5363DCA7BCA35A51BA5C91ADF3734 /* ActivityIndicatorView+Style.swift */; };
@@ -1915,7 +1915,7 @@
 		4B61319C78D1C067538C9966E4648491 /* GPBWireFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPBWireFormat.m; path = objectivec/GPBWireFormat.m; sourceTree = "<group>"; };
 		4C1086E8ADAFE35AC23AE77217EE9FEC /* TokensRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TokensRequest.swift; path = YandexCheckoutPaymentsApi/Source/Models/TokensRequest/TokensRequest.swift; sourceTree = "<group>"; };
 		4C308ACC8CD59EA6F471D9C9296B982D /* FIRAnalyticsInterop.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRAnalyticsInterop.h; path = Interop/Analytics/Public/FIRAnalyticsInterop.h; sourceTree = "<group>"; };
-		4C385DE42378A0420042CA6B /* TrustDefender.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TrustDefender.framework; sourceTree = "<group>"; };
+		4C329CEE23895CE6005B77D8 /* TrustDefender.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TrustDefender.framework; sourceTree = "<group>"; };
 		4C432040E0AEAA69F414760B2115731E /* GPBUnknownFieldSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBUnknownFieldSet.h; path = objectivec/GPBUnknownFieldSet.h; sourceTree = "<group>"; };
 		4C90E7833C50202402B366265F4CED30 /* YXLQueryUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YXLQueryUtils.m; path = lib/Classes/Private/Core/YXLQueryUtils.m; sourceTree = "<group>"; };
 		4CB23FB57075425930A1D4DFE6A3ED42 /* NumberKeyboardView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NumberKeyboardView.swift; path = "YandexCheckoutPayments/Private/Atomic Design/Keyboard/KeyboardView/NumberKeyboardView.swift"; sourceTree = "<group>"; };
@@ -2779,7 +2779,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C385DE52378A0420042CA6B /* TrustDefender.framework in Frameworks */,
+				4C329CEF23895CE6005B77D8 /* TrustDefender.framework in Frameworks */,
 				95FDA76D998CEEFC5CD58DCA7DB79A9B /* Foundation.framework in Frameworks */,
 				B362F4C20ADA87CEBBE8067EBA0DB095 /* FunctionalSwift.framework in Frameworks */,
 				B338843588E86F2DC7BFBDD33A7BD70F /* PassKit.framework in Frameworks */,
@@ -4088,7 +4088,7 @@
 		DBEAC2EB82410B5EA339A007B1EED9C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4C385DE42378A0420042CA6B /* TrustDefender.framework */,
+				4C329CEE23895CE6005B77D8 /* TrustDefender.framework */,
 				D7B43D0AB2F6F992BD2D7B5F9D226EEC /* FunctionalSwift.framework */,
 				32C2183F0EF4A6E221156EE99FD3F371 /* When.framework */,
 				143A4F2734726B76A267B5A3D8C5DE0A /* YandexCheckoutPaymentsApi.framework */,

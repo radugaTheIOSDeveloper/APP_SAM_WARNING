@@ -47,8 +47,12 @@
 
     }
     
+    
+    self.getButton.titleLabel.text = @"Получить";
+    
     [self titleButton:two];
 
+    
     
     self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     self.activityIndicator.alpha = 0.f;
@@ -179,7 +183,7 @@
     
     if (buttonTitle == 0) {
         self.getButton.enabled = NO;
-        [self.getButton setTitle:@"Купить жетоны" forState:UIControlStateNormal
+        [self.getButton setTitle:@"Получить" forState:UIControlStateNormal
 
          ];
 
