@@ -10,11 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FAQFormViewController : UIViewController
+@interface FAQFormViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageBackground;
 - (IBAction)goodBtn:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UITextField *editTextName;
+- (IBAction)actEditText:(id)sender;
 
 @end
 

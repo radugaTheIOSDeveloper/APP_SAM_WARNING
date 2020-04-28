@@ -20,7 +20,7 @@
     
     NSLog(@"%ld,\n %@",self.sizeTime, self.sizeMinuts);
     
-    self.sizeMinuts.text = [NSString stringWithFormat:@"Жетонов на %ld %@",self.sizeTime, [self getNumEnding:self.sizeTime]];
+    self.sizeMinuts.text = [NSString stringWithFormat:@"Жетонов: %ld",self.sizeTime/2];
     
 }
 

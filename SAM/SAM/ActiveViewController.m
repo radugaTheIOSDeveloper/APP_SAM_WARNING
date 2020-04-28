@@ -211,8 +211,8 @@
             UILabel * nameSam = (UILabel *)[cellACtive.contentView viewWithTag:550];
             UILabel * date = (UILabel *)[cellACtive.contentView viewWithTag:552];
             UILabel * detailLabel = (UILabel *)[cellACtive.contentView viewWithTag:551];
-            detailLabel.text = [NSString stringWithFormat:@"Жетонов на 2 минуты: %@",[curCoinActive objectForKey:@"2minutes_str"]];
-            imageClock.image = [UIImage imageNamed:@"iconClock"];
+            detailLabel.text = [NSString stringWithFormat:@"Количество жетонов: %@",[curCoinActive objectForKey:@"2minutes_str"]];
+            imageClock.image = [UIImage imageNamed:@"ruble"];
             imageCoin.image = [UIImage imageNamed:@"iconMyBy"];
             //nameSam.textColor = [UIColor colorWithRed:111/255.0f green:113/255.0f blue:121/255.0f alpha:1];
             nameSam.text = [curCoinActive objectForKey:@"minutes_str"];

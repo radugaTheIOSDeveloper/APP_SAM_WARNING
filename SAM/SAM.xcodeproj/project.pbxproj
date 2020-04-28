@@ -143,6 +143,7 @@
 		4CC5ABC62358C1CA009FDD0D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		4CC5ABC72358C1CB009FDD0D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		4CCA537A235F26A200D339AE /* SAM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SAM-Bridging-Header.h"; path = "../../Font/SAM-Bridging-Header.h"; sourceTree = "<group>"; };
+		4CD029F7240A8AC900D67442 /* SAM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SAM-Bridging-Header.h"; sourceTree = "<group>"; };
 		4CEF54D92355F469006F0BF1 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
 		4CEF54DB2355F46F006F0BF1 /* PageContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
 		4CEF54DC2355F478006F0BF1 /* Instruction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Instruction.h; sourceTree = "<group>"; };
@@ -437,6 +438,7 @@
 		CE032C971D7D8F4400851FF4 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				4CD029F7240A8AC900D67442 /* SAM-Bridging-Header.h */,
 				CE032C981D7D8F4400851FF4 /* LICENSE.txt */,
 				CE032C991D7D8F4400851FF4 /* Roboto-Black.ttf */,
 				CE032C9A1D7D8F4400851FF4 /* Roboto-BlackItalic.ttf */,
@@ -1111,7 +1113,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = UBFH48Y835;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1125,7 +1127,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/KeychainItemWrapper",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = itstack.SAM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1146,7 +1148,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = UBFH48Y835;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1160,7 +1162,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/KeychainItemWrapper",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = itstack.SAM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

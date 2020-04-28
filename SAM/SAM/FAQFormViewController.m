@@ -43,6 +43,7 @@ NSArray * arrs;
     [self.view addSubview:menu];
     
     
+    self.editTextName.placeholder = @"Ваше имя";
     self.textView.text = @"Опишите ваш вопрос...";
     self.textView.textColor = [UIColor lightGrayColor];
     
@@ -61,11 +62,22 @@ NSArray * arrs;
 //    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
 //    [self.view addGestureRecognizer:tap];
     
+    [self dismissKeyboard];
     
     [self getCarWash];
 
 }
 
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    if([textField isEqual:self.editTextName]){
+        
+        [self.textView becomeFirstResponder];
+
+    }
+    return YES;
+}
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
 
@@ -78,6 +90,7 @@ NSArray * arrs;
 }
 
 -(void) dismissKeyboard{
+    [self.editTextName resignFirstResponder];
     [self.textView resignFirstResponder];
 }
 
@@ -125,7 +138,7 @@ NSArray * arrs;
 
 -(void) setQuestion {
     
-    [[API apiManager]setQuestion:self.textView.text carWashId:self.idWash onSuccess:^(NSDictionary *responseObject) {
+    [[API apiManager]setQuestion:self.textView.text name:self.editTextName.text carWashId:self.idWash  onSuccess:^(NSDictionary *responseObject) {
         
         
         self.activityIndicator.alpha = 0.f;
@@ -208,4 +221,6 @@ NSArray * arrs;
 }
 
 
+- (IBAction)actEditText:(id)sender {
+}
 @end

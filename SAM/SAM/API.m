@@ -709,6 +709,7 @@
 
 
 -(void) setQuestion:(NSString *)problem
+               name:(NSString *)nameText
               carWashId:(NSString *)carWashID
           onSuccess:(void(^)(NSDictionary * responseObject)) success
           onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure{
@@ -716,6 +717,7 @@
     
         NSDictionary * params = [NSDictionary dictionaryWithObjectsAndKeys:
                              problem, @"problem",
+                            nameText,@"user_name",
                             carWashID,@"car_wash_id",nil];
         [self.sessionManager.requestSerializer setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
 

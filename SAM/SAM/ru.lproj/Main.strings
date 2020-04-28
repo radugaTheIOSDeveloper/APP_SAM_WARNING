@@ -114,7 +114,7 @@
 "LUu-2y-akB.placeholder" = "Код подтверждения";
 
 /* Class = "UILabel"; text = "Выберите сколько Вам нужно жетонов. В среднем на мойку хватает 6 минут"; ObjectID = "M2f-zg-lQZ"; */
-"M2f-zg-lQZ.text" = "Выберите сколько Вам нужно жетонов. В среднем на мойку хватает 3 жетона (6 минут)";
+"M2f-zg-lQZ.text" = "Выберите сколько Вам нужно жетонов. В среднем на мойку хватает 3 жетона";
 
 /* Class = "UITabBarItem"; title = "Задать вопрос"; ObjectID = "MRw-M3-bH7"; */
 "MRw-M3-bH7.title" = "Задать вопрос";
@@ -186,7 +186,7 @@
 "Vui-Xr-LBl.text" = "на вашем счете  12412 412412";
 
 /* Class = "UILabel"; text = "2 мин (50 руб)"; ObjectID = "WOW-yu-X0a"; */
-"WOW-yu-X0a.text" = "2 мин (50 руб)";
+"WOW-yu-X0a.text" = "1 жетон 50 рублей";
 
 /* Class = "UILabel"; text = "Принят токен:"; ObjectID = "Wzb-dH-eas"; */
 "Wzb-dH-eas.text" = "Принят токен:";
@@ -246,7 +246,7 @@
 "dpA-YT-WTl.text" = "*Жетоны действуют и на пылесосы";
 
 /* Class = "UILabel"; text = "2 мин (50 руб)"; ObjectID = "f9u-qC-JLe"; */
-"f9u-qC-JLe.text" = "2 мин (50 руб)";
+"f9u-qC-JLe.text" = "1 жетон 50 рублей";
 
 /* Class = "UITabBarItem"; title = "Мои покупки"; ObjectID = "hBc-Kz-iho"; */
 "hBc-Kz-iho.title" = "Мои покупки";
@@ -255,7 +255,7 @@
 "hGs-fi-eiF.text" = "Общее время :";
 
 /* Class = "UILabel"; text = "1 рубль = 1 балл \n50 баллов = жетон на 2 мин"; ObjectID = "hpK-32-6Vv"; */
-"hpK-32-6Vv.text" = "1 рубль = 1 балл \n50 баллов = жетон на 2 мин";
+"hpK-32-6Vv.text" = "1 балл = 1 рубль\n50 баллов = 1 жетон";
 
 /* Class = "UIViewController"; title = "Мои покупки"; ObjectID = "i0o-Xg-3v3"; */
 "i0o-Xg-3v3.title" = "Мои покупки";

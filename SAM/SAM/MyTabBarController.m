@@ -9,6 +9,7 @@
 #import "MyTabBarController.h"
 #import "ViewController.h"
 #import "Payment.h"
+#import "API.h"
 
 
 @interface MyTabBarController ()
@@ -64,5 +65,50 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+- (IBAction)actionExit:(id)sender {
+    
+    [self alerts];
+}
+
+
+-(void) alerts{
+    
+    
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:@"Выход из аккаунта"
+                                  message:@"Вы действительно хотите выйти из аккаунта?"
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* yesButton = [UIAlertAction
+                                actionWithTitle:@"ДА"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action)
+                                {
+        
+                                [[API apiManager]setToken:@""];
+                               NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+                               [userDefaults setObject:@"true" forKey:@"token"];
+        
+        
+                        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                        UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"enterController"];
+                        pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                        [self presentViewController:pvc animated:YES completion:nil];
+        
+                                }];
+    
+    UIAlertAction* nowButton = [UIAlertAction
+                                actionWithTitle:@"НЕТ"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action)
+                                {
+                                }];
+    
+    [alert addAction:yesButton];
+    [alert addAction:nowButton];
+    [self presentViewController:alert animated:YES completion:nil];
+}
 
 @end

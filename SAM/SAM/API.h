@@ -128,6 +128,7 @@ onFailure:(void(^)(NSError * error, NSInteger statusCode))failure;
 
 
 -(void) setQuestion:(NSString *)problem
+                name:(NSString *)nameText
               carWashId:(NSString *)carWashID
 onSuccess:(void(^)(NSDictionary * responseObject)) success
 onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
